@@ -1,0 +1,15 @@
+{
+    "json_format": "0.6.0",
+    "ori:block": {
+        "id": "ori:acacia_planks",
+        "display": {
+            "texture_id": "ori:acacia_planks"
+        },
+        "property": {
+            "hardness": 8,
+            "tags": [
+                "ori:planks"
+            ]
+        }
+    }
+}

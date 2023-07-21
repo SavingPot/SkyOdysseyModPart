@@ -1,0 +1,24 @@
+{
+    "json_format": "0.7.4",
+    "ori:block": {
+        "id": "ori:tangerine_seed",
+        "display": {
+            "texture_id": "ori:tangerine_seed",
+            "description": "ori:description.tangerine_seed"
+        },
+        "property": {
+            "hardness": 1,
+            "tags": [
+                "ori:plant",
+                "ori:tree_seed"
+            ],
+            "behaviour": "GameCore.TreeSeedBlockBehaviour",
+            "collidible": "false"
+        }
+    },
+    "ori:tree_seed": {
+        "property": {
+            "structure": "ori:tangerine_tree"
+        }
+    }
+}

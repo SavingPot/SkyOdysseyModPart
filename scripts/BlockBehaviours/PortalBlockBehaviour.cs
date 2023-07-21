@@ -1,0 +1,21 @@
+using DG.Tweening.Core;
+using UnityEngine;
+using System.Collections.Generic;
+using SP.Tools;
+using Newtonsoft.Json.Linq;
+using DG.Tweening;
+using GameCore.High;
+using SP.Tools.Unity;
+
+namespace GameCore
+{
+    public class PortalBlockBehaviour : Block
+    {
+        //TODO: data save and detect;
+        public override bool PlayerInteraction(Player player)
+        {
+            GM.instance.SummonEntity(new(pos.x, pos.y + 1), $"{GFiles.world.GetOrAddSandbox(chunk.sandboxIndex).biome}_guard", null, true, null, null);
+            return true;
+        }
+    }
+}

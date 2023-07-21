@@ -1,0 +1,24 @@
+{
+    "json_format": "0.7.4",
+    "ori:block": {
+        "id": "ori:mangrove_seed",
+        "display": {
+            "texture_id": "ori:mangrove_seed",
+            "description": "ori:description.mangrove_seed"
+        },
+        "property": {
+            "hardness": 1,
+            "tags": [
+                "ori:plant",
+                "ori:tree_seed"
+            ],
+            "behaviour": "GameCore.TreeSeedBlockBehaviour",
+            "collidible": "false"
+        }
+    },
+    "ori:tree_seed": {
+        "property": {
+            "structure": "ori:mangrove_tree"
+        }
+    }
+}
