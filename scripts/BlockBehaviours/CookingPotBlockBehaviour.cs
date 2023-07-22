@@ -86,7 +86,7 @@ namespace GameCore
                 }
             }
             //如果 有配方 - 拿着碗
-            else if (cookingResult.Contains(':') && caller.TryGetUsingItem()?.data?.id == ItemID.WoodenBowl)
+            else if (cookingResult.Contains(":") && caller.TryGetUsingItem()?.data?.id == ItemID.WoodenBowl)
             {
                 string[] splitted = cookingResult.Split(':');
 
