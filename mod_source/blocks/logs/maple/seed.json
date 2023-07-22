@@ -1,0 +1,24 @@
+{
+    "json_format": "0.7.4",
+    "ori:block": {
+        "id": "ori:maple_seed",
+        "display": {
+            "texture_id": "ori:maple_seed",
+            "description": "ori:description.maple_seed"
+        },
+        "property": {
+            "hardness": 1,
+            "tags": [
+                "ori:plant",
+                "ori:tree_seed"
+            ],
+            "behaviour": "GameCore.TreeSeedBlockBehaviour",
+            "collidible": "false"
+        }
+    },
+    "ori:tree_seed": {
+        "property": {
+            "structure": "ori:maple_tree"
+        }
+    }
+}

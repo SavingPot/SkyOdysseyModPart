@@ -1,0 +1,16 @@
+{
+    "json_format": "0.6.0",
+    "ori:block": {
+        "id": "ori:maple_leaf",
+        "display": {
+            "texture_id": "ori:maple_leaf"
+        },
+        "property": {
+            "hardness": 1,
+            "collidible": false,
+            "tags": [
+                "ori:leaf"
+            ]
+        }
+    }
+}
