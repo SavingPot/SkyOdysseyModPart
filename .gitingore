@@ -1,5 +1,5 @@
 plugin_supports\game_path.txt
 plugin_supports\mod_path.txt
 plugin_supports\sole_assets_path.txt
-scripts\bin\**
-scripts\obj\**
+scripts\bin\
+scripts\obj\
