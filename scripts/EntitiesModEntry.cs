@@ -13,7 +13,7 @@
                     caller.gravity *= 0.75f;
                 }
             };
-            //
+
             Player.backpackSidebarTable.Add("ori:barrel", (() => { BarrelBlockBehaviour.GenerateItemView().gameObject.SetActive(true); }, () => { BarrelBlockBehaviour.GenerateItemView().gameObject.SetActive(false); }));
             Player.backpackSidebarTable.Add("ori:cooking_pot", (() => { CookingPotBlockBehaviour.GenerateItemView().gameObject.SetActive(true); }, () => { CookingPotBlockBehaviour.GenerateItemView().gameObject.SetActive(false); }));
             Player.backpackSidebarTable.Add("ori:wooden_chest", (() => { WoodenChestBlockBehaviour.GenerateItemView().gameObject.SetActive(true); }, () => { WoodenChestBlockBehaviour.GenerateItemView().gameObject.SetActive(false); }));
