@@ -12,11 +12,14 @@ namespace GameCore
         {
             base.Update();
 
-            foreach (var player in PlayerCenter.allReady)
+            if (Tools.time >= attackTimer)
             {
-                if ((player.transform.position - transform.position).sqrMagnitude <= attackRadius)
+                foreach (var player in PlayerCenter.allReady)
                 {
+                    if ((player.transform.position - transform.position).sqrMagnitude <= attackRadius)
+                    {
 
+                    }
                 }
             }
         }
