@@ -15,6 +15,8 @@ namespace GameCore
             {
                 rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
             });
+
+            AddSpriteRenderer("ori:wooden_arrow");
         }
     }
 }
