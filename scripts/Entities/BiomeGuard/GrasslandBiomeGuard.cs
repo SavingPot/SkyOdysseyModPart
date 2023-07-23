@@ -21,6 +21,8 @@ namespace GameCore
 
                     }
                 }
+
+                attackTimer = Tools.time + 1;
             }
         }
     }
