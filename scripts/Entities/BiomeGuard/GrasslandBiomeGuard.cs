@@ -1,3 +1,5 @@
+using GameCore.High;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace GameCore
@@ -18,7 +20,13 @@ namespace GameCore
                 {
                     if ((player.transform.position - transform.position).sqrMagnitude <= attackRadius)
                     {
+                        var velocity = Tools.GetAngleVector2(transform.position, player.cursorWorldPos).normalized * 18;
 
+                        JObject jo = new();
+                        jo.AddObject("ori:bullet");
+                        jo["ori:bullet"].AddProperty("ownerId", netId);
+                        jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
+                        GM.instance.SummonEntity(transform.position, EntityID.GrasslandGuardStorm, Tools.randomGUID, true, null, jo.ToString());
                     }
                 }
 
