@@ -2,6 +2,7 @@
     "json_format": "0.6.2",
     "ori:biome": {
         "id": "ori:rain_forest",
+        "difficulty": 4,
         "size_scope": {
             "min": [
                 50,

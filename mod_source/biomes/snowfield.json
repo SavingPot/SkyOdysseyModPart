@@ -2,6 +2,7 @@
     "json_format": "0.6.2",
     "ori:biome": {
         "id": "ori:snowfield",
+        "difficulty": 5,
         "size_scope": {
             "min": [
                 60,
