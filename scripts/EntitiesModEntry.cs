@@ -18,6 +18,20 @@
             Player.backpackSidebarTable.Add("ori:cooking_pot", (() => { CookingPotBlockBehaviour.GenerateItemView().gameObject.SetActive(true); }, () => { CookingPotBlockBehaviour.GenerateItemView().gameObject.SetActive(false); }));
             Player.backpackSidebarTable.Add("ori:wooden_chest", (() => { WoodenChestBlockBehaviour.GenerateItemView().gameObject.SetActive(true); }, () => { WoodenChestBlockBehaviour.GenerateItemView().gameObject.SetActive(false); }));
             //Player.backpackSidebarTable.Add("ori:wooden_bowl_with_water", (() => { WoodenBowlWithWaterBehaviour.GenerateItemView().gameObject.SetActive(true); }, () => { WoodenBowlWithWaterBehaviour.GenerateItemView().gameObject.SetActive(false); }));
+
+            GScene.AfterChanged += scene =>
+            {
+                switch (scene.name)
+                {
+                    case SceneNames.mainScene:
+                        GAudio.Play(AudioID.Town);
+                        break;
+
+                    case SceneNames.gameScene:
+                        GAudio.Play(AudioID.WhyNotComeToTheParty);
+                        break;
+                }
+            };
         }
     }
 }

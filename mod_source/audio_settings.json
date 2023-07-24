@@ -1,12 +1,9 @@
 {
     "json_format": "0.5.1",
-    "audios": [
+    "audio": [
         {
             "id": "ori:why_not_come_to_the_party",
             "path": "/music/why_not_come_to_the_party.ogg",
-            "auto_play_scenes": [
-                "GameScene"
-            ],
             "loop": true,
             "audio_type": "ori:music",
             "volume": 0.7
@@ -14,9 +11,6 @@
         {
             "id": "ori:town",
             "path": "/music/town.ogg",
-            "auto_play_scenes": [
-                "MainMenu"
-            ],
             "loop": true,
             "audio_type": "ori:music",
             "volume": 0.8
