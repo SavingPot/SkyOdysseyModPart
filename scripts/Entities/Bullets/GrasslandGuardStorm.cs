@@ -11,7 +11,7 @@ namespace GameCore
             base.Start();
 
             rb.gravityScale = 0;
-            damage = 15;
+            damage = 10;
 
             WhenCorrectedSyncVars(() =>
             {
