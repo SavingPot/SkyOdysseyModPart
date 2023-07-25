@@ -20,7 +20,7 @@ namespace GameCore
                 jo.AddObject("ori:bullet");
                 jo["ori:bullet"].AddProperty("ownerId", netId);
                 jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
-                GM.instance.SummonEntity(transform.position, EntityID.OakForestSapling, Tools.randomGUID, true, null, jo.ToString());
+                GM.instance.SummonEntity(transform.position, EntityID.OakForestGuardSapling, Tools.randomGUID, true, null, jo.ToString());
 
                 attackTimer = Tools.time + 8f;
             }
