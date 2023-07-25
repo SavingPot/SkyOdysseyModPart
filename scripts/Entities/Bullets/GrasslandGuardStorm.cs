@@ -1,3 +1,4 @@
+using System.Collections;
 using SP.Tools.Unity;
 using UnityEngine;
 
@@ -9,14 +10,16 @@ namespace GameCore
         protected override void Start()
         {
             base.Start();
-            damage = 15;
+
+            rb.gravityScale = 0;
+            damage = 10;
 
             WhenCorrectedSyncVars(() =>
             {
                 rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
             });
 
-            AddSpriteRenderer("ori:wooden_arrow");
+            AddSpriteRenderer("ori:wooden_arrow");//grassland_guard_storm");
         }
     }
 }

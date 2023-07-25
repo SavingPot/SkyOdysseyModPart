@@ -975,6 +975,16 @@
             "pixel_unit": 24
         },
         {
+            "id": "ori:grassland_guard_storm",
+            "path": "/entities/bullets/grassland_guard_storm.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:desert_guard_sand",
+            "path": "/entities/bullets/desert_guard_sand.png",
+            "pixel_unit": 16
+        },
+        {
             "id": "ori:wooden_arrow",
             "path": "/entities/bullets/arrows/wooden.png",
             "pixel_unit": 16
