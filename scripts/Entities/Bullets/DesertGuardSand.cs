@@ -9,12 +9,16 @@ namespace GameCore
         protected override void Start()
         {
             base.Start();
+
+            rb.gravityScale = 0;
             damage = 20;
 
             WhenCorrectedSyncVars(() =>
             {
                 rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
             });
+
+            AddSpriteRenderer("ori:desert_guard_sand");
         }
     }
 }

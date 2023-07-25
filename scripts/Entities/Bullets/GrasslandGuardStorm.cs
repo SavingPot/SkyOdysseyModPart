@@ -9,6 +9,8 @@ namespace GameCore
         protected override void Start()
         {
             base.Start();
+
+            rb.gravityScale = 0;
             damage = 15;
 
             WhenCorrectedSyncVars(() =>
@@ -16,7 +18,7 @@ namespace GameCore
                 rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
             });
 
-            AddSpriteRenderer("ori:wooden_arrow");
+            AddSpriteRenderer("ori:grassland_guard_storm");
         }
     }
 }
