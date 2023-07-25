@@ -19,7 +19,7 @@ namespace GameCore
                 rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
             });
 
-            AddSpriteRenderer("ori:grassland_guard_storm");
+            AddSpriteRenderer("ori:wooden_arrow");//grassland_guard_storm");
         }
     }
 }
