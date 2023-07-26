@@ -389,6 +389,10 @@
                 "text": "Sour, sweet and delicious, with lingering aftertaste"
             },
             {
+                "id": "ori:description.potato_chips",
+                "text": ""
+            },
+            {
                 "id": "ori:description.oak_bark_vest",
                 "text": "Not suitable for sports and travel"
             },
