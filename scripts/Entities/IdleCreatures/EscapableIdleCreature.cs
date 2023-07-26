@@ -16,20 +16,18 @@ namespace GameCore
 
         protected override void Update()
         {
-            base.Update();
-
-            if (Tools.time < escapeTime)
+            if (Tools.time < escapeTimer)
             {
-                Vector2 velocity = Random.Range(-1, 2) switch
+                velocity = Random.Range(-1, 2) switch
                 {
                     -1 => TurnLeft(),
                     0 => rb.velocity,
                     1 => TurnRight(),
                     _ => throw new()
                 };
-
-                rb.velocity = velocity;
             }
+
+            base.Update();
         }
     }
 }

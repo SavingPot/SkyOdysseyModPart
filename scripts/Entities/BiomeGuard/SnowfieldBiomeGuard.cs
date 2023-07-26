@@ -18,13 +18,15 @@ namespace GameCore
             {
                 var snowballAmount = Random.Range(10, 21);
 
-                for (var i=0;i<snowballAmount;i++)
+                for (var i = 0; i < snowballAmount; i++)
                 {
                     var velocity = new Vector2(Random.Range(-10, 11), Random.Range(10, 16));
+
                     JObject jo = new();
                     jo.AddObject("ori:bullet");
                     jo["ori:bullet"].AddProperty("ownerId", netId);
                     jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
+
                     GM.instance.SummonEntity(transform.position, EntityID.SnowfieldGuardSnowball, Tools.randomGUID, true, null, jo.ToString());
                 }
 

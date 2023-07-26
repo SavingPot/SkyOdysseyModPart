@@ -13,6 +13,7 @@ namespace GameCore
 
             rb.gravityScale = 0;
             damage = 10;
+            livingTime = 5;
 
             WhenCorrectedSyncVars(() =>
             {
