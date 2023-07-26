@@ -389,6 +389,10 @@
                 "text": "酸甜可口, 回味不止"
             },
             {
+                "id": "ori:description.potato_chips",
+                "text": "使用后大量增加幸福值"
+            },
+            {
                 "id": "ori:description.oak_bark_vest",
                 "text": "不太适合运动和旅行"
             },
