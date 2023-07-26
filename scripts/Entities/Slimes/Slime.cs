@@ -99,6 +99,8 @@ namespace GameCore
             if (!isServer || !targetTransform)
                 return;
 
+            Debug.Log("TRYING SLIME");
+
             /* ---------------------------------- 声明方向 ---------------------------------- */
             bool tL = targetTransform.position.x < transform.position.x;
             float errorValue = 0.1f;
