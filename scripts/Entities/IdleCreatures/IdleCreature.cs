@@ -6,6 +6,7 @@ namespace GameCore
     {
         public float moveTimer;
         public float intervalTime = 5;
+        public Vector2 velocity;
 
         protected override void Update()
         {
@@ -13,17 +14,18 @@ namespace GameCore
 
             if (Tools.time >= moveTimer)
             {
-                Vector2 velocity = Random.Range(-2, 3) switch
+                velocity = Random.Range(-2, 3) switch
                 {
                     -2 => TurnLeft(),
-                    > -2 and < 2 => GetMovementVelocity(Vector2.zero),
+                    > -2 and < 2 => Vector2.zero,
                     2 => TurnRight(),
                     _ => throw new(),
                 };
 
-                rb.velocity = velocity;
                 moveTimer = Tools.time + intervalTime;
             }
+
+            rb.velocity = velocity == Vector2.zero ? GetMovementVelocity(rb.velocity) : velocity;
         }
 
         protected virtual Vector2 TurnLeft()
