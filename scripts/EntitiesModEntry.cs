@@ -25,9 +25,11 @@
                 {
                     case SceneNames.mainScene:
                         GAudio.Play(AudioID.Town);
+                        GAudio.Stop(AudioID.WhyNotComeToTheParty);
                         break;
 
                     case SceneNames.gameScene:
+                        GAudio.Stop(AudioID.Town);
                         GAudio.Play(AudioID.WhyNotComeToTheParty);
                         break;
                 }
