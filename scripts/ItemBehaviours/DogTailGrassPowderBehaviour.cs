@@ -16,7 +16,7 @@ namespace GameCore
             {
                 Player player = (Player)owner;
 
-                if (player.InUseRadius() && player.blockmap.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.controllingLayer, out Block block))
+                if (player.InUseRadius() && player.map.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.controllingLayer, out Block block))
                 {
                     if (block.data.id != BlockID.Water)
                         return false;

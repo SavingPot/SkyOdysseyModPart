@@ -26,14 +26,14 @@ namespace GameCore
         {
             Vector2Int targetPos = pos + new Vector2Int(0, 1);
 
-            if (!Blockmap.instance.HasBlock(targetPos, layer))
+            if (!Map.instance.HasBlock(targetPos, layer))
             {
                 BlockData grassData = ModFactory.CompareBlockDatum(BlockID.Grass);
 
                 if (grassData == null)
                     return;
 
-                Blockmap.instance.SetBlockNet(targetPos, layer, grassData.id, null);
+                Map.instance.SetBlockNet(targetPos, layer, grassData.id, null);
             }
         }
     }

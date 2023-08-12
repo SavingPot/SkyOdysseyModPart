@@ -61,7 +61,7 @@ namespace GameCore
             if (Server.isServer) WriteCustomDataToSave();
 
             //使客户端刷新
-            Blockmap.instance.SetBlockCustomDataOL(this);
+            Map.instance.SetBlockCustomDataOL(this);
         }
     }
 }
