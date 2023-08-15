@@ -905,6 +905,10 @@
                 "text": "洋芋"
             },
             {
+                "id": "ori:green_dumpling",
+                "text": "青团"
+            },
+            {
                 "id": "ori:potato_crop",
                 "text": "洋芋作物"
             },

@@ -905,6 +905,10 @@
                 "text": "Potato"
             },
             {
+                "id": "ori:green_dumpling",
+                "text": "Green dumpling"
+            },
+            {
                 "id": "ori:potato_crop",
                 "text": "Potato Crop"
             },

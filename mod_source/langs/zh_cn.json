@@ -905,6 +905,10 @@
                 "text": "土豆"
             },
             {
+                "id": "ori:green_dumpling",
+                "text": "青团"
+            },
+            {
                 "id": "ori:potato_crop",
                 "text": "土豆作物"
             },
