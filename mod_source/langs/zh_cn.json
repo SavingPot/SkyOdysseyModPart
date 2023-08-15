@@ -905,6 +905,14 @@
                 "text": "土豆"
             },
             {
+                "id": "ori:potato_chips",
+                "text": "薯片"
+            },
+            {
+                "id": "ori:potato_cake",
+                "text": "土豆饼"
+            },
+            {
                 "id": "ori:green_dumpling",
                 "text": "青团"
             },

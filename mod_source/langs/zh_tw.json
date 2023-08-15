@@ -905,6 +905,14 @@
                 "text": "洋芋"
             },
             {
+                "id": "ori:potato_chips",
+                "text": "薯片"
+            },
+            {
+                "id": "ori:potato_cake",
+                "text": "洋芋饼"
+            },
+            {
                 "id": "ori:green_dumpling",
                 "text": "青团"
             },
