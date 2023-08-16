@@ -565,7 +565,7 @@
                 "text": "一个瓶子, 清晰透明"
             },
             {
-                "id": "ori:description.bottle_with_water",
+                "id": "ori:description.water_bottle",
                 "text": "一个瓶子...有水, 看上去可以喝"
             },
             {
@@ -1081,7 +1081,7 @@
                 "text": "瓶子"
             },
             {
-                "id": "ori:bottle_with_water",
+                "id": "ori:water_bottle",
                 "text": "水瓶"
             },
             {

@@ -669,8 +669,8 @@
             "path": "/items/bottle.png"
         },
         {
-            "id": "ori:bottle_with_water",
-            "path": "/items/drinks/bottle_with_water.png"
+            "id": "ori:water_bottle",
+            "path": "/items/drinks/water_bottle.png"
         },
         {
             "id": "ori:yellow_stone",

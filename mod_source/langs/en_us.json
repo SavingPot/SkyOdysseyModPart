@@ -565,7 +565,7 @@
                 "text": "A bootle, clear and transparent"
             },
             {
-                "id": "ori:description.bottle_with_water",
+                "id": "ori:description.water_bottle",
                 "text": "A bottle...it's with water, and looks drinkable"
             },
             {
@@ -1081,7 +1081,7 @@
                 "text": "Bottle"
             },
             {
-                "id": "ori:bottle_with_water",
+                "id": "ori:water_bottle",
                 "text": "Bottle With Water"
             },
             {
