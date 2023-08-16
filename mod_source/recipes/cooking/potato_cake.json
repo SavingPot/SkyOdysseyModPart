@@ -1,14 +1,14 @@
 {
     "json_format": "0.6.0",
     "ori:cooking_recipe": {
-        "id": "ori:dew_potion",
+        "id": "ori:potato_cake",
         "items": [
             {
-                "id": "ori:dew_grass"
+                "id": "ori:potato"
             }
         ],
         "result": {
-            "id": "ori:dew_potion"
+            "id": "ori:potato_cake"
         }
     }
 }
