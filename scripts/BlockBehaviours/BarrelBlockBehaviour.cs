@@ -8,10 +8,10 @@ namespace GameCore
         public const int defaultItemCountConst = 4 * 7;
         public override int defaultItemCount { get; set; } = defaultItemCountConst;
         public override string sidebarId { get; set; } = "ori:barrel";
-        public static ScrollViewIdMessage itemView;
+        public static ScrollViewIdentity itemView;
         public static InventorySlotUI[] slotUIs = new InventorySlotUI[defaultItemCountConst];
 
-        public static ScrollViewIdMessage GenerateItemView()
+        public static ScrollViewIdentity GenerateItemView()
         {
             if (!itemView)
             {

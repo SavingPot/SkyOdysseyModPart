@@ -17,7 +17,7 @@ namespace GameCore
                     if (block.data.id != BlockID.Water)
                         return false;
 
-                    ItemData target = ModFactory.CompareItem(ItemID.BottleWithWater);
+                    ItemData target = ModFactory.CompareItem(ItemID.WaterBottle);
 
                     if (target == null)
                         return false;

@@ -9,11 +9,11 @@ namespace GameCore
         // public const int defaultItemCountConst = 10;
         // public override int defaultItemCount { get; set; } = defaultItemCountConst;
         // public override string sidebarId { get; set; } = "ori:wooden_bowl_with_water";
-        // public static ScrollViewIdMessage itemView;
+        // public static ScrollViewIdentity itemView;
         // public static InventorySlotUI[] slotUIs = new InventorySlotUI[defaultItemCountConst];
 
 
-        // public static ScrollViewIdMessage GenerateItemView()
+        // public static ScrollViewIdentity GenerateItemView()
         // {
         //     if (!itemView)
         //     {
