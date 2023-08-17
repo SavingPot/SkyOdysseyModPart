@@ -21,10 +21,8 @@ namespace GameCore
                 return baseUse;
 
 
-            if (owner is Player)
+            if (owner is Player player)
             {
-                Player player = (Player)owner;
-
                 if (player.InUseRadius() && player.map.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.controllingLayer, out Block block) && blockPairs.TryGetValue(block.data.id, out var result))
                 {
                     BlockData blockDatum = ModFactory.CompareBlockDatum(result); if (blockDatum == null) return false;

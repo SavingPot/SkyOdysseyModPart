@@ -34,10 +34,8 @@ namespace GameCore
             if (baseUse)
                 return baseUse;
 
-            if (owner is Player)
+            if (owner is Player player)
             {
-                Player player = (Player)owner;
-
                 player.SetBackpackSidebar("ori:wooden_bowl_with_water");
                 RefreshItemView();
                 player.ShowBackpackMask();

@@ -11,10 +11,8 @@ namespace GameCore
             if (baseUse)
                 return baseUse;
 
-            if (owner is Player)
+            if (owner is Player player)
             {
-                Player player = (Player)owner;
-
                 //TODO: 检测光标位置是否存在物品
                 // if (backItem != null)
                 // {

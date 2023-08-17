@@ -12,10 +12,8 @@ namespace GameCore
             if (baseUse)
                 return baseUse;
 
-            if (owner is Player)
+            if (owner is Player player)
             {
-                Player player = (Player)owner;
-
                 if (instance.count < powerNeed)
                 {
                     player.SetStatusText($"你需要至少 {powerNeed}个 水洗去壳狗尾草才可以做成粉末");
