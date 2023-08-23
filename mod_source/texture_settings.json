@@ -985,7 +985,7 @@
         {
             "id": "ori:player_head",
             "path": "/entities/player/head.png",
-            "pixel_unit": 16
+            "pixel_unit": 14
         },
         {
             "id": "ori:player_right_arm",
