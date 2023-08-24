@@ -1,6 +1,15 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:wooden_arrow"
+        "id": "ori:wooden_arrow",
+        "physics": {
+            "collider": {
+                "size": [
+                    1,
+                    1
+                ]
+            },
+            "gravity": 5
+        }
     }
 }

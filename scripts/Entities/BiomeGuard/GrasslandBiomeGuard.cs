@@ -27,7 +27,7 @@ namespace GameCore
                         jo["ori:bullet"].AddProperty("ownerId", netId);
                         jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
 
-                        GM.instance.SummonEntity(transform.position, EntityID.GrasslandGuardStorm, Tools.randomGUID, true, null, jo.ToString());
+                        GM.instance.SummonEntity(transform.position, EntityID.WoodenArrow, Tools.randomGUID, true, null, jo.ToString());
                     }
                 }
 

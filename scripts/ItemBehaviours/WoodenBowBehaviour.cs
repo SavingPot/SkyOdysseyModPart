@@ -16,8 +16,7 @@ namespace GameCore
 
             if (clearTimer.HasFinished())
             {
-                var player = owner as Player;
-                if (player)
+                if (owner is Player player)
                 {
                     var velocity = Tools.GetAngleVector2(player.transform.position, player.cursorWorldPos).normalized * 18;
 
