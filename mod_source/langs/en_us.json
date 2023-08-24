@@ -21,10 +21,6 @@
                 "text": "Just click <color=#D1A35F>{button}</color> on me!"
             },
             {
-                "id": "ori:dialog.nick.first_meet_4",
-                "text": "(Was it detailed enough?)"
-            },
-            {
                 "id": "ori:dialog.nick.teaching.attack_0",
                 "text": "You've indeed done it! <color=#D1A35F>{button}</color> can be used to not only chat but also use a item or a block!"
             },

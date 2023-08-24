@@ -21,10 +21,6 @@
                 "text": "只需要对着我点一下<color=#D1A35F>{button}</color>就好啦!"
             },
             {
-                "id": "ori:dialog.nick.first_meet_4",
-                "text": "(我是不是教的不够详细)"
-            },
-            {
                 "id": "ori:dialog.nick.teaching.attack_0",
                 "text": "你果然学会了! <color=#D1A35F>{button}</color>除了可以用来聊天, 还可以使用物品和方块"
             },
