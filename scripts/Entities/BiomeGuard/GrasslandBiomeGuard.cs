@@ -20,7 +20,7 @@ namespace GameCore
                 {
                     if ((player.transform.position - transform.position).sqrMagnitude <= attackRadius)
                     {
-                        var velocity = Tools.GetAngleVector2(transform.position, player.transform.position).normalized * 15;
+                        var velocity = Tools.GetAngleVector2(transform.position, player.transform.position).normalized * 22;
 
                         JObject jo = new();
                         jo.AddObject("ori:bullet");
