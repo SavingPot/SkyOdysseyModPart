@@ -158,8 +158,7 @@ namespace GameCore
                 ControlMode.KeyboardAndMouse => "鼠标右键",
                 ControlMode.Gamepad => "手柄左触发器",
                 _ => ""
-            }), "ori:nick_head"),
-            new(GameUI.CompareText("ori:dialog.nick.first_meet_4").text, "ori:nick_head")));
+            }), "ori:nick_head")));
 
             ProgressDeeper();
         }

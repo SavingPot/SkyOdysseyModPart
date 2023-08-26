@@ -25,7 +25,7 @@ namespace GameCore
         {
             base.DoStart();
 
-            animationDatum = GetDatum();
+            animationDatum = GetDatum(this);
             anim = AnimCenter.PlaySprites(animationDatum.time, animationDatum.sprites, sprite => { sr.sprite = sprite; return true; });
         }
 
@@ -37,8 +37,10 @@ namespace GameCore
         }
 
 
-        public AnimationBlockDatum GetDatum()
+        public static AnimationBlockDatum GetDatum(Block block)
         {
+            var data = block.data;
+
             if (dataTemps.TryGetValue(data.id, out AnimationBlockDatum value))
             {
                 return value;

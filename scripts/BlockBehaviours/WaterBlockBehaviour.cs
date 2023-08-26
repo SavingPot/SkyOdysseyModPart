@@ -25,13 +25,19 @@ namespace GameCore
             posTempRight = new(pos.x + 1, pos.y);
 
             physicTimer = Tools.time + streamSpeed;
+
+            if (Server.isServer)
+                MethodAgent.updates += WaterPhysics;
         }
 
-        public override void DoUpdate()
+        public override void OnRecovered()
         {
-            if (!Server.isServer)
-                return;
+            if (Server.isServer)
+                MethodAgent.updates -= WaterPhysics;
+        }
 
+        public void WaterPhysics()
+        {
             if (Tools.time >= physicTimer)
             {
                 physicTimer = Tools.time + streamSpeed;
