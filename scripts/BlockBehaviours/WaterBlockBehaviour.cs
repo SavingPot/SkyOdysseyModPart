@@ -18,6 +18,8 @@ namespace GameCore
 
         public override void DoStart()
         {
+            base.DoStart();
+
             sr.color = new(1, 1, 1, 0.4f);
 
             posTempDown = new(pos.x, pos.y - 1);
