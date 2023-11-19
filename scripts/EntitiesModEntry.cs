@@ -23,12 +23,13 @@
             {
                 switch (scene.name)
                 {
-                    case SceneNames.mainScene:
+                    //TODO: 调整音频播放位置
+                    case SceneNames.MainMenu:
                         GAudio.Play(AudioID.Town);
                         GAudio.Stop(AudioID.WhyNotComeToTheParty);
                         break;
 
-                    case SceneNames.gameScene:
+                    case SceneNames.GameScene:
                         GAudio.Stop(AudioID.Town);
                         GAudio.Play(AudioID.WhyNotComeToTheParty);
                         break;
