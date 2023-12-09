@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public class UniversalEntityBehaviour
+    public static class UniversalEntityBehaviour
     {
         public class EnemyMoveToTarget
         {
