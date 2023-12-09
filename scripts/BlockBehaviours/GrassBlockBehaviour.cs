@@ -28,6 +28,7 @@ namespace GameCore
 
             if (!Map.instance.HasBlock(targetPos, layer))
             {
+                //TODO: 长任意一种植物
                 BlockData grassData = ModFactory.CompareBlockDatum(BlockID.Grass);
 
                 if (grassData == null)
