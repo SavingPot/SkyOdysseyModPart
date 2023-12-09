@@ -18,16 +18,6 @@ namespace GameCore
     public class CoreEnemy<PropertyT> : Enemy
         where PropertyT : CoreEnemyProperties<PropertyT>, new()
     {
-        public BasicEnemyState stateLastFrame = BasicEnemyState.Idle;
-
-        [SyncGetter] BasicEnemyState state_get() => default; [SyncSetter] void state_set(BasicEnemyState value) { }
-        [Sync(nameof(OnStateChanged)), SyncDefaultValue(BasicEnemyState.Idle)] public BasicEnemyState state { get => state_get(); set => state_set(value); }
-        void OnStateChanged()
-        {
-            isMoving = state == BasicEnemyState.Movement;
-        }
-
-
         /* -------------------------------------------------------------------------- */
         /*                                     接口                                     */
         /* -------------------------------------------------------------------------- */

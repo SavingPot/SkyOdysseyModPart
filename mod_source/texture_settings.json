@@ -365,8 +365,12 @@
             "path": "/items/foods/potato.png"
         },
         {
-            "id": "ori:potato",
+            "id": "ori:potato_chips",
             "path": "/items/foods/dishes/potato_chips.png"
+        },
+        {
+            "id": "ori:green_dumpling",
+            "path": "/items/foods/dishes/green_dumpling.png"
         },
         {
             "id": "ori:flint",

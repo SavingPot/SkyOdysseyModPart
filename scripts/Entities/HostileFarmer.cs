@@ -25,6 +25,8 @@ namespace GameCore
         public SpriteRenderer rightHandItem { get; set; }
         public SpriteRenderer leftHandItem { get; set; }
         public EnemyMoveToTarget ai;
+        public bool isPursuing;
+        public bool isPursuingLastFrame;
 
 
 
@@ -46,76 +48,6 @@ namespace GameCore
             {
                 TryAttack();
             }
-
-            BasicEnemyState stateTemp = state;
-
-            if (stateLastFrame != stateTemp)
-            {
-                //当进入时
-                switch (stateTemp)
-                {
-                    case BasicEnemyState.Idle:
-                        {
-                            rb.velocity = Vector2.zero;
-                            anim.ResetAnimations();
-                            anim.SetAnim("idle_head");
-
-                            break;
-                        }
-
-                    case BasicEnemyState.Movement:
-                        {
-                            OnStartMovementAction();
-                            anim.ResetAnimations();
-
-                            anim.SetAnim("run_rightarm");
-                            anim.SetAnim("run_leftarm");
-                            anim.SetAnim("run_rightleg");
-                            anim.SetAnim("run_leftleg");
-                            anim.SetAnim("run_head");
-                            anim.SetAnim("run_body");
-
-                            break;
-                        }
-                }
-
-                //当离开时
-                switch (stateLastFrame)
-                {
-                    case BasicEnemyState.Idle:
-                        {
-
-                            break;
-                        }
-
-                    case BasicEnemyState.Movement:
-                        {
-                            OnStopMovementAction();
-
-                            break;
-                        }
-                }
-            }
-
-            //当停留时
-            switch (stateTemp)
-            {
-                case BasicEnemyState.Idle:
-                    {
-                        ai.Stroll();
-
-                        break;
-                    }
-
-                case BasicEnemyState.Movement:
-                    {
-                        ai.Pursuit();
-
-                        break;
-                    }
-            }
-
-            stateLastFrame = stateTemp;
         }
 
         protected override void Start()
@@ -181,14 +113,40 @@ namespace GameCore
             //如果目标超出范围
             CheckEnemyTarget();
 
-            if (!targetTransform)
+            isPursuing = targetTransform;
+
+            if (isPursuing)
             {
-                state = BasicEnemyState.Idle;
+                if (!isPursuingLastFrame)
+                {
+                    OnStartMovementAction();
+                    anim.ResetAnimations();
+
+                    anim.SetAnim("run_rightarm");
+                    anim.SetAnim("run_leftarm");
+                    anim.SetAnim("run_rightleg");
+                    anim.SetAnim("run_leftleg");
+                    anim.SetAnim("run_head");
+                    anim.SetAnim("run_body");
+                }
+
+                ai.Pursuit();
             }
             else
             {
-                state = BasicEnemyState.Movement;
+                if (isPursuingLastFrame)
+                {
+                    OnStopMovementAction();
+
+                    rb.velocity = Vector2.zero;
+                    anim.ResetAnimations();
+                    anim.SetAnim("idle_head");
+                }
+
+                ai.Stroll();
             }
+
+            isPursuingLastFrame = isPursuing;
         }
 
         public void OnInventoryItemChange(string index)

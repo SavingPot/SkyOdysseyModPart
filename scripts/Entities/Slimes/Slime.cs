@@ -19,6 +19,11 @@ namespace GameCore
     public class Slime<PropertyT> : CoreEnemy<PropertyT>
         where PropertyT : SlimeProperties<PropertyT>, new()
     {
+        public bool isPursuing;
+        public bool isPursuingLastFrame;
+
+
+        
         protected override void Update()
         {
             base.Update();
@@ -29,66 +34,6 @@ namespace GameCore
             {
                 TryAttack();
             }
-
-            BasicEnemyState stateTemp = state;
-
-            if (stateLastFrame != stateTemp)
-            {
-                //当进入时
-                switch (stateTemp)
-                {
-                    case BasicEnemyState.Idle:
-                        {
-                            rb.velocity = Vector2.zero;
-
-                            break;
-                        }
-
-                    case BasicEnemyState.Movement:
-                        {
-                            OnStartMovementAction();
-
-                            break;
-                        }
-                }
-
-                //当离开时
-                switch (stateLastFrame)
-                {
-                    case BasicEnemyState.Idle:
-                        {
-
-                            break;
-                        }
-
-                    case BasicEnemyState.Movement:
-                        {
-                            OnStopMovementAction();
-
-                            break;
-                        }
-                }
-            }
-
-            //当停留时
-            switch (stateTemp)
-            {
-                case BasicEnemyState.Idle:
-                    {
-                        //MoveWithTarget(machine);
-
-                        break;
-                    }
-
-                case BasicEnemyState.Movement:
-                    {
-                        Pursuit();
-
-                        break;
-                    }
-            }
-
-            stateLastFrame = stateTemp;
         }
 
         void Pursuit()
@@ -144,14 +89,30 @@ namespace GameCore
             //如果目标超出范围
             CheckEnemyTarget();
 
-            if (!targetTransform)
+            isPursuing = targetTransform;
+
+            if (isPursuing)
             {
-                state = BasicEnemyState.Idle;
+                if (!isPursuingLastFrame)
+                {
+                    OnStartMovementAction();
+                }
+
+                Pursuit();
             }
             else
             {
-                state = BasicEnemyState.Movement;
+                if (isPursuingLastFrame)
+                {
+                    OnStopMovementAction();
+
+                    rb.velocity = Vector2.zero;
+                    anim.ResetAnimations();
+                    anim.SetAnim("idle_head");
+                }
             }
+
+            isPursuingLastFrame = isPursuing;
         }
     }
 }
