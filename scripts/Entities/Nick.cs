@@ -57,7 +57,7 @@ namespace GameCore
         {
             base.Update();
 
-            if (NickData.progress == NickProgress.FirstMeet && Player.local && Player.local.correctedSyncVars && (Player.local.transform.position - transform.position).sqrMagnitude <= autoTalkRadius)
+            if (NickData.progress == NickProgress.FirstMeet && Player.local && (Player.local.transform.position - transform.position).sqrMagnitude <= autoTalkRadius)
             {
                 FirstMeetDialog(Player.local);
             }

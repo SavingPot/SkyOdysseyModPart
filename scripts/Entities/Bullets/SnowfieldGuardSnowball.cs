@@ -11,10 +11,7 @@ namespace GameCore
             base.Start();
             damage = 15;
 
-            WhenCorrectedSyncVars(() =>
-            {
-                rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
-            });
+            rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
         }
     }
 }

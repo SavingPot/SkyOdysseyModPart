@@ -25,73 +25,70 @@ namespace GameCore
 
             onGround = RayTools.TryOverlapCircle(mainCollider.DownPoint(), 0.3f, Block.blockLayerMask, out _);
 
-            if (correctedSyncVars)
+            if (!isDead && targetTransform && isServer)
             {
-                if (!isDead && targetTransform && isServer)
-                {
-                    TryAttack();
-                }
+                TryAttack();
+            }
 
-                BasicEnemyState stateTemp = state;
+            BasicEnemyState stateTemp = state;
 
-                if (stateLastFrame != stateTemp)
-                {
-                    //当进入时
-                    switch (stateTemp)
-                    {
-                        case BasicEnemyState.Idle:
-                            {
-                                rb.velocity = Vector2.zero;
-
-                                break;
-                            }
-
-                        case BasicEnemyState.Movement:
-                            {
-                                OnStartMovementAction();
-
-                                break;
-                            }
-                    }
-
-                    //当离开时
-                    switch (stateLastFrame)
-                    {
-                        case BasicEnemyState.Idle:
-                            {
-
-                                break;
-                            }
-
-                        case BasicEnemyState.Movement:
-                            {
-                                OnStopMovementAction();
-
-                                break;
-                            }
-                    }
-                }
-
-                //当停留时
+            if (stateLastFrame != stateTemp)
+            {
+                //当进入时
                 switch (stateTemp)
                 {
                     case BasicEnemyState.Idle:
                         {
-                            //MoveWithTarget(machine);
+                            rb.velocity = Vector2.zero;
 
                             break;
                         }
 
                     case BasicEnemyState.Movement:
                         {
-                            MoveWithTarget();
+                            OnStartMovementAction();
 
                             break;
                         }
                 }
 
-                stateLastFrame = stateTemp;
+                //当离开时
+                switch (stateLastFrame)
+                {
+                    case BasicEnemyState.Idle:
+                        {
+
+                            break;
+                        }
+
+                    case BasicEnemyState.Movement:
+                        {
+                            OnStopMovementAction();
+
+                            break;
+                        }
+                }
             }
+
+            //当停留时
+            switch (stateTemp)
+            {
+                case BasicEnemyState.Idle:
+                    {
+                        //MoveWithTarget(machine);
+
+                        break;
+                    }
+
+                case BasicEnemyState.Movement:
+                    {
+                        MoveWithTarget();
+
+                        break;
+                    }
+            }
+
+            stateLastFrame = stateTemp;
         }
 
         void MoveWithTarget()
@@ -149,16 +146,13 @@ namespace GameCore
             //如果目标超出范围
             CheckEnemyTarget();
 
-            if (correctedSyncVars)
+            if (!targetTransform)
             {
-                if (!targetTransform)
-                {
-                    state = BasicEnemyState.Idle;
-                }
-                else
-                {
-                    state = BasicEnemyState.Movement;
-                }
+                state = BasicEnemyState.Idle;
+            }
+            else
+            {
+                state = BasicEnemyState.Movement;
             }
         }
     }

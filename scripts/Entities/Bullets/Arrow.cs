@@ -9,10 +9,7 @@ namespace GameCore
         {
             base.Start();
 
-            WhenCorrectedSyncVars(() =>
-            {
-                rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
-            });
+            rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
         }
 
         protected override void Update()

@@ -29,81 +29,78 @@ namespace GameCore
 
             onGround = RayTools.TryOverlapCircle(mainCollider.DownPoint(), 0.3f, Block.blockLayerMask, out _);
 
-            if (correctedSyncVars)
+            if (!isDead && targetTransform && isServer)
             {
-                if (!isDead && targetTransform && isServer)
-                {
-                    TryAttack();
-                }
+                TryAttack();
+            }
 
-                BasicEnemyState stateTemp = state;
+            BasicEnemyState stateTemp = state;
 
-                if (stateLastFrame != stateTemp)
-                {
-                    //当进入时
-                    switch (stateTemp)
-                    {
-                        case BasicEnemyState.Idle:
-                            {
-                                rb.velocity = Vector2.zero;
-                                anim.ResetAnimations();
-                                anim.SetAnim("idle");
-
-                                break;
-                            }
-
-                        case BasicEnemyState.Movement:
-                            {
-                                anim.ResetAnimations();
-
-                                anim.SetAnim("run");
-
-                                break;
-                            }
-                    }
-
-                    //当离开时
-                    switch (stateLastFrame)
-                    {
-                        case BasicEnemyState.Idle:
-                            {
-
-                                break;
-                            }
-
-                        case BasicEnemyState.Movement:
-                            {
-
-                                break;
-                            }
-                    }
-                }
-
-                //当停留时
+            if (stateLastFrame != stateTemp)
+            {
+                //当进入时
                 switch (stateTemp)
                 {
                     case BasicEnemyState.Idle:
                         {
-                            MoveWithoutTarget();
+                            rb.velocity = Vector2.zero;
+                            anim.ResetAnimations();
+                            anim.SetAnim("idle");
 
                             break;
                         }
 
                     case BasicEnemyState.Movement:
                         {
-                            if (Tools.Prob100(35f * Tools.deltaTime))
-                            {
-                                GAudio.Play(AudioID.AncientBoxerAttack, true);
-                            }
+                            anim.ResetAnimations();
 
-                            MoveWithTarget();
+                            anim.SetAnim("run");
 
                             break;
                         }
                 }
 
-                stateLastFrame = stateTemp;
+                //当离开时
+                switch (stateLastFrame)
+                {
+                    case BasicEnemyState.Idle:
+                        {
+
+                            break;
+                        }
+
+                    case BasicEnemyState.Movement:
+                        {
+
+                            break;
+                        }
+                }
             }
+
+            //当停留时
+            switch (stateTemp)
+            {
+                case BasicEnemyState.Idle:
+                    {
+                        MoveWithoutTarget();
+
+                        break;
+                    }
+
+                case BasicEnemyState.Movement:
+                    {
+                        if (Tools.Prob100(35f * Tools.deltaTime))
+                        {
+                            GAudio.Play(AudioID.AncientBoxerAttack, true);
+                        }
+
+                        MoveWithTarget();
+
+                        break;
+                    }
+            }
+
+            stateLastFrame = stateTemp;
         }
 
         void MoveWithTarget()
@@ -295,16 +292,13 @@ namespace GameCore
             //如果目标超出范围
             CheckEnemyTarget();
 
-            if (correctedSyncVars)
+            if (!targetTransform)
             {
-                if (!targetTransform)
-                {
-                    state = BasicEnemyState.Idle;
-                }
-                else
-                {
-                    state = BasicEnemyState.Movement;
-                }
+                state = BasicEnemyState.Idle;
+            }
+            else
+            {
+                state = BasicEnemyState.Movement;
             }
         }
     }

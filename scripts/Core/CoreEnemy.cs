@@ -22,9 +22,8 @@ namespace GameCore
 
         [SyncGetter] BasicEnemyState state_get() => default; [SyncSetter] void state_set(BasicEnemyState value) { }
         [Sync(nameof(OnStateChanged)), SyncDefaultValue(BasicEnemyState.Movement)] public BasicEnemyState state { get => state_get(); set => state_set(value); }
-        async void OnStateChanged()
+        void OnStateChanged()
         {
-            await UniTask.WaitWhile(() => correctedSyncVars);
             isMoving = state == BasicEnemyState.Movement;
         }
 

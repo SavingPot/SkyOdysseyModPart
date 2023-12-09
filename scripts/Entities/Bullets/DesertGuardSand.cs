@@ -14,10 +14,7 @@ namespace GameCore
             damage = 20;
             livingTime = 4;
 
-            WhenCorrectedSyncVars(() =>
-            {
-                rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
-            });
+            rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
 
             AddSpriteRenderer("ori:desert_guard_sand");
         }
