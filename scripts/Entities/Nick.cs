@@ -74,7 +74,7 @@ namespace GameCore
                     break;
 
                 case NickProgress.Teaching_Attack:
-                    caller.pui.DisplayDialog(new("ori:button",
+                    caller.pui.DisplayDialog(new("ori:nick", "ori:button",
                     new(GameUI.CompareText("ori:dialog.nick.teaching.attack_0").text.Replace("{button}", "上次的那个按钮"), "ori:nick_head"),
                     new(GameUI.CompareText("ori:dialog.nick.teaching.attack_1").text.Replace("{button}", GControls.mode switch
                     {
@@ -98,7 +98,7 @@ namespace GameCore
                 case NickProgress.Teaching_Backpack:
                     if (!caller.inventory.IsEmpty())
                     {
-                        caller.pui.DisplayDialog(new("ori:button",
+                        caller.pui.DisplayDialog(new("ori:nick", "ori:button",
                         new(GameUI.CompareText("ori:dialog.nick.teaching.backpack_0").text, "ori:nick_head"),
                         new(GameUI.CompareText("ori:dialog.nick.teaching.backpack_1").text.Replace("{button}", GControls.mode switch
                         {
@@ -120,14 +120,14 @@ namespace GameCore
                     }
                     else
                     {
-                        caller.pui.DisplayDialog(new("ori:button",
+                        caller.pui.DisplayDialog(new("ori:nick", "ori:button",
                         new DialogData.DialogDatum[] { new(GameUI.CompareText("ori:dialog.nick.teaching.backpack_0.error_before").text, "ori:nick_head") }));
                     }
 
                     break;
 
                 case NickProgress.Teaching_Travel:
-                    caller.pui.DisplayDialog(new("ori:button",
+                    caller.pui.DisplayDialog(new("ori:nick", "ori:button",
                     new(GameUI.CompareText("ori:dialog.nick.teaching.travel_0").text, "ori:nick_head"),
                     new(GameUI.CompareText("ori:dialog.nick.teaching.travel_1").text, "ori:nick_head"),
                     new(GameUI.CompareText("ori:dialog.nick.teaching.travel_2").text, "ori:nick_head")));
@@ -137,10 +137,10 @@ namespace GameCore
 
                 default:
                     if (Item.Null(caller.inventory.breastplate))
-                        caller.pui.DisplayDialog(new("ori:button",
+                        caller.pui.DisplayDialog(new("ori:nick", "ori:button",
                         new DialogData.DialogDatum(GameUI.CompareText(GM.instance.weather.id == WeatherID.Rain ? "ori:dialog.nick.hello.shirtless_rain" : "ori:dialog.nick.hello.shirtless").text.Replace("{name}", caller.playerName), "ori:nick_head")));
                     else
-                        caller.pui.DisplayDialog(new("ori:button",
+                        caller.pui.DisplayDialog(new("ori:nick", "ori:button",
                         new DialogData.DialogDatum(GameUI.CompareText(GM.instance.weather.id == WeatherID.Rain ? "ori:dialog.nick.hello.rain" : "ori:dialog.nick.hello.normal").text.Replace("{name}", caller.playerName), "ori:nick_head")));
                     break;
             }
@@ -148,7 +148,7 @@ namespace GameCore
 
         public void FirstMeetDialog(Player caller)
         {
-            caller.pui.DisplayDialog(new("ori:button",
+            caller.pui.DisplayDialog(new("ori:nick", "ori:button",
             new(GameUI.CompareText("ori:dialog.nick.first_meet_0").text, "ori:nick_head"),
             new(GameUI.CompareText("ori:dialog.nick.first_meet_1").text, "ori:nick_head"),
             new(GameUI.CompareText("ori:dialog.nick.first_meet_2").text, "ori:nick_head"),

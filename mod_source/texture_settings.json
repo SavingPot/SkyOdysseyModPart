@@ -966,6 +966,14 @@
             "pixel_unit": 6
         },
         {
+            "id": "ori:cricket_0",
+            "path": "/entities/cricket_0.png"
+        },
+        {
+            "id": "ori:snail_0",
+            "path": "/entities/snail_0.png"
+        },
+        {
             "id": "ori:spark",
             "path": "/entities/bullets/spark.png",
             "pixel_unit": 24
