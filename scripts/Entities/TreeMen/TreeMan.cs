@@ -3,6 +3,7 @@ using SP.Tools.Unity;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using static GameCore.UniversalEntityBehaviour;
 using Random = UnityEngine.Random;
 
 namespace GameCore
@@ -24,6 +25,17 @@ namespace GameCore
     public class TreeMan<PropertyT> : CoreEnemy<PropertyT>
         where PropertyT : TreeManProperties<PropertyT>, new()
     {
+        public EnemyMoveToTarget ai;
+
+
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            ai = new(this, 0);
+        }
+
         protected override void Update()
         {
             base.Update();
@@ -97,40 +109,13 @@ namespace GameCore
 
                 case BasicEnemyState.Movement:
                     {
-                        MoveWithTarget();
+                        ai.MoveWithTarget();
 
                         break;
                     }
             }
 
             stateLastFrame = stateTemp;
-        }
-
-        void MoveWithTarget()
-        {
-            if (!isServer || !targetTransform)
-                return;
-
-            /* ---------------------------------- 声明方向 ---------------------------------- */
-            bool tL = targetTransform.position.x < transform.position.x;
-            float errorValue = 0.1f;
-
-            /* --------------------------------- 声明移动速度 --------------------------------- */
-            float yVelo = 0;
-
-            // 目标右向右
-            // 靠的很近就设为 0, 否则会鬼畜
-            int xVelo = !tL ? (targetTransform.position.x - transform.position.x < errorValue ? 0 : 1) : (targetTransform.position.x - transform.position.x > -errorValue ? 0 : -1);
-
-
-            /* ---------------------------------- 应用速度 ---------------------------------- */
-            //设置 RB 的速度
-            if (tL)
-                transform.SetScaleXNegativeAbs();
-            else
-                transform.SetScaleXAbs();
-
-            rb.velocity = GetMovementVelocity(new(xVelo, yVelo));
         }
 
         IEnumerator IEWaitAndSetVelo(float time)

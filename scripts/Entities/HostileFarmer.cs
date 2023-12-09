@@ -4,6 +4,7 @@ using SP.Tools.Unity;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using static GameCore.UniversalEntityBehaviour;
 using Random = UnityEngine.Random;
 
 namespace GameCore
@@ -23,10 +24,17 @@ namespace GameCore
         public Inventory inventory;
         public SpriteRenderer rightHandItem { get; set; }
         public SpriteRenderer leftHandItem { get; set; }
+        public EnemyMoveToTarget ai;
 
 
 
 
+        protected override void Awake()
+        {
+            base.Awake();
+
+            ai = new(this, 30);
+        }
 
         protected override void Update()
         {
@@ -101,78 +109,13 @@ namespace GameCore
 
                 case BasicEnemyState.Movement:
                     {
-                        MoveWithTarget();
+                        ai.MoveWithTarget();
 
                         break;
                     }
             }
 
             stateLastFrame = stateTemp;
-        }
-
-        void MoveWithTarget()
-        {
-            if (!isServer || !targetTransform)
-                return;
-
-            /* ---------------------------------- 声明方向 ---------------------------------- */
-            bool tL = targetTransform.position.x < transform.position.x;
-            float errorValue = 0.1f;
-
-            /* --------------------------------- 声明移动速度 --------------------------------- */
-            float yVelo = 0;
-
-            //靠的很近就设为 0, 否则会鬼畜
-            int xVelo = !tL ? (targetTransform.position.x - transform.position.x < errorValue ? 0 : 1) : (targetTransform.position.x - transform.position.x > -errorValue ? 0 : -1);
-
-            /* --------------------------------- 决定是否跳跃 --------------------------------- */
-            if (onGround)
-            {
-                /* ------------------------------ 如果玩家所处高度比自己高 ------------------------------ */
-                if (targetTransform.position.y - transform.position.y > 2)
-                {
-                    Jump();
-                    goto set;
-                }
-
-                /* ---------------------------------- 检测前方阻挡 ---------------------------------- */
-                Vector2 stemCenter = tL ? mainCollider.LeftPoint() : mainCollider.RightPoint();
-                Vector2 stemSize = new Vector2(1, mainCollider.size.y);
-                float angle = tL ? 180 : 0;
-
-                if (RayTools.TryOverlapBox(stemCenter, stemSize, angle, Block.blockLayerMask, out _))
-                {
-                    Jump();
-                    goto set;
-                }
-
-                /* ---------------------------------- 检测无地面 --------------------------------- */
-                Vector2 airCenter = tL ? mainCollider.LeftDownPoint() + new Vector2(0.6f, -0.5f) : mainCollider.RightDownPoint() + new Vector2(0.6f, -0.5f);
-                Vector2 airSize = new(0.5f, 0.5f);
-
-                if (!RayTools.TryOverlapBox(airCenter, airSize, angle, Block.blockLayerMask, out _))
-                {
-                    Jump();
-                    goto set;
-                }
-            }
-
-            void Jump()
-            {
-                yVelo = GetJumpVelocity(30);
-            }
-
-
-
-        /* ---------------------------------- 应用速度 ---------------------------------- */
-        set:
-            //设置 RB 的速度
-            if (tL)
-                transform.SetScaleXNegativeAbs();
-            else
-                transform.SetScaleXAbs();
-
-            rb.velocity = GetMovementVelocity(new(xVelo, yVelo));
         }
 
         IEnumerator IEWaitAndSetVelo(float time)

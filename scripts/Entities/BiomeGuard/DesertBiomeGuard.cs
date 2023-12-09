@@ -16,7 +16,7 @@ namespace GameCore
 
             if (Tools.time >= attackTimer)
             {
-                foreach (var player in PlayerCenter.allReady)
+                foreach (var player in PlayerCenter.all)
                 {
                     if ((player.transform.position - transform.position).sqrMagnitude <= attackRadius)
                     {
