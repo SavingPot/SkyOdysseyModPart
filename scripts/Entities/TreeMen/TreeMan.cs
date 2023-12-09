@@ -102,46 +102,20 @@ namespace GameCore
             {
                 case BasicEnemyState.Idle:
                     {
-                        MoveWithoutTarget();
+                        ai.Stroll();
 
                         break;
                     }
 
                 case BasicEnemyState.Movement:
                     {
-                        ai.MoveWithTarget();
+                        ai.Pursuit();
 
                         break;
                     }
             }
 
             stateLastFrame = stateTemp;
-        }
-
-        IEnumerator IEWaitAndSetVelo(float time)
-        {
-            yield return new WaitForSeconds(time);
-
-            rb.SetVelocity(Vector2.zero);
-        }
-
-        void MoveWithoutTarget()
-        {
-            if (!isServer)
-                return;
-
-            //12.5 为倍数, 每秒有 (moveRandomize / deltaTime)% 的几率触发移动
-            float moveRandomize = Tools.deltaTime * 1f;
-
-            if (Tools.Prob100(moveRandomize, Tools.staticRandom))
-            {
-                // -1 to 1
-                float horizontal = Random.Range(-1, 2) * 1.75f;
-                float vertical = rb.velocity.y;
-
-                rb.SetVelocity(horizontal, vertical);
-                StartCoroutine(IEWaitAndSetVelo(1));
-            }
         }
 
         protected override void Start()

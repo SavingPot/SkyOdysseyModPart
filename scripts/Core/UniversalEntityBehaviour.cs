@@ -1,5 +1,8 @@
+using System;
+using System.Collections;
 using SP.Tools.Unity;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace GameCore
 {
@@ -9,8 +12,38 @@ namespace GameCore
         {
             public Enemy enemy;
             public float jumpForce;
+            public Action whenStroll;
 
-            public void MoveWithTarget()
+
+
+            public void Stroll()
+            {
+                if (!enemy.isServer)
+                    return;
+
+                //12.5 为倍数, 每秒有 (moveRandomize / deltaTime)% 的几率触发移动
+                float moveRandomize = Tools.deltaTime * 2f;
+
+                if (Tools.Prob100(moveRandomize, Tools.staticRandom))
+                {
+                    // -1 to 1
+                    float horizontal = Random.Range(-1, 2) * 1.75f;
+                    float vertical = enemy.rb.velocity.y;
+
+                    enemy.rb.SetVelocity(horizontal, vertical);
+                    enemy.StartCoroutine(IEStrollResumeVelocity(1));
+                    whenStroll?.Invoke();
+                }
+            }
+
+            IEnumerator IEStrollResumeVelocity(float time)
+            {
+                yield return new WaitForSeconds(time);
+
+                enemy.rb.SetVelocity(Vector2.zero);
+            }
+
+            public void Pursuit()
             {
                 if (!enemy.isServer || !enemy.targetTransform)
                     return;
@@ -79,10 +112,11 @@ namespace GameCore
                 enemy.rb.velocity = enemy.GetMovementVelocity(new(xVelo, yVelo));
             }
 
-            public EnemyMoveToTarget(Enemy enemy, float jumpForce)
+            public EnemyMoveToTarget(Enemy enemy, float jumpForce, Action whenStroll = null)
             {
                 this.enemy = enemy;
                 this.jumpForce = jumpForce;
+                this.whenStroll = whenStroll;
             }
         }
     }

@@ -27,7 +27,7 @@ namespace GameCore
         {
             base.Awake();
 
-            ai = new(this, 20);
+            ai = new(this, 20, () => GAudio.Play(AudioID.AncientBoxerSpare, true));
         }
 
         protected override void Update()
@@ -89,7 +89,7 @@ namespace GameCore
             {
                 case BasicEnemyState.Idle:
                     {
-                        MoveWithoutTarget();
+                        ai.Stroll();
 
                         break;
                     }
@@ -101,40 +101,13 @@ namespace GameCore
                             GAudio.Play(AudioID.AncientBoxerAttack, true);
                         }
 
-                        ai.MoveWithTarget();
+                        ai.Pursuit();
 
                         break;
                     }
             }
 
             stateLastFrame = stateTemp;
-        }
-
-        IEnumerator IEWaitAndSetVelocity(float time)
-        {
-            yield return new WaitForSeconds(time);
-
-            rb.SetVelocity(Vector2.zero);
-        }
-
-        void MoveWithoutTarget()
-        {
-            if (!isServer)
-                return;
-
-            //12.5 为倍数, 每秒有 (moveRandomize / deltaTime)% 的几率触发移动
-            float moveRandomize = Tools.deltaTime * 2f;
-
-            if (Tools.Prob100(moveRandomize, Tools.staticRandom))
-            {
-                // -1 to 1
-                float horizontal = Random.Range(-1, 2) * 1.75f;
-                float vertical = rb.velocity.y;
-
-                rb.SetVelocity(horizontal, vertical);
-                StartCoroutine(IEWaitAndSetVelocity(1));
-                GAudio.Play(AudioID.AncientBoxerSpare, true);
-            }
         }
 
         protected override void Start()

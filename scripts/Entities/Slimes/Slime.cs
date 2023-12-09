@@ -82,7 +82,7 @@ namespace GameCore
 
                 case BasicEnemyState.Movement:
                     {
-                        MoveWithTarget();
+                        Pursuit();
 
                         break;
                     }
@@ -91,13 +91,10 @@ namespace GameCore
             stateLastFrame = stateTemp;
         }
 
-        void MoveWithTarget()
+        void Pursuit()
         {
             if (!isServer || !targetTransform)
                 return;
-
-            //TODO: WHERE ARE U
-            Debug.Log("TRYING SLIME");
 
             /* ---------------------------------- 声明方向 ---------------------------------- */
             bool tL = targetTransform.position.x < transform.position.x;
@@ -113,6 +110,7 @@ namespace GameCore
             /* ----------------------------------- 跳跃 ----------------------------------- */
             if (onGround)
             {
+                //TODO: 在地上的时间超过一秒后再跳, 并且在跳跃的时候才设置x轴速度
                 yVelo = GetJumpVelocity(50);
             }
 
