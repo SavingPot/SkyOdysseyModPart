@@ -4,9 +4,7 @@
         "id": "ori:flint_knife",
         "items": [
             {
-                "tags": [
-                    "ori:stick"
-                ],
+                "id": "ori:stick",
                 "count": 1
             },
             {

@@ -233,27 +233,7 @@
                 "text": "哎呀, 我的脸!"
             },
             {
-                "id": "ori:description.oak_bark",
-                "text": "可以用来打人或保护自己"
-            },
-            {
-                "id": "ori:description.maple_bark",
-                "text": "可以用来打人或保护自己"
-            },
-            {
-                "id": "ori:description.tangerine_bark",
-                "text": "可以用来打人或保护自己"
-            },
-            {
-                "id": "ori:description.banyan_bark",
-                "text": "可以用来打人或保护自己"
-            },
-            {
-                "id": "ori:description.acacia_bark",
-                "text": "可以用来打人或保护自己"
-            },
-            {
-                "id": "ori:description.mangrove_bark",
+                "id": "ori:description.bark",
                 "text": "可以用来打人或保护自己"
             },
             {
@@ -401,27 +381,7 @@
                 "text": "食用后大量增加幸福值"
             },
             {
-                "id": "ori:description.oak_bark_vest",
-                "text": "不太适合运动和旅行"
-            },
-            {
-                "id": "ori:description.maple_bark_vest",
-                "text": "不太适合运动和旅行"
-            },
-            {
-                "id": "ori:description.tangerine_bark_vest",
-                "text": "不太适合运动和旅行"
-            },
-            {
-                "id": "ori:description.banyan_bark_vest",
-                "text": "不太适合运动和旅行"
-            },
-            {
-                "id": "ori:description.acacia_bark_vest",
-                "text": "不太适合运动和旅行"
-            },
-            {
-                "id": "ori:description.mangrove_bark_vest",
+                "id": "ori:description.bark_vest",
                 "text": "不太适合运动和旅行"
             },
             {
@@ -485,59 +445,11 @@
                 "text": "圆圆的脑袋~"
             },
             {
-                "id": "ori:description.oak_stick",
-                "text": "一根普通的橡木棍, 没什么特别的"
+                "id": "ori:description.stick",
+                "text": "一根普通的木棍, 没什么特别的"
             },
             {
-                "id": "ori:description.oak_saw",
-                "text": "和九齿钉耙不同, 它可以用来辅助合成些什么"
-            },
-            {
-                "id": "ori:description.maple_stick",
-                "text": "一根普通的枫木棍, 没什么特别的"
-            },
-            {
-                "id": "ori:description.maple_saw",
-                "text": "和九齿钉耙不同, 它可以用来辅助合成些什么"
-            },
-            {
-                "id": "ori:description.tangerine_stick",
-                "text": "一根普通的橘子木棍, 没什么特别的"
-            },
-            {
-                "id": "ori:description.tangerine_saw",
-                "text": "和九齿钉耙不同, 它可以用来辅助合成些什么"
-            },
-            {
-                "id": "ori:description.banyan_stick",
-                "text": "一根普通的榕木棍, 没什么特别的"
-            },
-            {
-                "id": "ori:description.banyan_saw",
-                "text": "和九齿钉耙不同, 它可以用来辅助合成些什么"
-            },
-            {
-                "id": "ori:description.acacia_stick",
-                "text": "一根普通的合金欢木棍, 没什么特别的"
-            },
-            {
-                "id": "ori:description.acacia_saw",
-                "text": "和九齿钉耙不同, 它可以用来辅助合成些什么"
-            },
-            {
-                "id": "ori:description.sea_hibiscus_stick",
-                "text": "一根普通的木槿木棍, 没什么特别的"
-            },
-            {
-                "id": "ori:description.sea_hibiscus_saw",
-                "text": "和九齿钉耙不同, 它可以用来辅助合成些什么"
-            },
-            {
-                "id": "ori:description.mangrove_stick",
-                "text": "一根普通的红木棍, 没什么特别的"
-            },
-            {
-                "id": "ori:description.mangrove_saw",
+                "id": "ori:description.wooden_saw",
                 "text": "和九齿钉耙不同, 它可以用来辅助合成些什么"
             },
             {
@@ -673,14 +585,6 @@
                 "text": "狗尾草面条"
             },
             {
-                "id": "ori:banyan_bark",
-                "text": "榕木皮"
-            },
-            {
-                "id": "ori:mangrove_bark",
-                "text": "红木皮"
-            },
-            {
                 "id": "ori:straw_rope",
                 "text": "草绳"
             },
@@ -695,10 +599,6 @@
             {
                 "id": "ori:leaf_skirt",
                 "text": "树叶裙"
-            },
-            {
-                "id": "ori:mangrove_bark_vest",
-                "text": "红木皮背心"
             },
             {
                 "id": "ori:plant_fiber_vest",
@@ -1109,20 +1009,20 @@
                 "text": "橡树叶"
             },
             {
-                "id": "ori:oak_stick",
-                "text": "橡木棍"
+                "id": "ori:stick",
+                "text": "木棍"
             },
             {
-                "id": "ori:oak_saw",
-                "text": "橡木锯"
+                "id": "ori:wooden_saw",
+                "text": "木锯"
             },
             {
-                "id": "ori:oak_bark",
-                "text": "橡木皮"
+                "id": "ori:bark",
+                "text": "树皮"
             },
             {
-                "id": "ori:oak_bark_vest",
-                "text": "橡木皮背心"
+                "id": "ori:bark_vest",
+                "text": "树皮背心"
             },
             {
                 "id": "ori:maple_log",
@@ -1137,22 +1037,6 @@
                 "text": "枫树叶"
             },
             {
-                "id": "ori:maple_stick",
-                "text": "枫木棍"
-            },
-            {
-                "id": "ori:maple_saw",
-                "text": "枫木锯"
-            },
-            {
-                "id": "ori:maple_bark",
-                "text": "枫木皮"
-            },
-            {
-                "id": "ori:maple_bark_vest",
-                "text": "枫木皮背心"
-            },
-            {
                 "id": "ori:tangerine_log",
                 "text": "橘子木"
             },
@@ -1163,22 +1047,6 @@
             {
                 "id": "ori:tangerine_leaf",
                 "text": "橘子树叶"
-            },
-            {
-                "id": "ori:tangerine_stick",
-                "text": "橘子木棍"
-            },
-            {
-                "id": "ori:tangerine_saw",
-                "text": "橘子木锯"
-            },
-            {
-                "id": "ori:tangerine_bark",
-                "text": "橘子木皮"
-            },
-            {
-                "id": "ori:tangerine_bark_vest",
-                "text": "橘子木皮背心"
             },
             {
                 "id": "ori:banyan_log",
@@ -1193,22 +1061,6 @@
                 "text": "榕树叶"
             },
             {
-                "id": "ori:banyan_stick",
-                "text": "榕木棍"
-            },
-            {
-                "id": "ori:banyan_saw",
-                "text": "榕木锯"
-            },
-            {
-                "id": "ori:banyan_bark",
-                "text": "榕木皮"
-            },
-            {
-                "id": "ori:banyan_bark_vest",
-                "text": "榕木皮背心"
-            },
-            {
                 "id": "ori:acacia_log",
                 "text": "合金欢木"
             },
@@ -1219,22 +1071,6 @@
             {
                 "id": "ori:acacia_leaf",
                 "text": "合金欢树叶"
-            },
-            {
-                "id": "ori:acacia_stick",
-                "text": "合金欢木棍"
-            },
-            {
-                "id": "ori:acacia_saw",
-                "text": "合金欢木锯"
-            },
-            {
-                "id": "ori:acacia_bark",
-                "text": "合金欢木皮"
-            },
-            {
-                "id": "ori:acacia_bark_vest",
-                "text": "合金欢木皮背心"
             },
             {
                 "id": "ori:sea_hibiscus_log",
@@ -1249,10 +1085,6 @@
                 "text": "木槿树叶"
             },
             {
-                "id": "ori:sea_hibiscus_stick",
-                "text": "木槿木棍"
-            },
-            {
                 "id": "ori:mangrove_log",
                 "text": "红木"
             },
@@ -1263,14 +1095,6 @@
             {
                 "id": "ori:mangrove_leaf",
                 "text": "红树叶"
-            },
-            {
-                "id": "ori:mangrove_stick",
-                "text": "红木棍"
-            },
-            {
-                "id": "ori:mangrove_saw",
-                "text": "红木锯"
             },
             {
                 "id": "ori:button.choose_world_panel.text",

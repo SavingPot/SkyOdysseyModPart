@@ -1,15 +1,15 @@
 {
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
-        "id": "ori:mangrove_bark_vest",
+        "id": "ori:bark_vest",
         "items": [
             {
-                "id": "ori:mangrove_bark",
+                "id": "ori:bark",
                 "count": 2
             }
         ],
         "result": {
-            "id": "ori:mangrove_bark_vest"
+            "id": "ori:bark_vest"
         }
     }
 }

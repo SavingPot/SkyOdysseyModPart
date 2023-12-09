@@ -4,9 +4,7 @@
         "id": "ori:flint_hoe",
         "items": [
             {
-                "tags": [
-                    "ori:stick"
-                ],
+                "id": "ori:stick",
                 "count": 2
             },
             {

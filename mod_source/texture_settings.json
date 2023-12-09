@@ -214,28 +214,16 @@
             "path": "/items/straw_rope.png"
         },
         {
-            "id": "ori:oak_bark",
-            "path": "/items/oak_bark.png"
+            "id": "ori:bark",
+            "path": "/items/bark.png"
         },
         {
-            "id": "ori:maple_bark",
-            "path": "/items/maple_bark.png"
+            "id": "ori:stick",
+            "path": "/items/stick.png"
         },
         {
-            "id": "ori:tangerine_bark",
-            "path": "/items/tangerine_bark.png"
-        },
-        {
-            "id": "ori:banyan_bark",
-            "path": "/items/banyan_bark.png"
-        },
-        {
-            "id": "ori:acacia_bark",
-            "path": "/items/acacia_bark.png"
-        },
-        {
-            "id": "ori:mangrove_bark",
-            "path": "/items/mangrove_bark.png"
+            "id": "ori:wooden_saw",
+            "path": "/items/tools/saws/wooden.png"
         },
         {
             "id": "ori:plant_fiber",
@@ -449,14 +437,6 @@
             "path": "/blocks/oak_leaf.png"
         },
         {
-            "id": "ori:oak_stick",
-            "path": "/items/sticks/oak.png"
-        },
-        {
-            "id": "ori:oak_saw",
-            "path": "/items/tools/saws/oak.png"
-        },
-        {
             "id": "ori:maple_seed",
             "path": "/blocks/maple_seed.png"
         },
@@ -471,14 +451,6 @@
         {
             "id": "ori:maple_leaf",
             "path": "/blocks/maple_leaf.png"
-        },
-        {
-            "id": "ori:maple_stick",
-            "path": "/items/sticks/maple.png"
-        },
-        {
-            "id": "ori:maple_saw",
-            "path": "/items/tools/saws/maple.png"
         },
         {
             "id": "ori:tangerine_seed",
@@ -497,14 +469,6 @@
             "path": "/blocks/tangerine_leaf.png"
         },
         {
-            "id": "ori:tangerine_stick",
-            "path": "/items/sticks/tangerine.png"
-        },
-        {
-            "id": "ori:tangerine_saw",
-            "path": "/items/tools/saws/tangerine.png"
-        },
-        {
             "id": "ori:banyan_seed",
             "path": "/blocks/banyan_seed.png"
         },
@@ -519,14 +483,6 @@
         {
             "id": "ori:banyan_leaf",
             "path": "/blocks/banyan_leaf.png"
-        },
-        {
-            "id": "ori:banyan_stick",
-            "path": "/items/sticks/banyan.png"
-        },
-        {
-            "id": "ori:banyan_saw",
-            "path": "/items/tools/saws/banyan.png"
         },
         {
             "id": "ori:mangrove_seed",
@@ -545,14 +501,6 @@
             "path": "/blocks/mangrove_leaf.png"
         },
         {
-            "id": "ori:mangrove_stick",
-            "path": "/items/sticks/mangrove.png"
-        },
-        {
-            "id": "ori:mangrove_saw",
-            "path": "/items/tools/saws/mangrove.png"
-        },
-        {
             "id": "ori:acacia_seed",
             "path": "/blocks/acacia_seed.png"
         },
@@ -569,14 +517,6 @@
             "path": "/blocks/acacia_leaf.png"
         },
         {
-            "id": "ori:acacia_stick",
-            "path": "/items/sticks/acacia.png"
-        },
-        {
-            "id": "ori:acacia_saw",
-            "path": "/items/tools/saws/acacia.png"
-        },
-        {
             "id": "ori:sea_hibiscus_seed",
             "path": "/blocks/sea_hibiscus_seed.png"
         },
@@ -591,10 +531,6 @@
         {
             "id": "ori:sea_hibiscus_leaf",
             "path": "/blocks/sea_hibiscus_leaf.png"
-        },
-        {
-            "id": "ori:sea_hibiscus_stick",
-            "path": "/items/sticks/sea_hibiscus.png"
         },
         {
             "id": "ori:watermelon_crop_0",
@@ -1054,33 +990,8 @@
             "pixel_unit": 16
         },
         {
-            "id": "ori:oak_bark_vest.body",
-            "path": "/items/armors/bark/oak/body.png",
-            "pixel_unit": 16
-        },
-        {
-            "id": "ori:maple_bark_vest.body",
-            "path": "/items/armors/bark/maple/body.png",
-            "pixel_unit": 16
-        },
-        {
-            "id": "ori:tangerine_bark_vest.body",
-            "path": "/items/armors/bark/tangerine/body.png",
-            "pixel_unit": 16
-        },
-        {
-            "id": "ori:banyan_bark_vest.body",
-            "path": "/items/armors/bark/banyan/body.png",
-            "pixel_unit": 16
-        },
-        {
-            "id": "ori:acacia_bark_vest.body",
-            "path": "/items/armors/bark/acacia/body.png",
-            "pixel_unit": 16
-        },
-        {
-            "id": "ori:mangrove_bark_vest.body",
-            "path": "/items/armors/bark/mangrove/body.png",
+            "id": "ori:bark_vest.body",
+            "path": "/items/armors/bark/body.png",
             "pixel_unit": 16
         },
         {

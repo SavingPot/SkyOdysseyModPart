@@ -233,27 +233,7 @@
                 "text": "F*ck, my face!"
             },
             {
-                "id": "ori:description.oak_bark",
-                "text": "It can be used to attack others or protect yourself"
-            },
-            {
-                "id": "ori:description.maple_bark",
-                "text": "It can be used to attack others or protect yourself"
-            },
-            {
-                "id": "ori:description.tangerine_bark",
-                "text": "It can be used to attack others or protect yourself"
-            },
-            {
-                "id": "ori:description.banyan_bark",
-                "text": "It can be used to attack others or protect yourself"
-            },
-            {
-                "id": "ori:description.acacia_bark",
-                "text": "It can be used to attack others or protect yourself"
-            },
-            {
-                "id": "ori:description.mangrove_bark",
+                "id": "ori:description.bark",
                 "text": "It can be used to attack others or protect yourself"
             },
             {
@@ -401,27 +381,7 @@
                 "text": "Increase the happiness value greatly after eating"
             },
             {
-                "id": "ori:description.oak_bark_vest",
-                "text": "Not suitable for sports and travel"
-            },
-            {
-                "id": "ori:description.maple_bark_vest",
-                "text": "Not suitable for sports and travel"
-            },
-            {
-                "id": "ori:description.tangerine_bark_vest",
-                "text": "Not suitable for sports and travel"
-            },
-            {
-                "id": "ori:description.banyan_bark_vest",
-                "text": "Not suitable for sports and travel"
-            },
-            {
-                "id": "ori:description.acacia_bark_vest",
-                "text": "Not suitable for sports and travel"
-            },
-            {
-                "id": "ori:description.mangrove_bark_vest",
+                "id": "ori:description.bark_vest",
                 "text": "Not suitable for sports and travel"
             },
             {
@@ -485,59 +445,11 @@
                 "text": "Round head~"
             },
             {
-                "id": "ori:description.oak_stick",
-                "text": "A normal oak stick, nothing special"
+                "id": "ori:description.stick",
+                "text": "A normal stick, nothing special"
             },
             {
-                "id": "ori:description.oak_saw",
-                "text": "It can be used to craft something"
-            },
-            {
-                "id": "ori:description.maple_stick",
-                "text": "A normal maple stick, nothing special"
-            },
-            {
-                "id": "ori:description.maple_saw",
-                "text": "It can be used to craft something"
-            },
-            {
-                "id": "ori:description.tangerine_stick",
-                "text": "A normal tangerine stick, nothing special"
-            },
-            {
-                "id": "ori:description.tangerine_saw",
-                "text": "It can be used to craft something"
-            },
-            {
-                "id": "ori:description.banyan_stick",
-                "text": "A normal banyan stick, nothing special"
-            },
-            {
-                "id": "ori:description.banyan_saw",
-                "text": "It can be used to craft something"
-            },
-            {
-                "id": "ori:description.acacia_stick",
-                "text": "A normal acacia stick, nothing special"
-            },
-            {
-                "id": "ori:description.acacia_saw",
-                "text": "It can be used to craft something"
-            },
-            {
-                "id": "ori:description.sea_hibiscus_stick",
-                "text": "A normal sea hibiscus stick, nothing special"
-            },
-            {
-                "id": "ori:description.sea_hibiscus_saw",
-                "text": "It can be used to craft something"
-            },
-            {
-                "id": "ori:description.mangrove_stick",
-                "text": "A normal mangrove stick, nothing special"
-            },
-            {
-                "id": "ori:description.mangrove_saw",
+                "id": "ori:description.wooden_saw",
                 "text": "It can be used to craft something"
             },
             {
@@ -673,14 +585,6 @@
                 "text": "Dog Tail Grass Noodles"
             },
             {
-                "id": "ori:banyan_bark",
-                "text": "Banyan Bark"
-            },
-            {
-                "id": "ori:mangrove_bark",
-                "text": "Mangrove Bark"
-            },
-            {
                 "id": "ori:straw_rope",
                 "text": "Straw Rope"
             },
@@ -695,10 +599,6 @@
             {
                 "id": "ori:leaf_skirt",
                 "text": "Leaf Skirt"
-            },
-            {
-                "id": "ori:mangrove_bark_vest",
-                "text": "Mangrove Bark Vest"
             },
             {
                 "id": "ori:plant_fiber_vest",
@@ -1109,20 +1009,20 @@
                 "text": "Oak Leaf"
             },
             {
-                "id": "ori:oak_stick",
-                "text": "Oak Stick"
+                "id": "ori:stick",
+                "text": "Stick"
             },
             {
-                "id": "ori:oak_saw",
-                "text": "Oak Saw"
+                "id": "ori:wooden_saw",
+                "text": "Wooden Saw"
             },
             {
-                "id": "ori:oak_bark",
-                "text": "Oak Bark"
+                "id": "ori:bark",
+                "text": "Bark"
             },
             {
-                "id": "ori:oak_bark_vest",
-                "text": "Oak Bark Vest"
+                "id": "ori:bark_vest",
+                "text": "Bark Vest"
             },
             {
                 "id": "ori:maple_log",
@@ -1137,22 +1037,6 @@
                 "text": "Maple Leaf"
             },
             {
-                "id": "ori:maple_stick",
-                "text": "Maple Stick"
-            },
-            {
-                "id": "ori:maple_saw",
-                "text": "Maple Saw"
-            },
-            {
-                "id": "ori:maple_bark",
-                "text": "Maple Bark"
-            },
-            {
-                "id": "ori:maple_bark_vest",
-                "text": "Maple Bark Vest"
-            },
-            {
                 "id": "ori:tangerine_log",
                 "text": "Tangerine Log"
             },
@@ -1163,22 +1047,6 @@
             {
                 "id": "ori:tangerine_leaf",
                 "text": "Tangerine Leaf"
-            },
-            {
-                "id": "ori:tangerine_stick",
-                "text": "Tangerine Stick"
-            },
-            {
-                "id": "ori:tangerine_saw",
-                "text": "Tangerine Saw"
-            },
-            {
-                "id": "ori:tangerine_bark",
-                "text": "Tangerine Bark"
-            },
-            {
-                "id": "ori:tangerine_bark_vest",
-                "text": "Tangerine Bark Vest"
             },
             {
                 "id": "ori:banyan_log",
@@ -1193,22 +1061,6 @@
                 "text": "Banyan Leaf"
             },
             {
-                "id": "ori:banyan_stick",
-                "text": "Banyan Stick"
-            },
-            {
-                "id": "ori:banyan_saw",
-                "text": "Banyan Saw"
-            },
-            {
-                "id": "ori:banyan_bark",
-                "text": "Banyan Bark"
-            },
-            {
-                "id": "ori:banyan_bark_vest",
-                "text": "Banyan Bark Vest"
-            },
-            {
                 "id": "ori:acacia_log",
                 "text": "Acacia Log"
             },
@@ -1219,22 +1071,6 @@
             {
                 "id": "ori:acacia_leaf",
                 "text": "Acacia Leaf"
-            },
-            {
-                "id": "ori:acacia_stick",
-                "text": "Acacia Stick"
-            },
-            {
-                "id": "ori:acacia_saw",
-                "text": "Acacia Saw"
-            },
-            {
-                "id": "ori:acacia_bark",
-                "text": "Acacia Bark"
-            },
-            {
-                "id": "ori:acacia_bark_vest",
-                "text": "Acacia Bark Vest"
             },
             {
                 "id": "ori:sea_hibiscus_log",
@@ -1249,10 +1085,6 @@
                 "text": "Sea Hibiscus Leaf"
             },
             {
-                "id": "ori:sea_hibiscus_stick",
-                "text": "Sea Hibiscus Stick"
-            },
-            {
                 "id": "ori:mangrove_log",
                 "text": "Mangrove Log"
             },
@@ -1263,14 +1095,6 @@
             {
                 "id": "ori:mangrove_leaf",
                 "text": "Mangrove Leaf"
-            },
-            {
-                "id": "ori:mangrove_stick",
-                "text": "Mangrove Stick"
-            },
-            {
-                "id": "ori:mangrove_saw",
-                "text": "Mangrove Saw"
             },
             {
                 "id": "ori:button.choose_world_panel.text",
