@@ -47,11 +47,11 @@ namespace GameCore
             //放置方块
             foreach (var structBlock in treeSeedDatum.structure.fixedBlocks)
             {
-                chunk.map.SetBlockNet(downPos + structBlock.offset, structBlock.layer, structBlock.blockId, null);
+                chunk.map.SetBlockNet(downPos + structBlock.offset, structBlock.isBackground, structBlock.blockId, null);
             }
 
             //销毁自己
-            chunk.map.DestroyBlockNet(pos, layer);
+            chunk.map.DestroyBlockNet(pos, isBackground);
         }
 
 

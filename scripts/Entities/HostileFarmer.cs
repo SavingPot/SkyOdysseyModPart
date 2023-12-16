@@ -21,6 +21,7 @@ namespace GameCore
     [EntityBinding(EntityID.HostileFarmer)]
     public class HostileFarmer : CoreEnemy<HostileFarmerProperties>, IInventoryOwner
     {
+        //TODO: 变成同步变量
         public Inventory inventory;
         public SpriteRenderer rightHandItem { get; set; }
         public SpriteRenderer leftHandItem { get; set; }
@@ -100,7 +101,7 @@ namespace GameCore
                 inventory.SetItem(0, item);
             }
 
-            OnInventoryItemChange("0");
+            OnInventoryItemChange(inventory, "0");
         }
 
         public override void Movement()
@@ -120,14 +121,6 @@ namespace GameCore
                 if (!isPursuingLastFrame)
                 {
                     OnStartMovementAction();
-                    anim.ResetAnimations();
-
-                    anim.SetAnim("run_rightarm");
-                    anim.SetAnim("run_leftarm");
-                    anim.SetAnim("run_rightleg");
-                    anim.SetAnim("run_leftleg");
-                    anim.SetAnim("run_head");
-                    anim.SetAnim("run_body");
                 }
 
                 ai.Pursuit();
@@ -139,8 +132,6 @@ namespace GameCore
                     OnStopMovementAction();
 
                     rb.velocity = Vector2.zero;
-                    anim.ResetAnimations();
-                    anim.SetAnim("idle_head");
                 }
 
                 ai.Stroll();
@@ -149,11 +140,13 @@ namespace GameCore
             isPursuingLastFrame = isPursuing;
         }
 
-        public void OnInventoryItemChange(string index)
+        public void OnInventoryItemChange(Inventory newValue, string index)
         {
-            Item item = inventory.GetItem(index);
+            Item item = newValue.GetItem(index);
 
             rightHandItem.sprite = item.data.texture.sprite;
+
+            inventory = newValue;
         }
 
         public Inventory GetInventory() => inventory;

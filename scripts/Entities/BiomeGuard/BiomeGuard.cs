@@ -19,5 +19,13 @@ namespace GameCore
             particleSystem.gameObject.AddComponent<BiomeGuardParticle>();
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            if (particleSystem != null)
+                GameObject.Destroy(particleSystem.gameObject);
+        }
     }
 }

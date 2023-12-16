@@ -56,7 +56,7 @@ namespace GameCore
             //如果 没配方 - 下面是篝火
             if (string.IsNullOrWhiteSpace(cookingResult))
             {
-                if (chunk.map.TryGetBlock(posDown, layer, out Block result) && result.data.id == BlockID.Campfire)
+                if (chunk.map.TryGetBlock(posDown, isBackground, out Block result) && result.data.id == BlockID.Campfire)
                 {
                     foreach (var mod in ModFactory.mods) foreach (var cr in mod.cookingRecipes)
                         {

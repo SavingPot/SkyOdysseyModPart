@@ -15,10 +15,10 @@
         },
         "blocks": [
             {
-                "ranges": [
-                    "@bottom => @surface"
-                ],
-                "block": "ori:stone"
+                "prefab": "ori:grass_surface"
+            },
+            {
+                "prefab": "ori:ores"
             }
         ],
         "entities": {}

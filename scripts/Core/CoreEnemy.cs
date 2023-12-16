@@ -50,6 +50,7 @@ namespace GameCore
                 targetTransform = null;
         }
 
+        //TODO: 包含 layer 信息
         public string[] attackAnimations = new[] { "attack_leftarm", "attack_rightarm" };
 
         public virtual void AttackCore()
@@ -59,7 +60,7 @@ namespace GameCore
             //设置动画
             foreach (var animId in attackAnimations)
             {
-                anim.SetAnim(animId);
+                animWeb.SwitchPlayingTo(animId, 0);
             }
 
             if (UObjectTools.GetComponent(targetTransform, out Entity entity))

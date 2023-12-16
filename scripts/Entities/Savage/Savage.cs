@@ -78,14 +78,6 @@ namespace GameCore
                 if (!isPursuingLastFrame)
                 {
                     OnStartMovementAction();
-                    anim.ResetAnimations();
-
-                    anim.SetAnim("run_rightarm");
-                    anim.SetAnim("run_leftarm");
-                    anim.SetAnim("run_rightleg");
-                    anim.SetAnim("run_leftleg");
-                    anim.SetAnim("run_head");
-                    anim.SetAnim("run_body");
                 }
 
                 ai.Pursuit();
@@ -97,8 +89,6 @@ namespace GameCore
                     OnStopMovementAction();
 
                     rb.velocity = Vector2.zero;
-                    anim.ResetAnimations();
-                    anim.SetAnim("idle_head");
                 }
 
                 ai.Stroll();

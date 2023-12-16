@@ -47,28 +47,28 @@ namespace GameCore
                 //如果当前沙盒不存在未生成完, 不会执行物理
                 if (GFiles.world.TryGetSandbox(chunk.sandboxIndex, out Sandbox sb) && (!GM.instance.generatingExistingSandbox || GM.instance.generatedExistingSandboxes.Any(p => p.index == chunk.sandboxIndex)))
                 {
-                    if (!chunk.map.HasBlock(posTempDown, layer))
+                    if (!chunk.map.HasBlock(posTempDown, isBackground))
                     {
-                        chunk.map.SetBlockNet(posTempDown, layer, data.id, null);
-                        chunk.map.DestroyBlockNet(pos, layer);
+                        chunk.map.SetBlockNet(posTempDown, isBackground, data.id, null);
+                        chunk.map.DestroyBlockNet(pos, isBackground);
                     }
                     else
                     {
-                        bool leftContains = chunk.map.HasBlock(posTempLeft, layer);
-                        bool rightContains = chunk.map.HasBlock(posTempRight, layer);
+                        bool leftContains = chunk.map.HasBlock(posTempLeft, isBackground);
+                        bool rightContains = chunk.map.HasBlock(posTempRight, isBackground);
 
                         if (!leftContains)
                         {
-                            chunk.map.SetBlockNet(posTempLeft, layer, data.id, null);
+                            chunk.map.SetBlockNet(posTempLeft, isBackground, data.id, null);
                         }
                         if (!rightContains)
                         {
-                            chunk.map.SetBlockNet(posTempRight, layer, data.id, null);
+                            chunk.map.SetBlockNet(posTempRight, isBackground, data.id, null);
                         }
 
                         if (!leftContains || !rightContains)
                         {
-                            chunk.map.DestroyBlockNet(pos, layer);
+                            chunk.map.DestroyBlockNet(pos, isBackground);
                         }
                     }
                 }

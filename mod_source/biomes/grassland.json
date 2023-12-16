@@ -32,9 +32,6 @@
                 "prefab": "ori:universal_surface"
             },
             {
-                "prefab": "ori:plants_temperate_zone"
-            },
-            {
                 "block": "ori:grass",
                 "ranges": [
                     "@surface + 1"
@@ -43,8 +40,11 @@
                     "id": "ori:grass_block"
                 },
                 "rules": {
-                    "probability": 30
+                    "probability": 80
                 }
+            },
+            {
+                "prefab": "ori:plants_temperate_zone"
             }
         ],
         "entities": {}

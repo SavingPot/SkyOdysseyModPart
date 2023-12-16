@@ -26,7 +26,7 @@ namespace GameCore
         {
             Vector2Int targetPos = pos + new Vector2Int(0, 1);
 
-            if (!Map.instance.HasBlock(targetPos, layer))
+            if (!Map.instance.HasBlock(targetPos, isBackground))
             {
                 //TODO: 长任意一种植物
                 BlockData grassData = ModFactory.CompareBlockDatum(BlockID.Grass);
@@ -34,7 +34,7 @@ namespace GameCore
                 if (grassData == null)
                     return;
 
-                Map.instance.SetBlockNet(targetPos, layer, grassData.id, null);
+                Map.instance.SetBlockNet(targetPos, isBackground, grassData.id, null);
             }
         }
     }

@@ -26,7 +26,7 @@ namespace GameCore
             base.DoStart();
 
             animationDatum = GetDatum(this);
-            anim = AnimCenter.PlaySprites(animationDatum.time, animationDatum.sprites, sprite => { sr.sprite = sprite; return true; });
+            anim = EasyAnim.PlaySprites(animationDatum.time, animationDatum.sprites, sprite => { sr.sprite = sprite; return true; });
         }
 
         public override void OnRecovered()

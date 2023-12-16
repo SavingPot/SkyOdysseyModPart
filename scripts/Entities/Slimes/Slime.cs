@@ -107,8 +107,6 @@ namespace GameCore
                     OnStopMovementAction();
 
                     rb.velocity = Vector2.zero;
-                    anim.ResetAnimations();
-                    anim.SetAnim("idle_head");
                 }
             }
 

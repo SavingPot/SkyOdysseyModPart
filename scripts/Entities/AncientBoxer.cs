@@ -18,7 +18,6 @@ namespace GameCore
     [EntityBinding(EntityID.AncientBoxer)]
     public class AncientBoxer : CoreEnemy<AncientBoxerProperties>
     {
-        public DefaultSpriteAnimSequence sequence;
         public EnemyMoveToTarget ai;
         public bool isPursuing;
         public bool isPursuingLastFrame;
@@ -58,75 +57,53 @@ namespace GameCore
             /* -------------------------------------------------------------------------- */
             /*                                     动画                                     */
             /* -------------------------------------------------------------------------- */
-            sequence = new();
-            anim.sequences.Add(sequence);
             attackAnimations = new[] { "attack" };
 
             /* ----------------------------------- 战立 ----------------------------------- */
-            anim.AddAnim("idle", () =>
-            {
-                anim.ResetAnimations("idle");
-            }, () => new Tween[]
-            {
-                AnimCenter.PlaySprites(1.5f, new[]
-                {
-                    ModFactory.CompareTexture("ori:ancient_boxer.idle_0").sprite,
-                    ModFactory.CompareTexture("ori:ancient_boxer.idle_1").sprite
-                }, value => { if (sr) sr.sprite = value; return sr; }, 1)
-            }, () => sequence.sequence);
+            animWeb.AddAnim("idle", -1, new AnimFragment[] {
+                new SpriteAnimFragment(
+                    value => { if (sr) sr.sprite = value; return sr; },
+                    new[]
+                    {
+                        ModFactory.CompareTexture("ori:ancient_boxer.idle_0").sprite,
+                        ModFactory.CompareTexture("ori:ancient_boxer.idle_1").sprite
+                    },
+                    1.5f,
+                    Ease.Linear
+                )
+            });
 
             /* ----------------------------------- 跑步 ----------------------------------- */
-            anim.AddAnim("run", () =>
-            {
-                anim.ResetAnimations("run");
-            }, () => new Tween[]
-            {
-                AnimCenter.PlaySprites(0.7f, new[]
-                {
-                    ModFactory.CompareTexture("ori:ancient_boxer.run_0").sprite,
-                    ModFactory.CompareTexture("ori:ancient_boxer.run_1").sprite,
-                    ModFactory.CompareTexture("ori:ancient_boxer.run_2").sprite,
-                    ModFactory.CompareTexture("ori:ancient_boxer.run_3").sprite,
-                }, value => { if (sr) sr.sprite = value; return sr; }, 1)
-            }, () => sequence.sequence);
+            animWeb.AddAnim("run", -1, new AnimFragment[] {
+                new SpriteAnimFragment(
+                    value => { if (sr) sr.sprite = value; return sr; },
+                    new[]
+                    {
+                        ModFactory.CompareTexture("ori:ancient_boxer.run_0").sprite,
+                        ModFactory.CompareTexture("ori:ancient_boxer.run_1").sprite,
+                        ModFactory.CompareTexture("ori:ancient_boxer.run_2").sprite,
+                        ModFactory.CompareTexture("ori:ancient_boxer.run_3").sprite,
+                    },
+                    0.7f,
+                    Ease.Linear
+                )
+            });
 
             /* ----------------------------------- 攻击 ----------------------------------- */
-            anim.AddAnim("attack", () =>
-            {
-                anim.ResetAnimations("attack");
-
-                sequence.sequence.OnStepComplete(() =>
-                {
-                    anim.SetAnim("attack", false);
-
-                    if (isMoving)
+            animWeb.AddAnim("attack", -1, new AnimFragment[] {
+                new SpriteAnimFragment(
+                    value => { if (sr) sr.sprite = value; return sr; },
+                    new[]
                     {
-                        //重播放移动动画
-                        OnStartMovement();
-                    }
-                    else
-                    {
-                        //重播放待机动画
-                        OnStopMovement();
-                    }
-                });
-            }, () => new Tween[]
-            {
-                AnimCenter.PlaySprites(0.4f, new[]
-                {
-                    ModFactory.CompareTexture("ori:ancient_boxer.attack_0").sprite,
-                    ModFactory.CompareTexture("ori:ancient_boxer.attack_1").sprite,
-                    ModFactory.CompareTexture("ori:ancient_boxer.attack_2").sprite,
-                    ModFactory.CompareTexture("ori:ancient_boxer.attack_3").sprite,
-                }, value => { if (sr) sr.sprite = value; return sr; }, 1)
-            }, () => sequence.sequence);
-        }
-
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-
-            sequence?.sequence?.Kill();
+                        ModFactory.CompareTexture("ori:ancient_boxer.attack_0").sprite,
+                        ModFactory.CompareTexture("ori:ancient_boxer.attack_1").sprite,
+                        ModFactory.CompareTexture("ori:ancient_boxer.attack_2").sprite,
+                        ModFactory.CompareTexture("ori:ancient_boxer.attack_3").sprite,
+                    },
+                    0.4f,
+                    Ease.Linear
+                )
+            });
         }
 
         public override void Movement()
@@ -146,14 +123,6 @@ namespace GameCore
                 if (!isPursuingLastFrame)
                 {
                     OnStartMovementAction();
-                    anim.ResetAnimations();
-
-                    anim.SetAnim("run_rightarm");
-                    anim.SetAnim("run_leftarm");
-                    anim.SetAnim("run_rightleg");
-                    anim.SetAnim("run_leftleg");
-                    anim.SetAnim("run_head");
-                    anim.SetAnim("run_body");
                 }
 
                 ai.Pursuit();
@@ -165,8 +134,6 @@ namespace GameCore
                     OnStopMovementAction();
 
                     rb.velocity = Vector2.zero;
-                    anim.ResetAnimations();
-                    anim.SetAnim("idle_head");
                 }
 
                 ai.Stroll();

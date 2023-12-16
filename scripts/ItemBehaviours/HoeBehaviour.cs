@@ -23,15 +23,15 @@ namespace GameCore
 
             if (owner is Player player)
             {
-                if (player.InUseRadius() && player.map.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.controllingLayer, out Block block) && blockPairs.TryGetValue(block.data.id, out var result))
+                if (player.InUseRadius() && player.map.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.isControllingBackground, out Block block) && blockPairs.TryGetValue(block.data.id, out var result))
                 {
                     BlockData blockDatum = ModFactory.CompareBlockDatum(result); if (blockDatum == null) return false;
                     Vector2Int pos = block.pos;
-                    BlockLayer layer = block.layer;
+                    bool isBackground = block.isBackground;
                     Chunk chunk = block.chunk;
 
-                    chunk.RemoveBlock(pos, layer, true);
-                    chunk.AddBlock(pos, layer, blockDatum, null, true);
+                    chunk.RemoveBlock(pos, isBackground, true);
+                    chunk.AddBlock(pos, isBackground, blockDatum, null, true);
 
                     if (GControls.mode == ControlMode.Gamepad)
                         GControls.GamepadVibrationSlightMedium();

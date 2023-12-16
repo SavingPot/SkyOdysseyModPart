@@ -22,7 +22,7 @@ namespace GameCore
             yield return new WaitForSeconds(pickCD);
 
             //设置为未采集过
-            chunk.map.SetBlockNet(pos, layer, BlockID.BerryBush, null);
+            chunk.map.SetBlockNet(pos, isBackground, BlockID.BerryBush, null);
         }
 
         public override void OnRecovered()

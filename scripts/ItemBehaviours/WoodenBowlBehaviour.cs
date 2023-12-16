@@ -12,7 +12,7 @@ namespace GameCore
 
             if (owner is Player player)
             {
-                if (player.InUseRadius() && player.map.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.controllingLayer, out Block block))
+                if (player.InUseRadius() && player.map.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.isControllingBackground, out Block block))
                 {
                     switch (block.data.id)
                     {
