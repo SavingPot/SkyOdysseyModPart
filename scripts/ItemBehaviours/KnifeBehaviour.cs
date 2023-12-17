@@ -31,7 +31,7 @@ namespace GameCore
 
                 //             if (basic != null)
                 //             {
-                //                 Item datum = basic.ToExtended();
+                //                 Item datum = basic.DataToItem();
                 //                 datum.count = count;
 
                 //                 player.ServerAddItem(datum);

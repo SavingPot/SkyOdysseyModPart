@@ -25,7 +25,7 @@ namespace GameCore
                     if (GControls.mode == ControlMode.Gamepad)
                         GControls.GamepadVibrationSlightMedium();
 
-                    player.ServerAddItem(target.ToExtended());
+                    player.ServerAddItem(target.DataToItem());
                     player.ServerReduceItemCount(inventoryIndex, 1);
 
                     GAudio.Play(AudioID.FillingWaterBottle);

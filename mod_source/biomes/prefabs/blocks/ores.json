@@ -13,6 +13,19 @@
                 "ranges": [
                     "@bottom => @surface - 5"
                 ],
+                "area": [
+                    [
+                        0,
+                        0,
+                        -1
+                    ]
+                ],
+                "block": "ori:stone"
+            },
+            {
+                "ranges": [
+                    "@bottom => @surface - 5"
+                ],
                 "block": "ori:iron_ore",
                 "attached": {
                     "id": "ori:stone",

@@ -15,14 +15,7 @@
         },
         "blocks": [
             {
-                "prefab": "ori:dirt_surface"
-            },
-            {
-                "prefab": "ori:ores"
-            }
-        ],
-        "perlins": [
-            {
+                "type": "perlin",
                 "fluctuation": {
                     "frequency": 6,
                     "height": 3.5
@@ -40,6 +33,12 @@
                         "isBackground": false
                     }
                 ]
+            },
+            {
+                "prefab": "ori:dirt_surface"
+            },
+            {
+                "prefab": "ori:ores"
             }
         ],
         "entities": {}

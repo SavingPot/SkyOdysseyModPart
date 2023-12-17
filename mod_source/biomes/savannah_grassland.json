@@ -23,6 +23,26 @@
         ],
         "blocks": [
             {
+                "type": "perlin",
+                "fluctuation": {
+                    "frequency": 2.5,
+                    "height": 2.5
+                },
+                "start_y": "@surface + 1",
+                "blocks": [
+                    {
+                        "range": "@highest_noise => @highest_noise",
+                        "block": "ori:savannah_grass_block",
+                        "isBackground": false
+                    },
+                    {
+                        "range": "@lowest_noise => @highest_noise - 1",
+                        "block": "ori:dirt",
+                        "isBackground": false
+                    }
+                ]
+            },
+            {
                 "prefab": "ori:dirt_surface"
             },
             {
@@ -38,9 +58,10 @@
                 "prefab": "ori:plants_tropic"
             },
             {
+                "type": "post_process",
                 "block": "ori:grass",
                 "ranges": [
-                    "@surface + 1"
+                    "@highest_point + 1"
                 ],
                 "attached": {
                     "id": "ori:savannah_grass_block"

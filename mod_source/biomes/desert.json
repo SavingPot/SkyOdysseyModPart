@@ -20,6 +20,21 @@
         ],
         "blocks": [
             {
+                "type": "perlin",
+                "fluctuation": {
+                    "frequency": 2.5,
+                    "height": 2.5
+                },
+                "start_y": "@surface + 1",
+                "blocks": [
+                    {
+                        "range": "@bottom => @top",
+                        "block": "ori:sand",
+                        "isBackground": false
+                    }
+                ]
+            },
+            {
                 "ranges": [
                     "@surface - 4 => @surface"
                 ],

@@ -18,7 +18,7 @@
             },
             {
                 "id": "ori:dialog.nick.first_meet_2",
-                "text": "如果你想和我聊天的话....."
+                "text": "如果你想和我聊天的话......"
             },
             {
                 "id": "ori:dialog.nick.first_meet_3",
@@ -26,7 +26,7 @@
             },
             {
                 "id": "ori:dialog.nick.teaching.attack_0",
-                "text": "你果然学会了! <color=#D1A35F>{button}</color>除了可以用来聊天, 还可以使用物品和方块"
+                "text": "<color=#D1A35F>{button}</color>除了可以用来聊天, 还可以使用物品和方块"
             },
             {
                 "id": "ori:dialog.nick.teaching.attack_1",
@@ -50,11 +50,11 @@
             },
             {
                 "id": "ori:dialog.nick.teaching.backpack_1",
-                "text": "点击<color=#D1A35F>{button}</color>可以打开合成/背包界面"
+                "text": "接着试一下用<color=#D1A35F>{button}</color>可以打开合成/背包界面"
             },
             {
                 "id": "ori:dialog.nick.teaching.backpack_2",
-                "text": "点击<color=#D1A35F>{button}</color>可以打开任务界面"
+                "text": "对了, 点击<color=#D1A35F>{button}</color>可以打开任务界面"
             },
             {
                 "id": "ori:dialog.nick.teaching.backpack_3",

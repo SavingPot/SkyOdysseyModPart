@@ -108,7 +108,7 @@ namespace GameCore
                 if (GControls.mode == ControlMode.Gamepad)
                     GControls.GamepadVibrationSlightMedium();
 
-                caller.ServerAddItem(target.ToExtended());
+                caller.ServerAddItem(target.DataToItem());
                 caller.ServerReduceItemCount(caller.usingItemIndex.ToString(), 1);
 
                 GAudio.Play(AudioID.FillingWaterBowl);

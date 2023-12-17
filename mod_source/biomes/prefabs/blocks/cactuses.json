@@ -6,7 +6,19 @@
             {
                 "block": "ori:cactus",
                 "ranges": [
-                    "@surface + 2"
+                    "@highest_point + 1"
+                ],
+                "attached": {
+                    "id": "ori:sand"
+                },
+                "rules": {
+                    "probability": 10
+                }
+            },
+            {
+                "block": "ori:cactus",
+                "ranges": [
+                    "@highest_point + 2"
                 ],
                 "attached": {
                     "id": "ori:cactus"
@@ -18,7 +30,7 @@
             {
                 "block": "ori:cactus",
                 "ranges": [
-                    "@surface + 3"
+                    "@highest_point + 3"
                 ],
                 "attached": {
                     "id": "ori:cactus"
@@ -30,7 +42,7 @@
             {
                 "block": "ori:flowering_cactus",
                 "ranges": [
-                    "@surface + 1"
+                    "@highest_point + 1"
                 ],
                 "attached": {
                     "id": "ori:sand"
@@ -42,7 +54,7 @@
             {
                 "block": "ori:flowering_cactus",
                 "ranges": [
-                    "@surface + 2"
+                    "@highest_point + 2"
                 ],
                 "attached": {
                     "id": "ori:cactus"
@@ -54,7 +66,7 @@
             {
                 "block": "ori:flowering_cactus",
                 "ranges": [
-                    "@surface + 3"
+                    "@highest_point + 3"
                 ],
                 "attached": {
                     "id": "ori:cactus"

@@ -4,8 +4,9 @@
         "id": "ori:pools",
         "content": [
             {
+                "type": "post_process",
                 "ranges": [
-                    "@surface"
+                    "@highest_point"
                 ],
                 "areas": [
                     [

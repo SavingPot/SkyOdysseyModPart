@@ -37,7 +37,7 @@ namespace GameCore
                 //             if (GControls.mode == ControlMode.Gamepad)
                 //                 GControls.GamepadVibrationSlightMedium();
 
-                //             player.ServerAddItem(powder.ToExtended());
+                //             player.ServerAddItem(powder.DataToItem());
                 //             player.ServerReduceItemCount(i.ToString(), 1);
                 //             player.ServerReduceItemCount(inventoryIndex, powerNeed);
 

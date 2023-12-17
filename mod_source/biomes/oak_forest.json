@@ -42,35 +42,7 @@
         ],
         "blocks": [
             {
-                "prefab": "ori:dirt_surface"
-            },
-            {
-                "prefab": "ori:ores"
-            },
-            {
-                "prefab": "ori:pools"
-            },
-            {
-                "prefab": "ori:universal_surface"
-            },
-            {
-                "prefab": "ori:plants_temperate_zone"
-            },
-            {
-                "block": "ori:grass",
-                "ranges": [
-                    "@surface + 1"
-                ],
-                "attached": {
-                    "id": "ori:grass_block"
-                },
-                "rules": {
-                    "probability": 10
-                }
-            }
-        ],
-        "perlins": [
-            {
+                "type": "perlin",
                 "fluctuation": {
                     "frequency": 5,
                     "height": 5
@@ -88,6 +60,34 @@
                         "isBackground": false
                     }
                 ]
+            },
+            {
+                "prefab": "ori:dirt_surface"
+            },
+            {
+                "prefab": "ori:ores"
+            },
+            {
+                "prefab": "ori:pools"
+            },
+            {
+                "prefab": "ori:universal_surface"
+            },
+            {
+                "prefab": "ori:plants_temperate_zone"
+            },
+            {
+                "type": "post_process",
+                "block": "ori:grass",
+                "ranges": [
+                    "@highest_point + 1"
+                ],
+                "attached": {
+                    "id": "ori:grass_block"
+                },
+                "rules": {
+                    "probability": 10
+                }
             }
         ]
     }

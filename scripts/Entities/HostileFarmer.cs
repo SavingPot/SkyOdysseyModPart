@@ -91,11 +91,11 @@ namespace GameCore
             {
                 Item item = Random.Range(0, 5) switch
                 {
-                    1 => ModFactory.CompareItem("ori:straw_hat").ToExtended(),
-                    2 => ModFactory.CompareItem("ori:straw_hat").ToExtended(),
-                    3 => ModFactory.CompareItem("ori:straw_hat").ToExtended(),
-                    4 => ModFactory.CompareItem("ori:straw_hat").ToExtended(),
-                    _ => ModFactory.CompareItem("ori:flint_hoe").ToExtended()
+                    1 => ModFactory.CompareItem("ori:straw_hat").DataToItem(),
+                    2 => ModFactory.CompareItem("ori:straw_hat").DataToItem(),
+                    3 => ModFactory.CompareItem("ori:straw_hat").DataToItem(),
+                    4 => ModFactory.CompareItem("ori:straw_hat").DataToItem(),
+                    _ => ModFactory.CompareItem("ori:flint_hoe").DataToItem()
                 };
 
                 inventory.SetItem(0, item);
