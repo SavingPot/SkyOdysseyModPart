@@ -23,7 +23,7 @@
         ],
         "blocks": [
             {
-                "prefab": "ori:grass_surface"
+                "prefab": "ori:dirt_surface"
             },
             {
                 "prefab": "ori:ores"

@@ -42,7 +42,7 @@
         ],
         "blocks": [
             {
-                "prefab": "ori:grass_surface"
+                "prefab": "ori:dirt_surface"
             },
             {
                 "prefab": "ori:ores"
@@ -67,6 +67,27 @@
                 "rules": {
                     "probability": 10
                 }
+            }
+        ],
+        "perlins": [
+            {
+                "fluctuation": {
+                    "frequency": 5,
+                    "height": 5
+                },
+                "start_y": "@surface + 1",
+                "blocks": [
+                    {
+                        "range": "@highest_noise => @highest_noise",
+                        "block": "ori:grass_block",
+                        "isBackground": false
+                    },
+                    {
+                        "range": "@lowest_noise => @highest_noise - 1",
+                        "block": "ori:dirt",
+                        "isBackground": false
+                    }
+                ]
             }
         ]
     }
