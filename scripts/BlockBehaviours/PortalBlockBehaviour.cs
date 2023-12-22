@@ -14,7 +14,7 @@ namespace GameCore
         //TODO: data save and detect;
         public override bool PlayerInteraction(Player player)
         {
-            GM.instance.SummonEntity(new(pos.x, pos.y + 1), $"{GFiles.world.GetOrAddSandbox(chunk.sandboxIndex).biome}_guard", null, true, null, null);
+            GM.instance.SummonEntity(new(pos.x, pos.y + 1), $"{GFiles.world.GetOrAddRegion(chunk.regionIndex).biome}_guard", null, true, null, null);
             return true;
         }
     }

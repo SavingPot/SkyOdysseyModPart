@@ -726,7 +726,7 @@
             },
             {
                 "id": "ori:text.reborn_info",
-                "text": "重生后会回到初始沙盒, 因此可以等待其他玩家来救"
+                "text": "重生后会回到初始区域, 因此可以等待其他玩家来救"
             },
             {
                 "id": "ori:text.wait_joining_the_server",
@@ -1229,8 +1229,8 @@
                 "text": "返回"
             },
             {
-                "id": "ori:text.wait_generating_the_sandbox",
-                "text": "生成沙盒中"
+                "id": "ori:text.wait_generating_the_region",
+                "text": "生成区域中"
             }
         ]
     }

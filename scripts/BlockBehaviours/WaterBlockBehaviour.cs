@@ -44,8 +44,8 @@ namespace GameCore
             {
                 physicTimer = Tools.time + streamSpeed;
 
-                //如果当前沙盒不存在未生成完, 不会执行物理
-                if (GFiles.world.TryGetSandbox(chunk.sandboxIndex, out Sandbox sb) && (!GM.instance.generatingExistingSandbox || GM.instance.generatedExistingSandboxes.Any(p => p.index == chunk.sandboxIndex)))
+                //如果当前区域不存在未生成完, 不会执行物理
+                if (GFiles.world.TryGetRegion(chunk.regionIndex, out _) && (!GM.instance.generatingExistingRegion || GM.instance.generatedExistingRegions.Any(p => p.index == chunk.regionIndex)))
                 {
                     if (!chunk.map.HasBlock(posTempDown, isBackground))
                     {

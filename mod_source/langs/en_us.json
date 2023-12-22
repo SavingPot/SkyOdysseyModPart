@@ -726,7 +726,7 @@
             },
             {
                 "id": "ori:text.reborn_info",
-                "text": "You will return to sandbox zero after you reborn, you can wait for other players to save you"
+                "text": "You will return to region zero after you reborn, you can wait for other players to save you"
             },
             {
                 "id": "ori:text.wait_joining_the_server",
@@ -1229,8 +1229,8 @@
                 "text": "Back"
             },
             {
-                "id": "ori:text.wait_generating_the_sandbox",
-                "text": "Generating The Sandbox"
+                "id": "ori:text.wait_generating_the_region",
+                "text": "Generating The Region"
             }
         ]
     }
