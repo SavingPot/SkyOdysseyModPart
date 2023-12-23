@@ -553,6 +553,10 @@
                 "text": "木桶"
             },
             {
+                "id": "ori:wooden_chest",
+                "text": "木箱"
+            },
+            {
                 "id": "ori:wooden_bowl",
                 "text": "木碗"
             },

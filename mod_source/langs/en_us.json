@@ -553,6 +553,10 @@
                 "text": "Barrel"
             },
             {
+                "id": "ori:wooden_chest",
+                "text": "Wooden Chest"
+            },
+            {
                 "id": "ori:wooden_bowl",
                 "text": "Wooden Bowl"
             },
