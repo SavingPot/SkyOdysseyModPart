@@ -3,7 +3,7 @@ using static GameCore.PlayerUI;
 
 namespace GameCore
 {
-    public class BarrelBlockBehaviour : StorageBlockBehaviour
+    public class BarrelBlockBehaviour : StorageBlock
     {
         public const int defaultItemCountConst = 4 * 7;
         public override int defaultItemCount { get; set; } = defaultItemCountConst;

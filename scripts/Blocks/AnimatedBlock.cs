@@ -7,7 +7,7 @@ using DG.Tweening;
 
 namespace GameCore
 {
-    public class AnimationBlockBehaviour : Block
+    public class AnimatedBlock : Block
     {
         public class AnimationBlockDatum
         {

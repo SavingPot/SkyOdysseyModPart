@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public class WaterBlockBehaviour : Block
+    public class Water : Block
     {
         public static float entityFallingSpeed = 2;
         public static float resistance = 1.75f;

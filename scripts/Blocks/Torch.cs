@@ -3,7 +3,7 @@ using static GameCore.Player;
 
 namespace GameCore
 {
-    public class TorchBlockBehaviour : AnimationBlockBehaviour
+    public class Torch : AnimatedBlock
     {
         
     }

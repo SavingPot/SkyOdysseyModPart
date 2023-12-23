@@ -4,7 +4,7 @@ using SP.Tools;
 
 namespace GameCore
 {
-    public abstract class StorageBlockBehaviour : Block, IItemContainer
+    public abstract class StorageBlock : Block, IItemContainer
     {
         public abstract void RefreshItemView();
 
