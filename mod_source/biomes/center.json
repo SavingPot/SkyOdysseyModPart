@@ -5,12 +5,12 @@
         "difficulty": 0,
         "size_scope": {
             "min": [
-                70,
-                70
+                60,
+                60
             ],
             "max": [
-                70,
-                70
+                60,
+                60
             ]
         },
         "blocks": [

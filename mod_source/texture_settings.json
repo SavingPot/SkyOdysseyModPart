@@ -805,6 +805,10 @@
             "path": "/blocks/berry_bush.png"
         },
         {
+            "id": "ori:boundary",
+            "path": "/blocks/boundary.png"
+        },
+        {
             "id": "ori:grass_block",
             "path": "/blocks/grass_block.png"
         },
