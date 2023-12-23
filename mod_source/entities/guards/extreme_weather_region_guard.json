@@ -1,7 +1,7 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:desert_guard",
+        "id": "ori:extreme_weather_region_guard",
         "max_health": 800
     }
 }

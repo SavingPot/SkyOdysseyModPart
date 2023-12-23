@@ -1,0 +1,18 @@
+{
+    "json_format": "0.6.0",
+    "ori:crafting_recipe": {
+        "id": "ori:campfire",
+        "items": [
+            {
+                "tags": [
+                    "ori:planks"
+                ],
+                "count": 7
+            }
+        ],
+        "result": {
+            "id": "ori:campfire",
+            "count": 1
+        }
+    }
+}

@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.DesertGuard)]
-    public class DesertGuard : BiomeGuard
+    [EntityBinding(EntityID.PlantRegionGuard)]
+    public class PlantRegionGuard : RegionGuard
     {
         public float attackTimer;
-        public int attackRadius = 10 * 10; // 10^2
+        public int attackRadius = 15 * 15; // 15^2
 
         protected override void Update()
         {
@@ -20,18 +20,19 @@ namespace GameCore
                 {
                     if ((player.transform.position - transform.position).sqrMagnitude <= attackRadius)
                     {
-                        var velocity = Tools.GetAngleVector2(transform.position, player.transform.position).normalized * 20;
+                        var velocity = Tools.GetAngleVector2(transform.position, player.transform.position).normalized * 22;
 
                         JObject jo = new();
                         jo.AddObject("ori:bullet");
                         jo["ori:bullet"].AddProperty("ownerId", netId);
                         jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
 
-                        GM.instance.SummonEntity(transform.position, EntityID.DesertGuardSand, Tools.randomGUID, true, null, jo.ToString());
+                        //TODO: 发射树种
+                        GM.instance.SummonEntity(transform.position, EntityID.WoodenArrow, Tools.randomGUID, true, null, jo.ToString());
                     }
                 }
 
-                attackTimer = Tools.time + 0.5f;
+                attackTimer = Tools.time + 1;
             }
         }
     }

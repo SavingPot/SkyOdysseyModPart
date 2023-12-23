@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.SnowfieldGuard)]
-    public class SnowfieldGuard : BiomeGuard
+    [EntityBinding(EntityID.ExtremeWeatherRegionGuard)]
+    public class ExtremeWeatherGuard : RegionGuard
     {
         public float attackTimer;
         public int attackRadius = 10 * 10; // 10^2
@@ -16,9 +16,9 @@ namespace GameCore
 
             if (Tools.time >= attackTimer)
             {
-                var snowballAmount = Random.Range(10, 21);
+                var bulletAmount = Random.Range(10, 21);
 
-                for (var i = 0; i < snowballAmount; i++)
+                for (var i = 0; i < bulletAmount; i++)
                 {
                     var velocity = new Vector2(Random.Range(-10, 11), Random.Range(10, 16));
 
@@ -27,7 +27,10 @@ namespace GameCore
                     jo["ori:bullet"].AddProperty("ownerId", netId);
                     jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
 
-                    GM.instance.SummonEntity(transform.position, EntityID.SnowfieldGuardSnowball, Tools.randomGUID, true, null, jo.ToString());
+                    if (Tools.randomBool)
+                        GM.instance.SummonEntity(transform.position, EntityID.ExtremeWeatherRegionGuardSand, Tools.randomGUID, true, null, jo.ToString());
+                    else
+                        GM.instance.SummonEntity(transform.position, EntityID.ExtremeWeatherRegionGuardSnowball, Tools.randomGUID, true, null, jo.ToString());
                 }
 
                 attackTimer = Tools.time + 2f;

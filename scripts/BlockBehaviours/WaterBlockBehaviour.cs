@@ -38,6 +38,7 @@ namespace GameCore
                 MethodAgent.updates -= WaterPhysics;
         }
 
+        //TODO: 把水物理的执行放在 OnUpdate 中
         public void WaterPhysics()
         {
             if (Tools.time >= physicTimer)
@@ -47,6 +48,7 @@ namespace GameCore
                 //如果当前区域不存在未生成完, 不会执行物理
                 if (GFiles.world.TryGetRegion(chunk.regionIndex, out _) && (!GM.instance.generatingExistingRegion || GM.instance.generatedExistingRegions.Any(p => p.index == chunk.regionIndex)))
                 {
+                    //TODO: 冲走可以被冲走的小方块
                     if (!chunk.map.HasBlock(posTempDown, isBackground))
                     {
                         chunk.map.SetBlockNet(posTempDown, isBackground, data.id, null);

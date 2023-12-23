@@ -23,7 +23,7 @@ namespace GameCore
         public bool isPursuingLastFrame;
 
 
-        
+
         protected override void Update()
         {
             base.Update();
@@ -46,15 +46,17 @@ namespace GameCore
             float errorValue = 0.1f;
 
             /* --------------------------------- 声明移动速度 --------------------------------- */
+            float xVelo = 0;
             float yVelo = 0;
 
-            // 目标右向右
-            // 靠的很近就设为 0, 否则会鬼畜
-            int xVelo = !tL ? (targetTransform.position.x - transform.position.x < errorValue ? 0 : 1) : (targetTransform.position.x - transform.position.x > -errorValue ? 0 : -1);
 
             /* ----------------------------------- 跳跃 ----------------------------------- */
-            if (onGround)
+            if (onGround && Tools.time >= jumpTimer)
             {
+                // 目标右向右
+                // 靠的很近就设为 0, 否则会鬼畜
+                xVelo = !tL ? (targetTransform.position.x - transform.position.x < errorValue ? 0 : 5) : (targetTransform.position.x - transform.position.x > -errorValue ? 0 : -5);
+
                 //TODO: 在地上的时间超过一秒后再跳, 并且在跳跃的时候才设置x轴速度
                 yVelo = GetJumpVelocity(50);
             }
@@ -77,6 +79,8 @@ namespace GameCore
 
             /* ---------------------------------- 设置贴图 ---------------------------------- */
             AddSpriteRenderer(SlimeProperties<PropertyT>.instance.Texture());
+
+            jumpCD = 2;
         }
 
         public override void Movement()

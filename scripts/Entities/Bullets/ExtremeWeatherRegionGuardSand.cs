@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.DesertGuardSand)]
-    public class DesertGuardSand : Bullet
+    [EntityBinding(EntityID.ExtremeWeatherRegionGuardSand)]
+    public class ExtremeWeatherRegionGuardSand : Bullet
     {
         protected override void Start()
         {
