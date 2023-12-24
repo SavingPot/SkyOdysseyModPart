@@ -1,7 +1,8 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:snail",
+        "id": "ori:pillworm",
+        "lifetime": 60,
         "summon": {
             "default_probability": 70,
             "time_earliest": 4,
@@ -16,6 +17,6 @@
             },
             "gravity": 5
         },
-        "max_health": 5
+        "max_health": 3
     }
 }

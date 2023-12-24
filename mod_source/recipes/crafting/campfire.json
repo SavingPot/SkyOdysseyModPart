@@ -4,10 +4,12 @@
         "id": "ori:campfire",
         "items": [
             {
-                "tags": [
-                    "ori:planks"
-                ],
-                "count": 7
+                "id":"ori:stick",
+                "count": 12
+            },
+            {
+                "id": "ori:gravel",
+                "count": 4
             }
         ],
         "result": {

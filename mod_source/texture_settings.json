@@ -265,8 +265,8 @@
             "pixel_unit": 16
         },
         {
-            "id": "ori:backpack_background",
-            "path": "/gui/sidebars/backpack_background.png"
+            "id": "ori:ori:backpack_inventory_background",
+            "path": "/gui/sidebars/ori:backpack_inventory_background.png"
         },
         {
             "id": "ori:crafting_result",

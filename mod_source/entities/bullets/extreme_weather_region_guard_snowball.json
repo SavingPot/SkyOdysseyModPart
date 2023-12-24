@@ -4,6 +4,7 @@
         "id": "ori:extreme_weather_region_guard_snowball",
         "physics": {
             "gravity": 0
-        }
+        },
+        "lifetime": 10
     }
 }

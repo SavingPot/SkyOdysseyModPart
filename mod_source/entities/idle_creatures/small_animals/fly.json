@@ -1,7 +1,8 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:longicorn",
+        "id": "ori:fly",
+        "lifetime": 60,
         "summon": {
             "default_probability": 70,
             "time_earliest": 4,

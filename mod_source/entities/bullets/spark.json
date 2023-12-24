@@ -1,6 +1,7 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:spark"
+        "id": "ori:spark",
+        "lifetime": 10
     }
 }
