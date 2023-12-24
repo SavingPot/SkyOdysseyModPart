@@ -74,6 +74,18 @@
             "path": "/gui/tasks/get_flint_sword.png"
         },
         {
+            "id": "ori:task.get_iron_knife",
+            "path": "/gui/tasks/get_iron_knife.png"
+        },
+        {
+            "id": "ori:task.get_iron_hoe",
+            "path": "/gui/tasks/get_iron_hoe.png"
+        },
+        {
+            "id": "ori:task.get_iron_sword",
+            "path": "/gui/tasks/get_iron_sword.png"
+        },
+        {
             "id": "ori:task.get_bark",
             "path": "/gui/tasks/get_bark.png"
         },
@@ -410,7 +422,7 @@
         },
         {
             "id": "ori:flint_knife",
-            "path": "/items/tools/knives/flint_knife.png"
+            "path": "/items/tools/knives/flint.png"
         },
         {
             "id": "ori:flint_hoe",
@@ -419,6 +431,18 @@
         {
             "id": "ori:flint_sword",
             "path": "/items/tools/weapons/flint_sword.png"
+        },
+        {
+            "id": "ori:iron_knife",
+            "path": "/items/tools/knives/iron.png"
+        },
+        {
+            "id": "ori:flint_hoe",
+            "path": "/items/tools/hoes/iron.png"
+        },
+        {
+            "id": "ori:flint_sword",
+            "path": "/items/tools/weapons/iron_sword.png"
         },
         {
             "id": "ori:oak_seed",

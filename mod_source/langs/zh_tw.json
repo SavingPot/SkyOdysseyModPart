@@ -165,6 +165,18 @@
                 "text": "獲得燧石劍"
             },
             {
+                "id": "ori:button.task_node.ori:get_iron_knife.text",
+                "text": "獲得鐵制小刀"
+            },
+            {
+                "id": "ori:button.task_node.ori:get_iron_hoe.text",
+                "text": "獲得鐵鋤"
+            },
+            {
+                "id": "ori:button.task_node.ori:get_iron_sword.text",
+                "text": "獲得鐵劍"
+            },
+            {
                 "id": "ori:button.task_node.ori:get_bark.text",
                 "text": "獲得樹皮"
             },
@@ -463,6 +475,18 @@
             {
                 "id": "ori:description.flint_hoe",
                 "text": "燧石鋤, 原野耕"
+            },
+            {
+                "id": "ori:description.iron_sword",
+                "text": "鐵劍, 適合打架!"
+            },
+            {
+                "id": "ori:description.iron_knife",
+                "text": "鐵制小刀, 適合挖掘!"
+            },
+            {
+                "id": "ori:description.iron_hoe",
+                "text": "鐵制锄, 原野耕"
             },
             {
                 "id": "ori:description.chicken_feather",
@@ -851,6 +875,18 @@
             {
                 "id": "ori:flint_sword",
                 "text": "燧石劍"
+            },
+            {
+                "id": "ori:iron_knife",
+                "text": "鐵制小刀"
+            },
+            {
+                "id": "ori:iron_hoe",
+                "text": "鐵锄"
+            },
+            {
+                "id": "ori:iron_sword",
+                "text": "鐵劍"
             },
             {
                 "id": "ori:sugar",

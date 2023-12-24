@@ -165,6 +165,18 @@
                 "text": "Get Flint Sword"
             },
             {
+                "id": "ori:button.task_node.ori:get_iron_knife.text",
+                "text": "Get Iron Knife"
+            },
+            {
+                "id": "ori:button.task_node.ori:get_iron_hoe.text",
+                "text": "Get Iron Hoe"
+            },
+            {
+                "id": "ori:button.task_node.ori:get_iron_sword.text",
+                "text": "Get Iron Sword"
+            },
+            {
                 "id": "ori:button.task_node.ori:get_bark.text",
                 "text": "Get Bark"
             },
@@ -458,11 +470,23 @@
             },
             {
                 "id": "ori:description.flint_knife",
-                "text": "A flint knife, suitable for excavation!"
+                "text": "A flint knife, suitable for excavating!"
             },
             {
                 "id": "ori:description.flint_hoe",
-                "text": "A flint hoe, to the field~"
+                "text": "A flint hoe~ to the field~"
+            },
+            {
+                "id": "ori:description.iron_sword",
+                "text": "A iron sword, suitable for fighting!"
+            },
+            {
+                "id": "ori:description.iron_knife",
+                "text": "A iron knife, suitable for excavating!"
+            },
+            {
+                "id": "ori:description.iron_hoe",
+                "text": "A iron hoe~ to the field~"
             },
             {
                 "id": "ori:description.chicken_feather",
@@ -851,6 +875,18 @@
             {
                 "id": "ori:flint_sword",
                 "text": "Flint Sword"
+            },
+            {
+                "id": "ori:iron_knife",
+                "text": "Iron Knife"
+            },
+            {
+                "id": "ori:iron_hoe",
+                "text": "Iron Hoe"
+            },
+            {
+                "id": "ori:iron_sword",
+                "text": "Iron Sword"
             },
             {
                 "id": "ori:sugar",
