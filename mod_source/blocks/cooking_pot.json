@@ -8,7 +8,7 @@
         },
         "property": {
             "hardness": 10,
-            "behaviour": "GameCore.CookingPotBlockBehaviour"
+            "behaviour": "GameCore.CookingPot"
         }
     }
 }

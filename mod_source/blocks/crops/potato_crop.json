@@ -8,7 +8,7 @@
         "property": {
             "hardness": 1,
             "collidible": false,
-            "behaviour": "GameCore.CropBlockBehaviour"
+            "behaviour": "GameCore.CropBlock"
         }
     },
     "ori:corp_block": {

@@ -11,7 +11,7 @@
             "tags": [
                 "ori:liquid"
             ],
-            "behaviour": "GameCore.WaterBlockBehaviour",
+            "behaviour": "GameCore.Water",
             "collidible": false
         }
     }

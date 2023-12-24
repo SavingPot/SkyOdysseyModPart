@@ -13,7 +13,7 @@
                 "ori:loot.barrel"
             ],
             "collidible": false,
-            "behaviour": "GameCore.TorchBlockBehaviour"
+            "behaviour": "GameCore.Torch"
         }
     },
     "ori:animations": {

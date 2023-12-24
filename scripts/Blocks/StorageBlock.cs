@@ -27,11 +27,10 @@ namespace GameCore
             this.LoadItemsFromCustomData(customData, defaultItemCount);
         }
 
-        public override bool PlayerInteraction(Player caller)
+        public override bool PlayerInteraction(Player player)
         {
-            caller.SetBackpackSidebar(sidebarId);
+            player.ShowOrHideBackpackAndSetSideBarTo(sidebarId);
             RefreshItemView();
-            caller.ShowBackpackMask();
 
             return true;
         }

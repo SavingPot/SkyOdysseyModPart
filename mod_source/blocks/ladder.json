@@ -11,7 +11,7 @@
         },
         "property": {
             "hardness": 3,
-            "behaviour": "GameCore.LadderBlockBehaviour",
+            "behaviour": "GameCore.Ladder",
             "collidible": false
         }
     }

@@ -12,7 +12,6 @@ namespace GameCore
 
             rb.gravityScale = 0;
             damage = 20;
-            livingTime = 4;
 
             rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
 

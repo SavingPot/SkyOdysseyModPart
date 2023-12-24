@@ -3,7 +3,7 @@ using static GameCore.Player;
 
 namespace GameCore
 {
-    public class CampfireBlockBehaviour : AnimatedBlock
+    public class Campfire : AnimatedBlock
     {
         public static uint campfireCount;
 

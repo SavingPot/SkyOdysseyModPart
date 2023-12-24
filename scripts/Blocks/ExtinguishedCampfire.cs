@@ -3,7 +3,7 @@ using static GameCore.Player;
 
 namespace GameCore
 {
-    public class ExtinguishedCampfireBlockBehaviour : Block
+    public class ExtinguishedCampfire : Block
     {
         public override bool PlayerInteraction(Player caller)
         {

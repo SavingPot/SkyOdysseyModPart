@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public class PickedBerryBushBehaviour : Block
+    public class PickedBerryBush : Block
     {
         public const int pickCD = 90;
         public Coroutine setterCoroutine;

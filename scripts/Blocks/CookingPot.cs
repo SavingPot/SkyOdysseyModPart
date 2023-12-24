@@ -3,7 +3,7 @@ using static GameCore.PlayerUI;
 
 namespace GameCore
 {
-    public class CookingPotBlockBehaviour : StorageBlock
+    public class CookingPot : StorageBlock
     {
         #region 存储
 

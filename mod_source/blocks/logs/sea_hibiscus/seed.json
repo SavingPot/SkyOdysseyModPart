@@ -12,7 +12,7 @@
                 "ori:plant",
                 "ori:tree_seed"
             ],
-            "behaviour": "GameCore.TreeSeedBlockBehaviour",
+            "behaviour": "GameCore.TreeSeed",
             "collidible": "false"
         }
     },

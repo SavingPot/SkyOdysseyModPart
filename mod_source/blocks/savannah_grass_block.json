@@ -7,7 +7,7 @@
         },
         "property": {
             "hardness": 6,
-            "behaviour": "GameCore.GrassBlockBehaviour"
+            "behaviour": "GameCore.GrassBlock"
         }
     }
 }

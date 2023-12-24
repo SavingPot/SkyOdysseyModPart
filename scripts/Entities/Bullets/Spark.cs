@@ -8,8 +8,6 @@ namespace GameCore
         protected override void Awake()
         {
             base.Awake();
-
-            livingTime = 1;
         }
 
         protected override void Start()

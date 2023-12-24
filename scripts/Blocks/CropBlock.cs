@@ -21,7 +21,7 @@ namespace GameCore
         public TextureData texture;
     }
 
-    public class CropBlockBehaviour : Block
+    public class CropBlock : Block
     {
         public static Dictionary<string, CropBlockDatum> dataTemps = new();
         public CropBlockDatum cropDatum;

@@ -7,7 +7,7 @@
         },
         "property": {
             "hardness": -1,
-            "behaviour": "GameCore.PortalBlockBehaviour"
+            "behaviour": "GameCore.Portal"
         }
     }
 }

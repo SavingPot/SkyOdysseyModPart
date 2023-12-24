@@ -12,7 +12,7 @@
                 "ori:injurious",
                 "ori:plant"
             ],
-            "behaviour": "GameCore.UpAndSidesBlockBehaviour",
+            "behaviour": "GameCore.UpAndSides",
             "drops": [
                 {
                     "id": "ori:cactus"

@@ -13,7 +13,7 @@ namespace GameCore
         public StructureData structure;
     }
 
-    public class TreeSeedBlockBehaviour : Block
+    public class TreeSeed : Block
     {
         public static Dictionary<string, TreeSeedDatum> dataTemps = new();
         public TreeSeedDatum treeSeedDatum;

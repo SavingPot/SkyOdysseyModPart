@@ -11,7 +11,7 @@
                 "ori:chest"
             ],
             "collidible": false,
-            "behaviour": "GameCore.WoodenChestBlockBehaviour"
+            "behaviour": "GameCore.WoodenChest"
         }
     }
 }

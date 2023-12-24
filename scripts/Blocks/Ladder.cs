@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public class LadderBlockBehaviour : Block
+    public class Ladder : Block
     {
         public static float entityFallingSpeed = 2;
         public static float entityClimbingSpeed = 11;

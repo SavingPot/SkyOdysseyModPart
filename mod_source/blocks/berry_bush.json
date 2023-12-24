@@ -11,7 +11,7 @@
             "tags": [
                 "ori:plant"
             ],
-            "behaviour": "GameCore.BerryBushBehaviour",
+            "behaviour": "GameCore.BerryBush",
             "collidible": "false"
         }
     }

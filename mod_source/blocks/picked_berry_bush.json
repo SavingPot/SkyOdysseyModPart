@@ -10,7 +10,7 @@
             "tags": [
                 "ori:plant"
             ],
-            "behaviour": "GameCore.PickedBerryBushBehaviour",
+            "behaviour": "GameCore.PickedBerryBush",
             "collidible": "false"
         }
     }

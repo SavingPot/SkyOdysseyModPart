@@ -36,9 +36,8 @@ namespace GameCore
 
             if (owner is Player player)
             {
-                player.SetBackpackSidebar("ori:wooden_bowl_with_water");
+                player.ShowOrHideBackpackAndSetSideBarTo(sidebarId);
                 RefreshItemView();
-                player.ShowBackpackMask();
             }
 
             return true;

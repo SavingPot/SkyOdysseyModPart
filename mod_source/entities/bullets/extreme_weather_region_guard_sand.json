@@ -2,6 +2,6 @@
     "json_format": "0.4.8",
     "ori:entity": {
         "id": "ori:extreme_weather_region_guard_sand",
-        "lifetime": 10
+        "lifetime": 4
     }
 }

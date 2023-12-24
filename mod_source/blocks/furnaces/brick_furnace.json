@@ -8,7 +8,7 @@
         },
         "property": {
             "hardness": 25,
-            "behaviour": "GameCore.BrickFurnaceBlockBehaviour"
+            "behaviour": "GameCore.BrickFurnace"
         }
     }
 }

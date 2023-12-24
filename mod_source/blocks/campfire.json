@@ -10,7 +10,7 @@
         "property": {
             "hardness": 10,
             "collidible": false,
-            "behaviour": "GameCore.CampfireBlockBehaviour"
+            "behaviour": "GameCore.Campfire"
         }
     },
     "ori:animations": {

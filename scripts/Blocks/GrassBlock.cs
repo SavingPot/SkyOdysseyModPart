@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public class GrassBlockBehaviour : Block
+    public class GrassBlock : Block
     {
         public string randomUpdateID;
 

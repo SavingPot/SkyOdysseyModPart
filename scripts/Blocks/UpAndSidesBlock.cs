@@ -1,6 +1,6 @@
 namespace GameCore
 {
-    public class UpAndSidesBlockBehaviour : Block
+    public class UpAndSidesBlock : Block
     {
         public override void DoStart()
         {
