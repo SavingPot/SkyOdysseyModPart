@@ -4,28 +4,26 @@ namespace GameCore
 {
     public class IdleCreature : Creature
     {
-        public float moveTimer;
-        public float intervalTime = 5;
-        public Vector2 velocity;
+        public float movementTimer;
+        public float movementInterval = 5;
 
         protected override void Update()
         {
             base.Update();
 
-            if (Tools.time >= moveTimer)
+            if (Tools.time >= movementTimer)
             {
-                velocity = Random.Range(-2, 3) switch
+                Vector2 velocity = Random.Range(-2, 3) switch
                 {
                     -2 => TurnLeft(),
                     > -2 and < 2 => Vector2.zero,
                     2 => TurnRight(),
                     _ => throw new(),
                 };
+                rb.velocity = velocity == Vector2.zero ? GetMovementVelocity(rb.velocity) : velocity;
 
-                moveTimer = Tools.time + intervalTime;
+                movementTimer = Tools.time + movementInterval;
             }
-
-            rb.velocity = velocity == Vector2.zero ? GetMovementVelocity(rb.velocity) : velocity;
         }
 
         protected virtual Vector2 TurnLeft()

@@ -37,9 +37,7 @@ namespace GameCore
         {
             base.Update();
 
-            onGround = RayTools.TryOverlapCircle(mainCollider.DownPoint(), 0.3f, Block.blockLayerMask, out _);
-
-            if (!isDead && targetTransform && isServer)
+            if (isServer && targetTransform && !isDead)
             {
                 TryAttack();
             }

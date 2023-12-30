@@ -1,5 +1,6 @@
 using System.Collections;
 using GameCore.High;
+using SP.Tools.Unity;
 using UnityEngine;
 
 namespace GameCore
@@ -13,7 +14,7 @@ namespace GameCore
         {
             base.DoStart();
 
-            StartCoroutine(IESetToNotPicked());
+            setterCoroutine = CoroutineStarter.instance.StartCoroutine(IESetToNotPicked());
         }
 
         IEnumerator IESetToNotPicked()
@@ -30,7 +31,7 @@ namespace GameCore
             base.OnRecovered();
 
             if (setterCoroutine != null)
-                StopCoroutine(setterCoroutine);
+                CoroutineStarter.instance.StopCoroutine(setterCoroutine);
         }
     }
 }

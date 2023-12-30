@@ -98,8 +98,8 @@
             "path": "/pick_berry_bush.ogg"
         },
         {
-            "id": "ori:switch_inventory_slot",
-            "path": "/switch_inventory_slot.ogg"
+            "id": "ori:switch_quick_inventory_slot",
+            "path": "/switch_quick_inventory_slot.ogg"
         },
         {
             "id": "ori:crafting",

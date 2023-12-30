@@ -23,7 +23,7 @@ namespace GameCore
         {
             base.DoStart();
 
-            randomUpdateID = $"ori:tree_seeds_{GetInstanceID()}";
+            randomUpdateID = $"ori:tree_seeds_{gameObject.GetInstanceID()}";
             treeSeedDatum = GetDatum();
 
             RandomUpdater.Bind(randomUpdateID, 0.2f, Grow);

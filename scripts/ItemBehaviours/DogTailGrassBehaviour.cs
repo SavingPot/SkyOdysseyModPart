@@ -22,7 +22,7 @@ namespace GameCore
                     if (GControls.mode == ControlMode.Gamepad)
                         GControls.GamepadVibrationSlightMedium();
 
-                    GM.instance.SummonItem(block.transform.position, ItemID.ShelledDogTailGrass);
+                    GM.instance.SummonDrop(block.transform.position, ItemID.ShelledDogTailGrass);
                     player.ServerReduceItemCount(inventoryIndex, 1);
 
                     GAudio.Play(AudioID.PickBerryBush);

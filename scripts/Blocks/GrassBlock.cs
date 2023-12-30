@@ -10,7 +10,7 @@ namespace GameCore
         {
             base.DoStart();
 
-            randomUpdateID = $"ori:grass_block_{GetInstanceID()}";
+            randomUpdateID = $"ori:grass_block_{gameObject.GetInstanceID()}";
 
             RandomUpdater.Bind(randomUpdateID, 0.075f, GrowGrass);
         }

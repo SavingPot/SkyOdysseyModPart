@@ -2,25 +2,20 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public abstract class LivestockProperties<T> : CoreCreatureProperties<T> where T : LivestockProperties<T>, new()
-    {
-        public abstract string Texture();
-        public virtual float FlusteredTime() => 8;
-    }
-
-    public abstract class Livestock<T> : EscapableIdleCreature where T : LivestockProperties<T>, new()
+    public abstract class Livestock : EscapableIdleCreature
     {
         public LivestockState status;
         public float hurtTimer;
+        public string textureId;
 
         protected override void Start()
         {
             base.Start();
 
-            escapeTime = LivestockProperties<T>.instance.FlusteredTime();
+            escapeTime = 8;
 
             /* ---------------------------------- 设置贴图 ---------------------------------- */
-            AddSpriteRenderer(LivestockProperties<T>.instance.Texture());
+            AddSpriteRenderer(textureId);
         }
     }
 

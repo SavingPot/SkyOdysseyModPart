@@ -7,8 +7,9 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public abstract class CoreEnemyProperties<T> : CoreCreatureProperties<T> where T : CoreEnemyProperties<T>, new()
+    public abstract class CoreEnemyProperties<T> where T : CoreEnemyProperties<T>, new()
     {
+        public static T instance = new();
         public virtual ushort SearchRadius() => 25;
         public virtual float AttackRadius() => 2f;
         public virtual float NormalAttackDamage() => 20;
@@ -58,9 +59,12 @@ namespace GameCore
             attackTime = Time.time;
 
             //设置动画
-            foreach (var animId in attackAnimations)
+            if (animWeb != null)
             {
-                animWeb.SwitchPlayingTo(animId, 0);
+                foreach (var animId in attackAnimations)
+                {
+                    animWeb.SwitchPlayingTo(animId, 0);
+                }
             }
 
             if (UObjectTools.GetComponent(targetTransform, out Entity entity))

@@ -2,16 +2,19 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public class ChickenProperties : PoultryProperties<ChickenProperties>
-    {
-        public override string EggID() => "ori:chicken_egg";
-        public override string Texture() => "ori:chicken_white_leghorn";
-    }
 
     [EntityBinding(EntityID.Chicken)]
-    public class Chicken : Poultry<ChickenProperties>
+    public class Chicken : Poultry
     {
         public bool hasCrowedToday;
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            eggId = "ori:chicken_egg";
+            textureId = "ori:chicken_white_leghorn";
+        }
 
         protected override void Update()
         {

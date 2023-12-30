@@ -7,13 +7,12 @@
                 "ranges": [
                     "@bottom => @surface - 5"
                 ],
-                "block": "ori:stone"
-            },
-            {
-                "ranges": [
-                    "@bottom => @surface - 5"
-                ],
-                "area": [
+                "areas": [
+                    [
+                        0,
+                        0,
+                        0
+                    ],
                     [
                         0,
                         0,

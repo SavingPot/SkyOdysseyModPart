@@ -33,7 +33,7 @@ namespace GameCore
         {
             base.DoStart();
 
-            randomUpdateID = $"ori:crop_blocks_{GetInstanceID()}";
+            randomUpdateID = $"ori:crop_blocks_{gameObject.GetInstanceID()}";
             cropDatum = GetDatum();
 
             RandomUpdater.Bind(randomUpdateID, cropDatum.speed, Grow);
@@ -121,7 +121,7 @@ namespace GameCore
                 //生成掉落物
                 cropDatum.matureCrops.For(a =>
                 {
-                    GM.instance.SummonItem(pos, a.id, a.count);
+                    GM.instance.SummonDrop(pos, a.id, a.count);
                 });
             }
             else
@@ -130,7 +130,7 @@ namespace GameCore
                 if (cropDatum.seed.IsNullOrWhiteSpace())
                     base.OutputDrops(pos);
                 else
-                    GM.instance.SummonItem(pos, cropDatum.seed);
+                    GM.instance.SummonDrop(pos, cropDatum.seed);
             }
         }
     }

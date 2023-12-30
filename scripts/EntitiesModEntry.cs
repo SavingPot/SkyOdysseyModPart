@@ -23,6 +23,8 @@
                 //caller.backpackSidebarTable.Add("ori:wooden_bowl_with_water", (() => { WoodenBowlWithWaterBehaviour.GenerateItemView().gameObject.SetActive(true); }, () => { WoodenBowlWithWaterBehaviour.GenerateItemView().gameObject.SetActive(false); }));
             };
 
+            GM.OnUpdate += WaterCenter.WaterPhysics;
+
             GScene.AfterChanged += scene =>
             {
                 switch (scene.name)

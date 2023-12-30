@@ -9,7 +9,7 @@ namespace GameCore
         public override bool PlayerInteraction(Player caller)
         {
             //在方块的位置生成物品
-            GM.instance.SummonItem(transform.position, ItemID.Berry);
+            GM.instance.SummonDrop(transform.position, ItemID.Berry);
 
             //播放采摘音效
             GAudio.Play(AudioID.PickBerryBush);

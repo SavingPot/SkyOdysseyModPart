@@ -35,9 +35,7 @@ namespace GameCore
         {
             base.Update();
 
-            onGround = RayTools.TryOverlapCircle(mainCollider.DownPoint(), 0.3f, Block.blockLayerMask, out _);
-
-            if (!isDead && targetTransform && isServer)
+            if (isServer && targetTransform && !isDead)
             {
                 TryAttack();
             }
@@ -58,6 +56,7 @@ namespace GameCore
             /*                                     动画                                     */
             /* -------------------------------------------------------------------------- */
             attackAnimations = new[] { "attack" };
+            animWeb = new();
 
             /* ----------------------------------- 战立 ----------------------------------- */
             animWeb.AddAnim("idle", -1, new AnimFragment[] {

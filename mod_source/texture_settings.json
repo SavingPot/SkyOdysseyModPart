@@ -393,8 +393,36 @@
             "path": "/blocks/barrel.png"
         },
         {
-            "id": "ori:water",
-            "path": "/blocks/water.png"
+            "id": "ori:water_1",
+            "path": "/blocks/water_1.png"
+        },
+        {
+            "id": "ori:water_2",
+            "path": "/blocks/water_2.png"
+        },
+        {
+            "id": "ori:water_3",
+            "path": "/blocks/water_3.png"
+        },
+        {
+            "id": "ori:water_4",
+            "path": "/blocks/water_4.png"
+        },
+        {
+            "id": "ori:water_5",
+            "path": "/blocks/water_5.png"
+        },
+        {
+            "id": "ori:water_6",
+            "path": "/blocks/water_6.png"
+        },
+        {
+            "id": "ori:water_7",
+            "path": "/blocks/water_7.png"
+        },
+        {
+            "id": "ori:water_8",
+            "path": "/blocks/water_8.png"
         },
         {
             "id": "ori:stone",
@@ -437,11 +465,11 @@
             "path": "/items/tools/knives/iron.png"
         },
         {
-            "id": "ori:flint_hoe",
+            "id": "ori:iron_hoe",
             "path": "/items/tools/hoes/iron.png"
         },
         {
-            "id": "ori:flint_sword",
+            "id": "ori:iron_sword",
             "path": "/items/tools/weapons/iron_sword.png"
         },
         {

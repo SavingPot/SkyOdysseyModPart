@@ -6,14 +6,8 @@ using GameCore.High;
 
 namespace GameCore
 {
-    public class NickProperties : CoreNPCProperties<NickProperties>
-    {
-
-    }
-
-
     [EntityBinding(EntityID.Nick)]
-    public class Nick : CoreNPC<NickProperties>
+    public class Nick : CoreNPC
     {
         NickData NickData;
         public int autoTalkRadius = 5 * 5; //5^2

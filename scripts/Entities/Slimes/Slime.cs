@@ -28,9 +28,7 @@ namespace GameCore
         {
             base.Update();
 
-            onGround = RayTools.TryOverlapCircle(mainCollider.DownPoint(), 0.3f, Block.blockLayerMask, out _);
-
-            if (!isDead && targetTransform && isServer)
+            if (isServer && targetTransform && !isDead)
             {
                 TryAttack();
             }
@@ -41,35 +39,40 @@ namespace GameCore
             if (!isServer || !targetTransform)
                 return;
 
-            /* ---------------------------------- 声明方向 ---------------------------------- */
-            bool tL = targetTransform.position.x < transform.position.x;
-            float errorValue = 0.1f;
-
             /* --------------------------------- 声明移动速度 --------------------------------- */
             float xVelo = 0;
             float yVelo = 0;
 
 
             /* ----------------------------------- 跳跃 ----------------------------------- */
-            if (onGround && Tools.time >= jumpTimer)
+            if (Tools.time >= jumpTimer)
             {
-                // 目标右向右
-                // 靠的很近就设为 0, 否则会鬼畜
-                xVelo = !tL ? (targetTransform.position.x - transform.position.x < errorValue ? 0 : 5) : (targetTransform.position.x - transform.position.x > -errorValue ? 0 : -5);
+                bool onGround = RayTools.TryOverlapCircle(mainCollider.DownPoint(), 0.3f, Block.blockLayerMask, out _);
 
-                //TODO: 在地上的时间超过一秒后再跳, 并且在跳跃的时候才设置x轴速度
-                yVelo = GetJumpVelocity(50);
+                if (onGround)
+                {
+                    bool isTargetLeft = targetTransform.position.x < transform.position.x;
+                    float errorValue = 0.1f;
+
+                    // 目标右向右
+                    // 靠的很近就设为 0, 否则会鬼畜
+                    xVelo = !isTargetLeft ? (targetTransform.position.x - transform.position.x < errorValue ? 0 : 5) : (targetTransform.position.x - transform.position.x > -errorValue ? 0 : -5);
+
+                    yVelo = GetJumpVelocity(45);
+
+
+                    //起跳的时候改变面朝的方向
+                    if (isTargetLeft)
+                        transform.SetScaleXNegativeAbs();
+                    else
+                        transform.SetScaleXAbs();
+                }
             }
 
 
             /* ---------------------------------- 应用速度 ---------------------------------- */
 
             //设置 RB 的速度
-            if (tL)
-                transform.SetScaleXNegativeAbs();
-            else
-                transform.SetScaleXAbs();
-
             rb.velocity = GetMovementVelocity(new(xVelo, yVelo));
         }
 

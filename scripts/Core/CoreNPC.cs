@@ -5,15 +5,9 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public abstract class CoreNPCProperties<T> : CoreCreatureProperties<T> where T : CoreNPCProperties<T>, new()
-    {
-
-    }
-
     //TODO: GOODBYE
     [NotSummonable]
-    public class CoreNPC<PropertyT> : NPC
-            where PropertyT : CoreNPCProperties<PropertyT>, new()
+    public class CoreNPC : NPC
     {
         public T LoadNPCData<T>(Func<JToken, T> Load) where T : NPCData
         {
