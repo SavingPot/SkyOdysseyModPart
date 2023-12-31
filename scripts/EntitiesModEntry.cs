@@ -18,7 +18,7 @@
             {
                 caller.backpackSidebarTable.Add("ori:barrel", (() => { Barrel.GenerateItemView().gameObject.SetActive(true); }, () => { Barrel.GenerateItemView().gameObject.SetActive(false); }));
                 caller.backpackSidebarTable.Add("ori:cooking_pot", (() => { CookingPot.GenerateItemView().gameObject.SetActive(true); }, () => { CookingPot.GenerateItemView().gameObject.SetActive(false); }));
-                caller.backpackSidebarTable.Add("ori:soft_clay_furnace", (() => { SoftClayFurnace.GenerateItemView().gameObject.SetActive(true); }, () => { SoftClayFurnace.GenerateItemView().gameObject.SetActive(false); }));
+                caller.backpackSidebarTable.Add("ori:clay_furnace", (() => { ClayFurnace.GenerateItemView().gameObject.SetActive(true); }, () => { ClayFurnace.GenerateItemView().gameObject.SetActive(false); }));
                 caller.backpackSidebarTable.Add("ori:wooden_chest", (() => { WoodenChest.GenerateItemView().gameObject.SetActive(true); }, () => { WoodenChest.GenerateItemView().gameObject.SetActive(false); }));
                 //caller.backpackSidebarTable.Add("ori:wooden_bowl_with_water", (() => { WoodenBowlWithWaterBehaviour.GenerateItemView().gameObject.SetActive(true); }, () => { WoodenBowlWithWaterBehaviour.GenerateItemView().gameObject.SetActive(false); }));
             };

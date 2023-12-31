@@ -774,15 +774,15 @@
         },
         {
             "id": "ori:soft_clay_furnace",
-            "path": "/blocks/soft_clay_furnace.png"
+            "path": "/blocks/furnaces/soft_clay_furnace.png"
         },
         {
             "id": "ori:clay_furnace",
-            "path": "/blocks/clay_furnace.png"
+            "path": "/blocks/furnaces/clay_furnace.png"
         },
         {
             "id": "ori:brick_furnace",
-            "path": "/blocks/brick_furnace.png"
+            "path": "/blocks/furnaces/brick_furnace.png"
         },
         {
             "id": "ori:dog_tail_grass",
@@ -981,8 +981,8 @@
             "pixel_unit": 16
         },
         {
-            "id": "ori:wooden_arrow",
-            "path": "/entities/bullets/arrows/wooden.png",
+            "id": "ori:flint_arrow",
+            "path": "/entities/bullets/arrows/flint.png",
             "pixel_unit": 16
         },
         {

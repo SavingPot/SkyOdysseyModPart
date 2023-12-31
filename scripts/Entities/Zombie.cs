@@ -30,7 +30,7 @@ namespace GameCore
         {
             base.Awake();
 
-            ai = new(this, 45, () => GAudio.Play(AudioID.ZombieSpare, true));
+            ai = new(this, 38, () => GAudio.Play(AudioID.ZombieSpare, true));
         }
 
         protected override void Update()

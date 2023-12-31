@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.WoodenArrow)]
-    public class WoodenArrow : Arrow
+    [EntityBinding(EntityID.FlintArrow)]
+    public class FlintArrow : Arrow
     {
         protected override void Start()
         {
             base.Start();
 
             damage = 10;
-            AddSpriteRenderer("ori:wooden_arrow");
+            AddSpriteRenderer("ori:flint_arrow");
         }
     }
 }

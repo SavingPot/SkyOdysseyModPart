@@ -8,13 +8,13 @@ namespace GameCore
     [ItemBinding(ItemID.WoodenBow)]
     public class WoodenBowBehaviour : BowBehaviour
     {
-        public Timer clearTimer;
+        public Timer shootTimer;
 
         public override bool Use()
         {
             bool shotted = false;
 
-            if (clearTimer.HasFinished())
+            if (shootTimer.HasFinished())
             {
                 if (owner is Player player)
                 {
@@ -24,9 +24,9 @@ namespace GameCore
                     jo.AddObject("ori:bullet");
                     jo["ori:bullet"].AddProperty("ownerId", player.netId);
                     jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
-                    GM.instance.SummonEntity(player.transform.position, EntityID.WoodenArrow, Tools.randomGUID, true, null, jo.ToString());
+                    GM.instance.SummonEntity(player.transform.position, EntityID.FlintArrow, Tools.randomGUID, true, null, jo.ToString());
                     shotted = true;
-                    clearTimer.Start(0.5f);
+                    shootTimer.Start(1f);
                 }
             }
 
