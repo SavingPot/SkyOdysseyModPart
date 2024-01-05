@@ -313,6 +313,10 @@
             "path": "/gui/item_info_shower.png"
         },
         {
+            "id": "ori:item_info_shower_damage",
+            "path": "/gui/item_info_shower_damage.png"
+        },
+        {
             "id": "ori:enabled",
             "path": "/gui/enabled.png"
         },

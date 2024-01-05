@@ -22,8 +22,10 @@
                     3
                 ]
             },
-            "gravity": 20
+            "gravity": 12
         },
-        "max_health": 200
+        "max_health": 200,
+        "search_radius": 25,
+        "normal_attack_radius": 3
     }
 }

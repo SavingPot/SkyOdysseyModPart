@@ -1,3 +1,4 @@
+using Mirror;
 using UnityEngine;
 
 namespace GameCore
@@ -7,9 +8,9 @@ namespace GameCore
         public float escapeTimer;
         public float escapeTime = 4;
 
-        public override void OnGetHurtClient()
+        public override void OnGetHurtClient(float damage, float invincibleTime, Vector2 damageOriginPos, Vector2 impactForce, NetworkConnection caller)
         {
-            base.OnGetHurtClient();
+            base.OnGetHurtClient(damage, invincibleTime, damageOriginPos, impactForce, caller);
 
             escapeTimer = Tools.time + escapeTime;
         }
@@ -23,11 +24,11 @@ namespace GameCore
                 Vector2 velocity = Random.Range(-1, 2) switch
                 {
                     -1 => TurnLeft(),
-                    0 => rb.velocity,
+                    0 => GetMovementVelocity(rb.velocity),
                     1 => TurnRight(),
                     _ => throw new()
                 };
-                rb.velocity = velocity == Vector2.zero ? GetMovementVelocity(rb.velocity) : velocity;
+                rb.velocity = velocity;
             }
         }
     }

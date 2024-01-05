@@ -1,3 +1,4 @@
+using Mirror;
 using UnityEngine;
 
 namespace GameCore
@@ -18,8 +19,14 @@ namespace GameCore
             particleSystem.textureSheetAnimation.AddSprite(ModFactory.CompareTexture("ori:biome_guard_particle").sprite);
             particleSystem.gameObject.AddComponent<BiomeGuardParticle>();
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
 
+            if (particleSystem.isPlaying && isHurting)
+                particleSystem.Stop();
+
+            if (particleSystem.isStopped && !isHurting)
+                particleSystem.Play();
+        }
+        
         protected override void OnDestroy()
         {
             base.OnDestroy();

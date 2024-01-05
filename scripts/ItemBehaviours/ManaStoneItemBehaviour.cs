@@ -28,6 +28,10 @@ namespace GameCore
             {
                 totalMana -= spell.cost;
                 spellBehaviour.Release(Tools.GetAngleVector2((Vector2)((Player)owner).transform.position, ((Player)owner).cursorWorldPos), (Vector2)((Player)owner).transform.position, (Player)owner);
+
+                //播放手臂动画
+                if (!((Player)owner).animWeb.GetAnim("slight_rightarm_lift", 0).isPlaying)
+                    ((Player)owner).animWeb.SwitchPlayingTo("slight_rightarm_lift");
                 return true;
             }
 

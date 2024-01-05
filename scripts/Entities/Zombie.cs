@@ -8,17 +8,8 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public class ZombieProperties : CoreEnemyProperties<ZombieProperties>
-    {
-        public override ushort SearchRadius() => 35;
-        public override float NormalAttackDamage() => 12;
-
-        public const float attackCD = 2;
-    }
-
-
     [EntityBinding(EntityID.Zombie)]
-    public class Zombie : CoreEnemy<ZombieProperties>
+    public class Zombie : Enemy
     {
         public EnemyMoveToTarget ai;
         public bool isPursuing;
@@ -30,17 +21,7 @@ namespace GameCore
         {
             base.Awake();
 
-            ai = new(this, 38, () => GAudio.Play(AudioID.ZombieSpare, true));
-        }
-
-        protected override void Update()
-        {
-            base.Update();
-
-            if (isServer && targetTransform && !isDead)
-            {
-                TryAttack();
-            }
+            ai = new(this, 46, () => GAudio.Play(AudioID.ZombieSpare, true));
         }
 
         protected override void Start()
@@ -70,9 +51,6 @@ namespace GameCore
 
             if (!isServer || isDead)
                 return;
-
-            //如果目标超出范围
-            CheckEnemyTarget();
 
             isPursuing = targetTransform;
 

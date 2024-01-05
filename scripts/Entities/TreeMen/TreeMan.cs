@@ -8,44 +8,24 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public abstract class TreeManProperties<T> : CoreEnemyProperties<T> where T : TreeManProperties<T>, new()
-    {
-        public override ushort SearchRadius() => 25;
-        public override float AttackRadius() => 2.75f;
-
-        public abstract string BodyTexture();
-        public abstract string HeadTexture();
-        public abstract string RightArmTexture();
-        public abstract string LeftArmTexture();
-        public abstract string RightLegTexture();
-        public abstract string LeftLegTexture();
-    }
-
-
-    public class TreeMan<PropertyT> : CoreEnemy<PropertyT>
-        where PropertyT : TreeManProperties<PropertyT>, new()
+    public class TreeMan: Enemy
     {
         public EnemyMoveToTarget ai;
         public bool isPursuing;
         public bool isPursuingLastFrame;
-
+        public string BodyTexture;
+        public string HeadTexture;
+        public string RightArmTexture;
+        public string LeftArmTexture;
+        public string RightLegTexture;
+        public string LeftLegTexture;
 
 
         protected override void Awake()
         {
             base.Awake();
 
-            ai = new(this, 0);
-        }
-
-        protected override void Update()
-        {
-            base.Update();
-
-            if (isServer && targetTransform && !isDead)
-            {
-                TryAttack();
-            }
+            ai = new(this, 35);
         }
 
         protected override void Start()
@@ -55,12 +35,12 @@ namespace GameCore
             MethodAgent.TryRun(() =>
             {
                 //添加身体部分
-                body = AddBodyPart("body", ModFactory.CompareTexture(TreeManProperties<PropertyT>.instance.BodyTexture()).sprite, Vector2.zero, 3, model.transform, BodyPartType.Body);
-                head = AddBodyPart("head", ModFactory.CompareTexture(TreeManProperties<PropertyT>.instance.HeadTexture()).sprite, new Vector2(0, -0.15f), 6, body, BodyPartType.Head);
-                rightArm = AddBodyPart("rightarm", ModFactory.CompareTexture(TreeManProperties<PropertyT>.instance.RightArmTexture()).sprite, new Vector2(-0.03f, 0), 4, body, BodyPartType.RightArm);
-                leftArm = AddBodyPart("leftarm", ModFactory.CompareTexture(TreeManProperties<PropertyT>.instance.LeftArmTexture()).sprite, new Vector2(0.03f, 0), 2, body, BodyPartType.LeftArm);
-                rightLeg = AddBodyPart("rightleg", ModFactory.CompareTexture(TreeManProperties<PropertyT>.instance.RightLegTexture()).sprite, Vector2.zero, 2, body, BodyPartType.RightLeg);
-                leftLeg = AddBodyPart("leftleg", ModFactory.CompareTexture(TreeManProperties<PropertyT>.instance.LeftLegTexture()).sprite, Vector2.zero, 1, body, BodyPartType.LeftLeg);
+                body = AddBodyPart("body", ModFactory.CompareTexture(BodyTexture).sprite, Vector2.zero, 3, model.transform, BodyPartType.Body);
+                head = AddBodyPart("head", ModFactory.CompareTexture(HeadTexture).sprite, new Vector2(0, -0.15f), 6, body, BodyPartType.Head);
+                rightArm = AddBodyPart("rightarm", ModFactory.CompareTexture(RightArmTexture).sprite, new Vector2(-0.03f, 0), 4, body, BodyPartType.RightArm);
+                leftArm = AddBodyPart("leftarm", ModFactory.CompareTexture(LeftArmTexture).sprite, new Vector2(0.03f, 0), 2, body, BodyPartType.LeftArm);
+                rightLeg = AddBodyPart("rightleg", ModFactory.CompareTexture(RightLegTexture).sprite, Vector2.zero, 2, body, BodyPartType.RightLeg);
+                leftLeg = AddBodyPart("leftleg", ModFactory.CompareTexture(LeftLegTexture).sprite, Vector2.zero, 1, body, BodyPartType.LeftLeg);
             }, true);
 
 
@@ -73,9 +53,6 @@ namespace GameCore
 
             if (!isServer || isDead)
                 return;
-
-            //如果目标超出范围
-            CheckEnemyTarget();
 
             isPursuing = targetTransform;
 

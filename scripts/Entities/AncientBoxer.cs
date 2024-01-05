@@ -7,16 +7,8 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public class AncientBoxerProperties : CoreEnemyProperties<AncientBoxerProperties>
-    {
-        public override ushort SearchRadius() => 20;
-
-        public const float attackCD = 2;
-    }
-
-
     [EntityBinding(EntityID.AncientBoxer)]
-    public class AncientBoxer : CoreEnemy<AncientBoxerProperties>
+    public class AncientBoxer : Enemy
     {
         public EnemyMoveToTarget ai;
         public bool isPursuing;
@@ -29,16 +21,6 @@ namespace GameCore
             base.Awake();
 
             ai = new(this, 20, () => GAudio.Play(AudioID.AncientBoxerSpare, true));
-        }
-
-        protected override void Update()
-        {
-            base.Update();
-
-            if (isServer && targetTransform && !isDead)
-            {
-                TryAttack();
-            }
         }
 
         protected override void Start()
@@ -111,9 +93,6 @@ namespace GameCore
 
             if (!isServer || isDead)
                 return;
-
-            //如果目标超出范围
-            CheckEnemyTarget();
 
             isPursuing = targetTransform;
 

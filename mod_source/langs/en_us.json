@@ -506,15 +506,15 @@
             },
             {
                 "id": "ori:item.damage",
-                "text": "Damage: {value}"
+                "text": "{value} Damage"
             },
             {
                 "id": "ori:item.excavation_strength",
-                "text": "Excavation Strength: {value}"
+                "text": "{value} Excavation Strength"
             },
             {
                 "id": "ori:item.use_cd",
-                "text": "Use CD: {value}"
+                "text": "{value} Use CD"
             },
             {
                 "id": "ori:portal",

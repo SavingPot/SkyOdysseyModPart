@@ -1,13 +1,13 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:ancient_boxer",
+        "id": "ori:savage",
         "summon": {
             "default_probability": 50,
-            "time_earliest": 18,
+            "time_earliest": 19,
             "time_latest": 3
         },
-        "speed": 3.5,
+        "speed": 4,
         "physics": {
             "collider": {
                 "size": [
@@ -15,9 +15,10 @@
                     2
                 ]
             },
-            "gravity": 7
+            "gravity": 5
         },
-        "max_health": 80,
-        "search_radius": 25
+        "max_health": 100,
+        "search_radius": 35,
+        "normal_attack_damage": 15
     }
 }

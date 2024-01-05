@@ -5,15 +5,9 @@ using static GameCore.UniversalEntityBehaviour;
 
 namespace GameCore
 {
-    public class SavageProperties : CoreEnemyProperties<SavageProperties>
-    {
-        public override ushort SearchRadius() => 35;
-        public override float NormalAttackDamage() => 12;
-
-        public const float attackCD = 2;
-    }
+    //TODO: Complete
     [EntityBinding(EntityID.Savage)]
-    public class Savage : CoreEnemy<SavageProperties>
+    public class Savage : Enemy
     {
         public EnemyMoveToTarget ai;
         public bool isPursuing;
@@ -26,16 +20,6 @@ namespace GameCore
             base.Awake();
 
             ai = new(this, 45);
-        }
-
-        protected override void Update()
-        {
-            base.Update();
-
-            if (isServer && targetTransform && !isDead)
-            {
-                TryAttack();
-            }
         }
 
         protected override void Start()
@@ -65,9 +49,6 @@ namespace GameCore
 
             if (!isServer || isDead)
                 return;
-
-            //如果目标超出范围
-            CheckEnemyTarget();
 
             isPursuing = targetTransform;
 

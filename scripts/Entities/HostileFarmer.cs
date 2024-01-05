@@ -9,19 +9,10 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public class HostileFarmerProperties : CoreEnemyProperties<HostileFarmerProperties>
-    {
-        public override ushort SearchRadius() => 35;
-        public override float NormalAttackDamage() => 12;
-
-        public const float attackCD = 2;
-    }
-
-
     [EntityBinding(EntityID.HostileFarmer)]
-    public class HostileFarmer : CoreEnemy<HostileFarmerProperties>, IInventoryOwner
+    public class HostileFarmer : Enemy, IInventoryOwner
     {
-        //TODO: 变成同步变量
+        //TODO: Inventory 变成同步变量
         public Inventory inventory;
         public SpriteRenderer rightHandItem { get; set; }
         public SpriteRenderer leftHandItem { get; set; }
@@ -37,16 +28,6 @@ namespace GameCore
             base.Awake();
 
             ai = new(this, 30);
-        }
-
-        protected override void Update()
-        {
-            base.Update();
-
-            if (isServer && targetTransform && !isDead)
-            {
-                TryAttack();
-            }
         }
 
         protected override void Start()
@@ -108,9 +89,6 @@ namespace GameCore
 
             if (!isServer || isDead)
                 return;
-
-            //如果目标超出范围
-            CheckEnemyTarget();
 
             isPursuing = targetTransform;
 

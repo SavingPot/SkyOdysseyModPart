@@ -3,7 +3,7 @@ using UnityEngine;
 namespace GameCore
 {
     [EntityBinding(EntityID.Cricket)]
-    public class Cricket : SmallAnimal
+    public class Cricket : TinyAnimal
     {
         public override string Texture()
         {

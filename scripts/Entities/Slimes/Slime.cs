@@ -8,31 +8,14 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public abstract class SlimeProperties<T> : CoreEnemyProperties<T> where T : SlimeProperties<T>, new()
-    {
-        public abstract string Texture();
-        public override float AttackRadius() => 1f;
-        public override float NormalAttackDamage() => 10;
-    }
-
-
-    public class Slime<PropertyT> : CoreEnemy<PropertyT>
-        where PropertyT : SlimeProperties<PropertyT>, new()
+    public class Slime : Enemy
     {
         public bool isPursuing;
         public bool isPursuingLastFrame;
+        public string Texture;
 
 
 
-        protected override void Update()
-        {
-            base.Update();
-
-            if (isServer && targetTransform && !isDead)
-            {
-                TryAttack();
-            }
-        }
 
         void Pursuit()
         {
@@ -58,7 +41,7 @@ namespace GameCore
                     // 靠的很近就设为 0, 否则会鬼畜
                     xVelo = !isTargetLeft ? (targetTransform.position.x - transform.position.x < errorValue ? 0 : 5) : (targetTransform.position.x - transform.position.x > -errorValue ? 0 : -5);
 
-                    yVelo = GetJumpVelocity(45);
+                    yVelo = GetJumpVelocity(75);
 
 
                     //起跳的时候改变面朝的方向
@@ -81,7 +64,7 @@ namespace GameCore
             base.Start();
 
             /* ---------------------------------- 设置贴图 ---------------------------------- */
-            AddSpriteRenderer(SlimeProperties<PropertyT>.instance.Texture());
+            AddSpriteRenderer(Texture);
 
             jumpCD = 2;
         }
@@ -92,9 +75,6 @@ namespace GameCore
 
             if (!isServer || isDead)
                 return;
-
-            //如果目标超出范围
-            CheckEnemyTarget();
 
             isPursuing = targetTransform;
 

@@ -15,8 +15,10 @@
                     2
                 ]
             },
-            "gravity": 8
+            "gravity": 5.5
         },
-        "max_health": 120
+        "max_health": 120,
+        "search_radius": 35,
+        "normal_attack_damage": 15
     }
 }

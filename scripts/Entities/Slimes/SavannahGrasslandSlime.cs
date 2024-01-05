@@ -8,15 +8,14 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public class SavannahGrasslandSlimeProperties : SlimeProperties<SavannahGrasslandSlimeProperties>
-    {
-        public override string Texture() => "ori:savannah_grassland_slime.idle";
-    }
-
-
     [EntityBinding(EntityID.SavannahGrasslandSlime)]
-    public class SavannahGrasslandSlime : Slime<SavannahGrasslandSlimeProperties>
+    public class SavannahGrasslandSlime : Slime
     {
+        protected override void Awake()
+        {
+            base.Awake();
 
+            Texture = "ori:savannah_grassland_slime.idle";
+        }
     }
 }

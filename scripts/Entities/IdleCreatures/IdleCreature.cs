@@ -16,11 +16,11 @@ namespace GameCore
                 Vector2 velocity = Random.Range(-2, 3) switch
                 {
                     -2 => TurnLeft(),
-                    > -2 and < 2 => Vector2.zero,
+                    > -2 and < 2 => GetMovementVelocity(rb.velocity),
                     2 => TurnRight(),
                     _ => throw new(),
                 };
-                rb.velocity = velocity == Vector2.zero ? GetMovementVelocity(rb.velocity) : velocity;
+                rb.velocity = velocity;
 
                 movementTimer = Tools.time + movementInterval;
             }

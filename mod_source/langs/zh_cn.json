@@ -506,15 +506,15 @@
             },
             {
                 "id": "ori:item.damage",
-                "text": "伤害: {value}"
+                "text": "{value} 伤害"
             },
             {
                 "id": "ori:item.excavation_strength",
-                "text": "挖掘强度: {value}"
+                "text": "{value} 挖掘强度"
             },
             {
                 "id": "ori:item.use_cd",
-                "text": "使用CD: {value}"
+                "text": "{value} 使用CD"
             },
             {
                 "id": "ori:portal",
