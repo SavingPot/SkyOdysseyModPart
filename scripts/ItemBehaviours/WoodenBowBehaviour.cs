@@ -8,13 +8,13 @@ namespace GameCore
     [ItemBinding(ItemID.WoodenBow)]
     public class WoodenBowBehaviour : BowBehaviour
     {
-        public Timer shootTimer;
+        public float shootTimer;
 
         public override bool Use()
         {
             bool shotted = false;
 
-            if (shootTimer.HasFinished())
+            if (Tools.time >= shootTimer)
             {
                 if (owner is Player player)
                 {
@@ -26,7 +26,7 @@ namespace GameCore
                     jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
                     GM.instance.SummonEntity(player.transform.position, EntityID.FlintArrow, Tools.randomGUID, true, null, jo.ToString());
                     shotted = true;
-                    shootTimer.Start(1f);
+                    shootTimer = Tools.time + 1;
 
                     //播放手臂动画
                     if (!player.animWeb.GetAnim("slight_rightarm_lift", 0).isPlaying)

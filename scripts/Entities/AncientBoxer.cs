@@ -100,7 +100,7 @@ namespace GameCore
             {
                 if (!isPursuingLastFrame)
                 {
-                    OnStartMovementAction();
+                    ServerOnStartMovement();
                 }
 
                 ai.Pursuit();
@@ -109,7 +109,7 @@ namespace GameCore
             {
                 if (isPursuingLastFrame)
                 {
-                    OnStopMovementAction();
+                    ServerOnStopMovement();
 
                     rb.velocity = Vector2.zero;
                 }

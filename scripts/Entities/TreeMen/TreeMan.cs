@@ -35,6 +35,7 @@ namespace GameCore
             MethodAgent.TryRun(() =>
             {
                 //添加身体部分
+                CreateModel();
                 body = AddBodyPart("body", ModFactory.CompareTexture(BodyTexture).sprite, Vector2.zero, 3, model.transform, BodyPartType.Body);
                 head = AddBodyPart("head", ModFactory.CompareTexture(HeadTexture).sprite, new Vector2(0, -0.15f), 6, body, BodyPartType.Head);
                 rightArm = AddBodyPart("rightarm", ModFactory.CompareTexture(RightArmTexture).sprite, new Vector2(-0.03f, 0), 4, body, BodyPartType.RightArm);
@@ -60,7 +61,7 @@ namespace GameCore
             {
                 if (!isPursuingLastFrame)
                 {
-                    OnStartMovementAction();
+                    ServerOnStartMovement();
                 }
 
                 ai.Pursuit();
@@ -69,7 +70,7 @@ namespace GameCore
             {
                 if (isPursuingLastFrame)
                 {
-                    OnStopMovementAction();
+                    ServerOnStopMovement();
 
                     rb.velocity = Vector2.zero;
                 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public abstract class Livestock : EscapableIdleCreature
+    public abstract class Livestock : IdleCreature
     {
         public LivestockState status;
         public float hurtTimer;

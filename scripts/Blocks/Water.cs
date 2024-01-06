@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using SP.Tools.Unity;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace GameCore
@@ -29,17 +30,17 @@ namespace GameCore
             target.filledLevel += 1;
             origin.filledLevel -= 1;
 
-            target.OnUpdate();
+            MethodAgent.QueueOnMainThread(() => target.OnUpdate());
 
             if (origin.filledLevel <= 0)
             {
                 //如果流尽了就删除
-                Map.instance.DestroyBlockNet(origin.pos, origin.isBackground);
+                MethodAgent.QueueOnMainThread(() => Map.instance.DestroyBlockNet(origin.pos, origin.isBackground));
                 return true;
             }
             else
             {
-                origin.OnUpdate();
+                MethodAgent.QueueOnMainThread(() => origin.OnUpdate());
                 return false;
             }
         }
@@ -49,20 +50,19 @@ namespace GameCore
             var jo = new JObject();
             jo.AddProperty("ori:water_filled_level", 1);
 
-            Map.instance.SetBlockNet(target, origin.isBackground, BlockID.Water, jo.ToString());
-
             origin.filledLevel -= 1;
 
+            MethodAgent.QueueOnMainThread(() => Map.instance.SetBlockNet(target, origin.isBackground, BlockID.Water, jo.ToString()));
 
             if (origin.filledLevel <= 0)
             {
                 //如果流尽了就删除
-                Map.instance.DestroyBlockNet(origin.pos, origin.isBackground);
+                MethodAgent.QueueOnMainThread(() => Map.instance.DestroyBlockNet(origin.pos, origin.isBackground));
                 return true;
             }
             else
             {
-                origin.OnUpdate();
+                MethodAgent.QueueOnMainThread(() => origin.OnUpdate());
                 return false;
             }
         }
@@ -70,57 +70,60 @@ namespace GameCore
         //TODO: 水物理十分耗时
         public static void WaterPhysics()
         {
+            //如果当前区域不存在或未生成完, 不会执行水物理
             if (Server.isServer && Tools.time >= physicsTimer && !GM.instance.generatingExistingRegion)
             {
                 physicsTimer = Tools.time + streamSpeed;
 
-                //如果当前区域不存在未生成完, 不会执行物理
-                foreach (var water in waterBlocks)
+                Parallel.ForEach(waterBlocks, SingleWaterPhysics);
+            }
+        }
+
+        public static void SingleWaterPhysics(Water water)
+        {
+            //TODO: 冲走可以被冲走的小方块
+            var downBlock = water.blockTempDown;
+            if (downBlock == null)
+            {
+                if (StreamIntoAir(water, water.posTempDown))
+                    return;
+            }
+            else
+            {
+                if (downBlock is Water downWater && downWater.filledLevel < 8)
                 {
-                    //TODO: 冲走可以被冲走的小方块
-                    var downBlock = water.GetBlock(water.posTempDown);
-                    if (downBlock == null)
+                    if (StreamIntoWater(water, downWater))
+                        return;
+                }
+                else
+                {
+                    var leftBlock = water.blockTempLeft;
+                    var rightBlock = water.blockTempRight;
+
+                    if (leftBlock == null && water.filledLevel > 0)
                     {
-                        if (StreamIntoAir(water, water.posTempDown))
-                            continue;
+                        if (StreamIntoAir(water, water.posTempLeft))
+                            return;
                     }
-                    else
+                    else if (leftBlock is Water leftWater && leftWater.filledLevel < 8 && water.filledLevel > 0)
                     {
-                        if (downBlock is Water downWater && downWater.filledLevel < 8)
-                        {
-                            if (StreamIntoWater(water, downWater))
-                                continue;
-                        }
-                        else
-                        {
-                            var leftBlock = water.GetBlock(water.posTempLeft);
-                            var rightBlock = water.GetBlock(water.posTempRight);
+                        if (StreamIntoWater(water, leftWater))
+                            return;
+                    }
 
-                            if (leftBlock == null && water.filledLevel > 0)
-                            {
-                                if (StreamIntoAir(water, water.posTempLeft))
-                                    continue;
-                            }
-                            else if (leftBlock is Water leftWater && leftWater.filledLevel < 8 && water.filledLevel > 0)
-                            {
-                                if (StreamIntoWater(water, leftWater))
-                                    continue;
-                            }
-
-                            if (rightBlock == null && water.filledLevel > 0)
-                            {
-                                if (StreamIntoAir(water, water.posTempRight))
-                                    continue;
-                            }
-                            else if (rightBlock is Water rightWater && rightWater.filledLevel < 8 && water.filledLevel > 0)
-                            {
-                                if (StreamIntoWater(water, rightWater))
-                                    continue;
-                            }
-                        }
+                    if (rightBlock == null && water.filledLevel > 0)
+                    {
+                        if (StreamIntoAir(water, water.posTempRight))
+                            return;
+                    }
+                    else if (rightBlock is Water rightWater && rightWater.filledLevel < 8 && water.filledLevel > 0)
+                    {
+                        if (StreamIntoWater(water, rightWater))
+                            return;
                     }
                 }
             }
+
         }
     }
 
@@ -132,8 +135,12 @@ namespace GameCore
         public Vector2Int posTempDown;
         public Vector2Int posTempLeft;
         public Vector2Int posTempRight;
-        public bool isOnChunkBoundary;
-        public byte filledLevel = 8;//TODO
+
+        public Block blockTempDown;
+        public Block blockTempLeft;
+        public Block blockTempRight;
+
+        public byte filledLevel = 8;
 
         public override void DoStart()
         {
@@ -146,17 +153,9 @@ namespace GameCore
             posTempDown = new(pos.x, pos.y - 1);
             posTempLeft = new(pos.x - 1, pos.y);
             posTempRight = new(pos.x + 1, pos.y);
-            isOnChunkBoundary = Mathf.Max(Mathf.Abs(transform.position.x - chunk.regionMiddleX), Mathf.Abs(transform.position.y - chunk.regionMiddleY)) >= Chunk.halfBlockCountPerAxis - 1;
+
 
             WaterCenter.Add(this);
-        }
-
-        internal Block GetBlock(Vector2Int pos)
-        {
-            if (isOnChunkBoundary)
-                return chunk.map.GetBlock(pos, isBackground);
-            else
-                return chunk.GetBlock(pos, isBackground);
         }
 
         public override void OnRecovered()
@@ -167,6 +166,10 @@ namespace GameCore
         public override void OnUpdate()
         {
             base.OnUpdate();
+
+            blockTempDown = chunk.map.GetBlock(posTempDown, isBackground);
+            blockTempLeft = chunk.map.GetBlock(posTempLeft, isBackground);
+            blockTempRight = chunk.map.GetBlock(posTempRight, isBackground);
 
             if (filledLevel > 0)
                 sr.sprite = ModFactory.CompareTexture($"ori:water_{filledLevel}").sprite;

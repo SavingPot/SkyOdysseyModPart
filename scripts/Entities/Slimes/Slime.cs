@@ -82,7 +82,7 @@ namespace GameCore
             {
                 if (!isPursuingLastFrame)
                 {
-                    OnStartMovementAction();
+                    ServerOnStartMovement();
                 }
 
                 Pursuit();
@@ -91,7 +91,7 @@ namespace GameCore
             {
                 if (isPursuingLastFrame)
                 {
-                    OnStopMovementAction();
+                    ServerOnStopMovement();
 
                     rb.velocity = Vector2.zero;
                 }
