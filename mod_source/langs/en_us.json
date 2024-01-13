@@ -37,10 +37,6 @@
                 "text": "Go excavating a block then find me!"
             },
             {
-                "id": "ori:dialog.nick.teaching.attack_3",
-                "text": "I haven't told you how to pick up a item... Try to click <color=#D1A35F>{button}</color>"
-            },
-            {
                 "id": "ori:dialog.nick.teaching.backpack_0.error_before",
                 "text": "Let me have a look...You haven't got any item yet!"
             },

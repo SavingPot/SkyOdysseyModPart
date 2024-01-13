@@ -6,7 +6,10 @@
             "texture_id": "ori:iron_ore"
         },
         "property": {
-            "hardness": 14
+            "hardness": 8,
+            "tags": [
+                "ori:ore=10"
+            ]
         }
     }
 }

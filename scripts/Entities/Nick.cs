@@ -84,14 +84,7 @@ namespace GameCore
                         ControlMode.Gamepad => "手柄右触发器",
                         _ => ""
                     }), "ori:nick_head"),
-                    new(GameUI.CompareText("ori:dialog.nick.teaching.attack_2").text, "ori:nick_head"),
-                    new(GameUI.CompareText("ori:dialog.nick.teaching.attack_3").text.Replace("{button}", GControls.mode switch
-                    {
-                        ControlMode.Touchscreen => "像一只手的按钮",
-                        ControlMode.KeyboardAndMouse => "键盘E键",
-                        ControlMode.Gamepad => "手柄Select",
-                        _ => ""
-                    }), "ori:nick_head")));
+                    new(GameUI.CompareText("ori:dialog.nick.teaching.attack_2").text, "ori:nick_head")));
 
                     ProgressDeeper();
                     break;

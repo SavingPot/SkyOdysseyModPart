@@ -1,0 +1,19 @@
+{
+    "json_format": "0.6.0",
+    "ori:block": {
+        "id": "ori:acacia_tree_log",
+        "display": {
+            "texture_id": "ori:acacia_log"
+        },
+        "property": {
+            "hardness": 8,
+            "behaviour": "GameCore.TreeLogBlock",
+            "collidible": false,
+            "drops": [
+                {
+                    "id": "ori:acacia_log"
+                }
+            ]
+        }
+    }
+}

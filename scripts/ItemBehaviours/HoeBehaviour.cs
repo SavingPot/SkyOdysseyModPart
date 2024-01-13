@@ -25,7 +25,7 @@ namespace GameCore
             {
                 if (player.InUseRadius() && player.map.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.isControllingBackground, out Block block) && blockPairs.TryGetValue(block.data.id, out var result))
                 {
-                    BlockData blockDatum = ModFactory.CompareBlockDatum(result); if (blockDatum == null) return false;
+                    BlockData blockDatum = ModFactory.CompareBlockData(result); if (blockDatum == null) return false;
                     Vector2Int pos = block.pos;
                     bool isBackground = block.isBackground;
                     Chunk chunk = block.chunk;

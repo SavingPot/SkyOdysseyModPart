@@ -1,0 +1,19 @@
+{
+    "json_format": "0.6.0",
+    "ori:block": {
+        "id": "ori:sea_hibiscus_tree_log",
+        "display": {
+            "texture_id": "ori:sea_hibiscus_log"
+        },
+        "property": {
+            "hardness": 4,
+            "behaviour": "GameCore.TreeLogBlock",
+            "collidible": false,
+            "drops": [
+                {
+                    "id": "ori:sea_hibiscus_log"
+                }
+            ]
+        }
+    }
+}

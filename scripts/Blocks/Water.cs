@@ -13,7 +13,7 @@ namespace GameCore
     {
         public static List<Water> waterBlocks = new();
         public static float physicsTimer;
-        public static float streamSpeed = 0.15f;
+        public static float streamSpeed = 0.2f;
 
         public static void Add(Water water)
         {
@@ -79,10 +79,11 @@ namespace GameCore
             }
         }
 
+        //TODO: 保存水的 customData, 同时发送给客户端 (NMSetBlockCustomData)
         public static void SingleWaterPhysics(Water water)
         {
             //TODO: 冲走可以被冲走的小方块
-            var downBlock = water.blockTempDown;
+            var downBlock = water.chunk.map.GetBlock(water.posTempDown, water.isBackground);
             if (downBlock == null)
             {
                 if (StreamIntoAir(water, water.posTempDown))
@@ -97,8 +98,8 @@ namespace GameCore
                 }
                 else
                 {
-                    var leftBlock = water.blockTempLeft;
-                    var rightBlock = water.blockTempRight;
+                    var leftBlock = water.chunk.map.GetBlock(water.posTempLeft, water.isBackground);
+                    var rightBlock = water.chunk.map.GetBlock(water.posTempRight, water.isBackground);
 
                     if (leftBlock == null && water.filledLevel > 0)
                     {
@@ -130,15 +131,12 @@ namespace GameCore
     public class Water : Block
     {
         public static float entityFallingSpeed = 2;
-        public static float resistance = 1.75f;
+        public static float resistance = 1.8f;
+        public static float creatureSwimmingSpeed = 7;
 
         public Vector2Int posTempDown;
         public Vector2Int posTempLeft;
         public Vector2Int posTempRight;
-
-        public Block blockTempDown;
-        public Block blockTempLeft;
-        public Block blockTempRight;
 
         public byte filledLevel = 8;
 
@@ -148,6 +146,7 @@ namespace GameCore
 
             filledLevel = customData?["ori:water_filled_level"]?.ToObject<byte>() ?? 8;
 
+            sr.sortingOrder = 10;
             sr.color = new(1, 1, 1, 0.4f);
 
             posTempDown = new(pos.x, pos.y - 1);
@@ -160,16 +159,14 @@ namespace GameCore
 
         public override void OnRecovered()
         {
+            sr.sortingOrder = 1;
+            
             WaterCenter.Remove(this);
         }
 
         public override void OnUpdate()
         {
             base.OnUpdate();
-
-            blockTempDown = chunk.map.GetBlock(posTempDown, isBackground);
-            blockTempLeft = chunk.map.GetBlock(posTempLeft, isBackground);
-            blockTempRight = chunk.map.GetBlock(posTempRight, isBackground);
 
             if (filledLevel > 0)
                 sr.sprite = ModFactory.CompareTexture($"ori:water_{filledLevel}").sprite;
@@ -189,9 +186,26 @@ namespace GameCore
                 }
             }
 
-            if (entity.isPlayer)
+            if (entity is Creature creature)
             {
-                ((Player)entity).fallenY = entity.transform.position.y;
+                creature.fallenY = entity.transform.position.y;
+
+                if (entity.isPlayer)
+                {
+                    var player = (Player)entity;
+
+                    if (PlayerControls.HoldJump(player))
+                    {
+                        if (player.rb.velocity.y < creatureSwimmingSpeed)
+                        {
+                            player.AddVelocityY(resistance * 2f);
+                        }
+                        else if (player.rb.velocity.y > creatureSwimmingSpeed)
+                        {
+                            player.AddVelocityY(-resistance * 2f);
+                        }
+                    }
+                }
             }
         }
     }

@@ -37,10 +37,6 @@
                 "text": "先挖掉一個方塊然後來找我吧!"
             },
             {
-                "id": "ori:dialog.nick.teaching.attack_3",
-                "text": "我還沒告訴你怎麼撿起物品呢... 試試點擊<color=#D1A35F>{button}</color>"
-            },
-            {
                 "id": "ori:dialog.nick.teaching.backpack_0.error_before",
                 "text": "讓我看看...你還沒獲得物品呢!"
             },

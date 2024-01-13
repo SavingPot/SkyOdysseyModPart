@@ -10,7 +10,8 @@
             "tags": [
                 "ori:log",
                 "ori:loot.barrel"
-            ]
+            ],
+            "behaviour": "GameCore.LogBlock"
         }
     }
 }

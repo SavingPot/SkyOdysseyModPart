@@ -493,6 +493,10 @@
             "path": "/blocks/oak_leaf.png"
         },
         {
+            "id": "ori:oak_tree_leaf",
+            "path": "/blocks/oak_tree_leaf.png"
+        },
+        {
             "id": "ori:maple_seed",
             "path": "/blocks/maple_seed.png"
         },

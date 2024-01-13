@@ -4,9 +4,7 @@
         "id": "ori:ladder",
         "items": [
             {
-                "tags": [
-                    "ori:stick"
-                ],
+                "id": "ori:stick",
                 "count": 3
             }
         ],
