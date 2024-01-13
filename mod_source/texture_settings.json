@@ -961,6 +961,26 @@
             "path": "/ui/button_low.png"
         },
         {
+            "id": "ori:world_background_0",
+            "path": "/gui/world_backgrounds/world_background_0.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:world_background_1",
+            "path": "/gui/world_backgrounds/world_background_1.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:world_background_2",
+            "path": "/gui/world_backgrounds/world_background_2.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:world_background_3",
+            "path": "/gui/world_backgrounds/world_background_3.png",
+            "pixel_unit": 16
+        },
+        {
             "id": "ori:scroll_background",
             "path": "/gui/scroll_background.png",
             "pixel_unit": 6
