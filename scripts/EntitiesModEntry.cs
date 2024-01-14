@@ -8,9 +8,9 @@
 
             Player.GravitySet += caller =>
             {
-                if (caller.inventory.HasItem(ItemID.FeatherWing))
+                if (caller.inventory.breastplate?.data?.id == ItemID.FeatherWing)
                 {
-                    caller.gravity *= 0.75f;
+                    caller.gravity *= 0.7f;
                 }
             };
 

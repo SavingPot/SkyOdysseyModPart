@@ -39,7 +39,7 @@ namespace GameCore
 
                     // 目标右向右
                     // 靠的很近就设为 0, 否则会鬼畜
-                    xVelo = !isTargetLeft ? (targetTransform.position.x - transform.position.x < errorValue ? 0 : 10) : (targetTransform.position.x - transform.position.x > -errorValue ? 0 : -10);
+                    xVelo = !isTargetLeft ? (targetTransform.position.x - transform.position.x < errorValue ? 0 : 13) : (targetTransform.position.x - transform.position.x > -errorValue ? 0 : -13);
 
                     yVelo = GetJumpVelocity(60);
 
