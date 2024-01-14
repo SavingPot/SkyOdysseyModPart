@@ -27,6 +27,7 @@ namespace GameCore
         public CropBlockDatum cropDatum;
         public int cropIndex;
         public string randomUpdateID;
+        public bool hasBindGrowMethod;
 
 
         public override void DoStart()
@@ -35,15 +36,54 @@ namespace GameCore
 
             randomUpdateID = $"ori:crop_blocks_{gameObject.GetInstanceID()}";
             cropDatum = GetDatum();
+        }
 
-            RandomUpdater.Bind(randomUpdateID, cropDatum.speed, Grow);
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+
+            if (!chunk.map.TryGetBlock(new(pos.x, pos.y - 1), isBackground, out var block))
+            {
+                Destroy();
+                return;
+            }
+            else
+            {
+                UnbindGrowingMethod(this);
+
+                switch (block.data.id)
+                {
+                    case BlockID.Dirt:
+                    case BlockID.GrassBlock:
+                        RandomUpdater.Bind(randomUpdateID, cropDatum.speed, Grow);
+                        hasBindGrowMethod = true;
+                        break;
+
+                    case BlockID.Farmland:
+                        RandomUpdater.Bind(randomUpdateID, cropDatum.speed * 2, Grow);
+                        hasBindGrowMethod = true;
+                        break;
+
+                    default:
+                        hasBindGrowMethod = false;
+                        break;
+                }
+            }
         }
 
         public override void OnRecovered()
         {
             base.OnRecovered();
 
-            RandomUpdater.Unbind(randomUpdateID);
+            UnbindGrowingMethod(this);
+        }
+
+        public static void UnbindGrowingMethod(CropBlock block)
+        {
+            if (block.hasBindGrowMethod)
+            {
+                RandomUpdater.Unbind(block.randomUpdateID);
+            }
         }
 
         void Grow()
@@ -89,23 +129,26 @@ namespace GameCore
             if (GameTools.CompareVersions(data.jsonFormat, "0.6.2", Operators.thanOrEqual))
             {
                 JToken cropJT = data.jo?["ori:corp_block"];
-                JToken cropDip = cropJT?["display"];
+                JToken cropDisplay = cropJT?["display"];
                 JToken cropProp = cropJT?["property"];
 
-                cropDatum.threadCount = cropProp?["thread_count"]?.ToString()?.ToInt() ?? 3;
-                cropDatum.seed = cropProp?["seed"]?.ToString();
-                cropDatum.speed = 0.5f * (cropProp?["speed"]?.ToString()?.ToFloat() ?? 1);
-                cropDip?["textures"]?.For(j =>
+                if (cropProp != null)
+                {
+                    cropDatum.threadCount = cropProp["thread_count"]?.ToString()?.ToInt() ?? 3;
+                    cropDatum.seed = cropProp["seed"]?.ToString();
+                    cropDatum.speed = 0.3f * (cropProp["speed"]?.ToString()?.ToFloat() ?? 1);
+                    cropProp["mature_crops"]?.For(j =>
+                    {
+                        cropDatum.matureCrops.Add(new(j?["id"]?.ToString(), (j?["count"]?.ToString()?.ToInt() ?? 1).ToUShort(), new List<string>()));
+                    });
+                }
+                cropDisplay?["textures"]?.For(j =>
                 {
                     cropDatum.textures.Add(new()
                     {
-                        index = j?["index"]?.ToString()?.ToInt() ?? 0,
-                        texture = ModFactory.CompareTexture(j?["texture"]?.ToString())
+                        index = j["index"]?.ToString()?.ToInt() ?? 0,
+                        texture = ModFactory.CompareTexture(j["texture"]?.ToString())
                     }); ;
-                });
-                cropProp?["mature_crops"]?.For(j =>
-                {
-                    cropDatum.matureCrops.Add(new(j?["id"]?.ToString(), (j?["count"]?.ToString()?.ToInt() ?? 1).ToUShort(), new List<string>()));
                 });
             }
 

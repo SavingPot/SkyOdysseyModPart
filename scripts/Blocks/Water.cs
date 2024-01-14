@@ -35,7 +35,7 @@ namespace GameCore
             if (origin.filledLevel <= 0)
             {
                 //如果流尽了就删除
-                MethodAgent.QueueOnMainThread(() => Map.instance.DestroyBlockNet(origin.pos, origin.isBackground));
+                MethodAgent.QueueOnMainThread(() => origin.RemoveFromMap());
                 return true;
             }
             else
@@ -57,7 +57,7 @@ namespace GameCore
             if (origin.filledLevel <= 0)
             {
                 //如果流尽了就删除
-                MethodAgent.QueueOnMainThread(() => Map.instance.DestroyBlockNet(origin.pos, origin.isBackground));
+                MethodAgent.QueueOnMainThread(() => origin.RemoveFromMap());
                 return true;
             }
             else
@@ -106,7 +106,7 @@ namespace GameCore
                         if (StreamIntoAir(water, water.posTempLeft))
                             return;
                     }
-                    else if (leftBlock is Water leftWater && leftWater.filledLevel < 8 && water.filledLevel > 0)
+                    else if (leftBlock is Water leftWater && water.filledLevel > leftWater.filledLevel)
                     {
                         if (StreamIntoWater(water, leftWater))
                             return;
@@ -117,7 +117,7 @@ namespace GameCore
                         if (StreamIntoAir(water, water.posTempRight))
                             return;
                     }
-                    else if (rightBlock is Water rightWater && rightWater.filledLevel < 8 && water.filledLevel > 0)
+                    else if (rightBlock is Water rightWater && water.filledLevel > rightWater.filledLevel)
                     {
                         if (StreamIntoWater(water, rightWater))
                             return;
@@ -160,7 +160,7 @@ namespace GameCore
         public override void OnRecovered()
         {
             sr.sortingOrder = 1;
-            
+
             WaterCenter.Remove(this);
         }
 

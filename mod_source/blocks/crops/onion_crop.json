@@ -34,6 +34,10 @@
             "mature_crops": [
                 {
                     "id": "ori:onion"
+                },
+                {
+                    "id": "ori:onion_crop",
+                    "count": 3
                 }
             ]
         }

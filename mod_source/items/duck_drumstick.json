@@ -5,7 +5,8 @@
         "texture": "ori:duck_drumstick",
         "tags": [
             "ori:drumstick",
-            "ori:meat"
+            "ori:meat",
+            "ori:edible=10"
         ]
     }
 }

@@ -76,6 +76,7 @@ namespace GameCore
                                 }
 
                                 cookingResult = cr.result.id;
+                                sr.sprite = ModFactory.CompareTexture("ori:cooking_pot_filled").sprite;
                                 RefreshItemView();
                                 GAudio.Play(AudioID.Cooking);
                                 return true;
@@ -114,6 +115,7 @@ namespace GameCore
                 GAudio.Play(AudioID.FillingWaterBowl);
 
                 cookingResult = null;
+                sr.sprite = ModFactory.CompareTexture("ori:cooking_pot").sprite;
                 return true;
             }
 

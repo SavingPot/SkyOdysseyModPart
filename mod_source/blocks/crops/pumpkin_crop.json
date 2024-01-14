@@ -42,6 +42,10 @@
             "mature_crops": [
                 {
                     "id": "ori:pumpkin"
+                },
+                {
+                    "id": "ori:pumpkin_crop",
+                    "count": 3
                 }
             ]
         }

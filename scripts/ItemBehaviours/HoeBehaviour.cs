@@ -30,8 +30,9 @@ namespace GameCore
                     bool isBackground = block.isBackground;
                     Chunk chunk = block.chunk;
 
-                    chunk.RemoveBlock(pos, isBackground, true);
-                    chunk.AddBlock(pos, isBackground, blockDatum, null, true);
+                    //Remove 不执行生命周期，等到 Add 再更新，以节约性能
+                    chunk.RemoveBlock(pos, isBackground, true, false);
+                    chunk.AddBlock(pos, isBackground, blockDatum, null, true, true);
 
                     if (GControls.mode == ControlMode.Gamepad)
                         GControls.GamepadVibrationSlightMedium();

@@ -42,6 +42,10 @@
             "mature_crops": [
                 {
                     "id": "ori:watermelon"
+                },
+                {
+                    "id": "ori:watermelon_crop",
+                    "count": 3
                 }
             ]
         }

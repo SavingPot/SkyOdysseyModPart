@@ -26,7 +26,7 @@
                     0.8
                 ]
             },
-            "gravity": 8
+            "gravity": 6
         },
         "max_health": 40,
         "normal_attack_radius": 1,

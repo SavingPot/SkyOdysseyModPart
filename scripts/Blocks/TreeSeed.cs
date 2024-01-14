@@ -50,8 +50,8 @@ namespace GameCore
                 chunk.map.SetBlockNet(downPos + structBlock.offset, structBlock.isBackground, structBlock.blockId, null);
             }
 
-            //销毁自己
-            chunk.map.DestroyBlockNet(pos, isBackground);
+            //删除自己
+            RemoveFromMap();
         }
 
 
