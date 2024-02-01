@@ -1,18 +1,20 @@
+using UnityEngine;
+
 namespace GameCore
 {
     [ItemBinding(ItemID.WoodenBowl)]
     public class WoodenBowlBehaviour : ItemBehaviour
     {
-        public override bool Use()
+        public override bool Use(Vector2 point)
         {
-            bool baseUse = base.Use();
+            bool baseUse = base.Use(point);
 
             if (baseUse)
                 return baseUse;
 
             if (owner is Player player)
             {
-                if (player.InUseRadius() && player.map.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.isControllingBackground, out Block block))
+                if (player.InUseRadius(point) && player.map.TryGetBlock(PosConvert.WorldToMapPos(point), player.isControllingBackground, out Block block))
                 {
                     switch (block.data.id)
                     {
@@ -33,6 +35,7 @@ namespace GameCore
 
                                 return true;
                             }
+
                         default:
                             {
                                 return false;

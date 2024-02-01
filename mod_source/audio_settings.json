@@ -127,6 +127,22 @@
             "loop": true
         },
         {
+            "id": "ori:swim_0",
+            "path": "/swim_0.ogg"
+        },
+        {
+            "id": "ori:swim_1",
+            "path": "/swim_1.ogg"
+        },
+        {
+            "id": "ori:swim_2",
+            "path": "/swim_2.ogg"
+        },
+        {
+            "id": "ori:swim_3",
+            "path": "/swim_3.ogg"
+        },
+        {
             "id": "ori:eat",
             "path": "/eat.ogg"
         },
@@ -155,7 +171,7 @@
             "path": "/ambient/bird_1.ogg",
             "audio_type": "ori:ambient",
             "play": {
-                "time_earliest": 6,
+                "time_earliest": 5,
                 "time_latest": 10,
                 "not_during": true
             }
@@ -165,7 +181,7 @@
             "path": "/ambient/bird_2.ogg",
             "audio_type": "ori:ambient",
             "play": {
-                "time_earliest": 6,
+                "time_earliest": 5,
                 "time_latest": 10,
                 "not_during": true
             }
@@ -175,7 +191,7 @@
             "path": "/ambient/bird_3.ogg",
             "audio_type": "ori:ambient",
             "play": {
-                "time_earliest": 6,
+                "time_earliest": 5,
                 "time_latest": 10,
                 "not_during": true
             }
@@ -185,7 +201,7 @@
             "path": "/ambient/bird_4.ogg",
             "audio_type": "ori:ambient",
             "play": {
-                "time_earliest": 6,
+                "time_earliest": 5,
                 "time_latest": 10,
                 "not_during": true
             }
@@ -195,7 +211,7 @@
             "path": "/ambient/bird_5.ogg",
             "audio_type": "ori:ambient",
             "play": {
-                "time_earliest": 6,
+                "time_earliest": 5,
                 "time_latest": 10,
                 "not_during": true
             }
@@ -205,7 +221,7 @@
             "path": "/ambient/bird_6.ogg",
             "audio_type": "ori:ambient",
             "play": {
-                "time_earliest": 6,
+                "time_earliest": 5,
                 "time_latest": 10,
                 "not_during": true
             }

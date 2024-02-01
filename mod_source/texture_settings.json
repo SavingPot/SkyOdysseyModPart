@@ -18,6 +18,22 @@
             "path": "/gui/tasks/get_meat.png"
         },
         {
+            "id": "ori:task.get_potato",
+            "path": "/gui/tasks/get_potato.png"
+        },
+        {
+            "id": "ori:task.get_onion",
+            "path": "/gui/tasks/get_onion.png"
+        },
+        {
+            "id": "ori:task.get_watermelon",
+            "path": "/gui/tasks/get_watermelon.png"
+        },
+        {
+            "id": "ori:task.get_egg",
+            "path": "/gui/tasks/get_egg.png"
+        },
+        {
             "id": "ori:task.get_feather",
             "path": "/gui/tasks/get_feather.png"
         },
@@ -271,8 +287,18 @@
             "pixel_unit": 32
         },
         {
+            "id": "ori:chicken_china_local",
+            "path": "/entities/chicken_china_local.png",
+            "pixel_unit": 32
+        },
+        {
             "id": "ori:duck_cute",
             "path": "/entities/duck_cute.png",
+            "pixel_unit": 32
+        },
+        {
+            "id": "ori:duck_river",
+            "path": "/entities/duck_river.png",
             "pixel_unit": 32
         },
         {
@@ -701,8 +727,20 @@
             "path": "/ui/player/use_item_button.png"
         },
         {
+            "id": "ori:player_place_block_under_player_button",
+            "path": "/ui/player/place_block_under_player_button.png"
+        },
+        {
             "id": "ori:player_crafting_button",
             "path": "/ui/player/crafting_button.png"
+        },
+        {
+            "id": "ori:player_pause_button",
+            "path": "/ui/player/pause_button.png"
+        },
+        {
+            "id": "ori:player_show_task_button",
+            "path": "/ui/player/show_task_button.png"
         },
         {
             "id": "ori:player_joystick_background",
@@ -733,16 +771,16 @@
             "path": "/ui/player/using_item_tab.png"
         },
         {
+            "id": "ori:player_cursor",
+            "path": "/ui/player/player_cursor.png"
+        },
+        {
             "id": "ori:day_night_bar",
             "path": "/gui/day_night_bar.png"
         },
         {
             "id": "ori:day_night_bar_pointer",
             "path": "/gui/day_night_bar_pointer.png"
-        },
-        {
-            "id": "ori:player_cursor",
-            "path": "/gui/player_cursor.png"
         },
         {
             "id": "ori:virtual_cursor",
@@ -843,6 +881,14 @@
         {
             "id": "ori:berry",
             "path": "/items/foods/berry.png"
+        },
+        {
+            "id": "ori:chicken_egg",
+            "path": "/items/foods/chicken_egg.png"
+        },
+        {
+            "id": "ori:duck_egg",
+            "path": "/items/foods/duck_egg.png"
         },
         {
             "id": "ori:chicken_feather",

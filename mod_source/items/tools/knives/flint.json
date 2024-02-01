@@ -1,8 +1,10 @@
 {
-    "json_format": "0.5.1",
+    "json_format": "0.7.8",
     "ori:item": {
         "id": "ori:flint_knife",
-        "texture": "ori:flint_knife",
+        "display": {
+            "texture": "ori:flint_knife"
+        },
         "damage": 16,
         "excavation_strength": 70,
         "tags": [

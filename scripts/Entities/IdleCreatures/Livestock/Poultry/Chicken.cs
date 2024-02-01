@@ -6,26 +6,24 @@ namespace GameCore
     [EntityBinding(EntityID.Chicken)]
     public class Chicken : Poultry
     {
-        public bool hasCrowedToday;
-
         protected override void Awake()
         {
             base.Awake();
 
             eggId = "ori:chicken_egg";
-            textureId = "ori:chicken_white_leghorn";
-        }
-
-        protected override void Update()
-        {
-            base.Update();
+            textureId = Random.value switch
+            {
+                < 0.5f => "ori:chicken_white_leghorn",
+                _ => "ori:chicken_china_local"
+            };
 
             //打鸣
-            if (!hasCrowedToday && GTime.IsInTime(GTime.time24Format, 4.95f, 5.05f) && Tools.Prob100(8 * Tools.deltaTime))
+            if (Tools.Prob100(50))
             {
-                GAudio.Play(AudioID.Rooster);
-
-                hasCrowedToday = true;
+                GTime.BindTimeEvent(5, true, () =>
+                {
+                    GAudio.Play(AudioID.Rooster);
+                });
             }
         }
     }

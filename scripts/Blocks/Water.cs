@@ -199,6 +199,19 @@ namespace GameCore
                         if (player.rb.velocity.y < creatureSwimmingSpeed)
                         {
                             player.AddVelocityY(resistance * 2f);
+
+                            string swimAudio = Random.value switch
+                            {
+                                < 0.25f => AudioID.Swim0,
+                                < 0.5f => AudioID.Swim1,
+                                < 0.75f => AudioID.Swim2,
+                                _ => AudioID.Swim3,
+                            };
+
+                            if (GAudio.GetAudio(swimAudio).sources.Count == 0)
+                            {
+                                GAudio.Play(swimAudio, true);
+                            }
                         }
                         else if (player.rb.velocity.y > creatureSwimmingSpeed)
                         {

@@ -1,20 +1,20 @@
-using GameCore.High;
+using UnityEngine;
 
 namespace GameCore
 {
     [ItemBinding(ItemID.DogTailGrass)]
     public class DogTailGrassBehaviour : ItemBehaviour
     {
-        public override bool Use()
+        public override bool Use(Vector2 point)
         {
-            bool baseUse = base.Use();
+            bool baseUse = base.Use(point);
 
             if (baseUse)
                 return baseUse;
 
             if (owner is Player player)
             {
-                if (player.InUseRadius() && player.map.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.isControllingBackground, out Block block))
+                if (player.InUseRadius(point) && Map.instance.TryGetBlock(PosConvert.WorldToMapPos(point), player.isControllingBackground, out Block block))
                 {
                     if (block.data.id == BlockID.Water)
                         return false;

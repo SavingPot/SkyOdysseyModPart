@@ -12,13 +12,12 @@ namespace GameCore
     [EntityBinding(EntityID.HostileFarmer)]
     public class HostileFarmer : Enemy, IInventoryOwner
     {
-        //TODO: Inventory 变成同步变量
         public Inventory inventory;
-        public SpriteRenderer rightHandItem { get; set; }
-        public SpriteRenderer leftHandItem { get; set; }
+        public SpriteRenderer usingItemRenderer { get; set; }
         public EnemyMoveToTarget ai;
         public bool isPursuing;
         public bool isPursuingLastFrame;
+
 
 
 
@@ -48,21 +47,15 @@ namespace GameCore
                 leftFoot = AddBodyPart("leftFoot", ModFactory.CompareTexture("ori:hostile_farmer_left_foot").sprite, Vector2.zero, 1, leftLeg, BodyPartType.LeftFoot);
 
                 //添加双手物品的显示
-                leftHandItem = ObjectTools.CreateSpriteObject(leftArm.transform, "item");
-                rightHandItem = ObjectTools.CreateSpriteObject(rightArm.transform, "item");
+                usingItemRenderer = ObjectTools.CreateSpriteObject(rightArm.transform, "item");
 
-                leftHandItem.sortingOrder = 7;
-                rightHandItem.sortingOrder = 9;
+                usingItemRenderer.sortingOrder = 9;
 
-                leftHandItem.transform.localPosition = new(0.1f, -0.5f);
-                rightHandItem.transform.localPosition = new(0.1f, -0.5f);
-                leftHandItem.transform.SetScale(0.6f, 0.6f);
-                rightHandItem.transform.SetScale(0.6f, 0.6f);
+                SetUsingItemRendererLocalPositionAndScale(Vector2.zero, Vector2.one);
             }, true);
 
 
             Creature.BindHumanAnimations(this);
-
 
             this.LoadInventoryFromCustomData(1);
 
@@ -82,6 +75,12 @@ namespace GameCore
             }
 
             OnInventoryItemChange(inventory, "0");
+        }
+
+        public void SetUsingItemRendererLocalPositionAndScale(Vector2 localPosition, Vector2 localScale)
+        {
+            usingItemRenderer.transform.localPosition = new(0.1f + localPosition.x, -0.5f + localPosition.y);
+            usingItemRenderer.transform.SetScale(0.6f * localScale.x, 0.6f * localScale.y);
         }
 
         public override void Movement()
@@ -117,17 +116,32 @@ namespace GameCore
             isPursuingLastFrame = isPursuing;
         }
 
+
+
+
+
+
+
+
+
+
+        public Item[] items { get => inventory.slots; set => inventory.slots = value; }
+
+
         public void OnInventoryItemChange(Inventory newValue, string index)
         {
             Item item = newValue.GetItem(index);
 
-            rightHandItem.sprite = item.data.texture.sprite;
+            usingItemRenderer.sprite = item.data.texture.sprite;
 
             inventory = newValue;
         }
 
-        public Inventory GetInventory() => inventory;
 
+        public Inventory GetInventory() => inventory;
         public void SetInventory(Inventory value) => inventory = value;
+
+        public Item GetItem(string index) => inventory.GetItem(index);
+        public void SetItem(string index, Item value) => inventory.SetItem(index, value);
     }
 }

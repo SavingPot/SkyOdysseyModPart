@@ -1,3 +1,6 @@
+using GameCore.UI;
+using UnityEngine;
+
 namespace GameCore
 {
     [ItemBinding(ItemID.WashedShelledDogTailGrass)]
@@ -5,9 +8,9 @@ namespace GameCore
     {
         public static ushort powerNeed = 3;
 
-        public override bool Use()
+        public override bool Use(Vector2 point)
         {
-            bool baseUse = base.Use();
+            bool baseUse = base.Use(point);
 
             if (baseUse)
                 return baseUse;
@@ -16,7 +19,7 @@ namespace GameCore
             {
                 if (instance.count < powerNeed)
                 {
-                    player.SetStatusText($"你需要至少 {powerNeed}个 水洗去壳狗尾草才可以做成粉末");
+                    InternalUIAdder.instance.SetStatusText($"你需要至少 {powerNeed}个 水洗去壳狗尾草才可以做成粉末");
                     return false;
                 }
 

@@ -1,12 +1,13 @@
 using SP.Tools;
+using UnityEngine;
 
 namespace GameCore
 {
     public class KnifeBehaviour : ItemBehaviour
     {
-        public override bool Use()
+        public override bool Use(Vector2 point)
         {
-            bool baseUse = base.Use();
+            bool baseUse = base.Use(point);
 
             if (baseUse)
                 return baseUse;

@@ -105,6 +105,22 @@
                 "text": "获得肉"
             },
             {
+                "id": "ori:button.task_node.ori:get_onion.text",
+                "text": "获得洋葱"
+            },
+            {
+                "id": "ori:button.task_node.ori:get_potato.text",
+                "text": "获得土豆"
+            },
+            {
+                "id": "ori:button.task_node.ori:get_watermelon.text",
+                "text": "获得西瓜"
+            },
+            {
+                "id": "ori:button.task_node.ori:get_egg.text",
+                "text": "获得蛋"
+            },
+            {
                 "id": "ori:button.task_node.ori:get_feather.text",
                 "text": "获得羽毛"
             },
@@ -643,6 +659,14 @@
             {
                 "id": "ori:straw_hat",
                 "text": "草帽"
+            },
+            {
+                "id": "ori:chicken_egg",
+                "text": "鸡蛋"
+            },
+            {
+                "id": "ori:duck_egg",
+                "text": "鸭蛋"
             },
             {
                 "id": "ori:chicken_feather",

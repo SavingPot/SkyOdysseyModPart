@@ -105,6 +105,22 @@
                 "text": "Get Meat"
             },
             {
+                "id": "ori:button.task_node.ori:get_onion.text",
+                "text": "Get Union"
+            },
+            {
+                "id": "ori:button.task_node.ori:get_potato.text",
+                "text": "Get Potato"
+            },
+            {
+                "id": "ori:button.task_node.ori:get_watermelon.text",
+                "text": "Get Watermelon"
+            },
+            {
+                "id": "ori:button.task_node.ori:get_egg.text",
+                "text": "Get Egg"
+            },
+            {
                 "id": "ori:button.task_node.ori:get_feather.text",
                 "text": "Get Feather"
             },
@@ -643,6 +659,14 @@
             {
                 "id": "ori:straw_hat",
                 "text": "Straw Hat"
+            },
+            {
+                "id": "ori:chicken_egg",
+                "text": "Chicken Egg"
+            },
+            {
+                "id": "ori:duck_egg",
+                "text": "Duck Egg"
             },
             {
                 "id": "ori:chicken_feather",

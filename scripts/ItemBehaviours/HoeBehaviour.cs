@@ -13,9 +13,9 @@ namespace GameCore
             { BlockID.Dirt, BlockID.Farmland },
         };
 
-        public override bool Use()
+        public override bool Use(Vector2 point)
         {
-            bool baseUse = base.Use();
+            bool baseUse = base.Use(point);
 
             if (baseUse)
                 return baseUse;
@@ -23,7 +23,7 @@ namespace GameCore
 
             if (owner is Player player)
             {
-                if (player.InUseRadius() && player.map.TryGetBlock(PosConvert.WorldToMapPos(player.cursorWorldPos), player.isControllingBackground, out Block block) && blockPairs.TryGetValue(block.data.id, out var result))
+                if (player.InUseRadius(point) && Map.instance.TryGetBlock(PosConvert.WorldToMapPos(point), player.isControllingBackground, out Block block) && blockPairs.TryGetValue(block.data.id, out var result))
                 {
                     BlockData blockDatum = ModFactory.CompareBlockData(result); if (blockDatum == null) return false;
                     Vector2Int pos = block.pos;

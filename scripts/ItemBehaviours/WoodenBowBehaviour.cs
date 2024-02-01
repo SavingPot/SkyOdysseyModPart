@@ -1,6 +1,4 @@
-using GameCore.High;
 using Newtonsoft.Json.Linq;
-using SP.Tools;
 using UnityEngine;
 
 namespace GameCore
@@ -10,7 +8,7 @@ namespace GameCore
     {
         public float shootTimer;
 
-        public override bool Use()
+        public override bool Use(Vector2 point)
         {
             bool shotted = false;
 
@@ -18,7 +16,7 @@ namespace GameCore
             {
                 if (owner is Player player)
                 {
-                    var velocity = Tools.GetAngleVector2(player.transform.position, player.cursorWorldPos).normalized * 20;
+                    var velocity = Tools.GetAngleVector2(player.transform.position, point).normalized * 20;
 
                     JObject jo = new();
                     jo.AddObject("ori:bullet");

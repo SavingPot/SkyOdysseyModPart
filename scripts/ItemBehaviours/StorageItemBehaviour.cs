@@ -1,6 +1,5 @@
-using GameCore.High;
-using Newtonsoft.Json.Linq;
 using SP.Tools;
+using UnityEngine;
 
 namespace GameCore
 {
@@ -27,9 +26,9 @@ namespace GameCore
             this.LoadItemsFromCustomData(instance.customData, defaultItemCount);
         }
 
-        public override bool Use()
+        public override bool Use(Vector2 point)
         {
-            bool baseUse = base.Use();
+            bool baseUse = base.Use(point);
 
             if (baseUse)
                 return baseUse;

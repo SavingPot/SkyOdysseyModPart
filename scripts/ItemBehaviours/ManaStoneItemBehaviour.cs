@@ -21,13 +21,13 @@ namespace GameCore
                 ui.detailText.text.text += $"魔咒: {spell.id}";
         }
 
-        public override bool Use()
+        public override bool Use(Vector2 point)
         {
             //TODO: this only offers player logic
             if (totalMana >= spell.cost)
             {
                 totalMana -= spell.cost;
-                spellBehaviour.Release(Tools.GetAngleVector2((Vector2)((Player)owner).transform.position, ((Player)owner).cursorWorldPos), (Vector2)((Player)owner).transform.position, (Player)owner);
+                spellBehaviour.Release(Tools.GetAngleVector2((Vector2)((Player)owner).transform.position, point), (Vector2)((Player)owner).transform.position, (Player)owner);
 
                 //播放手臂动画
                 if (!((Player)owner).animWeb.GetAnim("slight_rightarm_lift", 0).isPlaying)

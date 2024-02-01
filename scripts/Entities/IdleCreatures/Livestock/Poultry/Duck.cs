@@ -10,7 +10,11 @@ namespace GameCore
             base.Awake();
 
             eggId = "ori:duck_egg";
-            textureId = "ori:duck_cute";
+            textureId = Random.value switch
+            {
+                < 0.5f => "ori:duck_cute",
+                _ => "ori:duck_river"
+            };
         }
     }
 }
