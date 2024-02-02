@@ -11,21 +11,28 @@ namespace GameCore
     {
         public T LoadNPCData<T>(Func<JToken, T> Load) where T : NPCData
         {
-            if (!customData.TryGetValue("ori:npc", out JToken value))
+            var cd = customData ?? new();
+
+            if (!cd.TryGetValue("ori:npc", out JToken value))
             {
-                customData.Add(new JProperty("ori:npc", new JObject()));
-                value = customData["ori:npc"];
+                cd.Add(new JProperty("ori:npc", new JObject()));
+                value = cd["ori:npc"];
             }
+
+            customData = cd;
 
             return Load(value);
         }
 
         public void SaveNPCData<T>(T newValue) where T : NPCData
         {
-            if (customData.TryGetValue("ori:npc", out JToken _))
-                customData.Remove("ori:npc");
+            var cd = customData ?? new();
 
-            customData.Add(new JProperty("ori:npc", JsonTools.LoadJObjectByString(JsonTools.ToJson(newValue))));
+            if (cd.TryGetValue("ori:npc", out JToken _))
+                cd.Remove("ori:npc");
+
+            cd.Add(new JProperty("ori:npc", JsonTools.LoadJObjectByString(JsonTools.ToJson(newValue))));
+            customData = cd;
         }
     }
 

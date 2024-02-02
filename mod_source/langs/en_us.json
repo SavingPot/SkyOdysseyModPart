@@ -26,11 +26,11 @@
             },
             {
                 "id": "ori:dialog.nick.teaching.attack_0",
-                "text": "<color=#D1A35F>{button}</color> can be used to not only chat but also use a item or a block!"
+                "text": "<color=#D1A35F>{button}</color> can be used to use a item or a block!"
             },
             {
                 "id": "ori:dialog.nick.teaching.attack_1",
-                "text": "You don't know how to attack or excavate a block, right? Just move the cursor to t he target, then hold <color=#D1A35F>{button}</color>"
+                "text": "Move the cursor to the target, then hold <color=#D1A35F>{button}</color> to attack or excavate a block"
             },
             {
                 "id": "ori:dialog.nick.teaching.attack_2",

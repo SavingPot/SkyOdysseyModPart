@@ -15,7 +15,7 @@ namespace GameCore
 
             if (chunk.map.GetBlock(new(pos.x, pos.y + 1), isBackground)?.data?.id != data.id)
             {
-                leaveRenderer = SpriteRendererPool.Get(sr.sortingOrder);
+                leaveRenderer = LitSpriteRendererPool.Get(sr.sortingOrder);
                 leaveRenderer.sprite = ModFactory.CompareTexture("ori:oak_tree_leaf").sprite;
                 leaveRenderer.transform.localPosition = new(pos.x, pos.y + 1.5f, 0);
             }
@@ -36,7 +36,7 @@ namespace GameCore
         {
             if (leaveRenderer)
             {
-                SpriteRendererPool.Recover(leaveRenderer);
+                LitSpriteRendererPool.Recover(leaveRenderer);
                 leaveRenderer = null;
             }
         }

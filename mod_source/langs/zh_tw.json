@@ -26,11 +26,11 @@
             },
             {
                 "id": "ori:dialog.nick.teaching.attack_0",
-                "text": "<color=#D1A35F>{button}</color>除了可以用來聊天, 還可以使用物品和方塊"
+                "text": "点击<color=#D1A35F>{button}</color>可以使用物品和方塊"
             },
             {
                 "id": "ori:dialog.nick.teaching.attack_1",
-                "text": "你應該不知道怎麼攻擊和挖掘方塊對吧? 將光標移動到目標上，然後按住<color=#D1A35F>{button}</color>就好"
+                "text": "將光標移動到目標上，然後按住<color=#D1A35F>{button}</color>就可以攻擊和挖掘方塊"
             },
             {
                 "id": "ori:dialog.nick.teaching.attack_2",
