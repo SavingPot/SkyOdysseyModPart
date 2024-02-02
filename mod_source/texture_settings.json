@@ -308,35 +308,39 @@
         },
         {
             "id": "ori:backpack_inventory_background",
-            "path": "/gui/sidebars/backpack_inventory_background.png"
+            "path": "/gui/backpack_panels/backpack_inventory_background.png"
         },
         {
-            "id": "ori:crafting_result",
-            "path": "/gui/sidebars/crafting_result.png"
+            "id": "ori:backpack_panel_switch_button",
+            "path": "/gui/backpack_panels/backpack_panel_switch_button.png"
         },
         {
-            "id": "ori:crafting_result_sign",
-            "path": "/gui/sidebars/crafting_result_sign.png"
+            "id": "ori:switch_button.inventory",
+            "path": "/gui/backpack_panels/switch_buttons/inventory.png"
         },
         {
-            "id": "ori:sidebar_sign.crafting_stuff",
-            "path": "/gui/sidebars/signs/crafting_stuff.png"
+            "id": "ori:switch_button.crafting",
+            "path": "/gui/backpack_panels/switch_buttons/crafting.png"
         },
         {
-            "id": "ori:sidebar_sign.crafting_results",
-            "path": "/gui/sidebars/signs/crafting_results.png"
+            "id": "ori:switch_button.barrel",
+            "path": "/gui/backpack_panels/switch_buttons/barrel.png"
         },
         {
-            "id": "ori:sidebar_sign.barrel",
-            "path": "/gui/sidebars/signs/barrel.png"
+            "id": "ori:switch_button.cooking_pot",
+            "path": "/gui/backpack_panels/switch_buttons/cooking_pot.png"
         },
         {
-            "id": "ori:sidebar_sign.cooking_pot",
-            "path": "/gui/sidebars/signs/cooking_pot.png"
+            "id": "ori:switch_button.wooden_chest",
+            "path": "/gui/backpack_panels/switch_buttons/wooden_chest.png"
         },
         {
-            "id": "ori:sidebar_sign.wooden_chest",
-            "path": "/gui/sidebars/signs/wooden_chest.png"
+            "id": "ori:crafting_info_shower_background",
+            "path": "/gui/backpack_panels/crafting_info_shower_background.png"
+        },
+        {
+            "id": "ori:crafting_info_shower_arrow",
+            "path": "/gui/backpack_panels/crafting_info_shower_arrow.png"
         },
         {
             "id": "ori:item_info_shower",

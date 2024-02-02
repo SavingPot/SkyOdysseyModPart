@@ -1,3 +1,4 @@
+using SP.Tools.Unity;
 using UnityEngine;
 using static GameCore.PlayerUI;
 
@@ -9,7 +10,8 @@ namespace GameCore
 
         public const int defaultItemCountConst = 4 * 2;
         public override int defaultItemCount { get; set; } = defaultItemCountConst;
-        public override string sidebarId { get; set; } = "ori:cooking_pot";
+        public override string backpackPanelId { get; set; } = "ori:cooking_pot";
+        public static BackpackPanel itemPanel;
         public static ScrollViewIdentity itemView;
         public static InventorySlotUI[] slotUIs = new InventorySlotUI[defaultItemCountConst];
 
@@ -18,8 +20,8 @@ namespace GameCore
             if (!itemView)
             {
                 //物品视图
-                Player.local.pui.GenerateSidebar(SidebarType.Left, "ori:sw.cooking_pot_items", 52.5f, 210, Vector2.zero, "ori:crafting_result", "ori:sidebar_sign.cooking_pot", out itemView, out _, out _);
-
+                (itemPanel, itemView) = Player.local.pui.GenerateItemViewBackpackPanel("ori:cooking_pot", "ori:switch_button.cooking_pot", 80, Vector2.zero, Vector2.zero, () => itemView.gameObject.SetActive(true));
+                
                 //初始化所有UI
                 for (int i = 0; i < slotUIs.Length; i++)
                 {

@@ -12,7 +12,7 @@ namespace GameCore
 
 
         public abstract int defaultItemCount { get; set; }
-        public abstract string sidebarId { get; set; }
+        public abstract string backpackPanelId { get; set; }
         public Item[] items { get; set; }
 
 
@@ -35,7 +35,7 @@ namespace GameCore
 
             if (owner is Player player)
             {
-                player.ShowOrHideBackpackAndSetSideBarTo(sidebarId);
+                player.pui.ShowOrHideBackpackAndSetPanelTo(backpackPanelId);
                 RefreshItemView();
             }
 

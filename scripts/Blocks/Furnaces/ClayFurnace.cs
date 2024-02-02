@@ -1,3 +1,4 @@
+using SP.Tools.Unity;
 using UnityEngine;
 using static GameCore.PlayerUI;
 
@@ -9,7 +10,8 @@ namespace GameCore
 
         public const int defaultItemCountConst = 4 * 2;
         public override int defaultItemCount { get; set; } = defaultItemCountConst;
-        public override string sidebarId { get; set; } = "ori:clay_furnace";
+        public override string backpackPanelId { get; set; } = "ori:clay_furnace";
+        public static BackpackPanel itemPanel;
         public static ScrollViewIdentity itemView;
         public static InventorySlotUI[] slotUIs = new InventorySlotUI[defaultItemCountConst];
 
@@ -18,7 +20,7 @@ namespace GameCore
             if (!itemView)
             {
                 //物品视图
-                Player.local.pui.GenerateSidebar(SidebarType.Left, "ori:sw.clay_furnace_items", 52.5f, 210, Vector2.zero, "ori:crafting_result", "ori:sidebar_sign.clay_furnace", out itemView, out _, out _);
+                (itemPanel, itemView) = Player.local.pui.GenerateItemViewBackpackPanel("ori:clay_furnace", "ori:switch_button.clay_furnace", 80, Vector2.zero, Vector2.zero, () => itemView.gameObject.SetActive(true));
 
                 //初始化所有UI
                 for (int i = 0; i < slotUIs.Length; i++)
@@ -32,6 +34,8 @@ namespace GameCore
 
         public override void RefreshItemView()
         {
+            GenerateItemView();
+
             for (int i = 0; i < slotUIs.Length; i++)
             {
                 slotUIs[i].Refresh(this, i.ToString());
@@ -41,12 +45,5 @@ namespace GameCore
         #endregion
 
         public string smeltingResult;
-
-        public override void DoStart()
-        {
-            base.DoStart();
-
-            GenerateItemView().gameObject.SetActive(false);
-        }
     }
 }
