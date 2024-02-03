@@ -2,6 +2,14 @@
     "json_format": "0.4.8",
     "ori:entity": {
         "id": "ori:extreme_weather_region_guard_sand",
-        "lifetime": 4
+        "lifetime": 4,
+        "physics": {
+            "collider": {
+                "size": [
+                    0.5,
+                    0.5
+                ]
+            }
+        }
     }
 }

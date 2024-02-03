@@ -331,6 +331,10 @@
             "path": "/gui/backpack_panels/switch_buttons/pause.png"
         },
         {
+            "id": "ori:switch_button.tasks",
+            "path": "/gui/backpack_panels/switch_buttons/tasks.png"
+        },
+        {
             "id": "ori:switch_button.cooking_pot",
             "path": "/gui/backpack_panels/switch_buttons/cooking_pot.png"
         },

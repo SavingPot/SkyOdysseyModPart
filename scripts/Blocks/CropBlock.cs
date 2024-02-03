@@ -2,6 +2,7 @@ using GameCore.High;
 using Newtonsoft.Json.Linq;
 using SP.Tools;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GameCore
@@ -124,30 +125,45 @@ namespace GameCore
             //添加默认值
             CropBlockDatum cropDatum = new();
 
-            if (GameTools.CompareVersions(data.jsonFormat, "0.6.2", Operators.lessOrEqual))
+            if (GameTools.CompareVersions(data.jsonFormat, "0.7.8", Operators.thanOrEqual))
             {
                 JToken cropJT = data.jo?["ori:crop_block"];
 
-                if (cropJT != null)
+                if (cropJT != null && cropJT.Type == JTokenType.Object)
                 {
+                    var processes = cropJT["processes"];
+
                     cropDatum.seed = cropJT["seed"]?.ToString();
                     cropDatum.speed = 0.3f * (cropJT["speed"]?.ToString()?.ToFloat() ?? 1);
                     cropJT["harvests"]?.For(j =>
                     {
                         cropDatum.harvests.Add(new(j?["id"]?.ToString(), (j?["count"]?.ToString()?.ToInt() ?? 1).ToUShort(), new List<string>()));
                     });
-                    cropJT?["textures"]?.For(j =>
+
+                    if (processes == null || processes.Type != JTokenType.Array || processes.Count() == 0 )
                     {
-                        cropDatum.processes.Add(new()
+                        Debug.LogError($"加载作物失败: 作物方块 {data.id} 的 json 文件中不包含 ori:crop_block/processes 或者 processes 不是数组!");
+                        return cropDatum;
+                    }
+                    else
+                    {
+                        processes.For(j =>
                         {
-                            texture = ModFactory.CompareTexture(j["texture"]?.ToString())
-                        }); ;
-                    });
+                            cropDatum.processes.Add(new()
+                            {
+                                texture = ModFactory.CompareTexture(j["texture"]?.ToString())
+                            }); ;
+                        });
+                    }
+                }
+                else
+                {
+                    Debug.LogError($"加载作物失败: 作物方块 {data.id} 的 json 文件中不包含 ori:crop_block 或者 ori:crop_block 不是对象!");
                 }
             }
             else
             {
-
+                Debug.LogError($"加载作物失败: 方块 {data.id} 的 json 格式版本 {data.jsonFormat} 不受支持!");
             }
 
             dataTemps.Add(data.id, cropDatum);

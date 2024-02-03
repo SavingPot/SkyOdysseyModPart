@@ -3,7 +3,13 @@
     "ori:entity": {
         "id": "ori:plant_region_guard_sapling",
         "physics": {
-            "gravity": 0
+            "gravity": 0,
+            "collider": {
+                "size": [
+                    0.5,
+                    0.5
+                ]
+            }
         },
         "lifetime": 10
     }

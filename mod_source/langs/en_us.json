@@ -1291,6 +1291,10 @@
             {
                 "id": "ori:text.wait_generating_the_region",
                 "text": "Generating The Region"
+            },
+            {
+                "id": "ori:text.leaving_game",
+                "text": "Leaving Game"
             }
         ]
     }

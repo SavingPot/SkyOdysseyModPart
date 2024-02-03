@@ -1291,6 +1291,10 @@
             {
                 "id": "ori:text.wait_generating_the_region",
                 "text": "生成区域中"
+            },
+            {
+                "id": "ori:text.leaving_game",
+                "text": "退出遊戲中"
             }
         ]
     }
