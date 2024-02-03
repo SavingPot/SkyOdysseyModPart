@@ -8,16 +8,14 @@ namespace GameCore
 {
     public class CropBlockDatum
     {
-        public int threadCount;
         public string seed;
         public float speed;
-        public List<CraftingRecipe_Item> matureCrops = new();
-        public List<CropBlockDatum_Texture> textures = new();
+        public List<CraftingRecipe_Item> harvests = new();
+        public List<CropBlockDatum_Process> processes = new();
     }
 
-    public class CropBlockDatum_Texture
+    public class CropBlockDatum_Process
     {
-        public int index;
         public TextureData texture;
     }
 
@@ -92,7 +90,7 @@ namespace GameCore
                 return;
 
             //增加生长进度
-            if (cropIndex + 1 < cropDatum.threadCount)
+            if (cropIndex + 1 < cropDatum.processes.Count)
             {
                 //增加 index
                 cropIndex++;
@@ -100,16 +98,16 @@ namespace GameCore
                 //刷新贴图
                 if (sr)
                 {
-                    foreach (var texture in cropDatum.textures)
+                    try
                     {
-                        if (texture.index == cropIndex)
-                        {
-                            sr.sprite = texture.texture.sprite;
-                            return;
-                        }
+                        sr.sprite = cropDatum.processes[cropIndex].texture.sprite;
                     }
-
-                    sr.sprite = GInit.instance.spriteUnknown;
+                    catch (System.Exception ex)
+                    {
+                        Debug.LogError($"刷新作物贴图失败, 异常如下: {ex}");
+                        sr.sprite = GInit.instance.spriteUnknown;
+                        throw;
+                    }
                 }
             }
         }
@@ -126,30 +124,30 @@ namespace GameCore
             //添加默认值
             CropBlockDatum cropDatum = new();
 
-            if (GameTools.CompareVersions(data.jsonFormat, "0.6.2", Operators.thanOrEqual))
+            if (GameTools.CompareVersions(data.jsonFormat, "0.6.2", Operators.lessOrEqual))
             {
-                JToken cropJT = data.jo?["ori:corp_block"];
-                JToken cropDisplay = cropJT?["display"];
-                JToken cropProp = cropJT?["property"];
+                JToken cropJT = data.jo?["ori:crop_block"];
 
-                if (cropProp != null)
+                if (cropJT != null)
                 {
-                    cropDatum.threadCount = cropProp["thread_count"]?.ToString()?.ToInt() ?? 3;
-                    cropDatum.seed = cropProp["seed"]?.ToString();
-                    cropDatum.speed = 0.3f * (cropProp["speed"]?.ToString()?.ToFloat() ?? 1);
-                    cropProp["mature_crops"]?.For(j =>
+                    cropDatum.seed = cropJT["seed"]?.ToString();
+                    cropDatum.speed = 0.3f * (cropJT["speed"]?.ToString()?.ToFloat() ?? 1);
+                    cropJT["harvests"]?.For(j =>
                     {
-                        cropDatum.matureCrops.Add(new(j?["id"]?.ToString(), (j?["count"]?.ToString()?.ToInt() ?? 1).ToUShort(), new List<string>()));
+                        cropDatum.harvests.Add(new(j?["id"]?.ToString(), (j?["count"]?.ToString()?.ToInt() ?? 1).ToUShort(), new List<string>()));
+                    });
+                    cropJT?["textures"]?.For(j =>
+                    {
+                        cropDatum.processes.Add(new()
+                        {
+                            texture = ModFactory.CompareTexture(j["texture"]?.ToString())
+                        }); ;
                     });
                 }
-                cropDisplay?["textures"]?.For(j =>
-                {
-                    cropDatum.textures.Add(new()
-                    {
-                        index = j["index"]?.ToString()?.ToInt() ?? 0,
-                        texture = ModFactory.CompareTexture(j["texture"]?.ToString())
-                    }); ;
-                });
+            }
+            else
+            {
+
             }
 
             dataTemps.Add(data.id, cropDatum);
@@ -159,10 +157,10 @@ namespace GameCore
         public override void OutputDrops(Vector3 pos)
         {
             //达到最大值, 即已成熟
-            if (cropIndex >= cropDatum.threadCount - 1)
+            if (cropIndex >= cropDatum.processes.Count - 1)
             {
                 //生成掉落物
-                cropDatum.matureCrops.For(a =>
+                cropDatum.harvests.For(a =>
                 {
                     GM.instance.SummonDrop(pos, a.id, a.count);
                 });
