@@ -1,19 +1,23 @@
 using GameCore.High;
 using Newtonsoft.Json.Linq;
 using SP.Tools;
+using UnityEngine;
+using static GameCore.PlayerUI;
 
 namespace GameCore
 {
     public abstract class StorageBlock : Block, IItemContainer
     {
-        public abstract void RefreshItemView();
+        public abstract BackpackPanel itemPanel { get; set; }
+        public abstract ScrollViewIdentity itemView { get; set; }
+        public abstract InventorySlotUI[] slotUIs { get; set; }
 
 
 
 
 
-        public abstract int defaultItemCount { get; set; }
-        public abstract string backpackPanelId { get; set; }
+        public abstract int itemCount { get; }
+        public abstract string backpackPanelId { get; }
         public Item[] items { get; set; }
 
 
@@ -24,13 +28,13 @@ namespace GameCore
         {
             base.DoStart();
 
-            this.LoadItemsFromCustomData(customData, defaultItemCount);
+            this.LoadItemsFromCustomData(customData, itemCount);
         }
 
         public override bool PlayerInteraction(Player player)
         {
-            player.pui.ShowOrHideBackpackAndSetPanelTo(backpackPanelId);
             RefreshItemView();
+            player.pui.ShowOrHideBackpackAndSetPanelTo(backpackPanelId);
 
             return true;
         }
@@ -38,6 +42,29 @@ namespace GameCore
         public override void OnServerSetCustomData()
         {
             RefreshItemView();
+        }
+
+        public virtual void RefreshItemView()
+        {
+            if (!itemView)
+            {
+                (var modId, var panelName) = Tools.SplitModIdAndName(backpackPanelId);
+
+                //物品视图
+                (itemPanel, itemView) = Player.local.pui.GenerateItemViewBackpackPanel(backpackPanelId, $"{modId}:button.switch_{panelName}", 80, Vector2.zero, Vector2.zero, () => itemView.gameObject.SetActive(true));
+
+                //初始化所有UI
+                for (int i = 0; i < slotUIs.Length; i++)
+                {
+                    itemView.AddChild((slotUIs[i] = InventorySlotUI.Generate($"{modId}:button.{panelName}_item_{i}", $"{modId}:image.{panelName}_item_{i}", itemView.gridLayoutGroup.cellSize)).button);
+                }
+            }
+
+
+            for (int i = 0; i < slotUIs.Length; i++)
+            {
+                slotUIs[i].Refresh(this, i.ToString());
+            }
         }
 
 
