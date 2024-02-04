@@ -8,8 +8,7 @@
         "property": {
             "hardness": 4,
             "tags": [
-                "ori:log",
-                "ori:loot.barrel"
+                "ori:log"
             ]
         }
     }

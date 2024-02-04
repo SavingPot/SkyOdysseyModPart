@@ -4,9 +4,6 @@
         "id": "ori:straw_rope",
         "texture": "ori:straw_rope",
         "damage": 10,
-        "tags": [
-            "ori:loot.barrel"
-        ],
         "description": "ori:description.straw_rope"
     }
 }

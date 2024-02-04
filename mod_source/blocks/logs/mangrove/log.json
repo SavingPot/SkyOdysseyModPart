@@ -8,8 +8,7 @@
         "property": {
             "hardness": 8,
             "tags": [
-                "ori:log",
-                "ori:loot.barrel"
+                "ori:log"
             ],
             "behaviour": "GameCore.LogBlock"
         }

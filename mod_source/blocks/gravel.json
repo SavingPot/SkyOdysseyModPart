@@ -7,10 +7,7 @@
         },
         "property": {
             "hardness": 0.025,
-            "collidible": false,
-            "tags": [
-                "ori:loot.barrel"
-            ]
+            "collidible": false
         }
     },
     "ori:item": {

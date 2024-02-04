@@ -4,8 +4,7 @@
         "id": "ori:wooden_bow",
         "texture": "ori:wooden_bow",
         "tags": [
-            "ori:bow",
-            "ori:loot.barrel"
+            "ori:bow"
         ],
         "use_cd": 0.4
     }

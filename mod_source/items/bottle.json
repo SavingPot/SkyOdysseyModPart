@@ -4,9 +4,6 @@
         "id": "ori:bottle",
         "texture": "ori:bottle",
         "damage": 10,
-        "tags": [
-            "ori:loot.barrel"
-        ],
         "description": "ori:description.bottle"
     }
 }

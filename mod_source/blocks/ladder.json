@@ -4,10 +4,7 @@
         "id": "ori:ladder",
         "display": {
             "texture_id": "ori:ladder",
-            "description": "ori:description.ladder",
-            "tags": [
-                "ori:loot.barrel"
-            ]
+            "description": "ori:description.ladder"
         },
         "property": {
             "hardness": 3,

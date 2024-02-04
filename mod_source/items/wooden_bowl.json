@@ -4,9 +4,6 @@
         "id": "ori:wooden_bowl",
         "texture": "ori:wooden_bowl",
         "damage": 8,
-        "tags": [
-            "ori:loot.barrel"
-        ],
         "description": "ori:description.wooden_bowl"
     }
 }

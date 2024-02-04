@@ -10,7 +10,11 @@ namespace GameCore
         public float escapeEndTime;
         public float escapeLastTime = 4;
         public float escapeNextStartTime;
-        public float escapeInterval = 1;
+        public float escapeInterval = 0.5f;
+
+
+
+
 
         public override void OnGetHurtClient(float damage, float invincibleTime, Vector2 damageOriginPos, Vector2 impactForce, NetworkConnection caller)
         {
@@ -29,7 +33,6 @@ namespace GameCore
                 Vector2 velocity = Random.Range(-1, 2) switch
                 {
                     -1 => TurnLeft(),
-                    0 => new(0, rb.velocity.y),
                     1 => TurnRight(),
                     _ => throw new()
                 };
