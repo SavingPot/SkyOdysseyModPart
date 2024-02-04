@@ -1,26 +1,22 @@
 using System.Collections;
 using SP.Tools.Unity;
 using UnityEngine;
-using static GameCore.UniversalEntityBehaviour;
 
 namespace GameCore
 {
     //TODO: Complete
     [EntityBinding(EntityID.Savage)]
-    public class Savage : Enemy
+    public class Savage : Enemy, IEnemyMoveToTarget
     {
-        public EnemyMoveToTarget ai;
-        public bool isPursuing;
-        public bool isPursuingLastFrame;
+        public bool isPursuing { get; set; }
+        public bool isPursuingLastFrame { get; set; }
+        public float jumpForce { get; } = 45;
 
 
 
-        protected override void Awake()
-        {
-            base.Awake();
 
-            ai = new(this, 45);
-        }
+
+
 
         public override void Initialize()
         {
@@ -51,30 +47,12 @@ namespace GameCore
             if (!isServer || isDead)
                 return;
 
-            isPursuing = targetTransform;
+            EnemyMoveToTargetBehaviour.OnMovement(this);
+        }
 
-            if (isPursuing)
-            {
-                if (!isPursuingLastFrame)
-                {
-                    ServerOnStartMovement();
-                }
+        public void WhenStroll()
+        {
 
-                ai.Pursuit();
-            }
-            else
-            {
-                if (isPursuingLastFrame)
-                {
-                    ServerOnStopMovement();
-
-                    rb.velocity = Vector2.zero;
-                }
-
-                ai.Stroll();
-            }
-
-            isPursuingLastFrame = isPursuing;
         }
     }
 }

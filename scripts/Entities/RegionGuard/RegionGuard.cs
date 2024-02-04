@@ -4,7 +4,7 @@ using UnityEngine;
 namespace GameCore
 {
     [NotSummonable]
-    public abstract class RegionGuard : Creature
+    public abstract class RegionGuard : Entity
     {
         public ParticleSystem particleSystem;
         public BiomeGuardParticle particleScript;

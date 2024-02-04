@@ -2,26 +2,22 @@ using DG.Tweening;
 using SP.Tools.Unity;
 using System.Collections;
 using UnityEngine;
-using static GameCore.UniversalEntityBehaviour;
-using Random = UnityEngine.Random;
 
 namespace GameCore
 {
     [EntityBinding(EntityID.AncientBoxer)]
-    public class AncientBoxer : Enemy
+    public class AncientBoxer : Enemy, IEnemyMoveToTarget
     {
-        public EnemyMoveToTarget ai;
-        public bool isPursuing;
-        public bool isPursuingLastFrame;
+        public bool isPursuing { get; set; }
+        public bool isPursuingLastFrame { get; set; }
+        public float jumpForce { get; } = 20;
 
 
 
-        protected override void Awake()
-        {
-            base.Awake();
 
-            ai = new(this, 20, () => GAudio.Play(AudioID.AncientBoxerSpare, true));
-        }
+
+
+
 
         public override void Initialize()
         {
@@ -94,30 +90,12 @@ namespace GameCore
             if (!isServer || isDead)
                 return;
 
-            isPursuing = targetTransform;
+            EnemyMoveToTargetBehaviour.OnMovement(this);
+        }
 
-            if (isPursuing)
-            {
-                if (!isPursuingLastFrame)
-                {
-                    ServerOnStartMovement();
-                }
-
-                ai.Pursuit();
-            }
-            else
-            {
-                if (isPursuingLastFrame)
-                {
-                    ServerOnStopMovement();
-
-                    rb.velocity = Vector2.zero;
-                }
-
-                ai.Stroll();
-            }
-
-            isPursuingLastFrame = isPursuing;
+        public void WhenStroll()
+        {
+            GAudio.Play(AudioID.AncientBoxerSpare, true);
         }
     }
 }

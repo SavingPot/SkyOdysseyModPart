@@ -30,9 +30,7 @@ namespace GameCore
             /* ----------------------------------- 跳跃 ----------------------------------- */
             if (Tools.time >= jumpTimer)
             {
-                bool onGround = RayTools.TryOverlapCircle(mainCollider.DownPoint(), 0.3f, Block.blockLayerMask, out _);
-
-                if (onGround)
+                if (isOnGround)
                 {
                     bool isTargetLeft = targetTransform.position.x < transform.position.x;
                     float errorValue = 0.1f;

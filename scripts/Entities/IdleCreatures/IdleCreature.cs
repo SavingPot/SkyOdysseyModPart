@@ -7,14 +7,16 @@ namespace GameCore
     {
         public float movementTimer;
         public float movementInterval = 5;
-        public float escapeTimer;
-        public float escapeTime = 4;
+        public float escapeEndTime;
+        public float escapeLastTime = 4;
+        public float escapeNextStartTime;
+        public float escapeInterval = 1;
 
         public override void OnGetHurtClient(float damage, float invincibleTime, Vector2 damageOriginPos, Vector2 impactForce, NetworkConnection caller)
         {
             base.OnGetHurtClient(damage, invincibleTime, damageOriginPos, impactForce, caller);
 
-            escapeTimer = Tools.time + escapeTime;
+            escapeEndTime = Tools.time + escapeLastTime;
         }
 
         protected override void Update()
@@ -22,7 +24,7 @@ namespace GameCore
             base.Update();
 
             /* ----------------------------------- 逃脱 ----------------------------------- */
-            if (Tools.time < escapeTimer)
+            if (Tools.time < escapeEndTime && Tools.time >= escapeNextStartTime)
             {
                 Vector2 velocity = Random.Range(-1, 2) switch
                 {
@@ -32,6 +34,8 @@ namespace GameCore
                     _ => throw new()
                 };
                 rb.velocity = velocity;
+                
+                escapeNextStartTime = Tools.time + escapeInterval;
             }
             /* ----------------------------------- 闲逛 ----------------------------------- */
             else if (Tools.time >= movementTimer)

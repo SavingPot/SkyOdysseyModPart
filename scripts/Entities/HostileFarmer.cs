@@ -4,30 +4,23 @@ using SP.Tools.Unity;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
-using static GameCore.UniversalEntityBehaviour;
 using Random = UnityEngine.Random;
 
 namespace GameCore
 {
     [EntityBinding(EntityID.HostileFarmer)]
-    public class HostileFarmer : Enemy, IInventoryOwner
+    public class HostileFarmer : Enemy, IInventoryOwner, IEnemyMoveToTarget
     {
         public Inventory inventory;
         public SpriteRenderer usingItemRenderer { get; set; }
-        public EnemyMoveToTarget ai;
-        public bool isPursuing;
-        public bool isPursuingLastFrame;
+        public bool isPursuing { get; set; }
+        public bool isPursuingLastFrame { get; set; }
+        public float jumpForce { get; } = 25;
 
 
 
 
 
-        protected override void Awake()
-        {
-            base.Awake();
-
-            ai = new(this, 30);
-        }
 
         public override void Initialize()
         {
@@ -90,30 +83,12 @@ namespace GameCore
             if (!isServer || isDead)
                 return;
 
-            isPursuing = targetTransform;
+            EnemyMoveToTargetBehaviour.OnMovement(this);
+        }
 
-            if (isPursuing)
-            {
-                if (!isPursuingLastFrame)
-                {
-                    ServerOnStartMovement();
-                }
+        public void WhenStroll()
+        {
 
-                ai.Pursuit();
-            }
-            else
-            {
-                if (isPursuingLastFrame)
-                {
-                    ServerOnStopMovement();
-
-                    rb.velocity = Vector2.zero;
-                }
-
-                ai.Stroll();
-            }
-
-            isPursuingLastFrame = isPursuing;
         }
 
 

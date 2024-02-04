@@ -3,26 +3,20 @@ using SP.Tools.Unity;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
-using static GameCore.UniversalEntityBehaviour;
-using Random = UnityEngine.Random;
 
 namespace GameCore
 {
     [EntityBinding(EntityID.Zombie)]
-    public class Zombie : Enemy
+    public class Zombie : Enemy, IEnemyMoveToTarget
     {
-        public EnemyMoveToTarget ai;
-        public bool isPursuing;
-        public bool isPursuingLastFrame;
+        public bool isPursuing { get; set; }
+        public bool isPursuingLastFrame { get; set; }
+        public float jumpForce { get; } = 46;
 
 
 
-        protected override void Awake()
-        {
-            base.Awake();
 
-            ai = new(this, 46, () => GAudio.Play(AudioID.ZombieSpare, true));
-        }
+
 
         public override void Initialize()
         {
@@ -53,30 +47,12 @@ namespace GameCore
             if (!isServer || isDead)
                 return;
 
-            isPursuing = targetTransform;
+            EnemyMoveToTargetBehaviour.OnMovement(this);
+        }
 
-            if (isPursuing)
-            {
-                if (!isPursuingLastFrame)
-                {
-                    ServerOnStartMovement();
-                }
-
-                ai.Pursuit();
-            }
-            else
-            {
-                if (isPursuingLastFrame)
-                {
-                    ServerOnStopMovement();
-
-                    rb.velocity = Vector2.zero;
-                }
-
-                ai.Stroll();
-            }
-
-            isPursuingLastFrame = isPursuing;
+        public void WhenStroll()
+        {
+            GAudio.Play(AudioID.ZombieSpare, true);
         }
     }
 }

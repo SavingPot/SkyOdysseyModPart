@@ -3,16 +3,11 @@ using SP.Tools.Unity;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
-using static GameCore.UniversalEntityBehaviour;
-using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public class TreeMan: Enemy
+    public class TreeMan: Enemy, IEnemyMoveToTarget
     {
-        public EnemyMoveToTarget ai;
-        public bool isPursuing;
-        public bool isPursuingLastFrame;
         public string BodyTexture;
         public string HeadTexture;
         public string RightArmTexture;
@@ -20,13 +15,16 @@ namespace GameCore
         public string RightLegTexture;
         public string LeftLegTexture;
 
+        public bool isPursuing { get; set; }
+        public bool isPursuingLastFrame { get; set; }
+        public float jumpForce { get; } = 0;
 
-        protected override void Awake()
-        {
-            base.Awake();
 
-            ai = new(this, 35);
-        }
+
+
+
+
+
 
         public override void Initialize()
         {
@@ -55,30 +53,12 @@ namespace GameCore
             if (!isServer || isDead)
                 return;
 
-            isPursuing = targetTransform;
+            EnemyMoveToTargetBehaviour.OnMovement(this);
+        }
 
-            if (isPursuing)
-            {
-                if (!isPursuingLastFrame)
-                {
-                    ServerOnStartMovement();
-                }
-
-                ai.Pursuit();
-            }
-            else
-            {
-                if (isPursuingLastFrame)
-                {
-                    ServerOnStopMovement();
-
-                    rb.velocity = Vector2.zero;
-                }
-
-                ai.Stroll();
-            }
-
-            isPursuingLastFrame = isPursuing;
+        public void WhenStroll()
+        {
+            GAudio.Play(AudioID.ZombieSpare, true);
         }
     }
 }

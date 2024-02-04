@@ -12,7 +12,7 @@ namespace GameCore
         {
             base.Initialize();
 
-            escapeTime = 8;
+            escapeLastTime = 8;
 
             /* ---------------------------------- 设置贴图 ---------------------------------- */
             AddSpriteRenderer(textureId);
