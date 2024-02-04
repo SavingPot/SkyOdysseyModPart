@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 namespace GameCore
 {
     [EntityBinding(EntityID.HostileFarmer)]
-    public class HostileFarmer : Enemy, IInventoryOwner, IEnemyMoveToTarget
+    public class HostileFarmer : Enemy, IInventoryOwner, IEnemyWalkToTarget
     {
         public Inventory inventory;
         public SpriteRenderer usingItemRenderer { get; set; }
@@ -83,7 +83,7 @@ namespace GameCore
             if (!isServer || isDead)
                 return;
 
-            EnemyMoveToTargetBehaviour.OnMovement(this);
+            EnemyWalkToTargetBehaviour.OnMovement(this);
         }
 
         public void WhenStroll()

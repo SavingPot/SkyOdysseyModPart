@@ -6,9 +6,9 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public static class EnemyMoveToTargetBehaviour
+    public static class EnemyWalkToTargetBehaviour
     {
-        public static void OnMovement<T>(T enemy) where T : Enemy, IEnemyMoveToTarget
+        public static void OnMovement<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
         {
             enemy.isPursuing = enemy.targetTransform;
 
@@ -36,7 +36,7 @@ namespace GameCore
             enemy.isPursuingLastFrame = enemy.isPursuing;
         }
 
-        public static void Stroll<T>(T enemy) where T : Enemy, IEnemyMoveToTarget
+        public static void Stroll<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
         {
             //12.5 为倍数, 每秒有 (moveRandomize / deltaTime)% 的几率触发移动
             float moveRandomize = Tools.deltaTime * 2f;
@@ -53,14 +53,14 @@ namespace GameCore
             }
         }
 
-        static IEnumerator IEStrollResumeVelocity<T>(T enemy, float time) where T : Enemy, IEnemyMoveToTarget
+        static IEnumerator IEStrollResumeVelocity<T>(T enemy, float time) where T : Enemy, IEnemyWalkToTarget
         {
             yield return new WaitForSeconds(time);
 
             enemy.rb.SetVelocity(Vector2.zero);
         }
 
-        public static void Pursuit<T>(T enemy) where T : Enemy, IEnemyMoveToTarget
+        public static void Pursuit<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
         {
             if(!enemy.targetTransform)
             {
@@ -136,11 +136,9 @@ namespace GameCore
         }
     }
 
-    public interface IEnemyMoveToTarget
+    public interface IEnemyWalkToTarget: IEnemyMovement
     {
-        public float jumpForce { get; }
-        public bool isPursuingLastFrame { get; set; }
-        public bool isPursuing { get; set; }
+        float jumpForce { get; }
 
         void WhenStroll();
     }

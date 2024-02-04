@@ -6,7 +6,7 @@ namespace GameCore
 {
     //TODO: Complete
     [EntityBinding(EntityID.Savage)]
-    public class Savage : Enemy, IEnemyMoveToTarget
+    public class Savage : Enemy, IEnemyWalkToTarget
     {
         public bool isPursuing { get; set; }
         public bool isPursuingLastFrame { get; set; }
@@ -47,7 +47,7 @@ namespace GameCore
             if (!isServer || isDead)
                 return;
 
-            EnemyMoveToTargetBehaviour.OnMovement(this);
+            EnemyWalkToTargetBehaviour.OnMovement(this);
         }
 
         public void WhenStroll()

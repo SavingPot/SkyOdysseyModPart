@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public class TreeMan: Enemy, IEnemyMoveToTarget
+    public class TreeMan: Enemy, IEnemyWalkToTarget
     {
         public string BodyTexture;
         public string HeadTexture;
@@ -53,7 +53,7 @@ namespace GameCore
             if (!isServer || isDead)
                 return;
 
-            EnemyMoveToTargetBehaviour.OnMovement(this);
+            EnemyWalkToTargetBehaviour.OnMovement(this);
         }
 
         public void WhenStroll()

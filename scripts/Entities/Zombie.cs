@@ -7,7 +7,7 @@ using UnityEngine;
 namespace GameCore
 {
     [EntityBinding(EntityID.Zombie)]
-    public class Zombie : Enemy, IEnemyMoveToTarget
+    public class Zombie : Enemy, IEnemyWalkToTarget
     {
         public bool isPursuing { get; set; }
         public bool isPursuingLastFrame { get; set; }
@@ -47,7 +47,7 @@ namespace GameCore
             if (!isServer || isDead)
                 return;
 
-            EnemyMoveToTargetBehaviour.OnMovement(this);
+            EnemyWalkToTargetBehaviour.OnMovement(this);
         }
 
         public void WhenStroll()

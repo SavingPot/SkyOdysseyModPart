@@ -6,7 +6,7 @@ using UnityEngine;
 namespace GameCore
 {
     [EntityBinding(EntityID.AncientBoxer)]
-    public class AncientBoxer : Enemy, IEnemyMoveToTarget
+    public class AncientBoxer : Enemy, IEnemyWalkToTarget
     {
         public bool isPursuing { get; set; }
         public bool isPursuingLastFrame { get; set; }
@@ -90,7 +90,7 @@ namespace GameCore
             if (!isServer || isDead)
                 return;
 
-            EnemyMoveToTargetBehaviour.OnMovement(this);
+            EnemyWalkToTargetBehaviour.OnMovement(this);
         }
 
         public void WhenStroll()
