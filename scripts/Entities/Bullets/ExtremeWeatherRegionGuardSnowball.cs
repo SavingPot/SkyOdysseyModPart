@@ -6,9 +6,9 @@ namespace GameCore
     [EntityBinding(EntityID.ExtremeWeatherRegionGuardSnowball)]
     public class ExtremeWeatherRegionGuardSnowball : Bullet
     {
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
             damage = 15;
 
             rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();

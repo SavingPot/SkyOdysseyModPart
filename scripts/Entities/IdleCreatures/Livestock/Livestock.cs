@@ -8,9 +8,9 @@ namespace GameCore
         public float hurtTimer;
         public string textureId;
 
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             escapeTime = 8;
 

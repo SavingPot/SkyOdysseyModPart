@@ -59,9 +59,9 @@ namespace GameCore
             rb.velocity = GetMovementVelocity(new(xVelo, yVelo));
         }
 
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             /* ---------------------------------- 设置贴图 ---------------------------------- */
             AddSpriteRenderer(Texture);

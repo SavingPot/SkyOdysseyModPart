@@ -6,9 +6,9 @@ namespace GameCore
     [EntityBinding(EntityID.ExtremeWeatherRegionGuardSand)]
     public class ExtremeWeatherRegionGuardSand : Bullet
     {
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             rb.gravityScale = 0;
             damage = 20;

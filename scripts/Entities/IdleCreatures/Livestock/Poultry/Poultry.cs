@@ -7,13 +7,13 @@ namespace GameCore
     {
         public string eggId;
 
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             if (isServer && !eggId.IsNullOrWhiteSpace())
             {
-                RandomUpdater.Bind(gameObject.GetInstanceID().ToString(), 1, () => GM.instance.SummonDrop(transform.position, eggId));
+                RandomUpdater.Bind(gameObject.GetInstanceID().ToString(), 0.5f, () => GM.instance.SummonDrop(transform.position, eggId));
             }
         }
 

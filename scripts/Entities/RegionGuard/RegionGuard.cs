@@ -9,9 +9,9 @@ namespace GameCore
         public ParticleSystem particleSystem;
         public BiomeGuardParticle particleScript;
 
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             //TODO: pool-ify
             particleSystem = GameObject.Instantiate(GInit.instance.BiomeGuardParticleSystemPrefab);

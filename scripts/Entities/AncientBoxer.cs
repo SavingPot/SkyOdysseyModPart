@@ -23,9 +23,9 @@ namespace GameCore
             ai = new(this, 20, () => GAudio.Play(AudioID.AncientBoxerSpare, true));
         }
 
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             /* -------------------------------------------------------------------------- */
             /*                                     贴图                                     */

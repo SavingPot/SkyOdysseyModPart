@@ -24,9 +24,9 @@ namespace GameCore
             ai = new(this, 46, () => GAudio.Play(AudioID.ZombieSpare, true));
         }
 
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             MethodAgent.TryRun(() =>
             {

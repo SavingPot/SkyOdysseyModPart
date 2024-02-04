@@ -43,9 +43,9 @@ namespace GameCore
             return 1;
         }
 
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             /* ---------------------------------- 设置贴图 ---------------------------------- */
             AddSpriteRenderer(Texture());

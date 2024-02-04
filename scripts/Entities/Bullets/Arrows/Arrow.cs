@@ -5,9 +5,9 @@ namespace GameCore
 {
     public class Arrow : Bullet
     {
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
         }

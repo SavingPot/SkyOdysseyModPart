@@ -28,9 +28,9 @@ namespace GameCore
             ai = new(this, 35);
         }
 
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             MethodAgent.TryRun(() =>
             {

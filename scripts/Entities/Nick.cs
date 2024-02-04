@@ -14,9 +14,9 @@ namespace GameCore
 
 
 
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             #region 添加肢体
             MethodAgent.TryRun(() =>

@@ -8,9 +8,9 @@ namespace GameCore
     [EntityBinding(EntityID.FlintArrow)]
     public class FlintArrow : Arrow
     {
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
 
             damage = 10;
             AddSpriteRenderer("ori:flint_arrow");

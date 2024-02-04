@@ -6,9 +6,9 @@ namespace GameCore
     [EntityBinding(EntityID.PlantRegionGuardSapling)]
     public class PlantRegionGuardSapling : Bullet
     {
-        protected override void Start()
+        public override void Initialize()
         {
-            base.Start();
+            base.Initialize();
             damage = 0;
 
             rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
