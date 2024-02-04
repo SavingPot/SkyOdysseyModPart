@@ -12,7 +12,7 @@ namespace GameCore
 
             randomUpdateID = $"ori:grass_block_{gameObject.GetInstanceID()}";
 
-            RandomUpdater.Bind(randomUpdateID, 0.06f, GrowGrass);
+            RandomUpdater.Bind(randomUpdateID, 0.05f, GrowGrass);
         }
 
         public override void OnRecovered()
@@ -28,7 +28,7 @@ namespace GameCore
 
             if (!Map.instance.HasBlock(targetPos, isBackground))
             {
-                //TODO: 长任意一种植物
+                //TODO: 长任意一种植物、草蔓延
                 BlockData grassData = ModFactory.CompareBlockData(BlockID.Grass);
 
                 if (grassData == null)
