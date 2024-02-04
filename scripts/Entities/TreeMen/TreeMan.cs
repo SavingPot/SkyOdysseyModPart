@@ -17,7 +17,7 @@ namespace GameCore
 
         public bool isPursuing { get; set; }
         public bool isPursuingLastFrame { get; set; }
-        public float jumpForce { get; } = 0;
+        public float jumpForce => 0;
 
 
 

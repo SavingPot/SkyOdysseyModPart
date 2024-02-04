@@ -15,7 +15,7 @@ namespace GameCore
         public SpriteRenderer usingItemRenderer { get; set; }
         public bool isPursuing { get; set; }
         public bool isPursuingLastFrame { get; set; }
-        public float jumpForce { get; } = 25;
+        public float jumpForce => 25;
 
 
 
