@@ -30,7 +30,7 @@ namespace GameCore
         {
             base.Initialize();
 
-            MethodAgent.TryRun(() =>
+            MethodAgent.DebugRun(() =>
             {
                 //添加身体部分
                 CreateModel();
@@ -40,7 +40,7 @@ namespace GameCore
                 leftArm = AddBodyPart("leftarm", ModFactory.CompareTexture(LeftArmTexture).sprite, new Vector2(0.03f, 0), 2, body, BodyPartType.LeftArm);
                 rightLeg = AddBodyPart("rightleg", ModFactory.CompareTexture(RightLegTexture).sprite, Vector2.zero, 2, body, BodyPartType.RightLeg);
                 leftLeg = AddBodyPart("leftleg", ModFactory.CompareTexture(LeftLegTexture).sprite, Vector2.zero, 1, body, BodyPartType.LeftLeg);
-            }, true);
+            });
 
 
             Creature.BindHumanAnimations(this);

@@ -2,7 +2,7 @@
     "json_format": "0.6.0",
     "ori:cooking_recipe": {
         "id": "ori:duck_soup",
-        "items": [
+        "ingredients": [
             {
                 "id": "ori:duck_drumstick"
             }

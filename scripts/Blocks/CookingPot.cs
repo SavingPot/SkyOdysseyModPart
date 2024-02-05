@@ -33,11 +33,11 @@ namespace GameCore
                     foreach (var mod in ModFactory.mods) foreach (var cr in mod.cookingRecipes)
                         {
                             //如果全部原料都可以匹配就添加
-                            if (Player.WhetherCanBeCrafted(cr, items, out var stuff))
+                            if (cr.WhetherCanBeCrafted(items, out var ingredientTables))
                             {
-                                foreach (var stuffItems in stuff)
+                                foreach (var ingredients in ingredientTables)
                                 {
-                                    foreach (var item in stuffItems)
+                                    foreach (var item in ingredients)
                                     {
                                         var temp = items[item.Key];
 

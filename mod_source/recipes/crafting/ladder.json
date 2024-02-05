@@ -2,10 +2,10 @@
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
         "id": "ori:ladder",
-        "items": [
+        "ingredients": [
             {
                 "id": "ori:stick",
-                "count": 3
+                "count": 2
             }
         ],
         "result": {

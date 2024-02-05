@@ -2,7 +2,7 @@
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
         "id": "ori:straw_rope",
-        "items": [
+        "ingredients": [
             {
                 "id": "ori:grass",
                 "count": 3

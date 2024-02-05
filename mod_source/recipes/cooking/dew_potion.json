@@ -2,7 +2,7 @@
     "json_format": "0.6.0",
     "ori:cooking_recipe": {
         "id": "ori:dew_potion",
-        "items": [
+        "ingredients": [
             {
                 "id": "ori:dew_grass"
             }

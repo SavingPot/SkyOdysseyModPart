@@ -2,7 +2,7 @@
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
         "id": "ori:wooden_bow",
-        "items": [
+        "ingredients": [
             {
                 "tags": [
                     "ori:planks"

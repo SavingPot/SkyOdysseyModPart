@@ -2,7 +2,7 @@
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
         "id": "ori:feather_wing",
-        "items": [
+        "ingredients": [
             {
                 "tags": [
                     "ori:feather"

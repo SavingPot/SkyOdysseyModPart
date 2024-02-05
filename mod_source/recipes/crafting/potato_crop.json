@@ -2,7 +2,7 @@
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
         "id": "ori:potato_crop",
-        "items": [
+        "ingredients": [
             {
                 "id": "ori:potato"
             }

@@ -22,7 +22,7 @@ namespace GameCore
         {
             base.Initialize();
 
-            MethodAgent.TryRun(() =>
+            MethodAgent.DebugRun(() =>
             {
                 //添加身体部分
                 CreateModel();
@@ -34,7 +34,7 @@ namespace GameCore
                 leftLeg = AddBodyPart("leftLeg", ModFactory.CompareTexture("ori:zombie_left_leg").sprite, new(-0.02f, 0.04f), 1, body, BodyPartType.LeftLeg);
                 rightFoot = AddBodyPart("rightFoot", ModFactory.CompareTexture("ori:zombie_right_foot").sprite, Vector2.zero, 3, rightLeg, BodyPartType.RightFoot);
                 leftFoot = AddBodyPart("leftFoot", ModFactory.CompareTexture("ori:zombie_left_foot").sprite, Vector2.zero, 1, leftLeg, BodyPartType.LeftFoot);
-            }, true);
+            });
 
 
             Creature.BindHumanAnimations(this);

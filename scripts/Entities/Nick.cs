@@ -19,7 +19,7 @@ namespace GameCore
             base.Initialize();
 
             #region 添加肢体
-            MethodAgent.TryRun(() =>
+            MethodAgent.DebugRun(() =>
             {
                 CreateModel();
                 body = AddBodyPart("body", ModFactory.CompareTexture("ori:nick_body_naked").sprite, Vector2.zero, 3, model.transform, BodyPartType.Body);
@@ -28,7 +28,7 @@ namespace GameCore
                 leftArm = AddBodyPart("leftarm", ModFactory.CompareTexture("ori:nick_left_arm").sprite, Vector2.zero, 2, body, BodyPartType.LeftArm);
                 rightLeg = AddBodyPart("rightleg", ModFactory.CompareTexture("ori:nick_right_leg").sprite, Vector2.zero, 2, body, BodyPartType.RightLeg);
                 leftLeg = AddBodyPart("leftleg", ModFactory.CompareTexture("ori:nick_left_leg").sprite, Vector2.zero, 1, body, BodyPartType.LeftLeg);
-            }, true);
+            });
             #endregion
 
             NickData = LoadNPCData<NickData>(t =>

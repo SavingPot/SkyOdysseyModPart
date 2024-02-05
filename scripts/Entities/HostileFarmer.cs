@@ -1,8 +1,10 @@
 using DG.Tweening;
 using GameCore.High;
 using SP.Tools.Unity;
+using System;
 using System.Collections;
 using System.Linq;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -26,7 +28,7 @@ namespace GameCore
         {
             base.Initialize();
 
-            MethodAgent.TryRun(() =>
+            MethodAgent.DebugRun(() =>
             {
                 //添加身体部分
                 CreateModel();
@@ -39,35 +41,19 @@ namespace GameCore
                 rightFoot = AddBodyPart("rightFoot", ModFactory.CompareTexture("ori:hostile_farmer_right_foot").sprite, Vector2.zero, 3, rightLeg, BodyPartType.RightFoot);
                 leftFoot = AddBodyPart("leftFoot", ModFactory.CompareTexture("ori:hostile_farmer_left_foot").sprite, Vector2.zero, 1, leftLeg, BodyPartType.LeftFoot);
 
-                //添加双手物品的显示
-                usingItemRenderer = ObjectTools.CreateSpriteObject(rightArm.transform, "item");
+                //添加手持物品的显示
+                EntityInventoryOwnerBehaviour.CreateUsingItemRenderer(this, rightArm.transform, 9);
+            });
 
-                usingItemRenderer.sortingOrder = 9;
-
-                SetUsingItemRendererLocalPositionAndScale(Vector2.zero, Vector2.one);
-            }, true);
+            BindHumanAnimations(this);
 
 
-            Creature.BindHumanAnimations(this);
 
-            this.LoadInventoryFromCustomData(1);
 
-            //没有物品就设置
-            if (Item.Null(inventory.GetItem(0)))
-            {
-                Item item = Random.Range(0, 5) switch
-                {
-                    1 => ModFactory.CompareItem("ori:straw_hat").DataToItem(),
-                    2 => ModFactory.CompareItem("ori:straw_hat").DataToItem(),
-                    3 => ModFactory.CompareItem("ori:straw_hat").DataToItem(),
-                    4 => ModFactory.CompareItem("ori:straw_hat").DataToItem(),
-                    _ => ModFactory.CompareItem("ori:flint_hoe").DataToItem()
-                };
 
-                inventory.SetItem(0, item);
-            }
 
-            OnInventoryItemChange(inventory, "0");
+            EntityInventoryOwnerBehaviour.LoadInventoryFromCustomData(this);
+            EntityInventoryOwnerBehaviour.RefreshInventory(this);
         }
 
         public void SetUsingItemRendererLocalPositionAndScale(Vector2 localPosition, Vector2 localScale)
@@ -101,15 +87,33 @@ namespace GameCore
 
 
         public Item[] items { get => inventory.slots; set => inventory.slots = value; }
+        public int inventorySlotCount => 1;
+        public int usingItemIndex => 0;
+
+        Inventory IInventoryOwner.DefaultInventory()
+        {
+            Inventory inventory = new(inventorySlotCount, this);
+
+            string item = Random.Range(0, 5) switch
+            {
+                2 => "ori:iron_hoe",
+                0 => "ori:flint_hoe",
+                1 => "ori:straw_hat",
+                3 => "ori:straw_hat",
+                4 => "ori:straw_hat",
+                _ => throw new NotImplementedException()
+            };
+
+            inventory.SetItem(0, ModFactory.CompareItem(item).DataToItem());
+
+            return inventory;
+        }
 
 
         public void OnInventoryItemChange(Inventory newValue, string index)
         {
-            Item item = newValue.GetItem(index);
-
-            usingItemRenderer.sprite = item.data.texture.sprite;
-
-            inventory = newValue;
+            if (inventory != null)
+                EntityInventoryOwnerBehaviour.RefreshInventory(this);
         }
 
 

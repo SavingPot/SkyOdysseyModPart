@@ -2,7 +2,7 @@
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
         "id": "ori:sea_hibiscus_planks",
-        "items": [
+        "ingredients": [
             {
                 "id": "ori:sea_hibiscus_log"
             }

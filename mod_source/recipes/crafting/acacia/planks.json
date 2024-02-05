@@ -2,7 +2,7 @@
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
         "id": "ori:acacia_planks",
-        "items": [
+        "ingredients": [
             {
                 "id": "ori:acacia_log"
             }
