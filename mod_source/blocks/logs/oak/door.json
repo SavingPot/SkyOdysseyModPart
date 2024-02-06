@@ -1,0 +1,34 @@
+{
+    "json_format": "0.7.8",
+    "ori:block": {
+        "id": "ori:oak_door",
+        "display": {
+            "texture_id": "ori:oak_door"
+        },
+        "property": {
+            "hardness": 12,
+            "tags": [
+                "ori:door"
+            ],
+            "behaviour": "GameCore.Door"
+        }
+    },
+    "ori:group_block": {
+        "parts": [
+            {
+                "offset": [
+                    0,
+                    0
+                ],
+                "texture": "ori:oak_door_down"
+            },
+            {
+                "offset": [
+                    0,
+                    1
+                ],
+                "texture": "ori:oak_door_up"
+            }
+        ]
+    }
+}

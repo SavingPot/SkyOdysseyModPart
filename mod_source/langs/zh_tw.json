@@ -22,7 +22,7 @@
             },
             {
                 "id": "ori:dialog.nick.first_meet_3",
-                "text": "只需要對著我點一下<color=#D1A35F>{button}</color>就好啦!"
+                "text": "試著對著我點一下<color=#D1A35F>{button}</color>吧!"
             },
             {
                 "id": "ori:dialog.nick.teaching.attack_0",

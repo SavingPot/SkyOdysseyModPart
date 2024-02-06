@@ -531,6 +531,26 @@
             "path": "/blocks/oak_planks.png"
         },
         {
+            "id": "ori:oak_door",
+            "path": "/items/oak_door.png"
+        },
+        {
+            "id": "ori:oak_door_up",
+            "path": "/blocks/oak_door_up.png"
+        },
+        {
+            "id": "ori:oak_door_down",
+            "path": "/blocks/oak_door_down.png"
+        },
+        {
+            "id": "ori:oak_door_up_opened",
+            "path": "/blocks/oak_door_up_opened.png"
+        },
+        {
+            "id": "ori:oak_door_down_opened",
+            "path": "/blocks/oak_door_down_opened.png"
+        },
+        {
             "id": "ori:oak_leaf",
             "path": "/blocks/oak_leaf.png"
         },

@@ -23,18 +23,26 @@ namespace GameCore
         public Vector2Int posDown;
         public string cookingResult;
 
+        public override void DoStart()
+        {
+            base.DoStart();
+
+            posDown = new(pos.x, pos.y - 1);
+        }
+
         public override bool PlayerInteraction(Player caller)
         {
             //如果 没配方 - 下面是篝火
             if (string.IsNullOrWhiteSpace(cookingResult))
             {
-                if (chunk.map.TryGetBlock(posDown, isBackground, out Block result) && result.data.id == BlockID.Campfire)
+                if (chunk.map.TryGetBlock(posDown, isBackground, out Block blockDown) && blockDown.data.id == BlockID.Campfire)
                 {
                     foreach (var mod in ModFactory.mods) foreach (var cr in mod.cookingRecipes)
                         {
                             //如果全部原料都可以匹配就添加
                             if (cr.WhetherCanBeCrafted(items, out var ingredientTables))
                             {
+                                //消耗掉原料
                                 foreach (var ingredients in ingredientTables)
                                 {
                                     foreach (var item in ingredients)

@@ -22,7 +22,7 @@ namespace GameCore
 
     public class CropBlock : Block
     {
-        public static Dictionary<string, CropBlockDatum> dataTemps = new();
+        public static readonly Dictionary<string, CropBlockDatum> dataTemps = new();
         public CropBlockDatum cropDatum;
         public int cropIndex;
         public string randomUpdateID;
@@ -140,10 +140,10 @@ namespace GameCore
                         cropDatum.harvests.Add(new(j?["id"]?.ToString(), (j?["count"]?.ToString()?.ToInt() ?? 1).ToUShort(), new List<string>()));
                     });
 
-                    if (processes == null || processes.Type != JTokenType.Array || processes.Count() == 0 )
+                    if (processes == null || processes.Type != JTokenType.Array || processes.Count() == 0)
                     {
                         Debug.LogError($"加载作物失败: 作物方块 {data.id} 的 json 文件中不包含 ori:crop_block/processes 或者 processes 不是数组!");
-                        return cropDatum;
+                        return null;
                     }
                     else
                     {
@@ -159,11 +159,13 @@ namespace GameCore
                 else
                 {
                     Debug.LogError($"加载作物失败: 作物方块 {data.id} 的 json 文件中不包含 ori:crop_block 或者 ori:crop_block 不是对象!");
+                    return null;
                 }
             }
             else
             {
                 Debug.LogError($"加载作物失败: 方块 {data.id} 的 json 格式版本 {data.jsonFormat} 不受支持!");
+                return null;
             }
 
             dataTemps.Add(data.id, cropDatum);

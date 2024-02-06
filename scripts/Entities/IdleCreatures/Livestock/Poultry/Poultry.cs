@@ -13,7 +13,7 @@ namespace GameCore
 
             if (isServer && !eggId.IsNullOrWhiteSpace())
             {
-                RandomUpdater.Bind(gameObject.GetInstanceID().ToString(), 0.5f, () => GM.instance.SummonDrop(transform.position, eggId));
+                RandomUpdater.Bind(gameObject.GetInstanceID().ToString(), 0.4f, () => GM.instance.SummonDrop(transform.position, eggId));
             }
         }
 
