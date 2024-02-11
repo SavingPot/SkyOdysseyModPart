@@ -122,19 +122,30 @@ namespace GameCore
 
 
             /* --------------------------------- 补全方块组 (放下非中心方块) -------------------------------- */
+
             block.groupPosTemp = new Vector2Int[datum.parts.Length - 1];
 
-            //注意起始索引是 1
-            for (int i = 1; i < datum.parts.Length; i++)
+            //获取组方块中除了自己的其他部分
+            List<GroupBlockDatum_Part> partsWithoutSelf = new(block.groupPosTemp.Length);
+            foreach (var part in datum.parts)
+                if (part.offset != block.offset)
+                    partsWithoutSelf.Add(part);
+
+
+            //遍历获得到的部分
+            for (int i = 0; i < partsWithoutSelf.Count; i++)
             {
-                var entourageOffset = datum.parts[i].offset;
-                var entouragePos = block.pos + entourageOffset;
-                block.groupPosTemp[i - 1] = entouragePos;
+                var entourageOffset = partsWithoutSelf[i].offset;
+                var entouragePos = block.pos - block.offset + entourageOffset;
+                block.groupPosTemp[i] = entouragePos;
 
                 if (block.isGroupCenter)
                 {
-                    if (!Map.instance.HasBlock(entouragePos, block.isBackground))
+                    //如果存档中不存在子方块
+                    if (!GFiles.world.TryGetRegion(block.chunk.regionIndex, out var region) ||
+                        region.GetBlock(block.data.id, block.isBackground)?.GetLocation(entouragePos.x, entouragePos.y) == null)
                     {
+                        //创建子方块
                         JObject customData = new();
                         customData.AddProperty("offset", VectorConverter.ToIntArray(entourageOffset));
                         Map.instance.SetBlock(entouragePos, block.isBackground, block.data, customData.ToString(Formatting.None), true, false);
@@ -150,12 +161,12 @@ namespace GameCore
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="block"></param>
-        public static void OnUpdate<T>(T block) where T : Block, IGroupBlock
+        public static void SpreadOnUpdate<T>(T block) where T : Block, IGroupBlock
         {
-            block.UpdateWithoutSpread();
-
             if (block.isGroupCenter)
             {
+                block.UpdateWithoutSpread();
+
                 //让子方块更新
                 foreach (var groupPos in block.groupPosTemp)
                 {
@@ -169,12 +180,41 @@ namespace GameCore
             }
             else
             {
-                //让中心方块更新
+                //让中心方块更新 (中心方块的更新会传播到子方块)
                 var group = Map.instance.GetBlock(block.pos - block.offset, block.isBackground);
 
-                if (group != null)
+                group?.OnUpdate();
+            }
+        }
+
+        public static void SpreadOnRecovered<T>(T block) where T : Block, IGroupBlock
+        {
+            //回收整个组
+            foreach (var groupPos in block.groupPosTemp)
+            {
+                //获取同组方块
+                var group = Map.instance.GetBlock(groupPos, block.isBackground);
+
+                //检查空值
+                if (group is null)
                 {
-                    ((IGroupBlock)group).UpdateWithoutSpread();
+                    Debug.LogError($"位于 {block.pos} 的方块 {block.data.id} 的组方块 {groupPos} 不存在!");
+                    return;
+                }
+
+                //检查类型
+                if (group is T groupAsT)
+                {
+                    if (!groupAsT.hasBeenSpreadOnRecovered)
+                    {
+                        groupAsT.hasBeenSpreadOnRecovered = true;
+                        Map.instance.RemoveBlock(groupPos, block.isBackground, true, true);
+                    }
+                }
+                else
+                {
+                    Debug.LogError($"位于 {block.pos} 的方块 {block.data.id} 的组方块 {groupPos} 与其组成员类型不一致!");
+                    return;
                 }
             }
         }
@@ -185,6 +225,8 @@ namespace GameCore
         Vector2Int[] groupPosTemp { get; set; }
         Vector2Int offset { get; set; }
         bool isGroupCenter { get; set; }
+        bool hasBeenSpreadOnRecovered { get; set; }
         void UpdateWithoutSpread();
+        void OnRecoveredWithoutSpread();
     }
 }

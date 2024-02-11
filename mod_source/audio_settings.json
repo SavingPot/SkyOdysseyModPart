@@ -26,6 +26,14 @@
             "volume": 1.1
         },
         {
+            "id": "ori:open_door",
+            "path": "/open_door.ogg"
+        },
+        {
+            "id": "ori:close_door",
+            "path": "/close_door.ogg"
+        },
+        {
             "id": "ori:hoe",
             "path": "/hoe.ogg"
         },

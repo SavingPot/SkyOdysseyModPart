@@ -6,7 +6,7 @@
             "texture_id": "ori:oak_log"
         },
         "property": {
-            "hardness": 8,
+            "hardness": 12,
             "behaviour": "GameCore.TreeLogBlock",
             "collidible": false,
             "drops": [
