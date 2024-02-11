@@ -21,7 +21,7 @@ namespace GameCore
         #endregion
 
         public Vector2Int posDown;
-        public string cookingResult;
+        public CookingRecipe cookedRecipe = null;
 
         public override void DoStart()
         {
@@ -33,7 +33,7 @@ namespace GameCore
         public override bool PlayerInteraction(Player caller)
         {
             //如果 没配方 - 下面是篝火
-            if (string.IsNullOrWhiteSpace(cookingResult))
+            if (cookedRecipe == null)
             {
                 if (chunk.map.TryGetBlock(posDown, isBackground, out Block blockDown) && blockDown.data.id == BlockID.Campfire)
                 {
@@ -55,7 +55,7 @@ namespace GameCore
                                     }
                                 }
 
-                                cookingResult = cr.result.id;
+                                cookedRecipe = cr;
                                 sr.sprite = ModFactory.CompareTexture("ori:cooking_pot_filled").sprite;
                                 RefreshItemView();
                                 GAudio.Play(AudioID.Cooking);
@@ -67,17 +67,17 @@ namespace GameCore
                 }
             }
             //如果 有配方 - 拿着碗
-            else if (cookingResult.Contains(":") && caller.TryGetUsingItem()?.data?.id == ItemID.WoodenBowl)
+            else if (!cookedRecipe.needBowl || caller.TryGetUsingItem()?.data?.id == ItemID.WoodenBowl)
             {
-                string[] splitted = cookingResult.Split(':');
+                // string[] splitted = cookingResult.Split(':');
 
-                if (splitted.Length != 2)
-                {
-                    Debug.LogError($"菜谱ID {cookingResult} 格式必须为 namespace:name");
-                    return false;
-                }
+                // if (splitted.Length != 2)
+                // {
+                //     Debug.LogError($"菜谱ID {cookingResult} 格式必须为 namespace:name");
+                //     return false;
+                // }
 
-                string itemId = $"{splitted[0]}:wooden_bowl_with_{splitted[1]}";
+                string itemId = cookedRecipe.result.id;//$"{splitted[0]}:wooden_bowl_with_{splitted[1]}";
                 ItemData target = ModFactory.CompareItem(itemId);
 
                 if (target == null)
@@ -94,7 +94,7 @@ namespace GameCore
 
                 GAudio.Play(AudioID.FillingWaterBowl);
 
-                cookingResult = null;
+                cookedRecipe = null;
                 sr.sprite = ModFactory.CompareTexture("ori:cooking_pot").sprite;
                 return true;
             }

@@ -1,8 +1,8 @@
 {
     "json_format": "0.5.1",
     "ori:item": {
-        "id": "ori:wooden_bowl_with_pig_soup",
-        "texture": "ori:wooden_bowl_with_pig_soup",
+        "id": "ori:pig_soup",
+        "texture": "ori:pig_soup",
         "tags": [
             "ori:dish",
             "ori:edible=50",

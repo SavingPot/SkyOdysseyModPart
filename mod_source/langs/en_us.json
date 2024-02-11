@@ -225,7 +225,7 @@
                 "text": "Can be disassembled into gravels"
             },
             {
-                "id": "ori:description.wooden_bowl_with_dog_tail_grass_noodles",
+                "id": "ori:description.dog_tail_grass_noodles",
                 "text": "Yummy!!!!!!!!!!!"
             },
             {
@@ -341,7 +341,7 @@
                 "text": "It can be made into noodles with a knife"
             },
             {
-                "id": "ori:description.dog_tail_grass_noodles",
+                "id": "ori:description.raw_dog_tail_grass_noodles",
                 "text": "You can add it into cooking pot to make delicacies"
             },
             {
@@ -549,20 +549,20 @@
                 "text": "Slime Gel"
             },
             {
-                "id": "ori:wooden_bowl_with_salad",
-                "text": "Wooden Bowl With Salad"
+                "id": "ori:salad",
+                "text": "Salad"
             },
             {
-                "id": "ori:wooden_bowl_with_chicken_soup",
-                "text": "Wooden Bowl With Chicken Soup"
+                "id": "ori:chicken_soup",
+                "text": "Chicken Soup"
             },
             {
-                "id": "ori:wooden_bowl_with_duck_soup",
-                "text": "Wooden Bowl With Duck Soup"
+                "id": "ori:duck_soup",
+                "text": "Duck Soup"
             },
             {
-                "id": "ori:wooden_bowl_with_pig_soup",
-                "text": "Wooden Bowl With Pig Soup"
+                "id": "ori:pig_soup",
+                "text": "Pig Soup"
             },
             {
                 "id": "ori:extinguished_campfire",
@@ -581,8 +581,8 @@
                 "text": "Wooden Bow"
             },
             {
-                "id": "ori:wooden_bowl_with_dog_tail_grass_noodles",
-                "text": "Wooden Bowl With Dog Tail Grass Noodles"
+                "id": "ori:dog_tail_grass_noodles",
+                "text": "Dog Tail Grass Noodles"
             },
             {
                 "id": "ori:barrel",
@@ -621,8 +621,8 @@
                 "text": "Dog Tail Grass Dough"
             },
             {
-                "id": "ori:dog_tail_grass_noodles",
-                "text": "Dog Tail Grass Noodles"
+                "id": "ori:raw_dog_tail_grass_noodles",
+                "text": "Raw Dog Tail Grass Noodles"
             },
             {
                 "id": "ori:straw_rope",

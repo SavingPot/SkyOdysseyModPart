@@ -225,7 +225,7 @@
                 "text": "可被拆为砾石"
             },
             {
-                "id": "ori:description.wooden_bowl_with_dog_tail_grass_noodles",
+                "id": "ori:description.dog_tail_grass_noodles",
                 "text": "好吃!!!!!!!!!!!"
             },
             {
@@ -341,7 +341,7 @@
                 "text": "可以用刀做成面条"
             },
             {
-                "id": "ori:description.dog_tail_grass_noodles",
+                "id": "ori:description.raw_dog_tail_grass_noodles",
                 "text": "可以加入烹饪锅来做菜肴"
             },
             {
@@ -549,20 +549,20 @@
                 "text": "史莱姆凝胶"
             },
             {
-                "id": "ori:wooden_bowl_with_salad",
-                "text": "木碗装沙拉"
+                "id": "ori:salad",
+                "text": "沙拉"
             },
             {
-                "id": "ori:wooden_bowl_with_chicken_soup",
-                "text": "木碗装鸡汤"
+                "id": "ori:chicken_soup",
+                "text": "鸡汤"
             },
             {
-                "id": "ori:wooden_bowl_with_duck_soup",
-                "text": "木碗装鸭汤"
+                "id": "ori:duck_soup",
+                "text": "鸭汤"
             },
             {
-                "id": "ori:wooden_bowl_with_pig_soup",
-                "text": "木碗装猪汤"
+                "id": "ori:pig_soup",
+                "text": "猪肉汤"
             },
             {
                 "id": "ori:extinguished_campfire",
@@ -581,8 +581,8 @@
                 "text": "木弓"
             },
             {
-                "id": "ori:wooden_bowl_with_dog_tail_grass_noodles",
-                "text": "木碗装狗尾草面"
+                "id": "ori:dog_tail_grass_noodles",
+                "text": "狗尾草面"
             },
             {
                 "id": "ori:barrel",
@@ -621,8 +621,8 @@
                 "text": "狗尾草面团"
             },
             {
-                "id": "ori:dog_tail_grass_noodles",
-                "text": "狗尾草面条"
+                "id": "ori:raw_dog_tail_grass_noodles",
+                "text": "生狗尾草面条"
             },
             {
                 "id": "ori:straw_rope",

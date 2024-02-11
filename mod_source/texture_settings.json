@@ -186,24 +186,24 @@
             "path": "/items/slime_gel.png"
         },
         {
-            "id": "ori:wooden_bowl_with_dog_tail_grass_noodles",
-            "path": "/items/foods/dishes/wooden_bowl/dog_tail_grass_noodles.png"
+            "id": "ori:dog_tail_grass_noodles",
+            "path": "/items/foods/dishes/dog_tail_grass_noodles.png"
         },
         {
-            "id": "ori:wooden_bowl_with_chicken_soup",
-            "path": "/items/foods/dishes/wooden_bowl/chicken_soup.png"
+            "id": "ori:chicken_soup",
+            "path": "/items/foods/dishes/chicken_soup.png"
         },
         {
-            "id": "ori:wooden_bowl_with_duck_soup",
-            "path": "/items/foods/dishes/wooden_bowl/duck_soup.png"
+            "id": "ori:duck_soup",
+            "path": "/items/foods/dishes/duck_soup.png"
         },
         {
-            "id": "ori:wooden_bowl_with_pig_soup",
-            "path": "/items/foods/dishes/wooden_bowl/pig_soup.png"
+            "id": "ori:pig_soup",
+            "path": "/items/foods/dishes/pig_soup.png"
         },
         {
-            "id": "ori:wooden_bowl_with_salad",
-            "path": "/items/foods/dishes/wooden_bowl/salad.png"
+            "id": "ori:salad",
+            "path": "/items/foods/dishes/salad.png"
         },
         {
             "id": "ori:extinguished_campfire",
@@ -239,7 +239,7 @@
         },
         {
             "id": "ori:wooden_bowl_with_water",
-            "path": "/items/foods/dishes/wooden_bowl/water.png"
+            "path": "/items/foods/dishes/wooden_bowl_with_water.png"
         },
         {
             "id": "ori:straw_rope",
@@ -887,8 +887,8 @@
             "path": "/items/foods/dog_tail_grass/dough.png"
         },
         {
-            "id": "ori:dog_tail_grass_noodles",
-            "path": "/items/foods/dog_tail_grass/noodles.png"
+            "id": "ori:raw_dog_tail_grass_noodles",
+            "path": "/items/foods/dog_tail_grass/raw_noodles.png"
         },
         {
             "id": "ori:grass",

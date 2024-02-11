@@ -1,0 +1,8 @@
+{
+    "json_format": "0.5.1",
+    "ori:item": {
+        "id": "ori:raw_dog_tail_grass_noodles",
+        "texture": "ori:raw_dog_tail_grass_noodles",
+        "description": "ori:description.raw_dog_tail_grass_noodles"
+    }
+}

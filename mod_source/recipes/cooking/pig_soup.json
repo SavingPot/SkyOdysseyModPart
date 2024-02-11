@@ -2,6 +2,7 @@
     "json_format": "0.6.0",
     "ori:cooking_recipe": {
         "id": "ori:pig_soup",
+        "need_bowl": true,
         "ingredients": [
             {
                 "id": "ori:pig_chop"
