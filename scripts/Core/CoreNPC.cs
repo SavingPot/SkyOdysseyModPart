@@ -13,12 +13,14 @@ namespace GameCore
         {
             var cd = customData ?? new();
 
+            //如果不存在就添加
             if (!cd.TryGetValue("ori:npc", out JToken value))
             {
                 cd.Add(new JProperty("ori:npc", new JObject()));
                 value = cd["ori:npc"];
             }
 
+            //修改 customData
             customData = cd;
 
             return Load(value);
@@ -28,10 +30,14 @@ namespace GameCore
         {
             var cd = customData ?? new();
 
+            //如果存在就删掉
             if (cd.TryGetValue("ori:npc", out JToken _))
                 cd.Remove("ori:npc");
 
+            //添加数据
             cd.Add(new JProperty("ori:npc", JsonTools.LoadJObjectByString(JsonTools.ToJson(newValue))));
+
+            //修改 customData
             customData = cd;
         }
     }

@@ -182,6 +182,10 @@
             "path": "/blocks/cooking_pot_filled.png"
         },
         {
+            "id": "ori:frying_pan",
+            "path": "/blocks/frying_pan.png"
+        },
+        {
             "id": "ori:slime_gel",
             "path": "/items/slime_gel.png"
         },

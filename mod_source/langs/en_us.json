@@ -237,6 +237,10 @@
                 "text": "Can be used to cook foods"
             },
             {
+                "id": "ori:description.frying_pan",
+                "text": "Can be used to fry food in oil"
+            },
+            {
                 "id": "ori:description.extinguished_campfire",
                 "text": "Interactive to ignite"
             },
@@ -979,6 +983,10 @@
             {
                 "id": "ori:cooking_pot",
                 "text": "Cooking Pot"
+            },
+            {
+                "id": "ori:frying_pan",
+                "text": "Frying Pan"
             },
             {
                 "id": "ori:grass",

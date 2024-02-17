@@ -31,13 +31,13 @@ namespace GameCore
             });
             #endregion
 
-            NickData = LoadNPCData<NickData>(t =>
+            NickData = LoadNPCData(npcToken =>
             {
                 NickData temp = new();
 
                 try
                 {
-                    temp.progress = (NickProgress)byte.Parse(t["progress"].ToString());
+                    temp.progress = (NickProgress)byte.Parse(npcToken["progress"].ToString());
                 }
                 catch
                 {
@@ -161,7 +161,6 @@ namespace GameCore
         {
             NickData.progress++;
             SaveNPCData(NickData);
-            WriteDataToSave();
         }
     }
 

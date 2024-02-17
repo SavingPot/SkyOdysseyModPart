@@ -4,7 +4,7 @@
         "id": "ori:torch",
         "display": {
             "texture_id": "ori:torch_0",
-            "lightLevel": 5
+            "light_level": 5
         },
         "property": {
             "hardness": 0.025,

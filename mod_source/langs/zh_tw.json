@@ -237,6 +237,10 @@
                 "text": "可以進行烹飪"
             },
             {
+                "id": "ori:description.frying_pan",
+                "text": "可以油煎食物"
+            },
+            {
                 "id": "ori:description.extinguished_campfire",
                 "text": "互動可以點燃"
             },
@@ -979,6 +983,10 @@
             {
                 "id": "ori:cooking_pot",
                 "text": "烹飪鍋"
+            },
+            {
+                "id": "ori:frying_pan",
+                "text": "煎鍋"
             },
             {
                 "id": "ori:grass",

@@ -16,7 +16,7 @@ namespace GameCore
             {
                 if (!enemy.isPursuingLastFrame)
                 {
-                    enemy.ServerOnStartMovement();
+                    enemy.isMoving = true;
                 }
 
                 Pursuit(enemy);
@@ -25,7 +25,7 @@ namespace GameCore
             {
                 if (enemy.isPursuingLastFrame)
                 {
-                    enemy.ServerOnStopMovement();
+                    enemy.isMoving = false;
 
                     enemy.rb.velocity = Vector2.zero;
                 }
