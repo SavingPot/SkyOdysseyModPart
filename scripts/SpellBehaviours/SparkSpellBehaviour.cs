@@ -9,8 +9,8 @@ namespace GameCore
     {
         public override void Release(Vector2 releaseDirection, Vector2 releasePosition, Player player)
         {
-            //标准化以保证速度正常, 乘以数字以加快速度
-            var velocity = releaseDirection.normalized * 12;
+            //标准化以保证速度正常, 乘以数字以加快子弹速度
+            var velocity = releaseDirection.normalized * 15;
 
             JObject jo = new();
             jo.AddObject("ori:bullet");

@@ -24,37 +24,37 @@ namespace GameCore
                 }
 
                 //TODO: 改为用石头敲打, 检测地上是否有水洗去壳狗尾草
-                // if (anotherItem?.data?.id == BlockID.Stone)
-                // {
-                //     for (int i = 0; i < player.inventory.slots.Length; i++)
-                //     {
-                //         var slot = player.inventory.slots[i];
+                if (Map.instance.GetBlock(PosConvert.WorldToMapPos( point),player.isControllingBackground)?.data?.id== BlockID.Stone)
+                {
+                    for (int i = 0; i < player.inventory.slots.Length; i++)
+                    {
+                        var slot = player.inventory.slots[i];
 
-                //         if (slot?.data?.id == ItemID.Bottle && slot.count >= 1)
-                //         {
-                //             ItemData powder = ModFactory.CompareItem(ItemID.DogTailGrassPowder);
+                        if (slot?.data?.id == ItemID.Bottle && slot.count >= 1)
+                        {
+                            ItemData powder = ModFactory.CompareItem(ItemID.DogTailGrassPowder);
 
-                //             if (powder == null)
-                //                 return false;
+                            if (powder == null)
+                                return false;
 
-                //             if (GControls.mode == ControlMode.Gamepad)
-                //                 GControls.GamepadVibrationSlightMedium();
+                            if (GControls.mode == ControlMode.Gamepad)
+                                GControls.GamepadVibrationSlightMedium();
 
-                //             player.ServerAddItem(powder.DataToItem());
-                //             player.ServerReduceItemCount(i.ToString(), 1);
-                //             player.ServerReduceItemCount(inventoryIndex, powerNeed);
+                            player.ServerAddItem(powder.DataToItem());
+                            player.ServerReduceItemCount(i.ToString(), 1);
+                            player.ServerReduceItemCount(inventoryIndex, powerNeed);
 
-                //             GAudio.Play(AudioID.PickBerryBush);
-                //             return true;
-                //         }
-                //     }
+                            GAudio.Play(AudioID.PickBerryBush);
+                            return true;
+                        }
+                    }
 
-                //     player.SetStatusText("背包中需要一个瓶子");
-                // }
-                // else
-                // {
-                //     player.SetStatusText("另一只手需要放一个石头");
-                // }
+                    InternalUIAdder.instance.SetStatusText("背包中需要一个瓶子");
+                }
+                else
+                {
+                    InternalUIAdder.instance.SetStatusText("请对着石头方块使用");
+                }
             }
 
             return false;

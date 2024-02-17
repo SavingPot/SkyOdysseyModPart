@@ -2,16 +2,20 @@ using Cysharp.Threading.Tasks.Triggers;
 using GameCore.High;
 using Newtonsoft.Json.Linq;
 using SP.Tools.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace GameCore
 {
     public static class WaterCenter
     {
         public static List<Water> waterBlocks = new();
+        public static List<Action> operationsToExecute = new();
         public static float physicsTimer;
         public static float streamSpeed = 0.2f;
 
@@ -25,46 +29,56 @@ namespace GameCore
             waterBlocks.Remove(water);
         }
 
+        /// <returns>origin 是否流完了</returns>
         public static bool StreamIntoWater(Water origin, Water target)
         {
-            target.filledLevel += 1;
-            origin.filledLevel -= 1;
+            Interlocked.Increment(ref target.filledLevel);
+            Interlocked.Decrement(ref origin.filledLevel);
 
-            MethodAgent.QueueOnMainThread(() => target.OnUpdate());
+            operationsToExecute.Add(() =>
+            {
+                target.OnUpdate();
 
-            if (origin.filledLevel <= 0)
-            {
-                //如果流尽了就删除
-                MethodAgent.QueueOnMainThread(() => origin.RemoveFromMap());
-                return true;
-            }
-            else
-            {
-                MethodAgent.QueueOnMainThread(() => origin.OnUpdate());
-                return false;
-            }
+                if (origin.filledLevel <= 0)
+                {
+                    //如果流尽了就删除
+                    origin.RemoveFromMap();
+                }
+                else
+                {
+                    //如果没流尽就更新
+                    origin.OnUpdate();
+                }
+            });
+
+            return origin.filledLevel <= 0;
         }
 
+        /// <returns>origin 是否流完了</returns>
         public static bool StreamIntoAir(Water origin, Vector2Int target)
         {
             var jo = new JObject();
             jo.AddProperty("ori:water_filled_level", 1);
 
-            origin.filledLevel -= 1;
+            Interlocked.Decrement(ref origin.filledLevel);
 
-            MethodAgent.QueueOnMainThread(() => Map.instance.SetBlockNet(target, origin.isBackground, BlockID.Water, jo.ToString()));
+            operationsToExecute.Add(() =>
+            {
+                Map.instance.SetBlockNet(target, origin.isBackground, BlockID.Water, jo.ToString());
 
-            if (origin.filledLevel <= 0)
-            {
-                //如果流尽了就删除
-                MethodAgent.QueueOnMainThread(() => origin.RemoveFromMap());
-                return true;
-            }
-            else
-            {
-                MethodAgent.QueueOnMainThread(() => origin.OnUpdate());
-                return false;
-            }
+                if (origin.filledLevel <= 0)
+                {
+                    //如果流尽了就删除
+                    origin.RemoveFromMap();
+                }
+                else
+                {
+                    //如果没流尽就更新
+                    origin.OnUpdate();
+                }
+            });
+
+            return origin.filledLevel <= 0;
         }
 
         //TODO: 水物理十分耗时
@@ -75,7 +89,15 @@ namespace GameCore
             {
                 physicsTimer = Tools.time + streamSpeed;
 
+                //执行水物理
                 Parallel.ForEach(waterBlocks, SingleWaterPhysics);
+
+                //执行水物理留下的待执行操作
+                foreach (var item in operationsToExecute)
+                    item();
+                
+                //清除待执行操作
+                operationsToExecute.Clear();
             }
         }
 
@@ -124,7 +146,6 @@ namespace GameCore
                     }
                 }
             }
-
         }
     }
 
@@ -138,13 +159,13 @@ namespace GameCore
         public Vector2Int posTempLeft;
         public Vector2Int posTempRight;
 
-        public byte filledLevel = 8;
+        public int filledLevel = 8;
 
         public override void DoStart()
         {
             base.DoStart();
 
-            filledLevel = customData?["ori:water_filled_level"]?.ToObject<byte>() ?? 8;
+            filledLevel = customData?["ori:water_filled_level"]?.ToObject<int>() ?? 8;
 
             sr.sortingOrder = 10;
             sr.color = new(1, 1, 1, 0.4f);
@@ -168,7 +189,7 @@ namespace GameCore
         {
             base.OnUpdate();
 
-            if (filledLevel > 0)
+            if (filledLevel != 0)
                 sr.sprite = ModFactory.CompareTexture($"ori:water_{filledLevel}").sprite;
         }
 
@@ -190,6 +211,7 @@ namespace GameCore
             {
                 creature.fallenY = entity.transform.position.y;
 
+                //TODO: 任一实体的游泳
                 if (entity.isPlayer)
                 {
                     var player = (Player)entity;
