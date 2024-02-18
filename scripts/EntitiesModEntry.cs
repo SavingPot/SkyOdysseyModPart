@@ -1,4 +1,7 @@
-﻿namespace GameCore
+﻿using UnityEngine;
+using SP.Tools.Unity;
+
+namespace GameCore
 {
     public class EntitiesModEntry : ModEntry
     {
@@ -14,10 +17,18 @@
                 }
             };
 
+            PlayerCenter.OnAddPlayer += player =>
+            {
+                player.RegisterParamRemoteCommand(LaserSpellBehaviour.LaserLightCommandId, LaserSpellBehaviour.LaserLight);
+            };
+
             GM.OnUpdate += WaterCenter.WaterPhysics;
 
             GScene.AfterChanged += scene =>
             {
+                //清理对象池
+                LaserLightPool.stack.Clear();
+
                 switch (scene.name)
                 {
                     //TODO: 调整音频播放位置

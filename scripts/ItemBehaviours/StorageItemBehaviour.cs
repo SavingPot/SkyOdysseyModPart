@@ -52,7 +52,14 @@ namespace GameCore
                 (var modId, var panelName) = Tools.SplitModIdAndName(backpackPanelId);
 
                 //物品视图
-                (itemPanel, itemView) = Player.local.pui.GenerateItemViewBackpackPanel(backpackPanelId, $"{modId}:button.switch_{panelName}", 80, Vector2.zero, Vector2.zero, () => itemView.gameObject.SetActive(true));
+                (itemPanel, itemView) = Player.local.pui.GenerateItemViewBackpackPanel(
+                    backpackPanelId,
+                    $"{modId}:button.switch_{panelName}",
+                    80,
+                    Vector2.zero,
+                    Vector2.zero,
+                    RefreshItemView,
+                    () => itemView.gameObject.SetActive(true));
 
                 //初始化所有UI
                 for (int i = 0; i < slotUIs.Length; i++)
