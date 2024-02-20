@@ -5,8 +5,7 @@
         "texture": "ori:pig_soup",
         "tags": [
             "ori:dish",
-            "ori:edible=50",
-            "ori:drinkable=20"
+            "ori:edible=50"
         ]
     }
 }

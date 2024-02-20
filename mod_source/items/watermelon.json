@@ -5,8 +5,7 @@
         "texture": "ori:watermelon",
         "tags": [
             "ori:food",
-            "ori:edible=6",
-            "ori:drinkable=18"
+            "ori:edible=15"
         ],
         "description": "ori:description.watermelon"
     }

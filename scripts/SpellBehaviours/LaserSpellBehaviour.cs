@@ -25,7 +25,8 @@ namespace GameCore
                 line = gameObject.AddComponent<LineRenderer>();
                 line.material = new(GInit.instance.defaultMat)
                 {
-                    mainTexture = GInit.instance.spriteUnknown.texture
+                    //TODO: 贴图
+                    //mainTexture = GInit.instance.spriteUnknown.texture
                 };
                 line.startWidth = 0.1f;
                 line.endWidth = 0.1f;
@@ -120,6 +121,8 @@ namespace GameCore
     public class LaserSpellBehaviour : SpellBehaviour
     {
         public const string LaserLightCommandId = "ori:laser_light";
+        public const int LaserDamage = 4;
+        public static Vector2 LaserImpactForce { get; } = new(2, 0);
 
         public override void Release(Vector2 releaseDirection, Vector2 releasePosition, Player player)
         {
@@ -148,7 +151,7 @@ namespace GameCore
             //攻击伤害
             if (rayHit.transform && rayHit.transform.gameObject.TryGetComponent<Entity>(out var hitEntity))
             {
-                hitEntity.TakeDamage(5, 0.1f, originPoint, originPoint.x < hitEntity.transform.position.x ? Vector2.right * 2 : Vector2.left * 2);
+                hitEntity.TakeDamage(LaserDamage, 0.1f, originPoint, originPoint.x < hitEntity.transform.position.x ? LaserImpactForce : -LaserImpactForce);
             }
         }
 

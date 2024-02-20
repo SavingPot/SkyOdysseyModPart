@@ -831,10 +831,6 @@
             "path": "/gui/loading_bar_2.png"
         },
         {
-            "id": "ori:thirst_bar",
-            "path": "/gui/thirst_bar.png"
-        },
-        {
             "id": "ori:hunger_bar",
             "path": "/gui/hunger_bar.png"
         },

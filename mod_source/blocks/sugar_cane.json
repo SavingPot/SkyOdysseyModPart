@@ -17,7 +17,6 @@
             "ori:weapon",
             "ori:sword",
             "ori:edible=8",
-            "ori:drinkable=10",
             "ori:plant"
         ]
     }

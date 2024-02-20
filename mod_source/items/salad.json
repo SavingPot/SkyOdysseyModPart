@@ -6,8 +6,7 @@
         "damage": 8,
         "tags": [
             "ori:food",
-            "ori:edible=13",
-            "ori:drinkable=10"
+            "ori:edible=13"
         ]
     }
 }

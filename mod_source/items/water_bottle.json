@@ -4,9 +4,6 @@
         "id": "ori:water_bottle",
         "texture": "ori:water_bottle",
         "damage": 10,
-        "tags": [
-            "ori:drinkable=25"
-        ],
         "description": "ori:description.water_bottle"
     }
 }

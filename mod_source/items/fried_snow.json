@@ -5,8 +5,7 @@
         "texture": "ori:fried_snow",
         "tags": [
             "ori:food",
-            "ori:edible=6",
-            "ori:drinkable=8"
+            "ori:edible=6"
         ],
         "description": "ori:description.fried_snow"
     }

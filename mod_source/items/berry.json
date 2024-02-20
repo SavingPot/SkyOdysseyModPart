@@ -5,8 +5,7 @@
         "texture": "ori:berry",
         "tags": [
             "ori:food",
-            "ori:edible=8",
-            "ori:drinkable=5",
+            "ori:edible=10",
             "ori:plant"
         ],
         "description": "ori:description.berry"

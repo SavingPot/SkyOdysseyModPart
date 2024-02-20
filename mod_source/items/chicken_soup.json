@@ -5,8 +5,7 @@
         "texture": "ori:chicken_soup",
         "tags": [
             "ori:dish",
-            "ori:edible=40",
-            "ori:drinkable=18"
+            "ori:edible=40"
         ]
     }
 }
