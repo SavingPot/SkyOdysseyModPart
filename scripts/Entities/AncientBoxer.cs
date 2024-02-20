@@ -83,14 +83,12 @@ namespace GameCore
             });
         }
 
-        public override void Movement()
+        public override Vector2 GetMovementDirection()
         {
-            base.Movement();
+            if (isDead)
+                return Vector2.zero;
 
-            if (!isServer || isDead)
-                return;
-
-            EnemyWalkToTargetBehaviour.OnMovement(this);
+            return EnemyWalkToTargetBehaviour.GetMovementVelocity(this);
         }
 
         public void WhenStroll()

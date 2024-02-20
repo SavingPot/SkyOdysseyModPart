@@ -5,33 +5,37 @@ namespace GameCore
 {
     public static class EnemyJumpToTargetBehaviour
     {
-        public static void OnMovement<T>(T enemy) where T : Enemy, IEnemyJumpToTarget
+        public static Vector2 GetMovementVelocity<T>(T enemy) where T : Enemy, IEnemyJumpToTarget
         {
+            Vector2 result;
             enemy.isPursuing = enemy.targetTransform;
 
             if (enemy.isPursuing)
             {
+                //刚开始移动
                 if (!enemy.isPursuingLastFrame)
                 {
                     enemy.isMoving = true;
                 }
 
-                Pursuit(enemy);
+                result = Pursuit(enemy);
             }
             else
             {
+                //刚停止移动
                 if (enemy.isPursuingLastFrame)
                 {
                     enemy.isMoving = false;
-
-                    enemy.rb.velocity = Vector2.zero;
                 }
+
+                result = Vector2.zero;
             }
 
             enemy.isPursuingLastFrame = enemy.isPursuing;
+            return result;
         }
 
-        public static void Pursuit<T>(T enemy) where T : Enemy, IEnemyJumpToTarget
+        public static Vector2 Pursuit<T>(T enemy) where T : Enemy, IEnemyJumpToTarget
         {
             /* --------------------------------- 声明移动速度 --------------------------------- */
             float xVelo = 0;
@@ -68,7 +72,7 @@ namespace GameCore
             /* ---------------------------------- 应用速度 ---------------------------------- */
 
             //设置 RB 的速度
-            enemy.rb.velocity = enemy.GetMovementVelocity(new(xVelo, yVelo));
+            return new(xVelo, yVelo);
         }
     }
 

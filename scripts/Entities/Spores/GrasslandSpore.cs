@@ -5,6 +5,7 @@ namespace GameCore
     [EntityBinding(EntityID.GrasslandSpore)]
     public class GrasslandSpore : Enemy
     {
+        //TODO
         protected override void Update()
         {
             if (!targetTransform)
@@ -19,6 +20,11 @@ namespace GameCore
             {
                 creature.TakeDamage(10);
             }
+        }
+
+        public override Vector2 GetMovementDirection()
+        {
+            return Vector2.zero;
         }
     }
 }

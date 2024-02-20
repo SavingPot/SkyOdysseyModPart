@@ -62,14 +62,12 @@ namespace GameCore
             usingItemRenderer.transform.SetScale(0.6f * localScale.x, 0.6f * localScale.y);
         }
 
-        public override void Movement()
+        public override Vector2 GetMovementDirection()
         {
-            base.Movement();
+            if (isDead)
+                return Vector2.zero;
 
-            if (!isServer || isDead)
-                return;
-
-            EnemyWalkToTargetBehaviour.OnMovement(this);
+            return EnemyWalkToTargetBehaviour.GetMovementVelocity(this);
         }
 
         public void WhenStroll()

@@ -8,64 +8,47 @@ namespace GameCore
 {
     public static class EnemyWalkToTargetBehaviour
     {
-        public static void OnMovement<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
+        public static Vector2 GetMovementVelocity<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
         {
-            enemy.isPursuing = enemy.targetTransform;
+            Vector2 result;
+            enemy.isPursuing = enemy.targetTransform != null;
 
             if (enemy.isPursuing)
             {
+                //刚开始移动
                 if (!enemy.isPursuingLastFrame)
                 {
                     enemy.isMoving = true;
                 }
 
-                Pursuit(enemy);
+                result = Pursuit(enemy);
             }
             else
             {
+                //刚停止移动
                 if (enemy.isPursuingLastFrame)
                 {
                     enemy.isMoving = false;
-
-                    enemy.rb.velocity = Vector2.zero;
                 }
 
-                Stroll(enemy);
+                result = Stroll(enemy);
             }
 
             enemy.isPursuingLastFrame = enemy.isPursuing;
+            return result;
         }
 
-        public static void Stroll<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
+        public static Vector2 Stroll<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
         {
-            //12.5 为倍数, 每秒有 (moveRandomize / deltaTime)% 的几率触发移动
-            float moveRandomize = Tools.deltaTime * 2f;
-
-            if (Tools.Prob100(moveRandomize, Tools.staticRandom))
-            {
-                // -1 to 1
-                float horizontal = Random.Range(-1, 2) * 1.75f;
-                float vertical = enemy.rb.velocity.y;
-
-                enemy.rb.SetVelocity(horizontal, vertical);
-                enemy.StartCoroutine(IEStrollResumeVelocity(enemy, 1));
-                enemy.WhenStroll();
-            }
+            return Vector2.zero;
         }
 
-        static IEnumerator IEStrollResumeVelocity<T>(T enemy, float time) where T : Enemy, IEnemyWalkToTarget
+        public static Vector2 Pursuit<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
         {
-            yield return new WaitForSeconds(time);
-
-            enemy.rb.SetVelocity(Vector2.zero);
-        }
-
-        public static void Pursuit<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
-        {
-            if(!enemy.targetTransform)
+            if (!enemy.targetTransform)
             {
                 Debug.LogError("请确保敌人有追击目标");
-                return;
+                return Vector2.zero;
             }
 
             var target = enemy.targetTransform.position;
@@ -132,11 +115,11 @@ namespace GameCore
             else
                 enemy.transform.SetScaleXAbs();
 
-            enemy.rb.velocity = enemy.GetMovementVelocity(new(xVelo, yVelo));
+            return new(xVelo, yVelo);
         }
     }
 
-    public interface IEnemyWalkToTarget: IEnemyMovement
+    public interface IEnemyWalkToTarget : IEnemyMovement
     {
         float jumpForce { get; }
 

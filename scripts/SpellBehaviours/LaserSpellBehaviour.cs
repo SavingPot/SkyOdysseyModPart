@@ -122,6 +122,7 @@ namespace GameCore
     {
         public const string LaserLightCommandId = "ori:laser_light";
         public const int LaserDamage = 4;
+        public const int LaserLength = 12;
         public static Vector2 LaserImpactForce { get; } = new(2, 0);
 
         public override void Release(Vector2 releaseDirection, Vector2 releasePosition, Player player)
@@ -139,8 +140,8 @@ namespace GameCore
             var originPoint = entity.transform.position;
 
             //发射射线
-            var rayHit = RayTools.Hit(originPoint, direction, 15);
-            Vector3 endPoint = rayHit.transform != null ? rayHit.point : originPoint + direction * 15;
+            var rayHit = RayTools.Hit(originPoint, direction, LaserLength);
+            Vector3 endPoint = rayHit.transform != null ? rayHit.point : originPoint + direction * LaserLength;
 
 
             //显示激光

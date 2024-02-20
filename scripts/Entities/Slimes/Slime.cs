@@ -31,14 +31,12 @@ namespace GameCore
             jumpCD = 2;
         }
 
-        public override void Movement()
+        public override Vector2 GetMovementDirection()
         {
-            base.Movement();
+            if (isDead)
+                return Vector2.zero;
 
-            if (!isServer || isDead)
-                return;
-
-            EnemyJumpToTargetBehaviour.OnMovement(this);
+            return EnemyJumpToTargetBehaviour.GetMovementVelocity(this);
         }
     }
 }

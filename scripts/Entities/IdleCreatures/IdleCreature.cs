@@ -23,53 +23,50 @@ namespace GameCore
             escapeEndTime = Tools.time + escapeLastTime;
         }
 
-        protected override void Update()
+        public override Vector2 GetMovementDirection()
         {
-            base.Update();
-
             /* ----------------------------------- 逃脱 ----------------------------------- */
             if (Tools.time < escapeEndTime && Tools.time >= escapeNextStartTime)
             {
-                Vector2 velocity = Random.Range(-1, 2) switch
+                escapeNextStartTime = Tools.time + escapeInterval;
+
+                return Random.Range(-2, 3) switch
                 {
-                    -1 => TurnLeft(),
-                    1 => TurnRight(),
+                    -2 => TurnLeft(),
+                    > -2 and < 2 => new(0, rb.velocity.y),
+                    2 => TurnRight(),
                     _ => throw new()
                 };
-                rb.velocity = velocity;
-                
-                escapeNextStartTime = Tools.time + escapeInterval;
             }
             /* ----------------------------------- 闲逛 ----------------------------------- */
             else if (Tools.time >= movementTimer)
             {
-                Vector2 velocity = Random.Range(-2, 3) switch
+                movementTimer = Tools.time + movementInterval;
+
+                return Random.Range(-2, 3) switch
                 {
                     -2 => TurnLeft(),
                     > -2 and < 2 => new(0, rb.velocity.y),
                     2 => TurnRight(),
                     _ => throw new(),
                 };
-                rb.velocity = velocity;
-
-                movementTimer = Tools.time + movementInterval;
             }
+
+            return Vector2.zero;
         }
 
         protected virtual Vector2 TurnLeft()
         {
-            Vector2 velocity = GetMovementVelocity(Vector2.left);
             SetOrientation(false);
 
-            return velocity;
+            return Vector2.left;
         }
 
         protected virtual Vector2 TurnRight()
         {
-            Vector2 velocity = GetMovementVelocity(Vector2.right);
             SetOrientation(true);
 
-            return velocity;
+            return Vector2.right;
         }
     }
 }
