@@ -1,3 +1,4 @@
+using GameCore.UI;
 using SP.Tools.Unity;
 using UnityEngine;
 using static GameCore.PlayerUI;
@@ -9,7 +10,7 @@ namespace GameCore
         public abstract string cookingType { get; }
         public abstract string uncookedTexture { get; }
         public abstract string cookedTexture { get; }
-        
+
         public Vector2Int posDown;
         public CookingRecipe cookedRecipe = null;
 
@@ -56,16 +57,22 @@ namespace GameCore
                     return base.PlayerInteraction(caller);
                 }
             }
-            //如果 有配方 - 拿着碗
-            else if (!cookedRecipe.needBowl || caller.TryGetUsingItem()?.data?.id == ItemID.WoodenBowl)
+            //如果 有配方
+            else
             {
-                // string[] splitted = cookingResult.Split(':');
-
-                // if (splitted.Length != 2)
-                // {
-                //     Debug.LogError($"菜谱ID {cookingResult} 格式必须为 namespace:name");
-                //     return false;
-                // }
+                //检查碗
+                if (cookedRecipe.needBowl)
+                {
+                    if (caller.GetUsingItemChecked()?.data?.id == ItemID.WoodenBowl)
+                    {
+                        caller.ServerReduceItemCount(caller.usingItemIndex.ToString(), 1);
+                    }
+                    else
+                    {
+                        InternalUIAdder.instance.SetStatusText("请手持一个木碗");
+                        return base.PlayerInteraction(caller);
+                    }
+                }
 
                 string itemId = cookedRecipe.result.id;//$"{splitted[0]}:wooden_bowl_with_{splitted[1]}";
                 ItemData target = ModFactory.CompareItem(itemId);
@@ -80,7 +87,6 @@ namespace GameCore
                     GControls.GamepadVibrationSlightMedium();
 
                 caller.ServerAddItem(target.DataToItem());
-                caller.ServerReduceItemCount(caller.usingItemIndex.ToString(), 1);
 
                 GAudio.Play(AudioID.FillingWaterBowl);
 

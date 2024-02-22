@@ -1,7 +1,7 @@
 {
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
-        "id": "ori:cooking_pot",
+        "id": "ori:soup_pot",
         "ingredients": [
             {
                 "tags": [
@@ -15,7 +15,7 @@
             }
         ],
         "result": {
-            "id": "ori:cooking_pot",
+            "id": "ori:soup_pot",
             "count": 1
         }
     }

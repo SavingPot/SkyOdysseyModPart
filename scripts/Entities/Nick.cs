@@ -72,7 +72,7 @@ namespace GameCore
                     caller.pui.DisplayDialog(new("ori:nick", "ori:button",
                     new(GameUI.CompareText("ori:dialog.nick.teaching.attack_0").text.Replace("{button}", GControls.mode switch //TODO: Compare these buttons' texts instead of output directly, support multi-languages
                     {
-                        ControlMode.Touchscreen => caller.TryGetUsingItem() == null ? "空白的按钮(互动按钮)" : $"有个{GameUI.CompareText(caller.TryGetUsingItem().data.id).text}的按钮(互动按钮)",
+                        ControlMode.Touchscreen => caller.GetUsingItemChecked() == null ? "空白的按钮(互动按钮)" : $"有个{GameUI.CompareText(caller.GetUsingItemChecked().data.id).text}的按钮(互动按钮)",
                         ControlMode.KeyboardAndMouse => "鼠标右键",
                         ControlMode.Gamepad => "手柄左触发器",
                         _ => ""

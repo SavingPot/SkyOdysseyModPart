@@ -4,13 +4,13 @@ using static GameCore.PlayerUI;
 
 namespace GameCore
 {
-    public class CookingPot : CookingStorageBlock
+    public class SoupPot : CookingStorageBlock
     {
         #region 烹饪
 
         public override string cookingType => "ori:poach";
-        public override string uncookedTexture => "ori:cooking_pot";
-        public override string cookedTexture => "ori:cooking_pot_filled";
+        public override string uncookedTexture => "ori:soup_pot";
+        public override string cookedTexture => "ori:soup_pot_filled";
 
         #endregion
 
@@ -21,7 +21,7 @@ namespace GameCore
         public static InventorySlotUI[] staticSlotUIs = new InventorySlotUI[defaultItemCountConst];
         public const int defaultItemCountConst = 4 * 1;
         public override int itemCount => defaultItemCountConst;
-        public override string backpackPanelId => "ori:cooking_pot";
+        public override string backpackPanelId => "ori:soup_pot";
         public override BackpackPanel itemPanel { get => staticItemPanel; set => staticItemPanel = value; }
         public override ScrollViewIdentity itemView { get => staticItemView; set => staticItemView = value; }
         public override InventorySlotUI[] slotUIs { get => staticSlotUIs; set => staticSlotUIs = value; }

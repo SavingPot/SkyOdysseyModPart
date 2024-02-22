@@ -225,8 +225,8 @@
                 "text": "可以搭配烹饪锅进行烹饪, 互动可以熄灭"
             },
             {
-                "id": "ori:description.cooking_pot",
-                "text": "可以进行烹饪"
+                "id": "ori:description.soup_pot",
+                "text": "可以用于煮汤"
             },
             {
                 "id": "ori:description.frying_pan",
@@ -973,8 +973,8 @@
                 "text": "砖炉"
             },
             {
-                "id": "ori:cooking_pot",
-                "text": "烹饪锅"
+                "id": "ori:soup_pot",
+                "text": "汤锅"
             },
             {
                 "id": "ori:frying_pan",

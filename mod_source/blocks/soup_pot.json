@@ -1,0 +1,14 @@
+{
+    "json_format": "0.6.0",
+    "ori:block": {
+        "id": "ori:soup_pot",
+        "display": {
+            "texture_id": "ori:soup_pot",
+            "description": "ori:description.soup_pot"
+        },
+        "property": {
+            "hardness": 10,
+            "behaviour": "GameCore.SoupPot"
+        }
+    }
+}

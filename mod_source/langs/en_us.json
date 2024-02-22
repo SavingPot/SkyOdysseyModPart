@@ -225,8 +225,8 @@
                 "text": "Can be used to cook foods with cooking pot, interactive to extinguish"
             },
             {
-                "id": "ori:description.cooking_pot",
-                "text": "Can be used to cook foods"
+                "id": "ori:description.soup_pot",
+                "text": "Can be used to cook soup"
             },
             {
                 "id": "ori:description.frying_pan",
@@ -973,8 +973,8 @@
                 "text": "Brick Furnace"
             },
             {
-                "id": "ori:cooking_pot",
-                "text": "Cooking Pot"
+                "id": "ori:soup_pot",
+                "text": "Soup Pot"
             },
             {
                 "id": "ori:frying_pan",

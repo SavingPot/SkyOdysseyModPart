@@ -174,16 +174,20 @@
             "path": "/blocks/crack_4.png"
         },
         {
-            "id": "ori:cooking_pot",
-            "path": "/blocks/cooking_pot.png"
+            "id": "ori:soup_pot",
+            "path": "/blocks/soup_pot.png"
         },
         {
-            "id": "ori:cooking_pot_filled",
-            "path": "/blocks/cooking_pot_filled.png"
+            "id": "ori:soup_pot_filled",
+            "path": "/blocks/soup_pot_filled.png"
         },
         {
             "id": "ori:frying_pan",
             "path": "/blocks/frying_pan.png"
+        },
+        {
+            "id": "ori:frying_pan_filled",
+            "path": "/blocks/frying_pan_filled.png"
         },
         {
             "id": "ori:slime_gel",
@@ -339,8 +343,12 @@
             "path": "/gui/backpack_panels/switch_buttons/tasks.png"
         },
         {
-            "id": "ori:switch_button.cooking_pot",
-            "path": "/gui/backpack_panels/switch_buttons/cooking_pot.png"
+            "id": "ori:switch_button.soup_pot",
+            "path": "/gui/backpack_panels/switch_buttons/soup_pot.png"
+        },
+        {
+            "id": "ori:switch_button.frying_pan",
+            "path": "/gui/backpack_panels/switch_buttons/frying_pan.png"
         },
         {
             "id": "ori:switch_button.wooden_chest",
