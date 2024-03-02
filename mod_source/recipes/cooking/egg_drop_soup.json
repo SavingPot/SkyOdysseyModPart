@@ -1,0 +1,17 @@
+{
+    "json_format": "0.6.0",
+    "ori:cooking_recipe": {
+        "id": "ori:egg_drop_soup",
+        "need_bowl": true,
+        "ingredients": [
+            {
+                "tags": [
+                    "ori:egg"
+                ]
+            }
+        ],
+        "result": {
+            "id": "ori:egg_drop_soup"
+        }
+    }
+}

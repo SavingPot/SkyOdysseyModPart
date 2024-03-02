@@ -3,7 +3,7 @@
     "ori:block": {
         "id": "ori:water",
         "display": {
-            "texture_id": "ori:water_1",
+            "texture_id": "ori:water_8",
             "description": "ori:description.water"
         },
         "property": {

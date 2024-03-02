@@ -1,0 +1,12 @@
+{
+    "json_format": "0.5.1",
+    "ori:item": {
+        "id": "ori:fried_egg",
+        "texture": "ori:fried_egg",
+        "tags": [
+            "ori:dish",
+            "ori:food",
+            "ori:edible=16"
+        ]
+    }
+}

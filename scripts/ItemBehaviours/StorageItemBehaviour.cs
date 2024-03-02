@@ -14,7 +14,7 @@ namespace GameCore
 
 
 
-        public abstract int defaultItemCount { get; set; }
+        public abstract int itemCount { get; set; }
         public abstract string backpackPanelId { get; set; }
         public Item[] items { get; set; }
 
@@ -26,7 +26,7 @@ namespace GameCore
         {
             base.OnEnter();
 
-            this.LoadItemsFromCustomData(instance.customData, defaultItemCount);
+            this.LoadItemsFromCustomData(instance.customData, itemCount);
         }
 
         public override bool Use(Vector2 point)

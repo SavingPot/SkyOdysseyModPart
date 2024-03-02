@@ -1,0 +1,13 @@
+{
+    "json_format": "0.6.0",
+    "ori:block": {
+        "id": "ori:boundary_gate",
+        "display": {
+            "texture_id": "ori:boundary_gate"
+        },
+        "property": {
+            "hardness": -1,
+            "behaviour": "GameCore.BoundaryGate"
+        }
+    }
+}

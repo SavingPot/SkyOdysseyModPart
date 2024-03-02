@@ -657,6 +657,14 @@
                 "text": "Straw Hat"
             },
             {
+                "id": "ori:egg_drop_soup",
+                "text": "Egg Drop Soup"
+            },
+            {
+                "id": "ori:fried_egg",
+                "text": "Fried Egg"
+            },
+            {
                 "id": "ori:chicken_egg",
                 "text": "Chicken Egg"
             },

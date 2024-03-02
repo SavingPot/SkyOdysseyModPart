@@ -8,7 +8,7 @@ namespace GameCore
     {
         #region 烹饪
 
-        public override string cookingType => "ori:deep-frying"; //TODO
+        public override string cookingType => "ori:deep-frying";
         public override string uncookedTexture => "ori:frying_pan";
         public override string cookedTexture => "ori:frying_pan_filled";
 

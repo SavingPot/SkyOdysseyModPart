@@ -923,6 +923,14 @@
             "path": "/items/foods/berry.png"
         },
         {
+            "id": "ori:egg_drop_soup",
+            "path": "/items/foods/dishes/egg_drop_soup.png"
+        },
+        {
+            "id": "ori:fried_egg",
+            "path": "/items/foods/dishes/fried_egg.png"
+        },
+        {
             "id": "ori:chicken_egg",
             "path": "/items/foods/chicken_egg.png"
         },
@@ -957,6 +965,10 @@
         {
             "id": "ori:boundary",
             "path": "/blocks/boundary.png"
+        },
+        {
+            "id": "ori:boundary_gate",
+            "path": "/blocks/boundary_gate.png"
         },
         {
             "id": "ori:grass_block",
