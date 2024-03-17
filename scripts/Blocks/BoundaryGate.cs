@@ -22,7 +22,7 @@ namespace GameCore
             if (!player.askingForGeneratingRegion)
             {
                 //生成沙盒
-                player.ServerGenerateRegion(chunk.regionIndex + indexDelta, player.generatedFirstRegion, null);
+                player.GenerateRegion(chunk.regionIndex + indexDelta, player.generatedFirstRegion, null);
             }
 
             return true;

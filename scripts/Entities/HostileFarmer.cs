@@ -15,9 +15,12 @@ namespace GameCore
     {
         public Inventory inventory;
         public SpriteRenderer usingItemRenderer { get; set; }
+        public BoxCollider2D usingItemCollider { get; set; }
+        public InventoryItemRendererCollision usingItemCollisionComponent { get; set; }
         public bool isPursuing { get; set; }
         public bool isPursuingLastFrame { get; set; }
         public float jumpForce => 25;
+        public bool isAttacking { get; private set; }
 
 
 
@@ -56,10 +59,13 @@ namespace GameCore
             EntityInventoryOwnerBehaviour.RefreshInventory(this);
         }
 
-        public void SetUsingItemRendererLocalPositionAndScale(Vector2 localPosition, Vector2 localScale)
+        public void ModifyUsingItemRendererTransform(Vector2 localPosition, Vector2 localScale, int localRotation)
         {
-            usingItemRenderer.transform.localPosition = new(0.1f + localPosition.x, -0.5f + localPosition.y);
-            usingItemRenderer.transform.SetScale(0.6f * localScale.x, 0.6f * localScale.y);
+            localScale *= 0.5f;
+            localPosition += new Vector2(0.1f, -0.5f);
+
+            usingItemRenderer.transform.SetLocalPositionAndRotation(localPosition, Quaternion.Euler(0, 0, localRotation));
+            usingItemRenderer.transform.SetScale(localScale);
         }
 
         public override Vector2 GetMovementDirection()

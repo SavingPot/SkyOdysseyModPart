@@ -2,16 +2,24 @@
     "json_format": "0.7.8",
     "ori:item": {
         "id": "ori:flint_knife",
-        "display": {
-            "texture": "ori:flint_knife"
-        },
         "damage": 16,
         "excavation_strength": 70,
         "tags": [
             "ori:knife"
         ],
-        "description": "ori:description.flint_knife",
         "use_cd": 0.2,
-        "extra_distance": 0.2
+        "extra_distance": 0.2,
+        "display": {
+            "description": "ori:description.flint_knife",
+            "size": [
+                1.6,
+                1.6
+            ],
+            "offset": [
+                0.25,
+                -0.1
+            ],
+            "rotation": -45
+        }
     }
 }
