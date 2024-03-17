@@ -1,15 +1,26 @@
 {
-    "json_format": "0.5.1",
+    "json_format": "0.7.8",
     "ori:item": {
         "id": "ori:flint_sword",
-        "texture": "ori:flint_sword",
         "damage": 23,
         "excavation_strength": 75,
         "tags": [
             "ori:sword"
         ],
-        "description": "ori:description.flint_sword",
         "use_cd": 0.4,
-        "extra_distance": 0.8
+        "extra_distance": 0.8,
+        "display": {
+            "texture": "ori:flint_sword",
+            "description": "ori:description.flint_sword",
+            "size": [
+                3,
+                3
+            ],
+            "offset": [
+                0.4,
+                0.4
+            ],
+            "rotation": -45
+        }
     }
 }
