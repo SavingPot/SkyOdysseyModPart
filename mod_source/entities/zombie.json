@@ -7,6 +7,7 @@
             "time_earliest": 19,
             "time_latest": 3
         },
+        "coin_count": 10,
         "speed": 4,
         "physics": {
             "collider": {

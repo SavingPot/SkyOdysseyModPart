@@ -110,6 +110,11 @@
             "path": "/gui/tasks/get_bark_vest.png"
         },
         {
+            "id": "ori:unlocked_region_color",
+            "path": "/gui/unlocked_region_color.png",
+            "pixel_unit": 1
+        },
+        {
             "id": "ori:rain_particle_0",
             "path": "/particles/rain_0.png"
         },
@@ -288,6 +293,10 @@
         {
             "id": "ori:mod_loading_mascot",
             "path": "/gui/mod_loading_mascot.png"
+        },
+        {
+            "id": "ori:coin",
+            "path": "/entities/coin.png"
         },
         {
             "id": "ori:chicken_white_leghorn",

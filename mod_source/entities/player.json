@@ -2,6 +2,7 @@
     "json_format": "0.4.8",
     "ori:entity": {
         "id": "ori:player",
+        "coin_count": 0,
         "speed": 5.5,
         "physics": {
             "collider": {
