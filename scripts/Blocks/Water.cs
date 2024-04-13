@@ -95,7 +95,7 @@ namespace GameCore
                 //执行水物理留下的待执行操作
                 foreach (var item in operationsToExecute)
                     item();
-                
+
                 //清除待执行操作
                 operationsToExecute.Clear();
             }
@@ -105,6 +105,7 @@ namespace GameCore
         public static void SingleWaterPhysics(Water water)
         {
             //TODO: 冲走可以被冲走的小方块
+            //向下流
             var downBlock = water.chunk.map.GetBlock(water.posTempDown, water.isBackground);
             if (downBlock == null)
             {
@@ -123,6 +124,7 @@ namespace GameCore
                     var leftBlock = water.chunk.map.GetBlock(water.posTempLeft, water.isBackground);
                     var rightBlock = water.chunk.map.GetBlock(water.posTempRight, water.isBackground);
 
+                    //向左流
                     if (leftBlock == null && water.filledLevel > 0)
                     {
                         if (StreamIntoAir(water, water.posTempLeft))
@@ -134,6 +136,7 @@ namespace GameCore
                             return;
                     }
 
+                    //向右流
                     if (rightBlock == null && water.filledLevel > 0)
                     {
                         if (StreamIntoAir(water, water.posTempRight))
