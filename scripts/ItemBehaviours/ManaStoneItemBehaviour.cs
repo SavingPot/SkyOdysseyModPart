@@ -44,7 +44,7 @@ namespace GameCore
             if (totalMana >= spell.cost)
             {
                 //释放
-                spellBehaviour.Release(Tools.GetAngleVector2(owner.transform.position, point), owner.transform.position, (Player)owner);
+                spellBehaviour.Release(AngleTools.GetAngleVector2(owner.transform.position, point), owner.transform.position, (Player)owner);
 
                 //播放手臂动画
                 if (!((Player)owner).animWeb.GetAnim("slight_rightarm_lift", 0).isPlaying)

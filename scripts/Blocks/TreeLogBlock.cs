@@ -53,7 +53,7 @@ namespace GameCore
         {
             if (leaveRenderer)
             {
-                LitSpriteRendererPool.Recover(leaveRenderer);
+                LitSpriteRendererPool.Recycle(leaveRenderer);
                 leaveRenderer = null;
             }
         }

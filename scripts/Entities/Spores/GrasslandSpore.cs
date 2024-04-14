@@ -8,9 +8,9 @@ namespace GameCore
         //TODO
         protected override void Update()
         {
-            if (!targetTransform)
+            if (!targetEntity)
             {
-                rb.velocity = Tools.GetAngleVector2(transform.position, targetTransform.position).normalized * 5;
+                rb.velocity = AngleTools.GetAngleVector2(transform.position, targetEntity.transform.position).normalized * 5;
             }
         }
 

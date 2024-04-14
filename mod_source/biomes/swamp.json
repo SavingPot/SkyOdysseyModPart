@@ -3,16 +3,6 @@
     "ori:biome": {
         "id": "ori:swamp",
         "difficulty": 6,
-        "size_scope": {
-            "min": [
-                45,
-                45
-            ],
-            "max": [
-                70,
-                70
-            ]
-        },
         "structure": [
             {
                 "id": "ori:cave"

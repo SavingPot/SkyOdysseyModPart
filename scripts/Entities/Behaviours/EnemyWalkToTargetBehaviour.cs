@@ -11,7 +11,7 @@ namespace GameCore
         public static Vector2 GetMovementVelocity<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
         {
             Vector2 result;
-            enemy.isPursuing = enemy.targetTransform != null;
+            enemy.isPursuing = enemy.targetEntity != null;
 
             if (enemy.isPursuing)
             {
@@ -45,16 +45,16 @@ namespace GameCore
 
         public static Vector2 Pursuit<T>(T enemy) where T : Enemy, IEnemyWalkToTarget
         {
-            if (!enemy.targetTransform)
+            if (!enemy.targetEntity)
             {
                 Debug.LogError("请确保敌人有追击目标");
                 return Vector2.zero;
             }
 
-            var target = enemy.targetTransform.position;
+            var targetPosition = enemy.targetEntity.transform.position;
 
             /* ---------------------------------- 声明方向 ---------------------------------- */
-            bool isTargetLeft = target.x < enemy.transform.position.x;
+            bool isTargetLeft = targetPosition.x < enemy.transform.position.x;
             float errorValue = 0.1f;
 
             /* --------------------------------- 声明移动速度 --------------------------------- */
@@ -62,7 +62,7 @@ namespace GameCore
 
             // 目标右向右
             // 靠的很近就设为 0, 否则会鬼畜
-            int xVelo = !isTargetLeft ? (target.x - enemy.transform.position.x < errorValue ? 0 : 1) : (target.x - enemy.transform.position.x > -errorValue ? 0 : -1);
+            int xVelo = !isTargetLeft ? (targetPosition.x - enemy.transform.position.x < errorValue ? 0 : 1) : (targetPosition.x - enemy.transform.position.x > -errorValue ? 0 : -1);
 
             /* --------------------------------- 决定是否跳跃 --------------------------------- */
             if (enemy.jumpForce != 0)
@@ -70,7 +70,7 @@ namespace GameCore
                 if (enemy.isOnGround)
                 {
                     //如果玩家所处高度比自己高
-                    if (target.y - enemy.transform.position.y > 2)
+                    if (targetPosition.y - enemy.transform.position.y > 2)
                     {
                         Jump();
                         goto set;

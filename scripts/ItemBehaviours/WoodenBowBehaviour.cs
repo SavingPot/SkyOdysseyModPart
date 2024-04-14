@@ -16,7 +16,7 @@ namespace GameCore
             {
                 if (owner is Player player)
                 {
-                    var velocity = Tools.GetAngleVector2(player.transform.position, point).normalized * 20;
+                    var velocity = AngleTools.GetAngleVector2(player.transform.position, point).normalized * 20;
 
                     JObject jo = new();
                     jo.AddObject("ori:bullet");

@@ -3,16 +3,12 @@
     "ori:biome": {
         "id": "ori:center",
         "difficulty": 0,
-        "size_scope": {
-            "min": [
-                60,
-                60
-            ],
-            "max": [
-                60,
-                60
-            ]
-        },
+        "distribution": 0,
+        "structures": [
+            {
+                "id": "ori:oak_tree"
+            }
+        ],
         "blocks": [
             {
                 "type": "perlin",
@@ -36,6 +32,9 @@
             },
             {
                 "prefab": "ori:dirt_surface"
+            },
+            {
+                "prefab": "ori:universal_surface"
             },
             {
                 "prefab": "ori:ores"

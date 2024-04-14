@@ -3,16 +3,6 @@
     "ori:biome": {
         "id": "ori:savannah_grassland",
         "difficulty": 4,
-        "size_scope": {
-            "min": [
-                45,
-                45
-            ],
-            "max": [
-                70,
-                70
-            ]
-        },
         "structures": [
             {
                 "id": "ori:acacia_tree"

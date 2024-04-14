@@ -3,16 +3,7 @@
     "ori:biome": {
         "id": "ori:oak_forest",
         "difficulty": 3,
-        "size_scope": {
-            "min": [
-                50,
-                50
-            ],
-            "max": [
-                70,
-                70
-            ]
-        },
+        "distribution": 3,
         "tags": [
             "ori:rich"
         ],

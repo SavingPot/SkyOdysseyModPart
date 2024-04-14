@@ -8,7 +8,7 @@ namespace GameCore
         public static Vector2 GetMovementVelocity<T>(T enemy) where T : Enemy, IEnemyJumpToTarget
         {
             Vector2 result;
-            enemy.isPursuing = enemy.targetTransform;
+            enemy.isPursuing = enemy.targetEntity;
 
             if (enemy.isPursuing)
             {
@@ -47,7 +47,7 @@ namespace GameCore
                 if (enemy.isOnGround)
                 {
                     var enemyPosition = enemy.transform.position;
-                    var targetPosition = enemy.targetTransform.position;
+                    var targetPosition = enemy.targetEntity.transform.position;
 
 
                     bool isTargetLeft = targetPosition.x < enemyPosition.x;
