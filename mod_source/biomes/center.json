@@ -31,6 +31,9 @@
                 ]
             },
             {
+                "prefab": "ori:plants_temperate_zone"
+            },
+            {
                 "prefab": "ori:dirt_surface"
             },
             {

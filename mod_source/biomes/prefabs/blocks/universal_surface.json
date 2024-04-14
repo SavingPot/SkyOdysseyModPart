@@ -10,7 +10,7 @@
                 ],
                 "block": "ori:gravel",
                 "rules": {
-                    "probability": 10
+                    "probability": 15
                 }
             }
         ]
