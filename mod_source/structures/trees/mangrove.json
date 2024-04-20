@@ -64,54 +64,6 @@
                         6,
                         1
                     ]
-                },
-                {
-                    "id": "ori:mangrove_leaf",
-                    "pos": [
-                        -1,
-                        7,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:mangrove_leaf",
-                    "pos": [
-                        -1,
-                        8,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:mangrove_leaf",
-                    "pos": [
-                        0,
-                        7,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:mangrove_leaf",
-                    "pos": [
-                        0,
-                        8,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:mangrove_leaf",
-                    "pos": [
-                        1,
-                        7,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:mangrove_leaf",
-                    "pos": [
-                        1,
-                        8,
-                        1
-                    ]
                 }
             ]
         },

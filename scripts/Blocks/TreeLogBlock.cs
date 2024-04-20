@@ -1,4 +1,5 @@
-using GameCore.High;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace GameCore
@@ -6,6 +7,13 @@ namespace GameCore
     public class TreeLogBlock : Block
     {
         public SpriteRenderer leaveRenderer;
+
+        public override void DoStart()
+        {
+            base.DoStart();
+
+            treeLogBlockDatum = GetDatum(this);
+        }
 
         public override void OnUpdate()
         {
@@ -16,7 +24,7 @@ namespace GameCore
             if (chunk.map.GetBlock(new(pos.x, pos.y + 1), isBackground)?.data?.id != data.id)
             {
                 leaveRenderer = LitSpriteRendererPool.Get(sr.sortingOrder);
-                leaveRenderer.sprite = ModFactory.CompareTexture("ori:oak_tree_leaf").sprite;
+                leaveRenderer.sprite = ModFactory.CompareTexture(treeLogBlockDatum.leaf).sprite;
                 leaveRenderer.transform.localPosition = new(pos.x, pos.y + 1.5f, 0);
             }
             else
@@ -56,6 +64,40 @@ namespace GameCore
                 LitSpriteRendererPool.Recycle(leaveRenderer);
                 leaveRenderer = null;
             }
+        }
+
+
+
+
+        public static Dictionary<string, TreeLogBlockDatum> dataTemps = new();
+        public TreeLogBlockDatum treeLogBlockDatum;
+
+        public class TreeLogBlockDatum
+        {
+            public string leaf;
+        }
+
+        public static TreeLogBlockDatum GetDatum(Block block)
+        {
+            var data = block.data;
+
+            if (dataTemps.TryGetValue(data.id, out TreeLogBlockDatum value))
+            {
+                return value;
+            }
+
+            //添加默认值
+            TreeLogBlockDatum logDatum = new();
+
+            if (true)//(GameTools.CompareVersions(datum.jsonFormat, "0.6.2", Operators.thanOrEqual))
+            {
+                JToken root = data.jo["ori:tree_log"];
+
+                logDatum.leaf = root["leaf"].ToString();
+            }
+
+            dataTemps.Add(data.id, logDatum);
+            return logDatum;
         }
     }
 }

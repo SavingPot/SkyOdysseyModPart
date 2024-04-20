@@ -15,5 +15,8 @@
                 }
             ]
         }
+    },
+    "ori:tree_log": {
+        "leaf": "ori:sea_hibiscus_tree_leaf"
     }
 }

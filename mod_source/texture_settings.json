@@ -596,6 +596,10 @@
             "path": "/blocks/maple_leaf.png"
         },
         {
+            "id": "ori:maple_tree_leaf",
+            "path": "/blocks/maple_tree_leaf.png"
+        },
+        {
             "id": "ori:tangerine_seed",
             "path": "/blocks/tangerine_seed.png"
         },
@@ -610,6 +614,10 @@
         {
             "id": "ori:tangerine_leaf",
             "path": "/blocks/tangerine_leaf.png"
+        },
+        {
+            "id": "ori:tangerine_tree_leaf",
+            "path": "/blocks/tangerine_tree_leaf.png"
         },
         {
             "id": "ori:banyan_seed",
@@ -628,6 +636,10 @@
             "path": "/blocks/banyan_leaf.png"
         },
         {
+            "id": "ori:banyan_tree_leaf",
+            "path": "/blocks/banyan_tree_leaf.png"
+        },
+        {
             "id": "ori:mangrove_seed",
             "path": "/blocks/mangrove_seed.png"
         },
@@ -642,6 +654,10 @@
         {
             "id": "ori:mangrove_leaf",
             "path": "/blocks/mangrove_leaf.png"
+        },
+        {
+            "id": "ori:mangrove_tree_leaf",
+            "path": "/blocks/mangrove_tree_leaf.png"
         },
         {
             "id": "ori:acacia_seed",
@@ -660,6 +676,10 @@
             "path": "/blocks/acacia_leaf.png"
         },
         {
+            "id": "ori:acacia_tree_leaf",
+            "path": "/blocks/acacia_tree_leaf.png"
+        },
+        {
             "id": "ori:sea_hibiscus_seed",
             "path": "/blocks/sea_hibiscus_seed.png"
         },
@@ -674,6 +694,10 @@
         {
             "id": "ori:sea_hibiscus_leaf",
             "path": "/blocks/sea_hibiscus_leaf.png"
+        },
+        {
+            "id": "ori:sea_hibiscus_tree_leaf",
+            "path": "/blocks/sea_hibiscus_tree_leaf.png"
         },
         {
             "id": "ori:watermelon_crop_0",

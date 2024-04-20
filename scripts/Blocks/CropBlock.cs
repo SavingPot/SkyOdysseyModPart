@@ -52,14 +52,18 @@ namespace GameCore
 
                 switch (block.data.id)
                 {
-                    case BlockID.Dirt:
                     case BlockID.GrassBlock:
+                        RandomUpdater.Bind(randomUpdateID, cropDatum.speed * 2, Grow);
+                        hasBindGrowMethod = true;
+                        break;
+
+                    case BlockID.Dirt:
                         RandomUpdater.Bind(randomUpdateID, cropDatum.speed * 4, Grow);
                         hasBindGrowMethod = true;
                         break;
 
                     case BlockID.Farmland:
-                        RandomUpdater.Bind(randomUpdateID, cropDatum.speed * 8, Grow);
+                        RandomUpdater.Bind(randomUpdateID, cropDatum.speed * 6, Grow);
                         hasBindGrowMethod = true;
                         break;
 

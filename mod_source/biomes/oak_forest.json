@@ -28,6 +28,15 @@
                 }
             },
             {
+                "id": "ori:maple_tree"
+            },
+            {
+                "id": "ori:sea_hibiscus_tree"
+            },
+            {
+                "id": "ori:tangerine_tree"
+            },
+            {
                 "id": "ori:cave"
             }
         ],

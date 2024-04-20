@@ -15,5 +15,8 @@
                 }
             ]
         }
+    },
+    "ori:tree_log": {
+        "leaf": "ori:acacia_tree_leaf"
     }
 }

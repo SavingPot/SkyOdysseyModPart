@@ -18,7 +18,7 @@
         "blocks": {
             "fixed": [
                 {
-                    "id": "ori:banyan_log",
+                    "id": "ori:banyan_tree_log",
                     "pos": [
                         0,
                         1,
@@ -26,7 +26,7 @@
                     ]
                 },
                 {
-                    "id": "ori:banyan_log",
+                    "id": "ori:banyan_tree_log",
                     "pos": [
                         0,
                         2,
@@ -34,7 +34,7 @@
                     ]
                 },
                 {
-                    "id": "ori:banyan_log",
+                    "id": "ori:banyan_tree_log",
                     "pos": [
                         0,
                         3,
@@ -42,7 +42,7 @@
                     ]
                 },
                 {
-                    "id": "ori:banyan_log",
+                    "id": "ori:banyan_tree_log",
                     "pos": [
                         0,
                         4,
@@ -50,7 +50,7 @@
                     ]
                 },
                 {
-                    "id": "ori:banyan_log",
+                    "id": "ori:banyan_tree_log",
                     "pos": [
                         0,
                         5,
@@ -58,122 +58,10 @@
                     ]
                 },
                 {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        -2,
-                        6,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        -2,
-                        7,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        -2,
-                        8,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        -1,
-                        6,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        -1,
-                        7,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        -1,
-                        8,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
+                    "id": "ori:banyan_tree_log",
                     "pos": [
                         0,
                         6,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        0,
-                        7,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        0,
-                        8,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        1,
-                        6,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        1,
-                        7,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        1,
-                        8,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        2,
-                        6,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        2,
-                        7,
-                        1
-                    ]
-                },
-                {
-                    "id": "ori:banyan_leaf",
-                    "pos": [
-                        2,
-                        8,
                         1
                     ]
                 }

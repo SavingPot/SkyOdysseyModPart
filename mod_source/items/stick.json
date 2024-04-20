@@ -1,9 +1,19 @@
 {
-    "json_format": "0.5.1",
+    "json_format": "0.7.8",
     "ori:item": {
         "id": "ori:stick",
-        "texture": "ori:stick",
-        "damage": 12,
-        "description": "ori:description.stick"
+        "damage": 10,
+        "display": {
+            "description": "ori:description.stick",
+            "size": [
+                1.5,
+                1.5
+            ],
+            "offset": [
+                0.22,
+                -0.11
+            ],
+            "rotation": -45
+        }
     }
 }
