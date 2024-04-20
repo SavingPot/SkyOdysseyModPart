@@ -18,7 +18,7 @@
         "blocks": {
             "fixed": [
                 {
-                    "id": "ori:mangrove_log",
+                    "id": "ori:mangrove_tree_log",
                     "pos": [
                         0,
                         1,
@@ -26,7 +26,7 @@
                     ]
                 },
                 {
-                    "id": "ori:mangrove_log",
+                    "id": "ori:mangrove_tree_log",
                     "pos": [
                         0,
                         2,
@@ -34,7 +34,7 @@
                     ]
                 },
                 {
-                    "id": "ori:mangrove_log",
+                    "id": "ori:mangrove_tree_log",
                     "pos": [
                         0,
                         3,
@@ -42,7 +42,7 @@
                     ]
                 },
                 {
-                    "id": "ori:mangrove_log",
+                    "id": "ori:mangrove_tree_log",
                     "pos": [
                         0,
                         4,
@@ -50,7 +50,7 @@
                     ]
                 },
                 {
-                    "id": "ori:mangrove_log",
+                    "id": "ori:mangrove_tree_log",
                     "pos": [
                         0,
                         5,
@@ -58,7 +58,7 @@
                     ]
                 },
                 {
-                    "id": "ori:mangrove_log",
+                    "id": "ori:mangrove_tree_log",
                     "pos": [
                         0,
                         6,
