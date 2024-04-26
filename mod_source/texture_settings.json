@@ -147,6 +147,10 @@
             "path": "/blocks/chests/wooden.png"
         },
         {
+            "id": "ori:remote_market",
+            "path": "/blocks/remote_market.png"
+        },
+        {
             "id": "ori:portal",
             "path": "/blocks/portal.png"
         },
@@ -998,10 +1002,6 @@
         {
             "id": "ori:boundary",
             "path": "/blocks/boundary.png"
-        },
-        {
-            "id": "ori:boundary_gate",
-            "path": "/blocks/boundary_gate.png"
         },
         {
             "id": "ori:grass_block",

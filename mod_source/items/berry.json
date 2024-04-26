@@ -8,6 +8,9 @@
             "ori:edible=10",
             "ori:plant"
         ],
+        "economy": {
+            "worth": 5
+        },
         "description": "ori:description.berry"
     }
 }
