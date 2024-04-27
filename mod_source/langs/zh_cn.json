@@ -89,111 +89,111 @@
                 "text": "奖励: {id} x {count}"
             },
             {
-                "id": "ori:button.task_node.ori:get_dirt.text",
+                "id": "ori:button.task_tree.node.ori:get_dirt.text",
                 "text": "获得泥土"
             },
             {
-                "id": "ori:button.task_node.ori:craft.text",
+                "id": "ori:button.task_tree.node.ori:craft.text",
                 "text": "合成"
             },
             {
-                "id": "ori:button.task_node.ori:get_log.text",
+                "id": "ori:button.task_tree.node.ori:get_log.text",
                 "text": "获得木头"
             },
             {
-                "id": "ori:button.task_node.ori:get_meat.text",
+                "id": "ori:button.task_tree.node.ori:get_meat.text",
                 "text": "获得肉"
             },
             {
-                "id": "ori:button.task_node.ori:get_onion.text",
+                "id": "ori:button.task_tree.node.ori:get_onion.text",
                 "text": "获得洋葱"
             },
             {
-                "id": "ori:button.task_node.ori:get_potato.text",
+                "id": "ori:button.task_tree.node.ori:get_potato.text",
                 "text": "获得土豆"
             },
             {
-                "id": "ori:button.task_node.ori:get_watermelon.text",
+                "id": "ori:button.task_tree.node.ori:get_watermelon.text",
                 "text": "获得西瓜"
             },
             {
-                "id": "ori:button.task_node.ori:get_egg.text",
+                "id": "ori:button.task_tree.node.ori:get_egg.text",
                 "text": "获得蛋"
             },
             {
-                "id": "ori:button.task_node.ori:get_feather.text",
+                "id": "ori:button.task_tree.node.ori:get_feather.text",
                 "text": "获得羽毛"
             },
             {
-                "id": "ori:button.task_node.ori:get_feather_wing.text",
+                "id": "ori:button.task_tree.node.ori:get_feather_wing.text",
                 "text": "获得羽翼"
             },
             {
-                "id": "ori:button.task_node.ori:get_grass.text",
+                "id": "ori:button.task_tree.node.ori:get_grass.text",
                 "text": "获得草"
             },
             {
-                "id": "ori:button.task_node.ori:get_straw_rope.text",
+                "id": "ori:button.task_tree.node.ori:get_straw_rope.text",
                 "text": "获得草绳"
             },
             {
-                "id": "ori:button.task_node.ori:get_plant_fiber.text",
+                "id": "ori:button.task_tree.node.ori:get_plant_fiber.text",
                 "text": "获得植物纤维"
             },
             {
-                "id": "ori:button.task_node.ori:get_gravel.text",
+                "id": "ori:button.task_tree.node.ori:get_gravel.text",
                 "text": "获得砾石"
             },
             {
-                "id": "ori:button.task_node.ori:get_flint.text",
+                "id": "ori:button.task_tree.node.ori:get_flint.text",
                 "text": "获得燧石"
             },
             {
-                "id": "ori:button.task_node.ori:get_stone.text",
+                "id": "ori:button.task_tree.node.ori:get_stone.text",
                 "text": "获得石头"
             },
             {
-                "id": "ori:button.task_node.ori:get_planks.text",
+                "id": "ori:button.task_tree.node.ori:get_planks.text",
                 "text": "获得木板"
             },
             {
-                "id": "ori:button.task_node.ori:get_stick.text",
+                "id": "ori:button.task_tree.node.ori:get_stick.text",
                 "text": "获得木棍"
             },
             {
-                "id": "ori:button.task_node.ori:get_campfire.text",
+                "id": "ori:button.task_tree.node.ori:get_campfire.text",
                 "text": "获得篝火"
             },
             {
-                "id": "ori:button.task_node.ori:get_flint_knife.text",
+                "id": "ori:button.task_tree.node.ori:get_flint_knife.text",
                 "text": "获得燧石小刀"
             },
             {
-                "id": "ori:button.task_node.ori:get_flint_hoe.text",
+                "id": "ori:button.task_tree.node.ori:get_flint_hoe.text",
                 "text": "获得燧石锄"
             },
             {
-                "id": "ori:button.task_node.ori:get_flint_sword.text",
+                "id": "ori:button.task_tree.node.ori:get_flint_sword.text",
                 "text": "获得燧石剑"
             },
             {
-                "id": "ori:button.task_node.ori:get_iron_knife.text",
+                "id": "ori:button.task_tree.node.ori:get_iron_knife.text",
                 "text": "获得铁制小刀"
             },
             {
-                "id": "ori:button.task_node.ori:get_iron_hoe.text",
+                "id": "ori:button.task_tree.node.ori:get_iron_hoe.text",
                 "text": "获得铁锄"
             },
             {
-                "id": "ori:button.task_node.ori:get_iron_sword.text",
+                "id": "ori:button.task_tree.node.ori:get_iron_sword.text",
                 "text": "获得铁剑"
             },
             {
-                "id": "ori:button.task_node.ori:get_bark.text",
+                "id": "ori:button.task_tree.node.ori:get_bark.text",
                 "text": "获得树皮"
             },
             {
-                "id": "ori:button.task_node.ori:get_bark_vest.text",
+                "id": "ori:button.task_tree.node.ori:get_bark_vest.text",
                 "text": "获得树皮背心"
             },
             {
@@ -549,12 +549,8 @@
                 "text": "沙拉"
             },
             {
-                "id": "ori:chicken_soup",
-                "text": "鸡汤"
-            },
-            {
-                "id": "ori:duck_soup",
-                "text": "鸭汤"
+                "id": "ori:poultry_soup",
+                "text": "禽肉汤"
             },
             {
                 "id": "ori:pig_soup",

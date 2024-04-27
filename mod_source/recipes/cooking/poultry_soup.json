@@ -1,15 +1,17 @@
 {
     "json_format": "0.6.0",
     "ori:cooking_recipe": {
-        "id": "ori:chicken_soup",
+        "id": "ori:poultry_soup",
         "need_bowl": true,
         "ingredients": [
             {
-                "id": "ori:chicken_drumstick"
+                "tags": [
+                    "ori:poultry_drumstick"
+                ]
             }
         ],
         "result": {
-            "id": "ori:chicken_soup"
+            "id": "ori:poultry_soup"
         }
     }
 }

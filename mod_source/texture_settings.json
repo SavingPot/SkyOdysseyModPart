@@ -207,12 +207,8 @@
             "path": "/items/foods/dishes/dog_tail_grass_noodles.png"
         },
         {
-            "id": "ori:chicken_soup",
-            "path": "/items/foods/dishes/chicken_soup.png"
-        },
-        {
-            "id": "ori:duck_soup",
-            "path": "/items/foods/dishes/duck_soup.png"
+            "id": "ori:poultry_soup",
+            "path": "/items/foods/dishes/poultry_soup.png"
         },
         {
             "id": "ori:pig_soup",
@@ -354,6 +350,10 @@
         {
             "id": "ori:switch_button.tasks",
             "path": "/gui/backpack_panels/switch_buttons/tasks.png"
+        },
+        {
+            "id": "ori:switch_button.skills",
+            "path": "/gui/backpack_panels/switch_buttons/skills.png"
         },
         {
             "id": "ori:switch_button.soup_pot",

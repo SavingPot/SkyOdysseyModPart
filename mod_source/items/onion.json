@@ -8,7 +8,7 @@
             "ori:edible=6"
         ],
         "economy": {
-            "worth": 10
+            "worth": 8
         },
         "description": "ori:description.onion"
     }

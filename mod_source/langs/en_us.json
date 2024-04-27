@@ -89,111 +89,111 @@
                 "text": "Rewards: {id} x {count}"
             },
             {
-                "id": "ori:button.task_node.ori:get_dirt.text",
+                "id": "ori:button.task_tree.node.ori:get_dirt.text",
                 "text": "Get Dirt"
             },
             {
-                "id": "ori:button.task_node.ori:craft.text",
+                "id": "ori:button.task_tree.node.ori:craft.text",
                 "text": "Craft"
             },
             {
-                "id": "ori:button.task_node.ori:get_log.text",
+                "id": "ori:button.task_tree.node.ori:get_log.text",
                 "text": "Get Log"
             },
             {
-                "id": "ori:button.task_node.ori:get_meat.text",
+                "id": "ori:button.task_tree.node.ori:get_meat.text",
                 "text": "Get Meat"
             },
             {
-                "id": "ori:button.task_node.ori:get_onion.text",
+                "id": "ori:button.task_tree.node.ori:get_onion.text",
                 "text": "Get Union"
             },
             {
-                "id": "ori:button.task_node.ori:get_potato.text",
+                "id": "ori:button.task_tree.node.ori:get_potato.text",
                 "text": "Get Potato"
             },
             {
-                "id": "ori:button.task_node.ori:get_watermelon.text",
+                "id": "ori:button.task_tree.node.ori:get_watermelon.text",
                 "text": "Get Watermelon"
             },
             {
-                "id": "ori:button.task_node.ori:get_egg.text",
+                "id": "ori:button.task_tree.node.ori:get_egg.text",
                 "text": "Get Egg"
             },
             {
-                "id": "ori:button.task_node.ori:get_feather.text",
+                "id": "ori:button.task_tree.node.ori:get_feather.text",
                 "text": "Get Feather"
             },
             {
-                "id": "ori:button.task_node.ori:get_feather_wing.text",
+                "id": "ori:button.task_tree.node.ori:get_feather_wing.text",
                 "text": "Get Feather Wing"
             },
             {
-                "id": "ori:button.task_node.ori:get_grass.text",
+                "id": "ori:button.task_tree.node.ori:get_grass.text",
                 "text": "Get Grass"
             },
             {
-                "id": "ori:button.task_node.ori:get_straw_rope.text",
+                "id": "ori:button.task_tree.node.ori:get_straw_rope.text",
                 "text": "Get Straw Rope"
             },
             {
-                "id": "ori:button.task_node.ori:get_plant_fiber.text",
+                "id": "ori:button.task_tree.node.ori:get_plant_fiber.text",
                 "text": "Get Plant Fiber"
             },
             {
-                "id": "ori:button.task_node.ori:get_gravel.text",
+                "id": "ori:button.task_tree.node.ori:get_gravel.text",
                 "text": "Get Gravel"
             },
             {
-                "id": "ori:button.task_node.ori:get_flint.text",
+                "id": "ori:button.task_tree.node.ori:get_flint.text",
                 "text": "Get Flint"
             },
             {
-                "id": "ori:button.task_node.ori:get_stone.text",
+                "id": "ori:button.task_tree.node.ori:get_stone.text",
                 "text": "Get Stone"
             },
             {
-                "id": "ori:button.task_node.ori:get_planks.text",
+                "id": "ori:button.task_tree.node.ori:get_planks.text",
                 "text": "Get Planks"
             },
             {
-                "id": "ori:button.task_node.ori:get_stick.text",
+                "id": "ori:button.task_tree.node.ori:get_stick.text",
                 "text": "Get Stick"
             },
             {
-                "id": "ori:button.task_node.ori:get_campfire.text",
+                "id": "ori:button.task_tree.node.ori:get_campfire.text",
                 "text": "Get Campfire"
             },
             {
-                "id": "ori:button.task_node.ori:get_flint_knife.text",
+                "id": "ori:button.task_tree.node.ori:get_flint_knife.text",
                 "text": "Get Flint Knife"
             },
             {
-                "id": "ori:button.task_node.ori:get_flint_hoe.text",
+                "id": "ori:button.task_tree.node.ori:get_flint_hoe.text",
                 "text": "Get Flint Hoe"
             },
             {
-                "id": "ori:button.task_node.ori:get_flint_sword.text",
+                "id": "ori:button.task_tree.node.ori:get_flint_sword.text",
                 "text": "Get Flint Sword"
             },
             {
-                "id": "ori:button.task_node.ori:get_iron_knife.text",
+                "id": "ori:button.task_tree.node.ori:get_iron_knife.text",
                 "text": "Get Iron Knife"
             },
             {
-                "id": "ori:button.task_node.ori:get_iron_hoe.text",
+                "id": "ori:button.task_tree.node.ori:get_iron_hoe.text",
                 "text": "Get Iron Hoe"
             },
             {
-                "id": "ori:button.task_node.ori:get_iron_sword.text",
+                "id": "ori:button.task_tree.node.ori:get_iron_sword.text",
                 "text": "Get Iron Sword"
             },
             {
-                "id": "ori:button.task_node.ori:get_bark.text",
+                "id": "ori:button.task_tree.node.ori:get_bark.text",
                 "text": "Get Bark"
             },
             {
-                "id": "ori:button.task_node.ori:get_bark_vest.text",
+                "id": "ori:button.task_tree.node.ori:get_bark_vest.text",
                 "text": "Get Bark Vest"
             },
             {
@@ -549,12 +549,8 @@
                 "text": "Salad"
             },
             {
-                "id": "ori:chicken_soup",
-                "text": "Chicken Soup"
-            },
-            {
-                "id": "ori:duck_soup",
-                "text": "Duck Soup"
+                "id": "ori:poultry_soup",
+                "text": "Poultry Soup"
             },
             {
                 "id": "ori:pig_soup",
