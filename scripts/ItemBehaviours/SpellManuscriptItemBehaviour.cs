@@ -9,7 +9,7 @@ namespace GameCore
         public Spell spell { get; set; }
         public SpellBehaviour spellBehaviour { get; set; }
 
-        public override void ModifyInfo(ItemInfoUI ui)
+        public override void ModifyInfo(ItemInfoShower ui)
         {
             base.ModifyInfo(ui);
 

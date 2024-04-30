@@ -10,7 +10,7 @@ namespace GameCore
         {
             if (player.TryGetUsingItem(out var item) && item.data.economy.worth != 0)
             {
-                player.ServerReduceUsingItemCount();
+                player.ServerReduceUsingItemCount(1);
                 player.AddCoin(item.data.economy.worth);
                 return true;
             }

@@ -9,6 +9,9 @@ namespace GameCore
         {
             base.OnLoaded();
 
+
+
+            //让玩家穿着羽翼时重力降低
             Player.GravitySet += caller =>
             {
                 if (caller.inventory.breastplate?.data?.id == ItemID.FeatherWing)
@@ -17,13 +20,21 @@ namespace GameCore
                 }
             };
 
+            //注册玩家的远程命令
+            //注意：以后可能得为所有 Entity 都注册，毕竟 Entity 以后可能也可以使用魔法
             PlayerCenter.OnAddPlayer += player =>
             {
                 player.RegisterParamRemoteCommand(LaserSpellBehaviour.LaserLightCommandId, LaserSpellBehaviour.LaserLight);
             };
 
+
+
+            //注册水物理
             GM.OnUpdate += WaterCenter.WaterPhysics;
 
+
+
+            //绑定场景切换事件
             GScene.AfterChanged += scene =>
             {
                 //清理对象池

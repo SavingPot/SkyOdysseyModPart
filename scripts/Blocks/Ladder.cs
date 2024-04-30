@@ -23,7 +23,7 @@ namespace GameCore
 
                     if (player.rb)
                     {
-                        if (player.playerController.HoldingJump())
+                        if (Player.PlayerCanControl(player) && player.playerController.HoldingJump())
                         {
                             if (player.rb.velocity.y < entityClimbingSpeed)
                             {

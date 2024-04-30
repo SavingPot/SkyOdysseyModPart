@@ -65,7 +65,7 @@ namespace GameCore
                 {
                     if (caller.GetUsingItemChecked()?.data?.id == ItemID.WoodenBowl)
                     {
-                        caller.ServerReduceItemCount(caller.usingItemIndex.ToString(), 1);
+                        caller.ServerReduceUsingItemCount(1);
                     }
                     else
                     {
