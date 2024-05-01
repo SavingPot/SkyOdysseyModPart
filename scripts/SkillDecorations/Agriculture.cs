@@ -2,8 +2,20 @@ using UnityEngine;
 
 namespace GameCore
 {
+    public class QuickGrowDecorator : CropDecorator
+    {
+        public override float DecideGrowProbability(Block underBlock) => crop.DecideGrowProbability(underBlock) * 1000.1f;
+        public override void Grow() => crop.Grow();
+        public override HarvestResult[] HarvestResults(Vector3 pos) => crop.HarvestResults(pos);
+
+
+
+        public QuickGrowDecorator(ICrop crop, CropBlock block) : base(crop, block) { }
+    }
+
     public class DoubleHarvestDecorator : CropDecorator
     {
+        public override float DecideGrowProbability(Block underBlock) => crop.DecideGrowProbability(underBlock);
         public override void Grow() => crop.Grow();
 
         public override HarvestResult[] HarvestResults(Vector3 pos)
@@ -29,6 +41,6 @@ namespace GameCore
 
 
 
-        public DoubleHarvestDecorator(ICrop crop) : base(crop) { }
+        public DoubleHarvestDecorator(ICrop crop, CropBlock block) : base(crop, block) { }
     }
 }

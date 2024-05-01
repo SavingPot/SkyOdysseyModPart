@@ -23,6 +23,8 @@ namespace GameCore
 
     public interface ICrop
     {
+        CropBlock block { get; }
+        float DecideGrowProbability(Block underBlock);
         void Grow();
         HarvestResult[] HarvestResults(Vector3 pos);
     }
@@ -30,12 +32,15 @@ namespace GameCore
     public abstract class CropDecorator : ICrop
     {
         protected readonly ICrop crop;
+        public CropBlock block { get; }
 
-        public CropDecorator(ICrop crop)
+        public CropDecorator(ICrop crop, CropBlock block)
         {
             this.crop = crop;
+            this.block = block;
         }
 
+        public abstract float DecideGrowProbability(Block underBlock);
         public abstract void Grow();
         public abstract HarvestResult[] HarvestResults(Vector3 pos);
     }
@@ -56,7 +61,16 @@ namespace GameCore
 
     public class NormalCrop : ICrop
     {
-        public CropBlock block;
+        public CropBlock block { get; }
+
+        public float DecideGrowProbability(Block underBlock) => underBlock.data.id switch
+        {
+            BlockID.GrassBlock => block.cropDatum.speed * 2,
+            BlockID.Dirt => block.cropDatum.speed * 4,
+            BlockID.Farmland => block.cropDatum.speed * 6,
+            _ => 0,
+        };
+
 
         public void Grow()
         {
@@ -117,7 +131,11 @@ namespace GameCore
             {
                 if (player.unlockedSkills.Any(p => p.unlocked && p.id == SkillID.Agriculture_Harvest))
                 {
-                    result = new DoubleHarvestDecorator(result);
+                    result = new DoubleHarvestDecorator(result, result.block);
+                }
+                if (player.unlockedSkills.Any(p => p.unlocked && p.id == SkillID.Agriculture_Quick))
+                {
+                    result = new QuickGrowDecorator(result, result.block);
                 }
             }
 
@@ -140,7 +158,7 @@ namespace GameCore
         {
             base.OnUpdate();
 
-            if (!chunk.map.TryGetBlock(new(pos.x, pos.y - 1), isBackground, out var block))
+            if (!chunk.map.TryGetBlock(new(pos.x, pos.y - 1), isBackground, out var underBlock))
             {
                 Destroy();
                 return;
@@ -149,26 +167,12 @@ namespace GameCore
             {
                 UnbindGrowingMethod(this);
 
-                switch (block.data.id)
+                var probability = crop.DecideGrowProbability(underBlock);
+
+                if (probability != 0)
                 {
-                    case BlockID.GrassBlock:
-                        RandomUpdater.Bind(randomUpdateID, cropDatum.speed * 2, Grow);
-                        hasBindGrowMethod = true;
-                        break;
-
-                    case BlockID.Dirt:
-                        RandomUpdater.Bind(randomUpdateID, cropDatum.speed * 4, Grow);
-                        hasBindGrowMethod = true;
-                        break;
-
-                    case BlockID.Farmland:
-                        RandomUpdater.Bind(randomUpdateID, cropDatum.speed * 6, Grow);
-                        hasBindGrowMethod = true;
-                        break;
-
-                    default:
-                        hasBindGrowMethod = false;
-                        break;
+                    RandomUpdater.Bind(randomUpdateID, probability, Grow);
+                    hasBindGrowMethod = true;
                 }
             }
         }
@@ -185,13 +189,14 @@ namespace GameCore
             if (block.hasBindGrowMethod)
             {
                 RandomUpdater.Unbind(block.randomUpdateID);
+                block.hasBindGrowMethod = false;
             }
         }
 
         public void Grow()
         {
             //如果已经达到最大值, 则不再生长
-            if (data.jo == null || cropIndex + 1 < cropDatum.processes.Count)
+            if (data.jo == null || cropIndex + 1 >= cropDatum.processes.Count)
                 return;
 
             //增加生长进度

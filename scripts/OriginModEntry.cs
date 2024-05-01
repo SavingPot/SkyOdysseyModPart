@@ -33,7 +33,7 @@ namespace GameCore
                     //解锁技能时刷新一下农作物装饰器
                     player.pui.OnUnlockSkill += skill =>
                     {
-                        if (skill.id == SkillID.Agriculture_Harvest)
+                        if (skill.id == SkillID.Agriculture_Harvest || skill.id == SkillID.Agriculture_Quick)
                         {
                             foreach (var chunk in Map.instance.chunks)
                             {
