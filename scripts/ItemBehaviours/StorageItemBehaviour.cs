@@ -64,7 +64,7 @@ namespace GameCore
                 //初始化所有UI
                 for (int i = 0; i < slotUIs.Length; i++)
                 {
-                    itemView.AddChild((slotUIs[i] = InventorySlotUI.Generate($"{modId}:button.{panelName}_item_{i}", $"{modId}:image.{panelName}_item_{i}", itemView.gridLayoutGroup.cellSize)).button);
+                    itemView.AddChild((slotUIs[i] = new($"{modId}:button.{panelName}_item_{i}", $"{modId}:image.{panelName}_item_{i}", itemView.gridLayoutGroup.cellSize)).button);
                 }
             }
 

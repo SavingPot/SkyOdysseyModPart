@@ -2,6 +2,22 @@
     "json_format": "0.4.6",
     "textures": [
         {
+            "id": "ori:skill.agriculture",
+            "path": "/gui/skills/agriculture.png"
+        },
+        {
+            "id": "ori:skill.agriculture.quick",
+            "path": "/gui/skills/agriculture.quick.png"
+        },
+        {
+            "id": "ori:skill.agriculture.coin",
+            "path": "/gui/skills/agriculture.coin.png"
+        },
+        {
+            "id": "ori:skill.agriculture.harvest",
+            "path": "/gui/skills/agriculture.harvest.png"
+        },
+        {
             "id": "ori:task.get_dirt",
             "path": "/gui/tasks/get_dirt.png"
         },

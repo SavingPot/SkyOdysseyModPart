@@ -561,6 +561,10 @@
                 "text": "熄滅的篝火"
             },
             {
+                "id": "ori:remote_market",
+                "text": "遠程市場"
+            },
+            {
                 "id": "ori:campfire",
                 "text": "篝火"
             },

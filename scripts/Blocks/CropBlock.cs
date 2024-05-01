@@ -1,6 +1,7 @@
 using GameCore.High;
 using Newtonsoft.Json.Linq;
 using SP.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -20,6 +21,86 @@ namespace GameCore
         public TextureData texture;
     }
 
+    public interface ICrop
+    {
+        void Grow();
+        HarvestResult[] HarvestResults(Vector3 pos);
+    }
+
+    public abstract class CropDecorator : ICrop
+    {
+        protected readonly ICrop crop;
+
+        public CropDecorator(ICrop crop)
+        {
+            this.crop = crop;
+        }
+
+        public abstract void Grow();
+        public abstract HarvestResult[] HarvestResults(Vector3 pos);
+    }
+
+    public struct HarvestResult
+    {
+        public string id;
+        public ushort count;
+        public string customData;
+
+        public HarvestResult(string id, ushort count, string customData)
+        {
+            this.id = id;
+            this.count = count;
+            this.customData = customData;
+        }
+    }
+
+    public class NormalCrop : ICrop
+    {
+        public CropBlock block;
+
+        public void Grow()
+        {
+            block.Grow();
+        }
+
+        public HarvestResult[] HarvestResults(Vector3 pos)
+        {
+            List<HarvestResult> items = new();
+
+            //达到最大值, 即已成熟
+            if (block.cropIndex >= block.cropDatum.processes.Count - 1)
+            {
+                //生成掉落物
+                block.cropDatum.harvests.For(a =>
+                {
+                    items.Add(new(a.id, a.count, null));
+                });
+            }
+            else
+            {
+                //未设定种子则直接掉落方块本身
+                if (block.cropDatum.seed.IsNullOrWhiteSpace())
+                {
+                    items.Add(new(block.data.id, 1, block.customData?.ToString()));
+                }
+                //设定了种子则掉落设定的种子
+                else
+                {
+                    items.Add(new(block.cropDatum.seed, 1, null));
+                }
+            }
+
+            return items.ToArray();
+        }
+
+
+
+        public NormalCrop(CropBlock block)
+        {
+            this.block = block;
+        }
+    }
+
     public class CropBlock : Block
     {
         public static readonly Dictionary<string, CropBlockDatum> dataTemps = new();
@@ -28,6 +109,23 @@ namespace GameCore
         public string randomUpdateID;
         public bool hasBindGrowMethod;
 
+        public static Func<CropBlock, ICrop> GetCrop = (block) =>
+        {
+            ICrop result = new NormalCrop(block);
+
+            if (Player.TryGetLocal(out var player))
+            {
+                if (player.unlockedSkills.Any(p => p.unlocked && p.id == SkillID.Agriculture_Harvest))
+                {
+                    result = new DoubleHarvestDecorator(result);
+                }
+            }
+
+            return result;
+        };
+        public ICrop crop;
+
+
 
         public override void DoStart()
         {
@@ -35,6 +133,7 @@ namespace GameCore
 
             randomUpdateID = $"ori:crop_blocks_{gameObject.GetInstanceID()}";
             cropDatum = GetDatum();
+            crop = GetCrop(this);
         }
 
         public override void OnUpdate()
@@ -89,30 +188,27 @@ namespace GameCore
             }
         }
 
-        void Grow()
+        public void Grow()
         {
-            if (data.jo == null)
+            //如果已经达到最大值, 则不再生长
+            if (data.jo == null || cropIndex + 1 < cropDatum.processes.Count)
                 return;
 
             //增加生长进度
-            if (cropIndex + 1 < cropDatum.processes.Count)
-            {
-                //增加 index
-                cropIndex++;
+            cropIndex++;
 
-                //刷新贴图
-                if (sr)
+            //刷新贴图
+            if (sr)
+            {
+                try
                 {
-                    try
-                    {
-                        sr.sprite = cropDatum.processes[cropIndex].texture.sprite;
-                    }
-                    catch (System.Exception ex)
-                    {
-                        Debug.LogError($"刷新作物贴图失败, 异常如下: {ex}");
-                        sr.sprite = GInit.instance.spriteUnknown;
-                        throw;
-                    }
+                    sr.sprite = cropDatum.processes[cropIndex].texture.sprite;
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"刷新作物贴图失败, 异常如下: {ex}");
+                    sr.sprite = GInit.instance.spriteUnknown;
+                    throw;
                 }
             }
         }
@@ -178,22 +274,11 @@ namespace GameCore
 
         public override void OutputDrops(Vector3 pos)
         {
-            //达到最大值, 即已成熟
-            if (cropIndex >= cropDatum.processes.Count - 1)
+            var results = crop.HarvestResults(pos);
+
+            foreach (var item in results)
             {
-                //生成掉落物
-                cropDatum.harvests.For(a =>
-                {
-                    GM.instance.SummonDrop(pos, a.id, a.count);
-                });
-            }
-            else
-            {
-                //未设定种子则直接生成
-                if (cropDatum.seed.IsNullOrWhiteSpace())
-                    base.OutputDrops(pos);
-                else
-                    GM.instance.SummonDrop(pos, cropDatum.seed);
+                GM.instance.SummonDrop(pos, item.id, item.count, item.customData);
             }
         }
     }

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using SP.Tools.Unity;
+using System.Linq;
 
 namespace GameCore
 {
-    public class EntitiesModEntry : ModEntry
+    public class OriginModEntry : ModEntry
     {
         public override void OnLoaded()
         {
@@ -20,12 +21,35 @@ namespace GameCore
                 }
             };
 
+
             //注册玩家的远程命令
             //注意：以后可能得为所有 Entity 都注册，毕竟 Entity 以后可能也可以使用魔法
             PlayerCenter.OnAddPlayer += player =>
             {
                 player.RegisterParamRemoteCommand(LaserSpellBehaviour.LaserLightCommandId, LaserSpellBehaviour.LaserLight);
+
+                if (player.isServer)
+                {
+                    //解锁技能时刷新一下农作物装饰器
+                    player.pui.OnUnlockSkill += skill =>
+                    {
+                        if (skill.id == SkillID.Agriculture_Harvest)
+                        {
+                            foreach (var chunk in Map.instance.chunks)
+                            {
+                                foreach (var block in chunk.blocks)
+                                {
+                                    if (block is CropBlock cropBlock)
+                                    {
+                                        cropBlock.crop = CropBlock.GetCrop(cropBlock);
+                                    }
+                                }
+                            }
+                        }
+                    };
+                }
             };
+
 
 
 

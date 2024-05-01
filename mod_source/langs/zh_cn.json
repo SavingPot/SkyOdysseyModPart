@@ -89,6 +89,38 @@
                 "text": "奖励: {id} x {count}"
             },
             {
+                "id": "ori:button.skill_tree.node.ori:agriculture.text",
+                "text": "农业"
+            },
+            {
+                "id": "ori:skill_description.agriculture",
+                "text": "获得土豆种子x3\n解锁锄头配方"
+            },
+            {
+                "id": "ori:button.skill_tree.node.ori:agriculture.quick.text",
+                "text": "快快"
+            },
+            {
+                "id": "ori:skill_description.agriculture.quick",
+                "text": "农作物生长加速10%"
+            },
+            {
+                "id": "ori:button.skill_tree.node.ori:agriculture.coin.text",
+                "text": "摇钱树"
+            },
+            {
+                "id": "ori:skill_description.agriculture.coin",
+                "text": "农作物有概率掉落金币"
+            },
+            {
+                "id": "ori:button.skill_tree.node.ori:agriculture.harvest.text",
+                "text": "丰收"
+            },
+            {
+                "id": "ori:skill_description.agriculture.harvest",
+                "text": "农作物有10%概率获得双倍收益"
+            },
+            {
                 "id": "ori:button.task_tree.node.ori:get_dirt.text",
                 "text": "获得泥土"
             },
@@ -559,6 +591,10 @@
             {
                 "id": "ori:extinguished_campfire",
                 "text": "熄灭的篝火"
+            },
+            {
+                "id": "ori:remote_market",
+                "text": "远程市场"
             },
             {
                 "id": "ori:campfire",
