@@ -4,7 +4,7 @@ namespace GameCore
 {
     public class QuickGrowDecorator : CropDecorator
     {
-        public override float DecideGrowProbability(Block underBlock) => crop.DecideGrowProbability(underBlock) * 1000.1f;
+        public override float DecideGrowProbability(Block underBlock) => crop.DecideGrowProbability(underBlock) * 1.15f;
         public override void Grow() => crop.Grow();
         public override HarvestResult[] HarvestResults(Vector3 pos) => crop.HarvestResults(pos);
 

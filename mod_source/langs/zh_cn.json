@@ -102,7 +102,7 @@
             },
             {
                 "id": "ori:skill_description.agriculture.quick",
-                "text": "农作物生长加速10%"
+                "text": "农作物生长加速15%"
             },
             {
                 "id": "ori:button.skill_tree.node.ori:agriculture.coin.text",
