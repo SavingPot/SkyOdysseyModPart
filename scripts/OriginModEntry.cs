@@ -28,7 +28,7 @@ namespace GameCore
             {
                 player.RegisterParamRemoteCommand(LaserSpellBehaviour.LaserLightCommandId, LaserSpellBehaviour.LaserLight);
 
-                if (player.isServer)
+                if (player.isLocalPlayer && player.isServer)
                 {
                     //解锁技能时刷新一下农作物装饰器
                     player.pui.OnUnlockSkill += skill =>
@@ -42,7 +42,6 @@ namespace GameCore
                                     cropBlock.crop = CropBlock.GetCrop(cropBlock);
                                 }
                             }
-
                         }
                     };
                 }

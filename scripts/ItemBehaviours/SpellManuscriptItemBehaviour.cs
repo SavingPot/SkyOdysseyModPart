@@ -1,5 +1,4 @@
-using SP.Tools;
-using UnityEngine;
+using GameCore.UI;
 
 namespace GameCore
 {

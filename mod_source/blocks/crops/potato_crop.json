@@ -29,5 +29,10 @@
                 "count": 2
             }
         ]
+    },
+    "ori:item": {
+        "display": {
+            "texture": "ori:potato_seed"
+        }
     }
 }

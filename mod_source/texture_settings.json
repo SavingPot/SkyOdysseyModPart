@@ -235,6 +235,10 @@
             "path": "/items/foods/dishes/salad.png"
         },
         {
+            "id": "ori:strange_dish",
+            "path": "/items/foods/dishes/strange_dish.png"
+        },
+        {
             "id": "ori:extinguished_campfire",
             "path": "/blocks/extinguished_campfire.png"
         },
@@ -384,6 +388,10 @@
             "path": "/gui/backpack_panels/switch_buttons/wooden_chest.png"
         },
         {
+            "id": "ori:switch_button.remote_market",
+            "path": "/gui/backpack_panels/switch_buttons/remote_market.png"
+        },
+        {
             "id": "ori:crafting_info_shower_background",
             "path": "/gui/backpack_panels/crafting_info_shower_background.png"
         },
@@ -436,6 +444,10 @@
             "path": "/items/foods/onion.png"
         },
         {
+            "id": "ori:onion_seed",
+            "path": "/items/seeds/onion_seed.png"
+        },
+        {
             "id": "ori:potato_crop_0",
             "path": "/blocks/crops/potato/potato_0.png"
         },
@@ -452,8 +464,96 @@
             "path": "/items/foods/potato.png"
         },
         {
+            "id": "ori:potato_seed",
+            "path": "/items/seeds/potato_seed.png"
+        },
+        {
             "id": "ori:potato_chips",
             "path": "/items/foods/dishes/potato_chips.png"
+        },
+        {
+            "id": "ori:pumpkin_crop_0",
+            "path": "/blocks/crops/pumpkin/pumpkin_0.png"
+        },
+        {
+            "id": "ori:pumpkin_crop_1",
+            "path": "/blocks/crops/pumpkin/pumpkin_1.png"
+        },
+        {
+            "id": "ori:pumpkin_crop_2",
+            "path": "/blocks/crops/pumpkin/pumpkin_2.png"
+        },
+        {
+            "id": "ori:pumpkin_crop_3",
+            "path": "/blocks/crops/pumpkin/pumpkin_3.png"
+        },
+        {
+            "id": "ori:pumpkin_crop_4",
+            "path": "/blocks/crops/pumpkin/pumpkin_4.png"
+        },
+        {
+            "id": "ori:pumpkin",
+            "path": "/items/foods/pumpkin.png"
+        },
+        {
+            "id": "ori:pumpkin_seed",
+            "path": "/items/seeds/pumpkin_seed.png"
+        },
+        {
+            "id": "ori:tomato_crop_0",
+            "path": "/blocks/crops/tomato/tomato_0.png"
+        },
+        {
+            "id": "ori:tomato_crop_1",
+            "path": "/blocks/crops/tomato/tomato_1.png"
+        },
+        {
+            "id": "ori:tomato_crop_2",
+            "path": "/blocks/crops/tomato/tomato_2.png"
+        },
+        {
+            "id": "ori:tomato_crop_3",
+            "path": "/blocks/crops/tomato/tomato_3.png"
+        },
+        {
+            "id": "ori:tomato_crop_4",
+            "path": "/blocks/crops/tomato/tomato_4.png"
+        },
+        {
+            "id": "ori:tomato",
+            "path": "/items/foods/tomato.png"
+        },
+        {
+            "id": "ori:tomato_seed",
+            "path": "/items/seeds/tomato_seed.png"
+        },
+        {
+            "id": "ori:watermelon_crop_0",
+            "path": "/blocks/crops/watermelon/watermelon_0.png"
+        },
+        {
+            "id": "ori:watermelon_crop_1",
+            "path": "/blocks/crops/watermelon/watermelon_1.png"
+        },
+        {
+            "id": "ori:watermelon_crop_2",
+            "path": "/blocks/crops/watermelon/watermelon_2.png"
+        },
+        {
+            "id": "ori:watermelon_crop_3",
+            "path": "/blocks/crops/watermelon/watermelon_3.png"
+        },
+        {
+            "id": "ori:watermelon_crop_4",
+            "path": "/blocks/crops/watermelon/watermelon_4.png"
+        },
+        {
+            "id": "ori:watermelon",
+            "path": "/items/foods/watermelon.png"
+        },
+        {
+            "id": "ori:watermelon_seed",
+            "path": "/items/seeds/watermelon_seed.png"
         },
         {
             "id": "ori:green_dumpling",
@@ -718,54 +818,6 @@
         {
             "id": "ori:sea_hibiscus_tree_leaf",
             "path": "/blocks/sea_hibiscus_tree_leaf.png"
-        },
-        {
-            "id": "ori:watermelon_crop_0",
-            "path": "/blocks/crops/watermelon/watermelon_0.png"
-        },
-        {
-            "id": "ori:watermelon_crop_1",
-            "path": "/blocks/crops/watermelon/watermelon_1.png"
-        },
-        {
-            "id": "ori:watermelon_crop_2",
-            "path": "/blocks/crops/watermelon/watermelon_2.png"
-        },
-        {
-            "id": "ori:watermelon_crop_3",
-            "path": "/blocks/crops/watermelon/watermelon_3.png"
-        },
-        {
-            "id": "ori:watermelon_crop_4",
-            "path": "/blocks/crops/watermelon/watermelon_4.png"
-        },
-        {
-            "id": "ori:watermelon",
-            "path": "/items/foods/watermelon.png"
-        },
-        {
-            "id": "ori:pumpkin_crop_0",
-            "path": "/blocks/crops/pumpkin/pumpkin_0.png"
-        },
-        {
-            "id": "ori:pumpkin_crop_1",
-            "path": "/blocks/crops/pumpkin/pumpkin_1.png"
-        },
-        {
-            "id": "ori:pumpkin_crop_2",
-            "path": "/blocks/crops/pumpkin/pumpkin_2.png"
-        },
-        {
-            "id": "ori:pumpkin_crop_3",
-            "path": "/blocks/crops/pumpkin/pumpkin_3.png"
-        },
-        {
-            "id": "ori:pumpkin_crop_4",
-            "path": "/blocks/crops/pumpkin/pumpkin_4.png"
-        },
-        {
-            "id": "ori:pumpkin",
-            "path": "/items/foods/pumpkin.png"
         },
         {
             "id": "ori:jungle_sword",

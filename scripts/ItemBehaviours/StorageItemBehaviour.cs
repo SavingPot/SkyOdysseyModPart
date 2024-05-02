@@ -1,6 +1,6 @@
+using GameCore.UI;
 using SP.Tools;
 using UnityEngine;
-using static GameCore.PlayerUI;
 
 namespace GameCore
 {

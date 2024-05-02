@@ -3,6 +3,7 @@
     "ori:item": {
         "id": "ori:fried_egg",
         "texture": "ori:fried_egg",
+        "description": "ori:description.fried_egg",
         "tags": [
             "ori:dish",
             "ori:food",

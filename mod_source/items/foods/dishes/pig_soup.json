@@ -3,6 +3,7 @@
     "ori:item": {
         "id": "ori:pig_soup",
         "texture": "ori:pig_soup",
+        "description": "ori:description.pig_soup",
         "tags": [
             "ori:dish",
             "ori:edible=50"

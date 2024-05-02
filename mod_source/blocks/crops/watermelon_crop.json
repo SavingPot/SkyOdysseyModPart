@@ -39,5 +39,10 @@
                 "count": 1
             }
         ]
+    },
+    "ori:item": {
+        "display": {
+            "texture": "ori:watermelon_seed"
+        }
     }
 }

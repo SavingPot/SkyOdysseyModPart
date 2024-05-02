@@ -497,6 +497,10 @@
                 "text": "圆圆的脑袋~"
             },
             {
+                "id": "ori:description.tomato",
+                "text": "酸甜可口"
+            },
+            {
                 "id": "ori:description.stick",
                 "text": "一根普通的木棍, 没什么特别的"
             },
@@ -545,6 +549,22 @@
                 "text": "一个瓶子...有水, 看上去可以喝"
             },
             {
+                "id": "ori:description.egg_drop_soup",
+                "text": "具有恢复饥饿值的作用。\n一颗蛋被轻轻打碎，在锅中化作了蛋花汤。\n尝起来甜甜的。"
+            },
+            {
+                "id": "ori:description.pig_soup",
+                "text": "具有恢复饥饿值的作用。\n切片的猪肉被放入锅中，煮至深红，汤汁浓郁。\n油浮在表面而看着鲜美。"
+            },
+            {
+                "id": "ori:description.poultry_soup",
+                "text": "具有恢复饥饿值的作用。\n禽肉坠入锅中，通过蒸煮，变得更加诱人。\n清淡而色香。"
+            },
+            {
+                "id": "ori:description.strange_dish",
+                "text": "嗯......\n看起来，\n应该可以吃吧...？"
+            },
+            {
                 "id": "ori:item.damage",
                 "text": "{value} 伤害"
             },
@@ -587,6 +607,10 @@
             {
                 "id": "ori:pig_soup",
                 "text": "猪肉汤"
+            },
+            {
+                "id": "ori:strange_dish",
+                "text": "奇怪的料理"
             },
             {
                 "id": "ori:extinguished_campfire",
@@ -755,6 +779,14 @@
             {
                 "id": "ori:pumpkin",
                 "text": "南瓜"
+            },
+            {
+                "id": "ori:tomato_crop",
+                "text": "番茄作物"
+            },
+            {
+                "id": "ori:tomato",
+                "text": "番茄"
             },
             {
                 "id": "ori:field.settings.playerName",
@@ -1195,6 +1227,10 @@
             {
                 "id": "ori:mangrove_leaf",
                 "text": "红树叶"
+            },
+            {
+                "id": "ori:trade_not_enough_coin",
+                "text": "金币不足！"
             },
             {
                 "id": "ori:button.choose_world_panel.text",

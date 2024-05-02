@@ -34,6 +34,10 @@
             "volume": 1.1
         },
         {
+            "id": "ori:trade",
+            "path": "/trade.ogg"
+        },
+        {
             "id": "ori:open_door",
             "path": "/open_door.ogg"
         },

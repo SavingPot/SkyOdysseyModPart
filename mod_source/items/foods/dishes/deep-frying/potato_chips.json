@@ -3,11 +3,11 @@
     "ori:item": {
         "id": "ori:potato_chips",
         "texture": "ori:potato_chips",
+        "description": "ori:description.potato_chips",
         "tags": [
             "ori:food",
             "ori:edible=20",
             "ori:plant"
-        ],
-        "description": "ori:description.potato_chips"
+        ]
     }
 }

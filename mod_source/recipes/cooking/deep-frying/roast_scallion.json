@@ -1,0 +1,15 @@
+{
+    "json_format": "0.6.0",
+    "ori:cooking_recipe": {
+        "id": "ori:roast_scallion",
+        "type": "ori:deep-frying",
+        "ingredients": [
+            {
+                "id": "ori:scallion"
+            }
+        ],
+        "result": {
+            "id": "ori:roast_scallion"
+        }
+    }
+}

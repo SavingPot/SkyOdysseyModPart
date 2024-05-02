@@ -32,6 +32,19 @@
                 "block": "ori:sand"
             },
             {
+                "type": "post_process",
+                "block": "ori:dead_tree",
+                "ranges": [
+                    "@highest_point + 1"
+                ],
+                "attached": {
+                    "id": "ori:sand"
+                },
+                "rules": {
+                    "probability": 10
+                }
+            },
+            {
                 "prefab": "ori:ores"
             },
             {

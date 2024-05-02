@@ -33,5 +33,10 @@
                 "count": 1
             }
         ]
+    },
+    "ori:item": {
+        "display": {
+            "texture": "ori:onion_seed"
+        }
     }
 }
