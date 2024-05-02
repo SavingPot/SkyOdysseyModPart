@@ -132,10 +132,10 @@ namespace GameCore
             get
             {
                 int totalDefense = 0;
-                totalDefense += inventory.helmet?.data?.Helmet.defense ?? 0;
-                totalDefense += inventory.breastplate?.data?.Breastplate.defense ?? 0;
-                totalDefense += inventory.legging?.data?.Legging.defense ?? 0;
-                totalDefense += inventory.boots?.data?.Boots.defense ?? 0;
+                totalDefense += inventory.helmet?.data?.Helmet?.defense ?? 0;
+                totalDefense += inventory.breastplate?.data?.Breastplate?.defense ?? 0;
+                totalDefense += inventory.legging?.data?.Legging?.defense ?? 0;
+                totalDefense += inventory.boots?.data?.Boots?.defense ?? 0;
                 return totalDefense;
             }
         }

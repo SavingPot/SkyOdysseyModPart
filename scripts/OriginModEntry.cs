@@ -69,6 +69,7 @@ namespace GameCore
                     case SceneNames.MainMenu:
                         GAudio.Play(AudioID.Town);
                         GAudio.Stop(AudioID.WhyNotComeToTheParty);
+                        GAudio.Stop(AudioID.Skirmish0);
                         break;
 
                     case SceneNames.GameScene:
@@ -84,11 +85,11 @@ namespace GameCore
             if (!Player.TryGetLocal(out Player player))
                 return;
 
-            int enemyTargetingPlayer = EnemyTargetingPlayer(player);
+            bool enemyTargetingPlayer = EnemyCenter.all.Any(enemy => enemy.targetEntity == player && Tools.instance.IsInView2DFaster(enemy.transform.position));
 
             if (GAudio.GetAudio(AudioID.Skirmish0).sources.Any(source => source.isPlaying))
             {
-                if (enemyTargetingPlayer == 0)
+                if (!enemyTargetingPlayer)
                 {
                     GAudio.Stop(AudioID.Skirmish0);
                     GAudio.Play(AudioID.WhyNotComeToTheParty);
@@ -96,7 +97,7 @@ namespace GameCore
             }
             else
             {
-                if (enemyTargetingPlayer > 0)
+                if (enemyTargetingPlayer)
                 {
                     GAudio.Stop(AudioID.WhyNotComeToTheParty);
                     GAudio.Play(AudioID.Skirmish0);
