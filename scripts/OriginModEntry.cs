@@ -33,18 +33,16 @@ namespace GameCore
                     //解锁技能时刷新一下农作物装饰器
                     player.pui.OnUnlockSkill += skill =>
                     {
-                        if (skill.id == SkillID.Agriculture_Harvest || skill.id == SkillID.Agriculture_Quick)
+                        foreach (var chunk in Map.instance.chunks)
                         {
-                            foreach (var chunk in Map.instance.chunks)
+                            foreach (var block in chunk.blocks)
                             {
-                                foreach (var block in chunk.blocks)
+                                if (block is CropBlock cropBlock)
                                 {
-                                    if (block is CropBlock cropBlock)
-                                    {
-                                        cropBlock.crop = CropBlock.GetCrop(cropBlock);
-                                    }
+                                    cropBlock.crop = CropBlock.GetCrop(cropBlock);
                                 }
                             }
+
                         }
                     };
                 }
@@ -55,6 +53,7 @@ namespace GameCore
 
             //注册水物理
             GM.OnUpdate += WaterCenter.WaterPhysics;
+            GM.OnUpdate += FightingMusic;
 
 
 
@@ -78,6 +77,42 @@ namespace GameCore
                         break;
                 }
             };
+        }
+
+        void FightingMusic()
+        {
+            if (!Player.TryGetLocal(out Player player))
+                return;
+
+            int enemyTargetingPlayer = EnemyTargetingPlayer(player);
+
+            if (GAudio.GetAudio(AudioID.Skirmish0).sources.Any(source => source.isPlaying))
+            {
+                if (enemyTargetingPlayer == 0)
+                {
+                    GAudio.Stop(AudioID.Skirmish0);
+                    GAudio.Play(AudioID.WhyNotComeToTheParty);
+                }
+            }
+            else
+            {
+                if (enemyTargetingPlayer > 0)
+                {
+                    GAudio.Stop(AudioID.WhyNotComeToTheParty);
+                    GAudio.Play(AudioID.Skirmish0);
+                }
+            }
+        }
+
+        int EnemyTargetingPlayer(Player player)
+        {
+            int result = 0;
+
+            foreach (var enemy in EnemyCenter.all)
+                if (enemy.targetEntity == player)
+                    result++;
+
+            return result;
         }
     }
 }

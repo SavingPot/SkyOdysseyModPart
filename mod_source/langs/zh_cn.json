@@ -110,7 +110,7 @@
             },
             {
                 "id": "ori:skill_description.agriculture.coin",
-                "text": "农作物有概率掉落金币"
+                "text": "农作物有20%概率掉落金币"
             },
             {
                 "id": "ori:button.skill_tree.node.ori:agriculture.harvest.text",

@@ -41,6 +41,19 @@
             },
             {
                 "prefab": "ori:ores"
+            },
+            {
+                "type": "post_process",
+                "block": "ori:grass",
+                "ranges": [
+                    "@highest_point + 1"
+                ],
+                "attached": {
+                    "id": "ori:grass_block"
+                },
+                "rules": {
+                    "probability": 35
+                }
             }
         ],
         "entities": {}

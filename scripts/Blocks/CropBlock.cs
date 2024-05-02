@@ -26,7 +26,8 @@ namespace GameCore
         CropBlock block { get; }
         float DecideGrowProbability(Block underBlock);
         void Grow();
-        HarvestResult[] HarvestResults(Vector3 pos);
+        DropResult[] CutResults(Vector3 pos);
+        DropResult[] HarvestResults(Vector3 pos);
     }
 
     public abstract class CropDecorator : ICrop
@@ -42,16 +43,17 @@ namespace GameCore
 
         public abstract float DecideGrowProbability(Block underBlock);
         public abstract void Grow();
-        public abstract HarvestResult[] HarvestResults(Vector3 pos);
+        public abstract DropResult[] CutResults(Vector3 pos);
+        public abstract DropResult[] HarvestResults(Vector3 pos);
     }
 
-    public struct HarvestResult
+    public struct DropResult
     {
         public string id;
         public ushort count;
         public string customData;
 
-        public HarvestResult(string id, ushort count, string customData)
+        public DropResult(string id, ushort count, string customData)
         {
             this.id = id;
             this.count = count;
@@ -77,32 +79,33 @@ namespace GameCore
             block.Grow();
         }
 
-        public HarvestResult[] HarvestResults(Vector3 pos)
+        public DropResult[] CutResults(Vector3 pos)
         {
-            List<HarvestResult> items = new();
+            List<DropResult> items = new();
 
-            //达到最大值, 即已成熟
-            if (block.cropIndex >= block.cropDatum.processes.Count - 1)
+            //未设定种子则直接掉落方块本身
+            if (block.cropDatum.seed.IsNullOrWhiteSpace())
             {
-                //生成掉落物
-                block.cropDatum.harvests.For(a =>
-                {
-                    items.Add(new(a.id, a.count, null));
-                });
+                items.Add(new(block.data.id, 1, block.customData?.ToString()));
             }
+            //设定了种子则掉落设定的种子
             else
             {
-                //未设定种子则直接掉落方块本身
-                if (block.cropDatum.seed.IsNullOrWhiteSpace())
-                {
-                    items.Add(new(block.data.id, 1, block.customData?.ToString()));
-                }
-                //设定了种子则掉落设定的种子
-                else
-                {
-                    items.Add(new(block.cropDatum.seed, 1, null));
-                }
+                items.Add(new(block.cropDatum.seed, 1, null));
             }
+
+            return items.ToArray();
+        }
+
+        public DropResult[] HarvestResults(Vector3 pos)
+        {
+            List<DropResult> items = new();
+
+            //生成掉落物
+            block.cropDatum.harvests.For(a =>
+            {
+                items.Add(new(a.id, a.count, null));
+            });
 
             return items.ToArray();
         }
@@ -129,13 +132,18 @@ namespace GameCore
 
             if (Player.TryGetLocal(out var player))
             {
-                if (player.unlockedSkills.Any(p => p.unlocked && p.id == SkillID.Agriculture_Harvest))
-                {
-                    result = new DoubleHarvestDecorator(result, result.block);
-                }
+                //TODO: 通用化
                 if (player.unlockedSkills.Any(p => p.unlocked && p.id == SkillID.Agriculture_Quick))
                 {
                     result = new QuickGrowDecorator(result, result.block);
+                }
+                if (player.unlockedSkills.Any(p => p.unlocked && p.id == SkillID.Agriculture_Coin))
+                {
+                    result = new CoinDecorator(result, result.block);
+                }
+                if (player.unlockedSkills.Any(p => p.unlocked && p.id == SkillID.Agriculture_Harvest))
+                {
+                    result = new DoubleHarvestDecorator(result, result.block);
                 }
             }
 
@@ -279,7 +287,8 @@ namespace GameCore
 
         public override void OutputDrops(Vector3 pos)
         {
-            var results = crop.HarvestResults(pos);
+            //达到最大值, 即已成熟
+            var results = (cropIndex >= cropDatum.processes.Count - 1) ? crop.HarvestResults(pos) : crop.CutResults(pos);
 
             foreach (var item in results)
             {

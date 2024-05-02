@@ -16,6 +16,14 @@
             "volume": 0.8
         },
         {
+            "id": "ori:skirmish_0",
+            "path": "/music/skirmish_0.ogg"
+        },
+        {
+            "id": "ori:the_new_region",
+            "path": "/music/the_new_region.ogg"
+        },
+        {
             "id": "ori:rain",
             "path": "/rain.ogg",
             "loop": true
