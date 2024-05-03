@@ -8,6 +8,9 @@
             "ori:poultry_drumstick",
             "ori:meat",
             "ori:edible=10"
-        ]
+        ],
+        "economy": {
+            "worth": 13
+        }
     }
 }

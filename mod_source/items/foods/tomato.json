@@ -3,10 +3,13 @@
     "ori:item": {
         "id": "ori:tomato",
         "texture": "ori:tomato",
+        "description": "ori:description.tomato",
         "tags": [
             "ori:food",
             "ori:edible=12"
         ],
-        "description": "ori:description.tomato"
+        "economy": {
+            "worth": 12
+        }
     }
 }

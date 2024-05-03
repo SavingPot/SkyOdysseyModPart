@@ -7,6 +7,9 @@
             "ori:food",
             "ori:meat",
             "ori:edible=20"
-        ]
+        ],
+        "economy": {
+            "worth": 25
+        }
     }
 }

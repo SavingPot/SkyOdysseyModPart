@@ -5,6 +5,9 @@
         "texture": "ori:duck_egg",
         "tags": [
             "ori:egg"
-        ]
+        ],
+        "economy": {
+            "worth": 8
+        }
     }
 }

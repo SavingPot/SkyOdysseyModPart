@@ -3,14 +3,14 @@
     "ori:item": {
         "id": "ori:berry",
         "texture": "ori:berry",
+        "description": "ori:description.berry",
         "tags": [
             "ori:food",
             "ori:edible=10",
             "ori:plant"
         ],
         "economy": {
-            "worth": 5
-        },
-        "description": "ori:description.berry"
+            "worth": 3
+        }
     }
 }

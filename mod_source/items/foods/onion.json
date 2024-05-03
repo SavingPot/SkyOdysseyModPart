@@ -3,13 +3,13 @@
     "ori:item": {
         "id": "ori:onion",
         "texture": "ori:onion",
+        "description": "ori:description.onion",
         "tags": [
             "ori:food",
             "ori:edible=6"
         ],
         "economy": {
-            "worth": 8
-        },
-        "description": "ori:description.onion"
+            "worth": 7
+        }
     }
 }

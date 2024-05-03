@@ -3,6 +3,7 @@
     "ori:item": {
         "id": "ori:scallion",
         "texture": "ori:scallion",
+        "description": "ori:description.scallion",
         "damage": 8,
         "tags": [
             "ori:food",
@@ -10,6 +11,8 @@
             "ori:sword",
             "ori:edible=5"
         ],
-        "description": "ori:description.scallion"
+        "economy": {
+            "worth": 6
+        }
     }
 }
