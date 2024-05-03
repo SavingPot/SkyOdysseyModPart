@@ -1,0 +1,42 @@
+{
+    "json_format": "0.7.8",
+    "ori:block": {
+        "id": "ori:carrot_crop",
+        "display": {
+            "texture_id": "ori:carrot_crop_0",
+            "description": "ori:description.carrot_crop"
+        },
+        "property": {
+            "hardness": 1,
+            "collidible": false,
+            "behaviour": "GameCore.CropBlock"
+        }
+    },
+    "ori:crop_block": {
+        "processes": [
+            {
+                "texture": "ori:carrot_crop_0"
+            },
+            {
+                "texture": "ori:carrot_crop_1"
+            },
+            {
+                "texture": "ori:carrot_crop_2"
+            }
+        ],
+        "harvests": [
+            {
+                "id": "ori:carrot"
+            },
+            {
+                "id": "ori:carrot_crop",
+                "count": 1
+            }
+        ]
+    },
+    "ori:item": {
+        "display": {
+            "texture": "ori:carrot_seed"
+        }
+    }
+}

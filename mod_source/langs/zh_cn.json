@@ -765,30 +765,6 @@
                 "text": "银矿"
             },
             {
-                "id": "ori:watermelon_crop",
-                "text": "西瓜作物"
-            },
-            {
-                "id": "ori:watermelon",
-                "text": "西瓜"
-            },
-            {
-                "id": "ori:pumpkin_crop",
-                "text": "南瓜作物"
-            },
-            {
-                "id": "ori:pumpkin",
-                "text": "南瓜"
-            },
-            {
-                "id": "ori:tomato_crop",
-                "text": "番茄作物"
-            },
-            {
-                "id": "ori:tomato",
-                "text": "番茄"
-            },
-            {
                 "id": "ori:field.settings.playerName",
                 "text": "输入玩家名称"
             },
@@ -909,6 +885,14 @@
                 "text": "炸雪"
             },
             {
+                "id": "ori:carrot",
+                "text": "胡萝卜"
+            },
+            {
+                "id": "ori:carrot_crop",
+                "text": "胡萝卜作物"
+            },
+            {
                 "id": "ori:onion",
                 "text": "洋葱"
             },
@@ -929,12 +913,36 @@
                 "text": "土豆饼"
             },
             {
+                "id": "ori:pumpkin_crop",
+                "text": "南瓜作物"
+            },
+            {
+                "id": "ori:pumpkin",
+                "text": "南瓜"
+            },
+            {
+                "id": "ori:tomato_crop",
+                "text": "番茄作物"
+            },
+            {
+                "id": "ori:tomato",
+                "text": "番茄"
+            },
+            {
                 "id": "ori:green_dumpling",
                 "text": "青团"
             },
             {
                 "id": "ori:potato_crop",
                 "text": "土豆作物"
+            },
+            {
+                "id": "ori:watermelon_crop",
+                "text": "西瓜作物"
+            },
+            {
+                "id": "ori:watermelon",
+                "text": "西瓜"
             },
             {
                 "id": "ori:ladder",

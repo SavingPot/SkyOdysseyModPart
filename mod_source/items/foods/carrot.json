@@ -1,0 +1,12 @@
+{
+    "json_format": "0.5.1",
+    "ori:item": {
+        "id": "ori:carrot",
+        "texture": "ori:carrot",
+        "tags": [
+            "ori:food",
+            "ori:edible=16"
+        ],
+        "description": "ori:description.carrot"
+    }
+}

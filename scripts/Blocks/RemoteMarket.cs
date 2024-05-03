@@ -15,8 +15,9 @@ namespace GameCore
             {
                 new(BlockID.Dirt, 1, 1),
                 new(BlockID.Sand, 1, 2),
-                new(BlockID.OnionCrop, 1, 5),
                 new(BlockID.PotatoCrop, 1, 3),
+                new(BlockID.OnionCrop, 1, 5),
+                new(BlockID.CarrotCrop, 1, 7),
                 new(BlockID.PumpkinCrop, 1, 10),
                 new(BlockID.TomatoCrop, 1, 10),
                 new(BlockID.WatermelonCrop, 1, 10),

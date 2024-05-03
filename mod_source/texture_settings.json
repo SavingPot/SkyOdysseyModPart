@@ -428,6 +428,26 @@
             "path": "/items/foods/fried_snow.png"
         },
         {
+            "id": "ori:carrot_crop_0",
+            "path": "/blocks/crops/carrot/carrot_0.png"
+        },
+        {
+            "id": "ori:carrot_crop_1",
+            "path": "/blocks/crops/carrot/carrot_1.png"
+        },
+        {
+            "id": "ori:carrot_crop_2",
+            "path": "/blocks/crops/carrot/carrot_2.png"
+        },
+        {
+            "id": "ori:carrot",
+            "path": "/items/foods/carrot.png"
+        },
+        {
+            "id": "ori:carrot_seed",
+            "path": "/items/seeds/carrot_seed.png"
+        },
+        {
             "id": "ori:onion_crop_0",
             "path": "/blocks/crops/onion/onion_0.png"
         },
