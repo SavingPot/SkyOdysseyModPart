@@ -125,6 +125,7 @@ namespace GameCore
         public int cropIndex;
         public string randomUpdateID;
         public bool hasBindGrowMethod;
+        public ICrop crop;
 
         public static Func<CropBlock, ICrop> GetCrop = (block) =>
         {
@@ -149,7 +150,8 @@ namespace GameCore
 
             return result;
         };
-        public ICrop crop;
+
+
 
 
 
@@ -157,9 +159,30 @@ namespace GameCore
         {
             base.DoStart();
 
+            //决定生长
             randomUpdateID = $"ori:crop_blocks_{gameObject.GetInstanceID()}";
             cropDatum = GetDatum();
             crop = GetCrop(this);
+
+            //加载生长进度
+            customData ??= new();
+            var cropJT = customData["ori:crop"];
+            if (cropJT == null)
+            {
+                customData.AddObject("ori:crop", new JProperty("crop_index", 0));
+                WriteCustomDataToSave();
+            }
+            else
+            {
+                cropIndex = cropJT["crop_index"].ToInt();
+            }
+            RefreshTextureByCropIndex();
+        }
+
+        public void WriteCropIndexToSave()
+        {
+            customData["ori:crop"]["crop_index"] = cropIndex;
+            WriteCustomDataToSave();
         }
 
         public override void OnUpdate()
@@ -204,13 +227,19 @@ namespace GameCore
         public void Grow()
         {
             //如果已经达到最大值, 则不再生长
-            if (data.jo == null || cropIndex + 1 >= cropDatum.processes.Count)
+            if (data.jo == null || cropIndex >= cropDatum.processes.Count - 1)
                 return;
 
             //增加生长进度
             cropIndex++;
+            WriteCropIndexToSave();
 
             //刷新贴图
+            RefreshTextureByCropIndex();
+        }
+
+        void RefreshTextureByCropIndex()
+        {
             if (sr)
             {
                 try
@@ -225,6 +254,19 @@ namespace GameCore
                 }
             }
         }
+
+        public override void OutputDrops(Vector3 pos)
+        {
+            //达到最大值, 即已成熟
+            var results = (cropIndex >= cropDatum.processes.Count - 1) ? crop.HarvestResults(pos) : crop.CutResults(pos);
+
+            foreach (var item in results)
+            {
+                GM.instance.SummonDrop(pos, item.id, item.count, item.customData);
+            }
+        }
+
+        
 
 
 
@@ -283,17 +325,6 @@ namespace GameCore
 
             dataTemps.Add(data.id, cropDatum);
             return cropDatum;
-        }
-
-        public override void OutputDrops(Vector3 pos)
-        {
-            //达到最大值, 即已成熟
-            var results = (cropIndex >= cropDatum.processes.Count - 1) ? crop.HarvestResults(pos) : crop.CutResults(pos);
-
-            foreach (var item in results)
-            {
-                GM.instance.SummonDrop(pos, item.id, item.count, item.customData);
-            }
         }
     }
 }

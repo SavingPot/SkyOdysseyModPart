@@ -2,7 +2,6 @@
     "json_format": "0.6.0",
     "ori:cooking_recipe": {
         "id": "ori:strange_dish",
-        "need_bowl": true,
         "ingredients": [
             {
                 "id": "we_must_use:a_strange_ingredient_name_for_strange_dish"

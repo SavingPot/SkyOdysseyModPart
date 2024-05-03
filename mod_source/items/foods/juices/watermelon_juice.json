@@ -1,0 +1,16 @@
+{
+    "json_format": "0.5.1",
+    "ori:item": {
+        "id": "ori:watermelon_juice",
+        "texture": "ori:watermelon_juice",
+        "description": "ori:description.watermelon_juice",
+        "tags": [
+            "ori:food",
+            "ori:edible=10",
+            "ori:juice"
+        ],
+        "economy": {
+            "worth": 15
+        }
+    }
+}

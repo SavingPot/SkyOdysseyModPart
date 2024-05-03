@@ -945,6 +945,10 @@
                 "text": "西瓜"
             },
             {
+                "id": "ori:watermelon_juice",
+                "text": "西瓜汁"
+            },
+            {
                 "id": "ori:ladder",
                 "text": "梯子"
             },

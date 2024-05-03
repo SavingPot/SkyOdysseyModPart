@@ -2,7 +2,6 @@
     "json_format": "0.6.0",
     "ori:cooking_recipe": {
         "id": "ori:dog_tail_grass_noodles",
-        "need_bowl": true,
         "ingredients": [
             {
                 "id": "ori:dog_tail_grass_noodles"

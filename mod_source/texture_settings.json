@@ -572,6 +572,10 @@
             "path": "/items/foods/watermelon.png"
         },
         {
+            "id": "ori:watermelon_juice",
+            "path": "/items/foods/juices/watermelon_juice.png"
+        },
+        {
             "id": "ori:watermelon_seed",
             "path": "/items/seeds/watermelon_seed.png"
         },
