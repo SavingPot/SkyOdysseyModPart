@@ -159,24 +159,28 @@ namespace GameCore
         {
             base.DoStart();
 
-            //决定生长
-            randomUpdateID = $"ori:crop_blocks_{gameObject.GetInstanceID()}";
-            cropDatum = GetDatum();
-            crop = GetCrop(this);
+            //TODO: 解决客户端同步问题
+            if (Server.isServer)
+            {
+                //决定生长
+                randomUpdateID = $"ori:crop_blocks_{gameObject.GetInstanceID()}";
+                cropDatum = GetDatum();
+                crop = GetCrop(this);
 
-            //加载生长进度
-            customData ??= new();
-            var cropJT = customData["ori:crop"];
-            if (cropJT == null)
-            {
-                customData.AddObject("ori:crop", new JProperty("crop_index", 0));
-                WriteCustomDataToSave();
+                //加载生长进度
+                customData ??= new();
+                var cropJT = customData["ori:crop"];
+                if (cropJT == null)
+                {
+                    customData.AddObject("ori:crop", new JProperty("crop_index", 0));
+                    WriteCustomDataToSave();
+                }
+                else
+                {
+                    cropIndex = cropJT["crop_index"].ToInt();
+                }
+                RefreshTextureByCropIndex();
             }
-            else
-            {
-                cropIndex = cropJT["crop_index"].ToInt();
-            }
-            RefreshTextureByCropIndex();
         }
 
         public void WriteCropIndexToSave()
@@ -266,7 +270,7 @@ namespace GameCore
             }
         }
 
-        
+
 
 
 

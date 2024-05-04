@@ -3,7 +3,6 @@
     "ori:block": {
         "id": "ori:clay",
         "display": {
-            "texture_id": "ori:clay",
             "description": "ori:description.clay"
         }
     }

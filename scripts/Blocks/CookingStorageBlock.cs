@@ -99,7 +99,7 @@ namespace GameCore
             }
 
             player.ServerAddItem(targetItem.DataToItem());
-            player.pui.ShowGetPreciousItemUI(targetItem);
+            player.pui.ShowGainRareItemUI(targetItem);
 
 
 

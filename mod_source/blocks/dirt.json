@@ -3,7 +3,6 @@
     "ori:block": {
         "id": "ori:dirt",
         "display": {
-            "texture_id": "ori:dirt",
             "description": "ori:description.dirt"
         }
     }

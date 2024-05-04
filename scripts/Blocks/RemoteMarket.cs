@@ -29,7 +29,7 @@ namespace GameCore
             if (player.TryGetUsingItem(out var item) && item.data.economy.worth != 0)
             {
                 player.ServerReduceUsingItemCount(1);
-                player.AddCoin(item.data.economy.worth);
+                player.ServerAddCoin(item.data.economy.worth);
                 GAudio.Play(AudioID.Trade);
                 return true;
             }

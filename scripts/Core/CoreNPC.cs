@@ -35,7 +35,7 @@ namespace GameCore
                 cd.Remove("ori:npc");
 
             //添加数据
-            cd.AddProperty("ori:npc", JsonTools.LoadJObjectByString(JsonTools.ToJson(newValue)));
+            cd.AddProperty("ori:npc", JsonUtils.LoadJObjectByString(JsonUtils.ToJson(newValue)));
 
             //修改 customData
             customData = cd;
