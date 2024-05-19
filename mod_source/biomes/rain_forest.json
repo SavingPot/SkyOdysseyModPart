@@ -2,7 +2,6 @@
     "json_format": "0.6.2",
     "ori:biome": {
         "id": "ori:rain_forest",
-        "difficulty": 4,
         "distribution": 2,
         "tags": [
             "ori:rich"
@@ -65,6 +64,45 @@
                 },
                 "rules": {
                     "probability": 12
+                }
+            },
+            {
+                "type": "post_process",
+                "block": "ori:bamboo",
+                "ranges": [
+                    "@highest_point + 1"
+                ],
+                "attached": {
+                    "id": "ori:grass_block"
+                },
+                "rules": {
+                    "probability": 25
+                }
+            },
+            {
+                "type": "post_process",
+                "block": "ori:bamboo",
+                "ranges": [
+                    "@highest_point + 2"
+                ],
+                "attached": {
+                    "id": "ori:bamboo"
+                },
+                "rules": {
+                    "probability": 20
+                }
+            },
+            {
+                "type": "post_process",
+                "block": "ori:bamboo",
+                "ranges": [
+                    "@highest_point + 3"
+                ],
+                "attached": {
+                    "id": "ori:bamboo"
+                },
+                "rules": {
+                    "probability": 25
                 }
             }
         ]

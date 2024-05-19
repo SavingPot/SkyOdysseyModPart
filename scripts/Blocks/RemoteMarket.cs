@@ -21,6 +21,9 @@ namespace GameCore
                 new(BlockID.PumpkinCrop, 1, 10),
                 new(BlockID.TomatoCrop, 1, 10),
                 new(BlockID.WatermelonCrop, 1, 10),
+                new(BlockID.OakSeed, 1, 15),
+                new(BlockID.AcaciaSeed, 1, 22),
+                new(BlockID.MangroveSeed, 1, 30),
             });
         }
 

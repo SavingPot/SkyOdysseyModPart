@@ -5,6 +5,7 @@
         "coin_count": 0,
         "lifetime": 1,
         "physics": {
+            "gravity": 3,
             "collider": {
                 "size": [
                     0.5,

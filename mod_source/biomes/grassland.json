@@ -2,7 +2,7 @@
     "json_format": "0.6.2",
     "ori:biome": {
         "id": "ori:grassland",
-        "difficulty": 1,
+        "distribution": 1,
         "structure": [
             {
                 "id": "ori:cave"

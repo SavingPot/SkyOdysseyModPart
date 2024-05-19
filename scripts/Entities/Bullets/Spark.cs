@@ -1,3 +1,4 @@
+using System;
 using UnityEngine.Rendering.Universal;
 
 namespace GameCore
@@ -5,10 +6,16 @@ namespace GameCore
     [EntityBinding(EntityID.Spark)]
     public class Spark : Bullet
     {
+        float initTime;
+        Light2D light;
+
+
+
         protected override void Awake()
         {
             base.Awake();
         }
+
 
         public override void Initialize()
         {
@@ -18,9 +25,11 @@ namespace GameCore
 
             //TODO: 灼伤
             damage = 5;
+            initTime = Tools.time;
+
             AddSpriteRenderer("ori:spark");
 
-            var light = gameObject.AddComponent<Light2D>();
+            light = gameObject.AddComponent<Light2D>();
             light.color = new(1, 0.5f, 0.5f, 1);
             light.pointLightOuterRadius = 3f;
             light.intensity = 0.4f;
@@ -30,7 +39,32 @@ namespace GameCore
         {
             base.Update();
 
+            SetScaleByTime();
             LookAtDirection();
+        }
+
+        void SetScaleByTime()
+        {
+            float value = Math.Max(0, (timeToAutoDestroy - Tools.time) / Init.data.lifetime);
+            transform.localScale = new(value, value);
+        }
+
+
+
+
+
+        public override void Hide()
+        {
+            base.Hide();
+
+            light.enabled = false;
+        }
+
+        public override void Show()
+        {
+            base.Show();
+
+            light.enabled = true;
         }
     }
 }

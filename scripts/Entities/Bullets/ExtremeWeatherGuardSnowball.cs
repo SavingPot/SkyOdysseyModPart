@@ -3,19 +3,15 @@ using UnityEngine;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.ExtremeWeatherRegionGuardSand)]
-    public class ExtremeWeatherRegionGuardSand : Bullet
+    [EntityBinding(EntityID.ExtremeWeatherGuardSnowball)]
+    public class ExtremeWeatherGuardSnowball : Bullet
     {
         public override void Initialize()
         {
             base.Initialize();
-
-            rb.gravityScale = 0;
-            damage = 20;
+            damage = 15;
 
             rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
-
-            AddSpriteRenderer("ori:desert_guard_sand");
         }
     }
 }

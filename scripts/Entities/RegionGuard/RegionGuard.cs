@@ -3,9 +3,8 @@ using UnityEngine;
 namespace GameCore
 {
     [NotSummonable]
-    public abstract class RegionGuard : Entity
+    public abstract class BiomeGuard : Entity
     {
-        public float motionDiameter = 20;
         public Vector3 originPosition;
         public ParticleSystem particleSystem;
         public BiomeGuardParticle particleScript;
@@ -27,12 +26,6 @@ namespace GameCore
         protected override void ServerUpdate()
         {
             base.ServerUpdate();
-
-            /* ----------------------------------- 运动 ----------------------------------- */
-            float xDelta = Mathf.PerlinNoise1D(Time.time * 0.5f) - 0.5f; //from -0.5 to 0.5
-            float yDelta = Mathf.PerlinNoise1D((Time.time + 10) * 0.5f) - 0.5f;
-            Vector3 delta = new(xDelta * motionDiameter, yDelta * motionDiameter);
-            gameObject.transform.position = originPosition + delta;
         }
 
         protected override void OnDestroy()
@@ -41,6 +34,20 @@ namespace GameCore
 
             if (particleSystem != null)
                 GameObject.Destroy(particleSystem.gameObject);
+        }
+
+        public override void Hide()
+        {
+            base.Hide();
+
+            particleSystem.Stop();
+        }
+
+        public override void Show()
+        {
+            base.Show();
+
+            particleSystem.Play();
         }
     }
 }

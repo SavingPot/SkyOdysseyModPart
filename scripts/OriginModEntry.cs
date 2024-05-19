@@ -33,16 +33,7 @@ namespace GameCore
                     //解锁技能时刷新一下农作物装饰器
                     player.pui.OnUnlockSkill += skill =>
                     {
-                        foreach (var chunk in Map.instance.chunks)
-                        {
-                            foreach (var block in chunk.blocks)
-                            {
-                                if (block is CropBlock cropBlock)
-                                {
-                                    cropBlock.crop = CropBlock.GetCrop(cropBlock);
-                                }
-                            }
-                        }
+                        CropBlock.GetCrop();
                     };
                 }
             };

@@ -1,17 +1,16 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:plant_region_guard_sapling",
-        "coin_count": 0,
+        "id": "ori:extreme_weather_guard",
         "physics": {
-            "gravity": 0,
             "collider": {
                 "size": [
-                    0.5,
-                    0.5
+                    1.5,
+                    1.5
                 ]
             }
         },
-        "lifetime": 10
+        "max_health": 800,
+        "lifetime": 3600
     }
 }

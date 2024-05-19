@@ -21,32 +21,6 @@ namespace GameCore
         public TextureData texture;
     }
 
-    public interface ICrop
-    {
-        CropBlock block { get; }
-        float DecideGrowProbability(Block underBlock);
-        void Grow();
-        DropResult[] CutResults(Vector3 pos);
-        DropResult[] HarvestResults(Vector3 pos);
-    }
-
-    public abstract class CropDecorator : ICrop
-    {
-        protected readonly ICrop crop;
-        public CropBlock block { get; }
-
-        public CropDecorator(ICrop crop, CropBlock block)
-        {
-            this.crop = crop;
-            this.block = block;
-        }
-
-        public abstract float DecideGrowProbability(Block underBlock);
-        public abstract void Grow();
-        public abstract DropResult[] CutResults(Vector3 pos);
-        public abstract DropResult[] HarvestResults(Vector3 pos);
-    }
-
     public struct DropResult
     {
         public string id;
@@ -61,11 +35,9 @@ namespace GameCore
         }
     }
 
-    public class NormalCrop : ICrop
+    public static class DefaultCropDelegates
     {
-        public CropBlock block { get; }
-
-        public float DecideGrowProbability(Block underBlock) => underBlock.data.id switch
+        public static float DecideGrowProbability(CropBlock block, Block underBlock) => underBlock.data.id switch
         {
             BlockID.GrassBlock => block.cropDatum.speed * 2,
             BlockID.Dirt => block.cropDatum.speed * 4,
@@ -74,12 +46,12 @@ namespace GameCore
         };
 
 
-        public void Grow()
+        public static void CropGrow(CropBlock block)
         {
             block.Grow();
         }
 
-        public DropResult[] CutResults(Vector3 pos)
+        public static DropResult[] CutResults(CropBlock block, Vector3 pos)
         {
             List<DropResult> items = new();
 
@@ -97,7 +69,7 @@ namespace GameCore
             return items.ToArray();
         }
 
-        public DropResult[] HarvestResults(Vector3 pos)
+        public static DropResult[] HarvestResults(CropBlock block, Vector3 pos)
         {
             List<DropResult> items = new();
 
@@ -109,14 +81,12 @@ namespace GameCore
 
             return items.ToArray();
         }
-
-
-
-        public NormalCrop(CropBlock block)
-        {
-            this.block = block;
-        }
     }
+
+    public delegate float DecideGrowProbabilityDelegate(CropBlock block, Block underBlock);
+    public delegate void CropGrowDelegate(CropBlock block);
+    public delegate DropResult[] CutResultsDelegate(CropBlock block, Vector3 pos);
+    public delegate DropResult[] HarvestResultsDelegate(CropBlock block, Vector3 pos);
 
     public class CropBlock : Block
     {
@@ -125,30 +95,64 @@ namespace GameCore
         public int cropIndex;
         public string randomUpdateID;
         public bool hasBindGrowMethod;
-        public ICrop crop;
 
-        public static Func<CropBlock, ICrop> GetCrop = (block) =>
+        public static DecideGrowProbabilityDelegate DecideGrowProbability;
+        public static CropGrowDelegate CropGrow;
+        public static CutResultsDelegate CutResults;
+        public static HarvestResultsDelegate HarvestResults;
+
+        public static Action GetCrop = () =>
         {
-            ICrop result = new NormalCrop(block);
+            DecideGrowProbability = DefaultCropDelegates.DecideGrowProbability;
+            CropGrow = DefaultCropDelegates.CropGrow;
+            CutResults = DefaultCropDelegates.CutResults;
+            HarvestResults = DefaultCropDelegates.HarvestResults;
 
             if (Player.TryGetLocal(out var player))
             {
                 //TODO: 通用化
                 if (player.unlockedSkills.Any(p => p.unlocked && p.id == SkillID.Agriculture_Quick))
                 {
-                    result = new QuickGrowDecorator(result, result.block);
+                    var OldDecideGrowProbability = DecideGrowProbability;
+                    DecideGrowProbability = (block, underBlock) => OldDecideGrowProbability(block, underBlock) * 1.15f;
                 }
                 if (player.unlockedSkills.Any(p => p.unlocked && p.id == SkillID.Agriculture_Coin))
                 {
-                    result = new CoinDecorator(result, result.block);
+                    var OldHarvestResults = HarvestResults;
+                    HarvestResults = (block, pos) =>
+                    {
+                        //20% 的几率掉落 1 个硬币
+                        if (Tools.Prob100(20))
+                            GM.instance.SummonCoinEntity(pos, 1);
+
+                        return OldHarvestResults(block, pos);
+                    };
                 }
                 if (player.unlockedSkills.Any(p => p.unlocked && p.id == SkillID.Agriculture_Harvest))
                 {
-                    result = new DoubleHarvestDecorator(result, result.block);
+                    var OldHarvestResults = HarvestResults;
+                    HarvestResults = (block, pos) =>
+                    {
+                        DropResult[] results = OldHarvestResults(block, pos);
+
+                        //有 10% 的几率使结果数量翻倍
+                        if (Tools.Prob100(10))
+                        {
+                            for (int i = 0; i < results.Length; i++)
+                            {
+                                var result = results[i];
+
+                                //数量翻倍
+                                result.count = (ushort)Mathf.Min(result.count * 2, ModFactory.CompareItem(result.id).maxCount);
+
+                                results[i] = result;
+                            }
+                        }
+
+                        return results;
+                    };
                 }
             }
-
-            return result;
         };
 
 
@@ -165,7 +169,7 @@ namespace GameCore
                 //决定生长
                 randomUpdateID = $"ori:crop_blocks_{gameObject.GetInstanceID()}";
                 cropDatum = GetDatum();
-                crop = GetCrop(this);
+                GetCrop();
 
                 //加载生长进度
                 customData ??= new();
@@ -202,7 +206,7 @@ namespace GameCore
             {
                 UnbindGrowingMethod(this);
 
-                var probability = crop.DecideGrowProbability(underBlock);
+                var probability = DecideGrowProbability(this, underBlock);
 
                 if (probability != 0)
                 {
@@ -262,7 +266,7 @@ namespace GameCore
         public override void OutputDrops(Vector3 pos)
         {
             //达到最大值, 即已成熟
-            var results = (cropIndex >= cropDatum.processes.Count - 1) ? crop.HarvestResults(pos) : crop.CutResults(pos);
+            var results = (cropIndex >= cropDatum.processes.Count - 1) ? HarvestResults(this, pos) : CutResults(this, pos);
 
             foreach (var item in results)
             {

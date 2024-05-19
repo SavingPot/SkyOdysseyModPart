@@ -23,7 +23,7 @@ namespace GameCore
 
             if (owner is Player player)
             {
-                if (player.InUseRadius(point) && Map.instance.TryGetBlock(PosConvert.WorldToMapPos(point), player.isControllingBackground, out Block block) && blockPairs.TryGetValue(block.data.id, out var result))
+                if (player.IsPointInteractable(point) && Map.instance.TryGetBlock(PosConvert.WorldToMapPos(point), player.isControllingBackground, out Block block) && blockPairs.TryGetValue(block.data.id, out var result))
                 {
                     BlockData blockDatum = ModFactory.CompareBlockData(result); if (blockDatum == null) return false;
                     Vector2Int pos = block.pos;

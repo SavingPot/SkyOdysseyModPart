@@ -12,5 +12,10 @@
             ],
             "behaviour": "GameCore.LogBlock"
         }
+    },
+    "ori:item": {
+        "economy": {
+            "worth": 5
+        }
     }
 }

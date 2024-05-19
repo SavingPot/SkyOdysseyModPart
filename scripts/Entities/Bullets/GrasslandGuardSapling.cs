@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.PlantRegionGuardSapling)]
-    public class PlantRegionGuardSapling : Bullet
+    [EntityBinding(EntityID.GrasslandGuardSapling)]
+    public class GrasslandGuardSapling : Bullet
     {
         public override void Initialize()
         {

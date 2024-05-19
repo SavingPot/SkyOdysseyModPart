@@ -11,5 +11,10 @@
                 "ori:log"
             ]
         }
+    },
+    "ori:item": {
+        "economy": {
+            "worth": 4
+        }
     }
 }

@@ -1153,6 +1153,10 @@
                 "text": "橡树叶"
             },
             {
+                "id": "ori:oak_seed",
+                "text": "橡树种子"
+            },
+            {
                 "id": "ori:stick",
                 "text": "木棍"
             },
@@ -1217,6 +1221,10 @@
                 "text": "合金欢树叶"
             },
             {
+                "id": "ori:acacia_seed",
+                "text": "合金欢种子"
+            },
+            {
                 "id": "ori:sea_hibiscus_log",
                 "text": "木槿木"
             },
@@ -1239,6 +1247,10 @@
             {
                 "id": "ori:mangrove_leaf",
                 "text": "红树叶"
+            },
+            {
+                "id": "ori:mangrove_seed",
+                "text": "红树种子"
             },
             {
                 "id": "ori:trade_not_enough_coin",

@@ -1,16 +1,16 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:extreme_weather_region_guard",
+        "id": "ori:extreme_weather_guard_sand",
+        "coin_count": 0,
+        "lifetime": 4,
         "physics": {
             "collider": {
                 "size": [
-                    1.5,
-                    1.5
+                    0.5,
+                    0.5
                 ]
             }
-        },
-        "max_health": 800,
-        "lifetime": 3600
+        }
     }
 }
