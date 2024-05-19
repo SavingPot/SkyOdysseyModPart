@@ -5,3 +5,4 @@ plugin_supports/sole_assets_path.txt
 scripts/bin/
 scripts/obj/
 scripts/scripts.csproj
+.VSCodeCounter
