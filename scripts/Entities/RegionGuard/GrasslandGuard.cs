@@ -7,6 +7,56 @@ namespace GameCore
     [EntityBinding(EntityID.GrasslandGuard)]
     public class GrasslandGuard : BiomeGuard
     {
+        public const int attackRadius = 15 * 15; // 15^2
+        public float attackTimer;
+        public StateMachine machine;
+        public LineRenderer lineRenderer;
+
+
+        public override void AfterInitialization()
+        {
+            base.AfterInitialization();
+
+            lineRenderer = gameObject.AddComponent<LineRenderer>();
+            lineRenderer.startWidth = 0.1f;
+            lineRenderer.endWidth = 0.1f;
+            lineRenderer.startColor = Color.green;
+            lineRenderer.endColor = Color.green;
+            lineRenderer.material = GInit.instance.spriteDefaultMat;
+
+            machine = new(this);
+            machine.ChangeState(new MovingState(machine));
+        }
+
+        protected override void Update()
+        {
+            base.Update();
+
+            machine.Update();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public sealed class MovingState : IState
         {
             public StateMachine machine;
@@ -31,7 +81,7 @@ namespace GameCore
                 float xDelta = Mathf.PerlinNoise1D(Time.time * 0.5f) - 0.5f; //from -0.5 to 0.5
                 float yDelta = Mathf.PerlinNoise1D((Time.time + 10) * 0.5f) - 0.5f;
                 Vector3 delta = new(xDelta * motionDiameter, yDelta * motionDiameter);
-                guard.gameObject.transform.position = guard.originPosition + delta;
+                guard.gameObject.transform.position = Vector3.Lerp(guard.transform.position, guard.originPosition + delta, Tools.deltaTime * 10f);
 
 
                 /* ----------------------------------- 休息 ----------------------------------- */
@@ -115,6 +165,7 @@ namespace GameCore
             public void OnEnter()
             {
                 guard.particleSystem.Stop();
+                guard.rb.gravityScale = 3;
             }
 
             public void OnUpdate()
@@ -128,6 +179,7 @@ namespace GameCore
             public void OnExit()
             {
                 guard.particleSystem.Play();
+                guard.rb.gravityScale = guard.data.gravity;
             }
         }
 
@@ -173,40 +225,6 @@ namespace GameCore
             }
 
             public void OnExit() { }
-        }
-
-
-
-
-
-
-
-
-        public const int attackRadius = 15 * 15; // 15^2
-        public float attackTimer;
-        public StateMachine machine;
-        public LineRenderer lineRenderer;
-
-
-        public override void AfterInitialization()
-        {
-            base.AfterInitialization();
-
-            lineRenderer = gameObject.AddComponent<LineRenderer>();
-            lineRenderer.startWidth = 0.1f;
-            lineRenderer.endWidth = 0.1f;
-            lineRenderer.startColor = Color.green;
-            lineRenderer.endColor = Color.green;
-
-            machine = new(this);
-            machine.ChangeState(new MovingState(machine));
-        }
-
-        protected override void Update()
-        {
-            base.Update();
-
-            machine.Update();
         }
     }
 }

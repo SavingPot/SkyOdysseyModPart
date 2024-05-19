@@ -3,6 +3,7 @@
     "ori:entity": {
         "id": "ori:extreme_weather_guard",
         "physics": {
+            "gravity": 0,
             "collider": {
                 "size": [
                     1.5,

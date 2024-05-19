@@ -20,7 +20,6 @@ namespace GameCore
             particleSystem.transform.localPosition = Vector3.zero;
             particleSystem.textureSheetAnimation.AddSprite(ModFactory.CompareTexture("ori:biome_guard_particle").sprite);
             particleSystem.gameObject.AddComponent<BiomeGuardParticle>();
-            Component.Destroy(rb);
         }
 
         protected override void ServerUpdate()

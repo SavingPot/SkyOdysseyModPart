@@ -3,6 +3,7 @@
     "ori:entity": {
         "id": "ori:grassland_guard",
         "physics": {
+            "gravity": 0,
             "collider": {
                 "size": [
                     1.5,
