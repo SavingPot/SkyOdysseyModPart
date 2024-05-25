@@ -1,0 +1,15 @@
+{
+    "json_format": "0.6.0",
+    "ori:crafting_recipe": {
+        "id": "ori:oak_door",
+        "ingredients": [
+            {
+                "id": "ori:oak_planks",
+                "count": 3
+            }
+        ],
+        "result": {
+            "id": "ori:oak_door"
+        }
+    }
+}

@@ -6,8 +6,8 @@
             "gravity": 0,
             "collider": {
                 "size": [
-                    1.5,
-                    1.5
+                    2,
+                    2
                 ]
             }
         },

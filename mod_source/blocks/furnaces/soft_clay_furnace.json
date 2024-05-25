@@ -8,6 +8,10 @@
         },
         "property": {
             "hardness": 9,
+            "tags": [
+                "ori:furnace",
+                "ori:furniture"
+            ],
             "behaviour": "GameCore.SoftClayFurnace"
         }
     }

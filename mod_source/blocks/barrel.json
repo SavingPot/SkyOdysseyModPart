@@ -8,6 +8,10 @@
         },
         "property": {
             "hardness": 10,
+            "tags": [
+                "ori:furniture"
+            ],
+            "collidible": false,
             "behaviour": "GameCore.Barrel"
         }
     }

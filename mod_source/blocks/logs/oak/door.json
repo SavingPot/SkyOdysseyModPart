@@ -8,7 +8,8 @@
         "property": {
             "hardness": 12,
             "tags": [
-                "ori:door"
+                "ori:door",
+                "ori:construction_wall"
             ],
             "behaviour": "GameCore.Door"
         }

@@ -58,21 +58,21 @@ namespace GameCore
             }
         }
 
-        public override void PlayerInteraction(Player caller)
+        public override void PlayerInteraction(Player player)
         {
-            base.PlayerInteraction(caller);
+            base.PlayerInteraction(player);
 
             switch (NickData.progress)
             {
                 case NickProgress.FirstMeet:
-                    FirstMeetDialog(caller);
+                    FirstMeetDialog(player);
                     break;
 
                 case NickProgress.Teaching_Attack:
-                    caller.pui.DisplayDialog(new("ori:nick", "ori:button",
+                    player.pui.DisplayDialog(new("ori:nick", "ori:button",
                     new(GameUI.CompareText("ori:dialog.nick.teaching.attack_0").text.Replace("{button}", GControls.mode switch //TODO: Compare these buttons' texts instead of output directly, support multi-languages
                     {
-                        ControlMode.Touchscreen => caller.GetUsingItemChecked() == null ? "空白的按钮(互动按钮)" : $"有个{GameUI.CompareText(caller.GetUsingItemChecked().data.id).text}的按钮(互动按钮)",
+                        ControlMode.Touchscreen => player.GetUsingItemChecked() == null ? "空白的按钮(互动按钮)" : $"有个{GameUI.CompareText(player.GetUsingItemChecked().data.id).text}的按钮(互动按钮)",
                         ControlMode.KeyboardAndMouse => "鼠标右键",
                         ControlMode.Gamepad => "手柄左触发器",
                         _ => ""
@@ -90,9 +90,9 @@ namespace GameCore
                     break;
 
                 case NickProgress.Teaching_Backpack:
-                    if (!caller.inventory.IsEmpty())
+                    if (!player.inventory.IsEmpty())
                     {
-                        caller.pui.DisplayDialog(new("ori:nick", "ori:button",
+                        player.pui.DisplayDialog(new("ori:nick", "ori:button",
                         new(GameUI.CompareText("ori:dialog.nick.teaching.backpack_0").text, "ori:nick_head"),
                         new(GameUI.CompareText("ori:dialog.nick.teaching.backpack_1").text.Replace("{button}", GControls.mode switch
                         {
@@ -114,14 +114,14 @@ namespace GameCore
                     }
                     else
                     {
-                        caller.pui.DisplayDialog(new("ori:nick", "ori:button",
+                        player.pui.DisplayDialog(new("ori:nick", "ori:button",
                         new DialogData.DialogDatum[] { new(GameUI.CompareText("ori:dialog.nick.teaching.backpack_0.error_before").text, "ori:nick_head") }));
                     }
 
                     break;
 
                 case NickProgress.Teaching_Travel:
-                    caller.pui.DisplayDialog(new("ori:nick", "ori:button",
+                    player.pui.DisplayDialog(new("ori:nick", "ori:button",
                     new(GameUI.CompareText("ori:dialog.nick.teaching.travel_0").text, "ori:nick_head"),
                     new(GameUI.CompareText("ori:dialog.nick.teaching.travel_1").text, "ori:nick_head"),
                     new(GameUI.CompareText("ori:dialog.nick.teaching.travel_2").text, "ori:nick_head")));
@@ -130,12 +130,12 @@ namespace GameCore
                     break;
 
                 default:
-                    if (Item.Null(caller.inventory.breastplate))
-                        caller.pui.DisplayDialog(new("ori:nick", "ori:button",
-                        new DialogData.DialogDatum(GameUI.CompareText(GM.instance.weather.id == WeatherID.Rain ? "ori:dialog.nick.hello.shirtless_rain" : "ori:dialog.nick.hello.shirtless").text.Replace("{name}", caller.playerName), "ori:nick_head")));
+                    if (Item.Null(player.inventory.breastplate))
+                        player.pui.DisplayDialog(new("ori:nick", "ori:button",
+                        new DialogData.DialogDatum(GameUI.CompareText(GM.instance.weather.id == WeatherID.Rain ? "ori:dialog.nick.hello.shirtless_rain" : "ori:dialog.nick.hello.shirtless").text.Replace("{name}", player.playerName), "ori:nick_head")));
                     else
-                        caller.pui.DisplayDialog(new("ori:nick", "ori:button",
-                        new DialogData.DialogDatum(GameUI.CompareText(GM.instance.weather.id == WeatherID.Rain ? "ori:dialog.nick.hello.rain" : "ori:dialog.nick.hello.normal").text.Replace("{name}", caller.playerName), "ori:nick_head")));
+                        player.pui.DisplayDialog(new("ori:nick", "ori:button",
+                        new DialogData.DialogDatum(GameUI.CompareText(GM.instance.weather.id == WeatherID.Rain ? "ori:dialog.nick.hello.rain" : "ori:dialog.nick.hello.normal").text.Replace("{name}", player.playerName), "ori:nick_head")));
                     break;
             }
         }

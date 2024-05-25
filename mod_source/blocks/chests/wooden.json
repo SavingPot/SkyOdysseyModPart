@@ -8,7 +8,8 @@
         "property": {
             "hardness": 15,
             "tags": [
-                "ori:chest"
+                "ori:chest",
+                "ori:furniture"
             ],
             "collidible": false,
             "behaviour": "GameCore.WoodenChest"

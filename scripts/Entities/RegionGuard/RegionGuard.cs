@@ -20,6 +20,8 @@ namespace GameCore
             particleSystem.transform.localPosition = Vector3.zero;
             particleSystem.textureSheetAnimation.AddSprite(ModFactory.CompareTexture("ori:biome_guard_particle").sprite);
             particleSystem.gameObject.AddComponent<BiomeGuardParticle>();
+
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
 
         protected override void ServerUpdate()

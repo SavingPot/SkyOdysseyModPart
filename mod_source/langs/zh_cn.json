@@ -1141,6 +1141,10 @@
                 "text": "剑"
             },
             {
+                "id": "ori:oak_door",
+                "text": "橡木门"
+            },
+            {
                 "id": "ori:oak_log",
                 "text": "橡木"
             },

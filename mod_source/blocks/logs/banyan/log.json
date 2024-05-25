@@ -8,7 +8,8 @@
         "property": {
             "hardness": 13,
             "tags": [
-                "ori:log"
+                "ori:log",
+                "ori:construction_wall"
             ]
         }
     }

@@ -1,9 +1,9 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:nick",
+        "id": "ori:trader",
         "speed": 6,
-        "max_health": 200,
+        "max_health": 300,
         "physics": {
             "collider": {
                 "size": [
@@ -11,7 +11,7 @@
                     1.8
                 ]
             },
-            "gravity": 20
+            "gravity": 10
         }
     }
 }

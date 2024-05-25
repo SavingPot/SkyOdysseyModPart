@@ -8,7 +8,8 @@
         "property": {
             "hardness": 10,
             "tags": [
-                "ori:planks"
+                "ori:planks",
+                "ori:construction_wall"
             ]
         }
     }
