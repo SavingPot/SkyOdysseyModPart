@@ -41,9 +41,10 @@ namespace GameCore
 
 
 
-            //注册水物理
+            //注册更新
             GM.OnUpdate += WaterCenter.WaterPhysics;
             GM.OnUpdate += FightingMusic;
+            GM.OnUpdate += PlantCenter.Update;
 
 
 

@@ -247,5 +247,20 @@ namespace GameCore
                 }
             }
         }
+
+        public override void OnEntityExit(Entity entity)
+        {
+            base.OnEntityExit(entity);
+
+            if (entity.isLocalPlayer)
+            {
+                GAudio.Play(Random.Range(0, 2) switch
+                {
+                    0 => AudioID.SwimExit0,
+                    1 => AudioID.SwimExit1,
+                    _ => throw new(),
+                });
+            }
+        }
     }
 }

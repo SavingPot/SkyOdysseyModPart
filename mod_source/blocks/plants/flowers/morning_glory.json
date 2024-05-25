@@ -1,16 +1,17 @@
 {
     "json_format": "0.6.0",
     "ori:block": {
-        "id": "ori:daisy",
+        "id": "ori:morning_glory",
         "display": {
-            "texture_id": "ori:daisy"
+            "texture_id": "ori:morning_glory"
         },
         "property": {
             "hardness": 0.025,
             "tags": [
                 "ori:plant"
             ],
-            "collidible": false
+            "collidible": false,
+            "behaviour": "GameCore.Plant"
         }
     }
 }

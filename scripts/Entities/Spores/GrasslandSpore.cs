@@ -14,8 +14,10 @@ namespace GameCore
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        protected override void OnTriggerEnter2D(Collider2D other)
         {
+            base.OnTriggerEnter2D(other);
+
             if (other.TryGetComponent<Creature>(out var creature))
             {
                 creature.TakeDamage(10);

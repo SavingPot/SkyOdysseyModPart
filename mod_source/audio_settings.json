@@ -34,16 +34,73 @@
             "volume": 1.1
         },
         {
-            "id": "ori:trade",
-            "path": "/trade.ogg"
-        },
-        {
-            "id": "ori:open_door",
-            "path": "/open_door.ogg"
+            "id": "ori:campfire",
+            "path": "/blocks/campfire.ogg",
+            "loop": true
         },
         {
             "id": "ori:close_door",
-            "path": "/close_door.ogg"
+            "path": "/blocks/close_door.ogg"
+        },
+        {
+            "id": "ori:destroy_block",
+            "path": "/blocks/destroy_block.ogg"
+        },
+        {
+            "id": "ori:excavating_block",
+            "path": "/blocks/excavating_block.ogg"
+        },
+        {
+            "id": "ori:open_door",
+            "path": "/blocks/open_door.ogg"
+        },
+        {
+            "id": "ori:pick_berry_bush",
+            "path": "/blocks/pick_berry_bush.ogg"
+        },
+        {
+            "id": "ori:place_block",
+            "path": "/blocks/place_block.ogg"
+        },
+        {
+            "id": "ori:swim_0",
+            "path": "/blocks/swim_0.ogg"
+        },
+        {
+            "id": "ori:swim_1",
+            "path": "/blocks/swim_1.ogg"
+        },
+        {
+            "id": "ori:swim_2",
+            "path": "/blocks/swim_2.ogg"
+        },
+        {
+            "id": "ori:swim_3",
+            "path": "/blocks/swim_3.ogg"
+        },
+        {
+            "id": "ori:swim_exit_0",
+            "path": "/blocks/swim_exit_0.ogg"
+        },
+        {
+            "id": "ori:swim_exit_1",
+            "path": "/blocks/swim_exit_1.ogg"
+        },
+        {
+            "id": "ori:walk_through_grass_0",
+            "path": "/blocks/walk_through_grass_0.ogg"
+        },
+        {
+            "id": "ori:walk_through_grass_1",
+            "path": "/blocks/walk_through_grass_1.ogg"
+        },
+        {
+            "id": "ori:walk_through_grass_2",
+            "path": "/blocks/walk_through_grass_2.ogg"
+        },
+        {
+            "id": "ori:trade",
+            "path": "/trade.ogg"
         },
         {
             "id": "ori:hoe",
@@ -94,14 +151,6 @@
             "path": "/heartbeat.ogg"
         },
         {
-            "id": "ori:excavating_block",
-            "path": "/excavating_block.ogg"
-        },
-        {
-            "id": "ori:destroy_block",
-            "path": "/destroy_block.ogg"
-        },
-        {
             "id": "ori:get_hurt",
             "path": "/get_hurt.ogg"
         },
@@ -112,10 +161,6 @@
         {
             "id": "ori:button",
             "path": "/button.ogg"
-        },
-        {
-            "id": "ori:pick_berry_bush",
-            "path": "/pick_berry_bush.ogg"
         },
         {
             "id": "ori:switch_quick_inventory_slot",
@@ -142,27 +187,6 @@
             "path": "/smother.ogg"
         },
         {
-            "id": "ori:campfire",
-            "path": "/campfire.ogg",
-            "loop": true
-        },
-        {
-            "id": "ori:swim_0",
-            "path": "/swim_0.ogg"
-        },
-        {
-            "id": "ori:swim_1",
-            "path": "/swim_1.ogg"
-        },
-        {
-            "id": "ori:swim_2",
-            "path": "/swim_2.ogg"
-        },
-        {
-            "id": "ori:swim_3",
-            "path": "/swim_3.ogg"
-        },
-        {
             "id": "ori:eat",
             "path": "/eat.ogg"
         },
@@ -173,10 +197,6 @@
         {
             "id": "ori:stick_attack",
             "path": "/stick_attack.ogg"
-        },
-        {
-            "id": "ori:place_block",
-            "path": "/place_block.ogg"
         },
         {
             "id": "ori:open_backpack",

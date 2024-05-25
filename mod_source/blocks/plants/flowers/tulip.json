@@ -1,16 +1,17 @@
 {
     "json_format": "0.6.0",
     "ori:block": {
-        "id": "ori:banana_shrub",
+        "id": "ori:tulip",
         "display": {
-            "texture_id": "ori:banana_shrub"
+            "texture_id": "ori:tulip"
         },
         "property": {
             "hardness": 0.025,
             "tags": [
                 "ori:plant"
             ],
-            "collidible": false
+            "collidible": false,
+            "behaviour": "GameCore.Plant"
         }
     }
 }

@@ -1,16 +1,18 @@
 {
     "json_format": "0.6.0",
     "ori:block": {
-        "id": "ori:jasmine_flower",
+        "id": "ori:grass",
         "display": {
-            "texture_id": "ori:jasmine_flower"
+            "texture_id": "ori:grass",
+            "description": "ori:description.grass"
         },
         "property": {
             "hardness": 0.025,
             "tags": [
                 "ori:plant"
             ],
-            "collidible": false
+            "collidible": false,
+            "behaviour": "GameCore.Plant"
         }
     }
 }

@@ -1,16 +1,17 @@
 {
     "json_format": "0.6.0",
     "ori:block": {
-        "id": "ori:tulip",
+        "id": "ori:lavender",
         "display": {
-            "texture_id": "ori:tulip"
+            "texture_id": "ori:lavender"
         },
         "property": {
             "hardness": 0.025,
             "tags": [
                 "ori:plant"
             ],
-            "collidible": false
+            "collidible": false,
+            "behaviour": "GameCore.Plant"
         }
     }
 }

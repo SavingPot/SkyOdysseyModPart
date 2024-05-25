@@ -1,16 +1,18 @@
 {
     "json_format": "0.6.0",
     "ori:block": {
-        "id": "ori:honeysuckle",
+        "id": "ori:dandelion",
         "display": {
-            "texture_id": "ori:honeysuckle"
+            "texture_id": "ori:dandelion",
+            "description": "ori:description.dandelion"
         },
         "property": {
             "hardness": 0.025,
             "tags": [
                 "ori:plant"
             ],
-            "collidible": false
+            "collidible": false,
+            "behaviour": "GameCore.Plant"
         }
     }
 }
