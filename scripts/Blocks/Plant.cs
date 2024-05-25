@@ -73,7 +73,7 @@ namespace GameCore
 
         public static void OnEntityEnter(IPlant plant, Entity entity)
         {
-            PlayWalkSound();
+            PlayWalkSound(entity);
         }
 
         public static void OnEntityStay(IPlant plant, Entity entity)
@@ -85,12 +85,16 @@ namespace GameCore
         public static void OnEntityExit(IPlant plant, Entity entity)
         {
             plant.entityInside = null;
+            plant.transform.localRotation = Quaternion.identity;
 
-            PlayWalkSound();
+            PlayWalkSound(entity);
         }
 
-        public static void PlayWalkSound()
+        public static void PlayWalkSound(Entity entity)
         {
+            if (!Tools.instance.IsInView2DFaster(entity.transform.position))
+                return;
+
             GAudio.Play(Random.Range(0, 3) switch
             {
                 0 => AudioID.WalkThroughGrass0,
@@ -104,11 +108,7 @@ namespace GameCore
         {
             foreach (var plant in plants)
             {
-                if (plant.entityInside == null)
-                {
-                    plant.transform.localRotation = Quaternion.identity;
-                }
-                else
+                if (plant.entityInside != null)
                 {
                     var rotationZ = Mathf.Clamp(10 / (plant.entityInside.transform.position.x - plant.transform.position.x), -30f, 30f);
                     plant.transform.localRotation = Quaternion.Euler(0, 0, rotationZ);

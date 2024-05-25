@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public class BerryBush : Block
+    public class BerryBush : Plant
     {
         public override bool PlayerInteraction(Player caller)
         {

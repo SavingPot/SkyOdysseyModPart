@@ -89,7 +89,7 @@ namespace GameCore
     public delegate DropResult[] CutResultsDelegate(CropBlock block, Vector3 pos);
     public delegate DropResult[] HarvestResultsDelegate(CropBlock block, Vector3 pos);
 
-    public class CropBlock : Block, IPlant
+    public class CropBlock : Plant
     {
         public static readonly Dictionary<string, CropBlockDatum> dataTemps = new();
         public CropBlockDatum cropDatum;
@@ -101,9 +101,6 @@ namespace GameCore
         public static CropGrowDelegate CropGrow;
         public static CutResultsDelegate CutResults;
         public static HarvestResultsDelegate HarvestResults;
-
-        public Entity entityInside { get; set; }
-        Transform IPlant.transform => transform;
 
         public static Action GetCrop = () =>
         {
@@ -167,8 +164,6 @@ namespace GameCore
         {
             base.DoStart();
 
-            PlantCenter.AddPlant(this);
-
             //TODO: 解决客户端同步问题
             if (Server.isServer)
             {
@@ -226,7 +221,6 @@ namespace GameCore
         {
             base.OnRecovered();
 
-            PlantCenter.RemovePlant(this);
             UnbindGrowingMethod(this);
         }
 

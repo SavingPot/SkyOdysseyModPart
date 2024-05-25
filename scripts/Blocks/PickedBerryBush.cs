@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameCore
 {
-    public class PickedBerryBush : Block
+    public class PickedBerryBush : Plant
     {
         public const int pickCD = 90;
         public Coroutine setterCoroutine;

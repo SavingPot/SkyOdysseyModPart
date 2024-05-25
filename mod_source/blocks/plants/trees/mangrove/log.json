@@ -10,8 +10,7 @@
             "tags": [
                 "ori:log",
                 "ori:construction_wall"
-            ],
-            "behaviour": "GameCore.LogBlock"
+            ]
         }
     },
     "ori:item": {
