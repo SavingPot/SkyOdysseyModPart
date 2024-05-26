@@ -41,6 +41,7 @@ namespace GameCore
             if (treeSeedDatum.structure == null)
                 return;
 
+            //TODO: 考虑周围有无障碍物, 若有则不生成
             //应该以下面的方块位置来运算, 这样才和群系生成一致
             Vector2Int downPos = pos + Vector2Int.down;
 
@@ -50,8 +51,7 @@ namespace GameCore
                 chunk.map.SetBlockNet(downPos + structBlock.offset, structBlock.isBackground, structBlock.blockId, null);
             }
 
-            //删除自己
-            RemoveFromMap();
+            //注：这里并不需要删除树种，因为它会被木头直接替换
         }
 
 

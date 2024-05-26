@@ -1,0 +1,17 @@
+{
+    "json_format": "0.6.0",
+    "ori:crafting_recipe": {
+        "id": "ori:building_center",
+        "ingredients": [
+            {
+                "tags": [
+                    "ori:planks"
+                ],
+                "count": 8
+            }
+        ],
+        "result": {
+            "id": "ori:building_center"
+        }
+    }
+}

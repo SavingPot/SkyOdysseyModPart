@@ -1,0 +1,14 @@
+{
+    "json_format": "0.7.8",
+    "ori:block": {
+        "id": "ori:doorplate",
+        "display": {
+            "texture_id": "ori:doorplate"
+        },
+        "property": {
+            "hardness": 12,
+            "collidible": false,
+            "behaviour": "GameCore.Doorplate"
+        }
+    }
+}

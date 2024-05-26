@@ -11,12 +11,17 @@ namespace GameCore
         public float attackTimer;
         public StateMachine machine;
         public LineRenderer lineRenderer;
+        public SpriteRenderer spriteRenderer;
 
 
         public override void AfterInitialization()
         {
             base.AfterInitialization();
 
+            //添加贴图
+            spriteRenderer = AddSpriteRenderer(BlockID.Grass);
+
+            //创建线渲染器
             lineRenderer = gameObject.AddComponent<LineRenderer>();
             lineRenderer.startWidth = 0.1f;
             lineRenderer.endWidth = 0.1f;
@@ -24,6 +29,7 @@ namespace GameCore
             lineRenderer.endColor = Color.green;
             lineRenderer.material = GInit.instance.spriteDefaultMat;
 
+            //创建状态机
             machine = new(this);
             machine.ChangeState(new MovingState(machine));
         }

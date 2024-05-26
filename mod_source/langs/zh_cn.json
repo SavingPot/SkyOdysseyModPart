@@ -1141,6 +1141,14 @@
                 "text": "剑"
             },
             {
+                "id": "ori:building_center",
+                "text": "建造中心"
+            },
+            {
+                "id": "ori:doorplate",
+                "text": "门牌"
+            },
+            {
                 "id": "ori:oak_door",
                 "text": "橡木门"
             },

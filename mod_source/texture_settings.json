@@ -299,6 +299,14 @@
             "path": "/items/tools/weapons/bows/wooden.png"
         },
         {
+            "id": "ori:switch_to_housing_rental",
+            "path": "/gui/switch_to_housing_rental.png"
+        },
+        {
+            "id": "ori:switch_to_housing_purchase",
+            "path": "/gui/switch_to_housing_purchase.png"
+        },
+        {
             "id": "ori:loading_house_0",
             "path": "/gui/loading_house_0.png"
         },
@@ -682,6 +690,14 @@
         {
             "id": "ori:iron_sword",
             "path": "/items/tools/weapons/iron_sword.png"
+        },
+        {
+            "id": "ori:building_center",
+            "path": "/blocks/building_center.png"
+        },
+        {
+            "id": "ori:doorplate",
+            "path": "/blocks/doorplate.png"
         },
         {
             "id": "ori:oak_seed",

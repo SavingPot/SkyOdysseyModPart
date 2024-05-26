@@ -66,6 +66,10 @@ namespace GameCore
                     case SceneNames.GameScene:
                         GAudio.Stop(AudioID.Town);
                         GAudio.Play(AudioID.WhyNotComeToTheParty);
+
+                        //初始化 UI
+                        Doorplate.InitUI();
+                        BuildingCenter.InitUI();
                         break;
                 }
             };
@@ -96,7 +100,7 @@ namespace GameCore
             }
         }
 
-        int EnemyTargetingPlayer(Player player)
+        int CountOfEnemyTargetingPlayer(Player player)
         {
             int result = 0;
 

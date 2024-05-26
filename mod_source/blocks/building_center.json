@@ -1,0 +1,14 @@
+{
+    "json_format": "0.6.0",
+    "ori:block": {
+        "id": "ori:building_center",
+        "display": {
+            "texture_id": "ori:building_center"
+        },
+        "property": {
+            "hardness": 20,
+            "collidible": false,
+            "behaviour": "GameCore.BuildingCenter"
+        }
+    }
+}
