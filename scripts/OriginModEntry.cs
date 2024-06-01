@@ -73,6 +73,8 @@ namespace GameCore
                         break;
                 }
             };
+
+            Debug.Log("OriginModEntry Loaded");
         }
 
         void FightingMusic()

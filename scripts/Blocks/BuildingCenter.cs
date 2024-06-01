@@ -1,5 +1,6 @@
 using GameCore.UI;
 using SP.Tools;
+using SP.Tools.Unity;
 using UnityEngine;
 
 namespace GameCore
@@ -12,6 +13,8 @@ namespace GameCore
         public static ButtonIdentity switchToHousingRentalPanelButton;
         public static ScrollViewIdentity housingRentalScrollView;
         static HousingRentalScrollViewPool housingRentalScrollViewPool;
+        public static ScrollViewIdentity housingRentalNPCScrollView;
+        static HousingRentalNPCScrollViewPool housingRentalNPCScrollViewPool;
 
         public static PanelIdentity housingPurchasePanel;
         public static ButtonIdentity switchToHousingPurchasePanelButton;
@@ -50,9 +53,9 @@ namespace GameCore
             housingRentalPanel.AfterRefreshing += _ =>
             {
                 foreach (var item in housingRentalScrollView.content.GetComponentsInChildren<ButtonIdentity>())
-                {
                     housingRentalScrollViewPool.Recover(item);
-                }
+                foreach (var item in housingRentalNPCScrollView.content.GetComponentsInChildren<ButtonIdentity>())
+                    housingRentalNPCScrollViewPool.Recover(item);
 
                 foreach (var chunk in Map.instance.chunks)
                 {
@@ -81,6 +84,12 @@ namespace GameCore
                         }
                     }
                 }
+
+                foreach (var npc in NPCCenter.all)
+                {
+                    var button = housingRentalNPCScrollViewPool.Get();
+                    button.SetText($"{npc.data.id}");
+                }
             };
 
             (_, switchToHousingRentalPanelButton) = GameUI.GenerateSidebarSwitchButton(
@@ -97,7 +106,16 @@ namespace GameCore
             });
 
             housingRentalScrollView = GameUI.AddScrollView(UIA.Middle, "ori:sv.building_center.housing_rental", housingRentalPanel);
+            housingRentalScrollView.SetSizeDeltaX(250);
+            housingRentalScrollView.SetAPosX(-housingRentalScrollView.sd.x / 2 - 5);
+            housingRentalScrollView.SetGridLayoutGroupCellSizeToMax(45);
             housingRentalScrollViewPool = new();
+
+            housingRentalNPCScrollView = GameUI.AddScrollView(UIA.Middle, "ori:sv.building_center.housing_rental_npc", housingRentalPanel);
+            housingRentalNPCScrollView.SetSizeDeltaX(250);
+            housingRentalNPCScrollView.SetAPosX(housingRentalNPCScrollView.sd.x / 2 + 5);
+            housingRentalNPCScrollView.SetGridLayoutGroupCellSizeToMax(45);
+            housingRentalNPCScrollViewPool = new();
 
 
 
@@ -137,6 +155,32 @@ namespace GameCore
         public override ButtonIdentity Generation()
         {
             var result = GameUI.AddButton(UIA.Middle, $"ori:button.building_center.housing_rental_item_{Tools.randomInt}", BuildingCenter.housingRentalScrollView.content);
+
+            result.buttonText.autoCompareText = false;
+
+            return result;
+        }
+    }
+
+    public sealed class HousingRentalNPCScrollViewPool : ObjectPool<ButtonIdentity>
+    {
+        public override ButtonIdentity Get()
+        {
+            var result = base.Get();
+            result.gameObject.SetActive(true);
+            return result;
+        }
+
+        public override void Recover(ButtonIdentity obj)
+        {
+            obj.gameObject.SetActive(false);
+
+            base.Recover(obj);
+        }
+
+        public override ButtonIdentity Generation()
+        {
+            var result = GameUI.AddButton(UIA.Middle, $"ori:button.building_center.housing_rental_npc_item_{Tools.randomInt}", BuildingCenter.housingRentalNPCScrollView.content);
 
             result.buttonText.autoCompareText = false;
 
