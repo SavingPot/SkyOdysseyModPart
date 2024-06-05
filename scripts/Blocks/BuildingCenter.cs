@@ -63,7 +63,7 @@ namespace GameCore
                     if (chunk.regionIndex != operatingBuildingCenter.chunk.regionIndex)
                         continue;
 
-                    foreach (var block in chunk.blocks)
+                    foreach (var block in chunk.wallBlocks)
                     {
                         if (block is Doorplate doorplate)
                         {

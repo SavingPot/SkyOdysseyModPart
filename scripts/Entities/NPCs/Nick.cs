@@ -1,15 +1,15 @@
-﻿using UnityEngine;
+﻿using GameCore.UI;
+using Newtonsoft.Json.Linq;
 using System;
 using UnityEngine.InputSystem;
-using GameCore.UI;
-using GameCore.High;
+using UnityEngine;
 
 namespace GameCore
 {
     [EntityBinding(EntityID.Nick)]
-    public class Nick : CoreNPC
+    public class Nick : NPC
     {
-        NickData NickData;
+        public NickProgress progress;
         public int autoTalkRadius = 5 * 5; //5^2
 
 
@@ -30,29 +30,42 @@ namespace GameCore
                 leftLeg = AddBodyPart("leftleg", ModFactory.CompareTexture("ori:nick_left_leg").sprite, Vector2.zero, 1, body, BodyPartType.LeftLeg);
             });
             #endregion
+        }
 
-            NickData = LoadNPCData(npcToken =>
+        public override JObject ModifyCustomData(JObject data)
+        {
+            data = base.ModifyCustomData(data);
+
+            //添加 "ori:nick"
+            var npcJT = data["ori:npc"];
+            if (!npcJT.TryGetJToken("ori:nick", out var nickJT))
             {
-                NickData temp = new();
+                npcJT.AddObject("ori:nick");
+                nickJT = npcJT["ori:nick"];
+            }
 
-                try
-                {
-                    temp.progress = (NickProgress)byte.Parse(npcToken["progress"].ToString());
-                }
-                catch
-                {
-                    temp.progress = new();
-                }
+            //添加 "progress"
+            if (!nickJT.TryGetJToken("progress", out var progressJT))
+            {
+                nickJT.AddProperty("progress", NickProgress.FirstMeet);
+                progressJT = nickJT["progress"];
+            }
 
-                return temp;
-            });
+            return data;
+        }
+
+        protected override void LoadFromNpcJT(JToken jt)
+        {
+            base.LoadFromNpcJT(jt);
+
+            progress = Enum.Parse<NickProgress>(jt["ori:nick"]["progress"].ToString());
         }
 
         protected override void Update()
         {
             base.Update();
 
-            if (NickData.progress == NickProgress.FirstMeet && Player.local && (Player.local.transform.position - transform.position).sqrMagnitude <= autoTalkRadius)
+            if (progress == NickProgress.FirstMeet && Player.local && (Player.local.transform.position - transform.position).sqrMagnitude <= autoTalkRadius)
             {
                 FirstMeetDialog(Player.local);
             }
@@ -62,7 +75,7 @@ namespace GameCore
         {
             base.PlayerInteraction(player);
 
-            switch (NickData.progress)
+            switch (progress)
             {
                 case NickProgress.FirstMeet:
                     FirstMeetDialog(player);
@@ -159,15 +172,9 @@ namespace GameCore
 
         public void ProgressDeeper()
         {
-            NickData.progress++;
-            SaveNPCData(NickData);
+            progress++;
+            customData["ori:npc"]["ori:nick"]["progress"] = (int)progress;
         }
-    }
-
-    [Serializable]
-    public class NickData : NPCData
-    {
-        public NickProgress progress = NickProgress.FirstMeet;
     }
 
     public enum NickProgress : byte

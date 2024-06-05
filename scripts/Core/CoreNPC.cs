@@ -45,6 +45,6 @@ namespace GameCore
     [Serializable]
     public class NPCData
     {
-
+        public string houseName;
     }
 }

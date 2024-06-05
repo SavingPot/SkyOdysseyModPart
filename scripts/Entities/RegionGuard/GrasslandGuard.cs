@@ -137,7 +137,7 @@ namespace GameCore
             {
                 var chunk = Map.instance.AddChunk(machine.entity.chunkIndex);
 
-                foreach (var block in chunk.blocks)
+                foreach (var block in chunk.wallBlocks)
                 {
                     if (block != null && block.data.id == BlockID.GrassBlock)
                     {
