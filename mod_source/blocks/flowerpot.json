@@ -1,0 +1,14 @@
+{
+    "json_format": "0.6.2",
+    "ori:block": {
+        "id": "ori:flowerpot",
+        "display": {
+            "description": "ori:description.flowerpot"
+        },
+        "property": {
+            "hardness": 3,
+            "collidible": false,
+            "behaviour": "GameCore.Flowerpot"
+        }
+    }
+}

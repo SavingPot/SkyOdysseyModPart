@@ -577,6 +577,14 @@
                 "text": "{value} 使用CD"
             },
             {
+                "id": "ori:flowerpot",
+                "text": "花盆"
+            },
+            {
+                "id": "ori:glass",
+                "text": "玻璃"
+            },
+            {
                 "id": "ori:portal",
                 "text": "传送门"
             },

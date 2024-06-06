@@ -167,6 +167,14 @@
             "path": "/blocks/remote_market.png"
         },
         {
+            "id": "ori:flowerpot",
+            "path": "/blocks/flowerpot.png"
+        },
+        {
+            "id": "ori:glass",
+            "path": "/blocks/glass.png"
+        },
+        {
             "id": "ori:portal",
             "path": "/blocks/portal.png"
         },

@@ -1,0 +1,12 @@
+{
+    "json_format": "0.6.0",
+    "ori:block": {
+        "id": "ori:glass",
+        "property": {
+            "hardness": 1,
+            "tags": [
+                "ori:construction_wall"
+            ]
+        }
+    }
+}

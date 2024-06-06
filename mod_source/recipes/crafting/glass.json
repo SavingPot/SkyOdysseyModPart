@@ -1,14 +1,14 @@
 {
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
-        "id": "ori:bottle",
+        "id": "ori:glass",
         "ingredients": [
             {
-                "id": "ori:glass"
+                "id": "ori:sand"
             }
         ],
         "result": {
-            "id": "ori:bottle"
+            "id": "ori:glass"
         }
     }
 }
