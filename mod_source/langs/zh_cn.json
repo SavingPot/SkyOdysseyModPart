@@ -1407,6 +1407,10 @@
             {
                 "id": "ori:text.leaving_game",
                 "text": "退出游戏中"
+            },
+            {
+                "id": "ori:button.building_center.housing_info_to_rental.text",
+                "text": "返回"
             }
         ]
     }

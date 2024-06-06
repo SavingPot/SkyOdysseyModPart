@@ -97,7 +97,7 @@ namespace GameCore
 
 
         //TODO: Execute only on the server, maybe we need Rpc requests for this
-        void SetTenantName(string tenantName)
+        public void SetTenantName(string tenantName)
         {
             FixCustomData();
 
