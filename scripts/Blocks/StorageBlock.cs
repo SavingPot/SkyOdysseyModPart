@@ -88,12 +88,9 @@ namespace GameCore
 
             RefreshItemView();
 
-            //写入数据到存档
+            //写入数据到存档并推给服务器
             this.WriteItemsToCustomData(itemCount, ref customData);
-            if (Server.isServer) WriteCustomDataToSave();
-
-            //使客户端刷新
-            Map.instance.SetBlockCustomDataOL(this);
+            PushCustomDataToServer();
         }
     }
 }

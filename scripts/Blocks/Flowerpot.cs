@@ -22,6 +22,8 @@ namespace GameCore
             plantRenderer.color = sr.color;
 
             //刷新植物渲染器
+            FixCustomData();
+            LoadCustomData();
             RefreshPlantRenderer();
         }
 
@@ -58,9 +60,8 @@ namespace GameCore
                 DropPlantedPlant();
 
                 //种入新的植物
-                plantId = item.data.id;
+                SetPlantId(item.data.id);
                 caller.ServerReduceUsingItemCount(1);
-                RefreshPlantRenderer();
 
                 //播放音效
                 GAudio.Play(AudioID.PlaceBlock);
@@ -68,6 +69,49 @@ namespace GameCore
             }
 
             return false;
+        }
+
+        void FixCustomData()
+        {
+            customData ??= new();
+
+            if (!customData.TryGetJToken("ori:flowerpot", out var flowerpotToken))
+            {
+                customData.AddObject("ori:flowerpot");
+                flowerpotToken = customData["ori:flowerpot"];
+            }
+
+            if (!flowerpotToken.TryGetJToken("plant", out _))
+            {
+                flowerpotToken.AddProperty("plant", string.Empty);
+            }
+        }
+
+        void LoadCustomData()
+        {
+            var plantToken = customData["ori:flowerpot"]["plant"];
+            plantId = plantToken.ToString();
+        }
+
+        void SetPlantId(string id)
+        {
+            plantId = id;
+
+            //更改 customData
+            FixCustomData();
+            customData["ori:flowerpot"]["plant"] = id;
+
+            //把数据推送给服务器
+            PushCustomDataToServer();
+        }
+
+        public override void OnServerSetCustomData()
+        {
+            base.OnServerSetCustomData();
+
+            //刷新植物渲染器
+            LoadCustomData();
+            RefreshPlantRenderer();
         }
     }
 }

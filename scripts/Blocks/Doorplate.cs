@@ -84,7 +84,7 @@ namespace GameCore
             FixCustomData();
 
             customData["ori:doorplate"]["room_name"] = roomName;
-            WriteCustomDataToSave();
+            PushCustomDataToServer();
         }
 
 
@@ -102,7 +102,7 @@ namespace GameCore
             FixCustomData();
 
             customData["ori:doorplate"]["tenant_name"] = tenantName;
-            WriteCustomDataToSave();
+            PushCustomDataToServer();
         }
 
 

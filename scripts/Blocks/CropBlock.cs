@@ -178,7 +178,7 @@ namespace GameCore
                 if (cropJT == null)
                 {
                     customData.AddObject("ori:crop", new JProperty("crop_index", 0));
-                    WriteCustomDataToSave();
+                    PushCustomDataToServer();
                 }
                 else
                 {
@@ -191,7 +191,7 @@ namespace GameCore
         public void WriteCropIndexToSave()
         {
             customData["ori:crop"]["crop_index"] = cropIndex;
-            WriteCustomDataToSave();
+            PushCustomDataToServer();
         }
 
         public override void OnUpdate()
@@ -242,6 +242,11 @@ namespace GameCore
             //增加生长进度
             cropIndex++;
             WriteCropIndexToSave();
+        }
+
+        public override void OnServerSetCustomData()
+        {
+            base.OnServerSetCustomData();
 
             //刷新贴图
             RefreshTextureByCropIndex();
