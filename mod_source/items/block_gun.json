@@ -1,0 +1,20 @@
+{
+    "json_format": "0.7.8",
+    "ori:item": {
+        "id": "ori:block_gun",
+        "tags": [
+            "ori:gun"
+        ],
+        "display": {
+            "description": "ori:description.block_gun",
+            "size": [
+                1.4,
+                1.4
+            ],
+            "offset": [
+                0.25,
+                -0.1
+            ]
+        }
+    }
+}

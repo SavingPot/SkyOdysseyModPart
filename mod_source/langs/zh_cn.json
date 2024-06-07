@@ -577,6 +577,10 @@
                 "text": "{value} 使用CD"
             },
             {
+                "id": "ori:block_gun",
+                "text": "方块枪"
+            },
+            {
                 "id": "ori:flowerpot",
                 "text": "花盆"
             },

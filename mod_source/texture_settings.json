@@ -167,6 +167,10 @@
             "path": "/blocks/remote_market.png"
         },
         {
+            "id": "ori:block_gun",
+            "path": "/items/tools/block_gun.png"
+        },
+        {
             "id": "ori:flowerpot",
             "path": "/blocks/flowerpot.png"
         },
