@@ -26,7 +26,7 @@ namespace GameCore
         {
             base.OnEnter();
 
-            this.LoadItemsFromCustomData(instance.customData, itemCount);
+            this.LoadItemsFromCustomData(itemCount, ref instance.customData);
         }
 
         public override bool Use(Vector2 point)
@@ -90,7 +90,7 @@ namespace GameCore
 
             RefreshItemView();
 
-            this.WriteItemsToCustomData(instance.customData);
+            this.WriteItemsToCustomData(itemCount, ref instance.customData);
         }
 
         public StorageItemBehaviour(IInventoryOwner owner, Item instance, string inventoryIndex) : base(owner, instance, inventoryIndex)

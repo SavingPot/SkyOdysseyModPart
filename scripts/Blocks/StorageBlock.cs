@@ -27,7 +27,7 @@ namespace GameCore
         {
             base.DoStart();
 
-            this.LoadItemsFromCustomData(customData, itemCount);
+            this.LoadItemsFromCustomData(itemCount, ref customData);
         }
 
         public override bool PlayerInteraction(Player player)
@@ -89,7 +89,7 @@ namespace GameCore
             RefreshItemView();
 
             //写入数据到存档
-            this.WriteItemsToCustomData(customData);
+            this.WriteItemsToCustomData(itemCount, ref customData);
             if (Server.isServer) WriteCustomDataToSave();
 
             //使客户端刷新
