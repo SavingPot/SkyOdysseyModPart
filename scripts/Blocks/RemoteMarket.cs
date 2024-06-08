@@ -26,6 +26,7 @@ namespace GameCore
                 new(BlockID.OakSeed, 1, 15),
                 new(BlockID.AcaciaSeed, 1, 22),
                 new(BlockID.MangroveSeed, 1, 30),
+                new(ItemID.BlockGun, 1, 100),
             });
         }
 
