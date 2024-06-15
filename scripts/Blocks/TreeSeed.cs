@@ -46,10 +46,7 @@ namespace GameCore
             Vector2Int downPos = pos + Vector2Int.down;
 
             //放置方块
-            foreach (var structBlock in treeSeedDatum.structure.fixedBlocks)
-            {
-                chunk.map.SetBlockNet(downPos + structBlock.offset, structBlock.isBackground, structBlock.blockId, null);
-            }
+            chunk.map.GenerateStructure(treeSeedDatum.structure, downPos);
 
             //注：这里并不需要删除树种，因为它会被木头直接替换
         }
