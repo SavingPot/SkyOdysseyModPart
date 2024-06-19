@@ -5,7 +5,7 @@
         "texture": "ori:mana_stone",
         "description": "ori:description.mana_stone",
         "tags": [
-            "ori:loot.wooden_chest"
+            "ori:loot.ghost_ship"
         ]
     }
 }

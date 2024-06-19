@@ -4,7 +4,7 @@
         "id": "ori:laser",
         "cost": 5,
         "tags": [
-            "ori:loot.wooden_chest"
+            "ori:loot.ghost_ship"
         ]
     }
 }

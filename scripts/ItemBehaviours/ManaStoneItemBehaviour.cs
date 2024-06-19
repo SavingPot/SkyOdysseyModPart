@@ -27,7 +27,7 @@ namespace GameCore
             if (owner is not Player player)
                 return false;
 
-            if (player.energyValue >= spell.cost)
+            if (player.mana >= spell.cost)
             {
                 //释放
                 spellBehaviour.Release(AngleTools.GetAngleVector2(owner.transform.position, point), owner.transform.position, (Player)owner);
@@ -37,7 +37,7 @@ namespace GameCore
                     ((Player)owner).animWeb.SwitchPlayingTo("slight_rightarm_lift");
 
                 //减少魔能
-                player.energyValue -= spell.cost;
+                player.mana -= spell.cost;
 
                 return true;
             }
