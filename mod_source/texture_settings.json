@@ -179,6 +179,10 @@
             "path": "/items/tools/fishing_rod.png"
         },
         {
+            "id": "ori:cod",
+            "path": "/items/foods/fishes/cod.png"
+        },
+        {
             "id": "ori:block_gun",
             "path": "/items/tools/block_gun.png"
         },
@@ -1261,8 +1265,24 @@
             "pixel_unit": 6
         },
         {
+            "id": "ori:pillworm",
+            "path": "/entities/pillworm_0.png"
+        },
+        {
+            "id": "ori:pillworm_0",
+            "path": "/entities/pillworm_0.png"
+        },
+        {
+            "id": "ori:cricket",
+            "path": "/entities/cricket_0.png"
+        },
+        {
             "id": "ori:cricket_0",
             "path": "/entities/cricket_0.png"
+        },
+        {
+            "id": "ori:snail",
+            "path": "/entities/snail_0.png"
         },
         {
             "id": "ori:snail_0",

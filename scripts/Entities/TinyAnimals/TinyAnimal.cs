@@ -4,11 +4,37 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public abstract class TinyAnimal : Entity
+    public abstract class TinyAnimal : Entity, IInteractableEntity
     {
         public abstract string Texture();
         public float movementTimer;
         public float movementInterval = 5;
+        public virtual Vector2 interactionSize { get; } = new(2, 2f);
+
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            /* ---------------------------------- 设置贴图 ---------------------------------- */
+            AddSpriteRenderer(Texture());
+        }
+
+        public virtual void PlayerInteraction(Player caller)
+        {
+            //获取物品并检查
+            var itemData = ModFactory.CompareItem(data.id);
+            if (itemData == null)
+            {
+                Debug.LogError("Item not found");
+                return;
+            }
+
+            //给予玩家物品
+            caller.ServerAddItem(itemData.DataToItem());
+
+            //死亡
+            Death();
+        }
 
         protected override void Update()
         {
@@ -41,14 +67,6 @@ namespace GameCore
             SetOrientation(true);
 
             return 1;
-        }
-
-        public override void Initialize()
-        {
-            base.Initialize();
-
-            /* ---------------------------------- 设置贴图 ---------------------------------- */
-            AddSpriteRenderer(Texture());
         }
     }
 }

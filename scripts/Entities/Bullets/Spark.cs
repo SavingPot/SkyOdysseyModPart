@@ -6,7 +6,6 @@ namespace GameCore
     [EntityBinding(EntityID.Spark)]
     public class Spark : Bullet
     {
-        float initTime;
         Light2D light;
 
 
@@ -25,7 +24,6 @@ namespace GameCore
 
             //TODO: 灼伤
             damage = 5;
-            initTime = Tools.time;
 
             AddSpriteRenderer("ori:spark");
 

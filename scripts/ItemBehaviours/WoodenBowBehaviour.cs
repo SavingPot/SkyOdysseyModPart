@@ -6,8 +6,6 @@ namespace GameCore
     [ItemBinding(ItemID.WoodenBow)]
     public class WoodenBowBehaviour : BowBehaviour
     {
-        public float shootTimer;
-
         public override bool Use(Vector2 point)
         {
             bool shotted = false;

@@ -593,6 +593,18 @@
                 "text": "{value} 使用CD"
             },
             {
+                "id": "ori:cricket",
+                "text": "蟋蟀"
+            },
+            {
+                "id": "ori:pillworm",
+                "text": "鼠妇"
+            },
+            {
+                "id": "ori:snail",
+                "text": "蜗牛"
+            },
+            {
                 "id": "ori:fishing_rod",
                 "text": "钓鱼竿"
             },
