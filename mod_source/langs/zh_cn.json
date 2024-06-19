@@ -85,8 +85,20 @@
                 "text": "真是朦胧的雨天啊! 我真喜欢这般的天气, 这让我感到宁静与舒适, 在这样的一天光着上身真是太凉爽了"
             },
             {
+                "id": "ori:trader",
+                "text": "商人"
+            },
+            {
                 "id": "ori:task.rewards",
                 "text": "奖励: {id} x {count}"
+            },
+            {
+                "id": "ori:button.skill_tree.node.ori:skill.text",
+                "text": "技能"
+            },
+            {
+                "id": "ori:skill_description.skill",
+                "text": "<color=red>目前还没功能，尽快加入（全局性的技能）</color>"
             },
             {
                 "id": "ori:button.skill_tree.node.ori:agriculture.text",
@@ -119,6 +131,14 @@
             {
                 "id": "ori:skill_description.agriculture.harvest",
                 "text": "农作物有10%概率获得双倍收益"
+            },
+            {
+                "id": "ori:button.skill_tree.node.ori:agriculture.fishing.text",
+                "text": "渔业"
+            },
+            {
+                "id": "ori:skill_description.agriculture.fishing",
+                "text": "解锁钓竿配方"
             },
             {
                 "id": "ori:button.task_tree.node.ori:get_dirt.text",
@@ -227,6 +247,10 @@
             {
                 "id": "ori:button.task_tree.node.ori:get_bark_vest.text",
                 "text": "获得树皮背心"
+            },
+            {
+                "id": "ori:description.fishing_rod",
+                "text": "向水中投掷浮标以钓鱼"
             },
             {
                 "id": "ori:description.mana_stone",
@@ -339,14 +363,6 @@
             {
                 "id": "ori:description.dandelion",
                 "text": "??? 怎么不能吹!"
-            },
-            {
-                "id": "ori:description.rose",
-                "text": "应是红瘦"
-            },
-            {
-                "id": "ori:description.grass",
-                "text": "应是绿肥"
             },
             {
                 "id": "ori:description.dog_tail_grass",
@@ -575,6 +591,14 @@
             {
                 "id": "ori:item.use_cd",
                 "text": "{value} 使用CD"
+            },
+            {
+                "id": "ori:fishing_rod",
+                "text": "钓鱼竿"
+            },
+            {
+                "id": "ori:loot_bag",
+                "text": "战利品袋"
             },
             {
                 "id": "ori:block_gun",

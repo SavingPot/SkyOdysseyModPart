@@ -2,6 +2,10 @@
     "json_format": "0.4.6",
     "textures": [
         {
+            "id": "ori:skill.skill",
+            "path": "/gui/skills/skill.png"
+        },
+        {
             "id": "ori:skill.agriculture",
             "path": "/gui/skills/agriculture.png"
         },
@@ -16,6 +20,10 @@
         {
             "id": "ori:skill.agriculture.harvest",
             "path": "/gui/skills/agriculture.harvest.png"
+        },
+        {
+            "id": "ori:skill.agriculture.fishing",
+            "path": "/gui/skills/agriculture.fishing.png"
         },
         {
             "id": "ori:task.get_dirt",
@@ -165,6 +173,10 @@
         {
             "id": "ori:remote_market",
             "path": "/blocks/remote_market.png"
+        },
+        {
+            "id": "ori:fishing_rod",
+            "path": "/items/tools/fishing_rod.png"
         },
         {
             "id": "ori:block_gun",
@@ -410,6 +422,10 @@
         {
             "id": "ori:switch_button.remote_market",
             "path": "/gui/backpack_panels/switch_buttons/remote_market.png"
+        },
+        {
+            "id": "ori:switch_button.trader",
+            "path": "/gui/backpack_panels/switch_buttons/trader.png"
         },
         {
             "id": "ori:crafting_info_shower_background",
@@ -1425,6 +1441,41 @@
         {
             "id": "ori:nick_left_leg",
             "path": "/entities/npcs/nick/leftleg.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:trader_body",
+            "path": "/entities/npcs/trader/body.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:trader_body_naked",
+            "path": "/entities/npcs/trader/body_naked.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:trader_head",
+            "path": "/entities/npcs/trader/head.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:trader_right_arm",
+            "path": "/entities/npcs/trader/rightarm.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:trader_left_arm",
+            "path": "/entities/npcs/trader/leftarm.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:trader_right_leg",
+            "path": "/entities/npcs/trader/rightleg.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:trader_left_leg",
+            "path": "/entities/npcs/trader/leftleg.png",
             "pixel_unit": 16
         },
         {

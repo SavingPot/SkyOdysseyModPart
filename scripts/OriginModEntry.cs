@@ -33,6 +33,7 @@ namespace GameCore
                     //解锁技能时刷新一下农作物装饰器
                     player.pui.OnUnlockSkill += skill =>
                     {
+                        //TODO: 解锁锄头合成配方
                         CropBlock.GetCrop();
                     };
                 }

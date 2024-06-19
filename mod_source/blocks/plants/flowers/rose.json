@@ -3,8 +3,7 @@
     "ori:block": {
         "id": "ori:rose",
         "display": {
-            "texture_id": "ori:rose",
-            "description": "ori:description.rose"
+            "texture_id": "ori:rose"
         },
         "property": {
             "hardness": 0.025,

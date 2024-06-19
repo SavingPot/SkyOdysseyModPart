@@ -1,0 +1,21 @@
+{
+    "json_format": "0.7.8",
+    "ori:item": {
+        "id": "ori:fishing_rod",
+        "damage": 7,
+        "use_cd": 0.8,
+        "extra_distance": 0.2,
+        "display": {
+            "description": "ori:description.fishing_rod",
+            "size": [
+                1.6,
+                1.6
+            ],
+            "offset": [
+                0.25,
+                -0.1
+            ],
+            "rotation": -45
+        }
+    }
+}

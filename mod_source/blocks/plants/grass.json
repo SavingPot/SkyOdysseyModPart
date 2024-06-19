@@ -3,8 +3,7 @@
     "ori:block": {
         "id": "ori:grass",
         "display": {
-            "texture_id": "ori:grass",
-            "description": "ori:description.grass"
+            "texture_id": "ori:grass"
         },
         "property": {
             "hardness": 0.025,
