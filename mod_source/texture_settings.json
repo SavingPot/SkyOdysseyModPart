@@ -1000,8 +1000,8 @@
             "path": "/gui/hunger_bar.png"
         },
         {
-            "id": "ori:happiness_bar",
-            "path": "/gui/happiness_bar.png"
+            "id": "ori:energy_bar",
+            "path": "/gui/energy_bar.png"
         },
         {
             "id": "ori:health_bar",

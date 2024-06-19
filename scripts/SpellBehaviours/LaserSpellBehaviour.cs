@@ -156,7 +156,7 @@ namespace GameCore
             }
         }
 
-        public LaserSpellBehaviour(IManaContainer manaContainer, ISpellContainer spellContainer, Spell instance) : base(manaContainer, spellContainer, instance)
+        public LaserSpellBehaviour(ISpellContainer spellContainer, Spell instance) : base(spellContainer, instance)
         {
 
         }

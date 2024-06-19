@@ -1,4 +1,5 @@
 using GameCore.High;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -16,10 +17,10 @@ namespace GameCore
             jo.AddObject("ori:bullet");
             jo["ori:bullet"].AddProperty("ownerId", player.netId);
             jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
-            GM.instance.SummonEntity(player.transform.position, EntityID.Spark, Tools.randomGUID, true, null, jo.ToString());
+            GM.instance.SummonEntity(player.transform.position, EntityID.Spark, Tools.randomGUID, true, null, jo.ToString(Formatting.None));
         }
 
-        public SparkSpellBehaviour(IManaContainer manaContainer, ISpellContainer spellContainer, Spell instance) : base(manaContainer, spellContainer, instance)
+        public SparkSpellBehaviour(ISpellContainer spellContainer, Spell instance) : base(spellContainer, instance)
         {
 
         }
