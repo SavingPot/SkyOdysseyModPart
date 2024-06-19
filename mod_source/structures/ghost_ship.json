@@ -3,7 +3,6 @@
     "ori:structure": {
         "id": "ori:ghost_ship",
         "generation": {
-            "probability": 10,
             "must_enough": true,
             "require": []
         },
@@ -2112,13 +2111,6 @@
                     "pos": [
                         -9,
                         -3
-                    ]
-                },
-                {
-                    "id": "ori:grass",
-                    "pos": [
-                        18,
-                        260
                     ]
                 },
                 {

@@ -1000,8 +1000,8 @@
             "path": "/gui/hunger_bar.png"
         },
         {
-            "id": "ori:energy_bar",
-            "path": "/gui/energy_bar.png"
+            "id": "ori:mana_bar",
+            "path": "/gui/mana_bar.png"
         },
         {
             "id": "ori:health_bar",
@@ -1074,6 +1074,10 @@
         {
             "id": "ori:bush",
             "path": "/blocks/bush.png"
+        },
+        {
+            "id": "ori:loot_bag",
+            "path": "/items/loot_bag.png"
         },
         {
             "id": "ori:berry",

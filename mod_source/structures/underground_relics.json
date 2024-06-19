@@ -1,0 +1,1332 @@
+{
+    "json_format": "0.6.4",
+    "ori:structure": {
+        "id": "ori:underground_relics",
+        "generation": {
+            "must_enough": false,
+            "require": []
+        },
+        "blocks": {
+            "fixed": [
+                {
+                    "id": null,
+                    "pos": [
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        1,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        1,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        2,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        3,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        3,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        4,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        5,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        5,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        6,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        6,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        8,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        7,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        7,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        8,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        9,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        10,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        11,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        12,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        12,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        10,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        13,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        13,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        14,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        15,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        15,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        16,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        16,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        16,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        15,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        14,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        13,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        12,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        11,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        10,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        9,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        8,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        7,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        6,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        5,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        3,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        2,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        1,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        0,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        0,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        1,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        2,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        3,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        4,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        4,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        5,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        6,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        7,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        8,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        9,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        10,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        11,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        12,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        13,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        14,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        15,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        16,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        14,
+                        -2
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        15,
+                        -2
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        16,
+                        -2
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        16,
+                        -2,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        15,
+                        -2,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        14,
+                        -2,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        15,
+                        -3
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        14,
+                        -3
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        13,
+                        -2
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        13,
+                        -2,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        13,
+                        -3
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        14,
+                        -4
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        13,
+                        -4
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        12,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        13,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        12,
+                        -4
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        12,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        11,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        11,
+                        -4
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        12,
+                        -3
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        7,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        8,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        6,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        6,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        5,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        4,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        4,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        3,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        3,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        2,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        2,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        1,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        1,
+                        -6
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        2,
+                        -2
+                    ]
+                },
+                {
+                    "id": "ori:farmland",
+                    "pos": [
+                        9,
+                        -2
+                    ]
+                },
+                {
+                    "id": "ori:farmland",
+                    "pos": [
+                        8,
+                        -2
+                    ]
+                },
+                {
+                    "id": "ori:farmland",
+                    "pos": [
+                        4,
+                        -2
+                    ]
+                },
+                {
+                    "id": "ori:potato_crop",
+                    "pos": [
+                        4,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:potato_crop",
+                    "pos": [
+                        9,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:onion_crop",
+                    "pos": [
+                        11,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        0,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        0,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -1,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -1,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -2,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -2,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -3,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -3,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -4,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -4,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -1,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -2,
+                        -1
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -2,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -3,
+                        0
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -3,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        -1,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        -2,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        -3,
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        -3,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        -2,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        -1,
+                        -1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:torch",
+                    "pos": [
+                        14,
+                        0
+                    ]
+                },
+                {
+                    "id": "ori:torch",
+                    "pos": [
+                        2,
+                        0
+                    ]
+                },
+                {
+                    "id": "ori:torch",
+                    "pos": [
+                        9,
+                        -5
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        5,
+                        -7
+                    ]
+                },
+                {
+                    "id": "ori:dirt",
+                    "pos": [
+                        6,
+                        -7
+                    ]
+                },
+                {
+                    "id": "ori:farmland",
+                    "pos": [
+                        11,
+                        -7
+                    ]
+                },
+                {
+                    "id": "ori:farmland",
+                    "pos": [
+                        10,
+                        -7
+                    ]
+                },
+                {
+                    "id": "ori:farmland",
+                    "pos": [
+                        9,
+                        -7
+                    ]
+                },
+                {
+                    "id": "ori:farmland",
+                    "pos": [
+                        8,
+                        -7
+                    ]
+                },
+                {
+                    "id": "ori:farmland",
+                    "pos": [
+                        7,
+                        -7
+                    ]
+                },
+                {
+                    "id": "ori:tomato_crop",
+                    "pos": [
+                        10,
+                        -6
+                    ]
+                },
+                {
+                    "id": "ori:tomato_crop",
+                    "pos": [
+                        11,
+                        -6
+                    ]
+                },
+                {
+                    "id": "ori:tomato_crop",
+                    "pos": [
+                        9,
+                        -6
+                    ]
+                },
+                {
+                    "id": "ori:tomato_crop",
+                    "pos": [
+                        8,
+                        -6
+                    ]
+                },
+                {
+                    "id": "ori:tomato_crop",
+                    "pos": [
+                        7,
+                        -6
+                    ]
+                },
+                {
+                    "id": "ori:tomato_crop",
+                    "pos": [
+                        5,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -5,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -5,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -6,
+                        -5
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -6,
+                        -6
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -5,
+                        -7
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -5,
+                        -8
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -5,
+                        -9
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -5,
+                        -10
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -5,
+                        -11
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -5,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -5,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -4,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -4,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -3,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -3,
+                        -13
+                    ]
+                },
+                {
+                    "id": "ori:ladder",
+                    "pos": [
+                        -6,
+                        -11
+                    ]
+                },
+                {
+                    "id": "ori:ladder",
+                    "pos": [
+                        -6,
+                        -9
+                    ]
+                },
+                {
+                    "id": "ori:ladder",
+                    "pos": [
+                        -6,
+                        -8
+                    ]
+                },
+                {
+                    "id": "ori:ladder",
+                    "pos": [
+                        -6,
+                        -7
+                    ]
+                },
+                {
+                    "id": "ori:ladder",
+                    "pos": [
+                        -6,
+                        -10
+                    ]
+                },
+                {
+                    "id": "ori:ladder",
+                    "pos": [
+                        -6,
+                        -13
+                    ]
+                },
+                {
+                    "id": "ori:ladder",
+                    "pos": [
+                        -6,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -2,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -2,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -1,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        -1,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        1,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        0,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        0,
+                        -12
+                    ]
+                },
+                {
+                    "id": "ori:wooden_chest",
+                    "pos": [
+                        1,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        2,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        2,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        3,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        3,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        4,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        4,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        5,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        5,
+                        -12
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        7,
+                        -13
+                    ]
+                },
+                {
+                    "id": null,
+                    "pos": [
+                        7,
+                        -12
+                    ]
+                },
+                {
+                    "id": "ori:soup_pot",
+                    "pos": [
+                        6,
+                        -12
+                    ]
+                },
+                {
+                    "id": "ori:extinguished_campfire",
+                    "pos": [
+                        6,
+                        -13
+                    ]
+                }
+            ]
+        }
+    }
+}

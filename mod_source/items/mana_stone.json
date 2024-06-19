@@ -5,7 +5,8 @@
         "texture": "ori:mana_stone",
         "description": "ori:description.mana_stone",
         "tags": [
-            "ori:loot.ghost_ship"
+            "ori:loot.ghost_ship",
+            "ori:spell_container"
         ]
     }
 }
