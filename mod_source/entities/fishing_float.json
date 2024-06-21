@@ -1,0 +1,17 @@
+{
+    "json_format": "0.4.8",
+    "ori:entity": {
+        "id": "ori:fishing_float",
+        "coin_count": 0,
+        "lifetime": 500,
+        "physics": {
+            "gravity": 1.8,
+            "collider": {
+                "size": [
+                    0.5,
+                    0.5
+                ]
+            }
+        }
+    }
+}

@@ -164,12 +164,13 @@ namespace GameCore
         {
             base.DoStart();
 
+            cropDatum = GetDatum();
+
             //TODO: 解决客户端同步问题
             if (Server.isServer)
             {
                 //决定生长
                 randomUpdateID = $"ori:crop_blocks_{gameObject.GetInstanceID()}";
-                cropDatum = GetDatum();
                 GetCrop();
 
                 //加载生长进度
@@ -198,6 +199,9 @@ namespace GameCore
         {
             base.OnUpdate();
 
+            if (!Server.isServer)
+                return;
+
             if (!chunk.map.TryGetBlock(new(pos.x, pos.y - 1), isBackground, out var underBlock))
             {
                 Destroy();
@@ -221,7 +225,8 @@ namespace GameCore
         {
             base.OnRecovered();
 
-            UnbindGrowingMethod(this);
+            if (Server.isServer)
+                UnbindGrowingMethod(this);
         }
 
         public static void UnbindGrowingMethod(CropBlock block)

@@ -17,7 +17,7 @@ namespace GameCore
             jo.AddObject("ori:bullet");
             jo["ori:bullet"].AddProperty("ownerId", player.netId);
             jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
-            GM.instance.SummonEntity(player.transform.position, EntityID.Spark, Tools.randomGUID, true, null, jo.ToString(Formatting.None));
+            GM.instance.SummonEntity(player.transform.position, EntityID.Spark, customData: jo.ToString(Formatting.None));
         }
 
         public SparkSpellBehaviour(ISpellContainer spellContainer, Spell instance) : base(spellContainer, instance)

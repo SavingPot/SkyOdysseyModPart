@@ -1,0 +1,13 @@
+{
+    "json_format": "0.7.8",
+    "ori:item": {
+        "id": "ori:cod",
+        "tags": [
+            "ori:food",
+            "ori:edible=20"
+        ],
+        "economy": {
+            "worth": 8
+        }
+    }
+}

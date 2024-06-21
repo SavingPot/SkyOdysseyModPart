@@ -20,7 +20,7 @@ namespace GameCore
                     jo.AddObject("ori:bullet");
                     jo["ori:bullet"].AddProperty("ownerId", player.netId);
                     jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
-                    GM.instance.SummonEntity(player.transform.position, EntityID.FlintArrow, Tools.randomGUID, true, null, jo.ToString());
+                    GM.instance.SummonEntity(player.transform.position, EntityID.FlintArrow, customData: jo.ToString());
                     shotted = true;
                     shootTimer = Tools.time + 1;
 

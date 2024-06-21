@@ -1265,6 +1265,10 @@
             "pixel_unit": 6
         },
         {
+            "id": "ori:fishing_float",
+            "path": "/entities/fishing_float.png"
+        },
+        {
             "id": "ori:pillworm",
             "path": "/entities/pillworm_0.png"
         },
