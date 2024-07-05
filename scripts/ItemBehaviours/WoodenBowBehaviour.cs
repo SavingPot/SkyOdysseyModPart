@@ -16,11 +16,7 @@ namespace GameCore
                 {
                     var velocity = AngleTools.GetAngleVector2(player.transform.position, point).normalized * 20;
 
-                    JObject jo = new();
-                    jo.AddObject("ori:bullet");
-                    jo["ori:bullet"].AddProperty("ownerId", player.netId);
-                    jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
-                    GM.instance.SummonEntity(player.transform.position, EntityID.FlintArrow, customData: jo.ToString());
+                    GM.instance.SummonEntityCallback(player.transform.position, EntityID.FlintArrow, entity => entity.ServerSetVelocity(velocity));
                     shotted = true;
                     shootTimer = Tools.time + 1;
 

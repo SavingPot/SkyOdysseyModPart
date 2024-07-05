@@ -20,8 +20,6 @@ namespace GameCore
         {
             base.Initialize();
 
-            rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
-
             //TODO: 灼伤
             damage = 5;
 

@@ -10,8 +10,6 @@ namespace GameCore
         {
             base.Initialize();
             damage = 0;
-
-            rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
         }
         public override void BlockCollision(Block block)
         {

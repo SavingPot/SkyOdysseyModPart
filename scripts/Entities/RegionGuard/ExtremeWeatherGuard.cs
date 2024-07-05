@@ -22,15 +22,10 @@ namespace GameCore
                 {
                     var velocity = new Vector2(Random.Range(-10, 11), Random.Range(10, 16));
 
-                    JObject jo = new();
-                    jo.AddObject("ori:bullet");
-                    jo["ori:bullet"].AddProperty("ownerId", netId);
-                    jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
-
                     if (Tools.randomBool)
-                        GM.instance.SummonEntity(transform.position, EntityID.ExtremeWeatherGuardSand, Tools.randomGUID, true, null, jo.ToString());
+                        GM.instance.SummonEntityCallback(transform.position, EntityID.ExtremeWeatherGuardSand, entity => entity.ServerSetVelocity(velocity));
                     else
-                        GM.instance.SummonEntity(transform.position, EntityID.ExtremeWeatherGuardSnowball, Tools.randomGUID, true, null, jo.ToString());
+                        GM.instance.SummonEntityCallback(transform.position, EntityID.ExtremeWeatherGuardSnowball, entity => entity.ServerSetVelocity(velocity));
                 }
 
                 attackTimer = Tools.time + 2f;

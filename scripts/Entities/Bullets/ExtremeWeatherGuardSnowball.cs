@@ -10,8 +10,6 @@ namespace GameCore
         {
             base.Initialize();
             damage = 15;
-
-            rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
         }
     }
 }

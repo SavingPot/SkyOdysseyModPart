@@ -13,11 +13,7 @@ namespace GameCore
             //标准化以保证速度正常, 乘以数字以加快子弹速度
             var velocity = releaseDirection.normalized * 16;
 
-            JObject jo = new();
-            jo.AddObject("ori:bullet");
-            jo["ori:bullet"].AddProperty("ownerId", player.netId);
-            jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y);
-            GM.instance.SummonEntity(player.transform.position, EntityID.Spark, customData: jo.ToString(Formatting.None));
+            GM.instance.SummonEntityCallback(player.transform.position, EntityID.Spark, entity => entity.ServerSetVelocity(velocity));
         }
 
         public SparkSpellBehaviour(ISpellContainer spellContainer, Spell instance) : base(spellContainer, instance)

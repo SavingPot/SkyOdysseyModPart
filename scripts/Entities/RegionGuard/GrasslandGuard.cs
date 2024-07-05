@@ -1,5 +1,6 @@
 using System;
 using Newtonsoft.Json.Linq;
+using SP.Tools.Unity;
 using UnityEngine;
 
 namespace GameCore
@@ -111,18 +112,14 @@ namespace GameCore
                 {
                     foreach (var player in PlayerCenter.all)
                     {
-                        if ((player.transform.position - guard.transform.position).sqrMagnitude <= attackRadius)
-                        {
-                            var velocity = AngleTools.GetAngleVector2(guard.transform.position, player.transform.position).normalized * 30;
+                        if ((player.transform.position - guard.transform.position).sqrMagnitude > attackRadius)
+                            continue;
 
-                            JObject jo = new();
-                            jo.AddObject("ori:bullet");
-                            jo["ori:bullet"].AddProperty("ownerId", guard.netId);
-                            jo["ori:bullet"].AddProperty("velocity", velocity.x, velocity.y + 1); //y轴 +1 是为了抬高一点角度
+                        var velocity = AngleTools.GetAngleVector2(guard.transform.position, player.transform.position).normalized * 30;
+                        velocity.y += 1; //y轴 +1 是为了抬高一点角度
 
-                            //TODO: 发射树种
-                            GM.instance.SummonEntity(guard.transform.position, EntityID.FlintArrow, null, true, null, jo.ToString());
-                        }
+                        //TODO: 发射树种
+                        GM.instance.SummonEntityCallback(guard.transform.position, EntityID.FlintArrow, entity => entity.SetVelocity(velocity));
                     }
 
                     guard.attackTimer = Tools.time + 1;

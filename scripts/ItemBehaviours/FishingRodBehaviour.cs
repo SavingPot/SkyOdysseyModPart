@@ -33,24 +33,23 @@ namespace GameCore
             }
             else
             {
-                //更新鱼线
-                lineRenderer.startWidth = 0.1f;
-                lineRenderer.endWidth = 0.1f;
-
                 //计算抛出的速度
                 var velocity = AngleTools.GetAngleVector2(owner.transform.position, point).normalized * 10;
-                var jo = new JObject();
-                jo.AddObject("ori:fishing_float");
-                jo["ori:fishing_float"].AddProperty("velocity", velocity.x, velocity.y);
 
                 //播放甩竿动画
                 if (owner is Player player) player.animWeb.SwitchPlayingTo("attack_rightarm", 0);
 
                 //生成浮标
-                GM.instance.SummonEntityAndCallback(owner.transform.position, EntityID.FishingFloat, entity =>
+                GM.instance.SummonEntityCallback(owner.transform.position, EntityID.FishingFloat, entity =>
                 {
+                    //设置浮标的速度
                     fishingFloat = (FishingFloat)entity;
-                }, customData: jo.ToString());
+                    fishingFloat.ServerSetVelocity(velocity);
+
+                    //显示鱼线
+                    lineRenderer.startWidth = 0.1f;
+                    lineRenderer.endWidth = 0.1f;
+                });
             }
 
             return true;

@@ -20,7 +20,7 @@ namespace GameCore
         {
             if (!generatedGuard)
             {
-                GM.instance.SummonEntity(new(pos.x, pos.y + 1), $"{GFiles.world.GetOrAddRegion(chunk.regionIndex).biomeId}_biome_guard", null, true, null, null);
+                GM.instance.SummonEntity(new(pos.x, pos.y + 1), $"{GFiles.world.GetOrAddRegion(chunk.regionIndex).biomeId}_biome_guard");
                 generatedGuard = true;
                 return true;
             }

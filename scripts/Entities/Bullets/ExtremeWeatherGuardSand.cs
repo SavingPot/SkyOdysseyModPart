@@ -13,8 +13,6 @@ namespace GameCore
             rb.gravityScale = 0;
             damage = 20;
 
-            rb.velocity = customData["ori:bullet"]["velocity"].ToVector2();
-
             AddSpriteRenderer("ori:desert_guard_sand");
         }
     }
