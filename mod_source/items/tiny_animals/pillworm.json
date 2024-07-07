@@ -2,6 +2,9 @@
     "json_format": "0.5.1",
     "ori:item": {
         "id": "ori:pillworm",
-        "texture": "ori:pillworm"
+        "texture": "ori:pillworm",
+        "tags": [
+            "ori:bait=1"
+        ]
     }
 }

@@ -12,17 +12,17 @@ namespace GameCore
 
             if (Tools.time >= shootTimer)
             {
-                if (owner is Player player)
+                if (owner is Creature creature)
                 {
-                    var velocity = AngleTools.GetAngleVector2(player.transform.position, point).normalized * 20;
+                    var velocity = AngleTools.GetAngleVector2(creature.transform.position, point).normalized * 20;
 
-                    GM.instance.SummonEntityCallback(player.transform.position, EntityID.FlintArrow, entity => entity.ServerSetVelocity(velocity));
+                    GM.instance.SummonBullet(creature.transform.position, EntityID.FlintArrow, velocity, creature.netId);
                     shotted = true;
                     shootTimer = Tools.time + 1;
 
                     //播放手臂动画
-                    if (!player.animWeb.GetAnim("slight_rightarm_lift", 0).isPlaying)
-                        player.animWeb.SwitchPlayingTo("slight_rightarm_lift");
+                    if (!creature.animWeb.GetAnim("slight_rightarm_lift", 0).isPlaying)
+                        creature.animWeb.SwitchPlayingTo("slight_rightarm_lift");
                 }
             }
 

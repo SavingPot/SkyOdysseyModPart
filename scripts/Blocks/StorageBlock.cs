@@ -1,3 +1,4 @@
+using System.Linq;
 using GameCore.Network;
 using GameCore.UI;
 using SP.Tools;
@@ -57,7 +58,9 @@ namespace GameCore
                     Vector2.zero,
                     Vector2.zero,
                     RefreshItemView,
-                    () => itemView.gameObject.SetActive(true));
+                    () => itemView.gameObject.SetActive(true),
+                    null,
+                    AutoDestroyBackpackPanel);
 
                 //初始化所有UI
                 for (int i = 0; i < slotUIs.Length; i++)
@@ -71,6 +74,20 @@ namespace GameCore
             {
                 slotUIs[i].Refresh(this, i.ToString());
             }
+        }
+
+        protected virtual void AutoDestroyBackpackPanel()
+        {
+            if (!Player.TryGetLocal(out var player))
+                return;
+
+            //矩形十格以内不销毁背包面板
+            if (Mathf.Abs(player.transform.position.x - pos.x) < 8 && Mathf.Abs(player.transform.position.y - pos.y) < 8)
+                return;
+
+            //检测一下背包面板是否还存在
+            if (player.pui.backpackPanels.Any(p => p.id == backpackPanelId))
+                player.pui.DestroyBackpackPanel(backpackPanelId);
         }
 
 

@@ -23,9 +23,9 @@ namespace GameCore
                     var velocity = new Vector2(Random.Range(-10, 11), Random.Range(10, 16));
 
                     if (Tools.randomBool)
-                        GM.instance.SummonEntityCallback(transform.position, EntityID.ExtremeWeatherGuardSand, entity => entity.ServerSetVelocity(velocity));
+                        GM.instance.SummonBullet(transform.position, EntityID.ExtremeWeatherGuardSand, velocity, netId);
                     else
-                        GM.instance.SummonEntityCallback(transform.position, EntityID.ExtremeWeatherGuardSnowball, entity => entity.ServerSetVelocity(velocity));
+                        GM.instance.SummonBullet(transform.position, EntityID.ExtremeWeatherGuardSnowball, velocity, netId);
                 }
 
                 attackTimer = Tools.time + 2f;

@@ -16,28 +16,29 @@ namespace GameCore
         public override bool Use(Vector2 point)
         {
             bool baseUse = base.Use(point);
+            if (baseUse) return baseUse;
 
-            if (baseUse)
-                return baseUse;
+            if (owner is not Player player)
+            {
+                Debug.LogWarning("只有玩家可以使用钓鱼竿");
+                return false;
+            }
 
             if (fishingFloat)
             {
                 //收竿
-                fishingFloat.Death();
-                fishingFloat = null;
-                lineRenderer.startWidth = 0;
-                lineRenderer.endWidth = 0;
-
-                //播放收竿动画
-                if (owner is Player player) player.animWeb.SwitchPlayingTo("slight_rightarm_lift");
+                ReelIn();
             }
             else
             {
+                if (!CheckBait())
+                    return true;
+
                 //计算抛出的速度
                 var velocity = AngleTools.GetAngleVector2(owner.transform.position, point).normalized * 10;
 
                 //播放甩竿动画
-                if (owner is Player player) player.animWeb.SwitchPlayingTo("attack_rightarm", 0);
+                player.animWeb.SwitchPlayingTo("attack_rightarm", 0);
 
                 //生成浮标
                 GM.instance.SummonEntityCallback(owner.transform.position, EntityID.FishingFloat, entity =>
@@ -54,6 +55,60 @@ namespace GameCore
 
             return true;
         }
+
+        void ReelIn()
+        {
+            var player = (Player)owner;
+
+            //设置浮标
+            if (fishingFloat)
+            {
+                //如果在 3 秒内收竿
+                if (TryGetBait(out var bait) && Tools.time < fishingFloat.lastTimeHookedUp + 3)
+                {
+                    player.ServerReduceItemCount(bait.index.ToString(), 1);
+                    GM.instance.SummonDrop(fishingFloat.transform.position, ItemID.Cod);
+                }
+
+                fishingFloat.Death();
+                fishingFloat = null;
+            }
+
+            //隐藏鱼线
+            lineRenderer.startWidth = 0;
+            lineRenderer.endWidth = 0;
+
+            //播放收竿动画
+            player.animWeb.SwitchPlayingTo("slight_rightarm_lift");
+        }
+
+
+
+        bool CheckBait() => !Item.Null(GetBait().item);
+        bool TryGetBait(out (int index, Item item, int allure) bait) => (bait = GetBait()).item != null;
+        (int index, Item item, int allure) GetBait()
+        {
+            //检查物品栏
+            var inventory = owner.GetInventory();
+            if (inventory == null) return (0, null, 0);
+
+            for (int i = 0; i < inventory.slots.Length; i++)
+            {
+                var item = inventory.slots[i];
+
+                if (Item.Null(item))
+                    continue;
+
+                if (item.data.TryGetValueTagToInt("ori:bait", out var bait))
+                {
+                    return (i, item, bait.tagValue);
+                }
+            }
+
+            return (0, null, 0);
+        }
+
+
 
         public override void OnEnter()
         {
@@ -78,6 +133,11 @@ namespace GameCore
 
             if (fishingFloat)
             {
+                //检查鱼饵
+                if (!CheckBait())
+                    ReelIn();
+
+                //更新鱼线
                 UpdateFishline();
             }
         }

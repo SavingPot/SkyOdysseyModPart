@@ -49,6 +49,11 @@ namespace GameCore
 
 
 
+            //保存事件
+            GFiles.SaveAllBlockDataToFiles += WaterCenter.WriteAllCustomDataToSave;
+
+
+
             //绑定场景切换事件
             GScene.AfterChanged += scene =>
             {

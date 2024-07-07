@@ -9,7 +9,7 @@ namespace GameCore
     [EntityBinding(EntityID.FishingFloat)]
     public sealed class FishingFloat : Entity
     {
-        float lastTimeHookedUp;
+        internal float lastTimeHookedUp;
 
         public override void Initialize()
         {
@@ -19,22 +19,18 @@ namespace GameCore
             AddSpriteRenderer("ori:fishing_float");
         }
 
-        public override void OnDeathServer()
-        {
-            base.OnDeathServer();
-
-            //在 3 秒内收竿
-            if (Tools.time < lastTimeHookedUp + 3)
-            {
-                Debug.Log("FishingFloat died");
-                GM.instance.SummonDrop(transform.position, ItemID.Cod);
-            }
-        }
-
         void HookingUp()
         {
             Debug.Log("Hooking up");
             lastTimeHookedUp = Tools.time;
+            rb.AddVelocityY(5);
+        }
+
+        protected override void FixedUpdate()
+        {
+            base.FixedUpdate();
+
+            rb.SetVelocityX(Mathf.Lerp(rb.velocity.x, 0, 1.2f * Time.fixedDeltaTime));
         }
 
         protected override void OnBlockEnter(Block block)
@@ -43,7 +39,26 @@ namespace GameCore
 
             if (block.data.id == BlockID.Water)
             {
-                RandomUpdater.Bind("ori:fishing_float", 50, HookingUp);
+                RandomUpdater.Bind("ori:fishing_float", 30, HookingUp);
+            }
+        }
+
+        protected override void OnBlockStay(Block block)
+        {
+            base.OnBlockStay(block);
+
+            if (block.data.id == BlockID.Water)
+            {
+                bool hasUpperWater = block.chunk.map.TryGetBlock(new(block.pos.x, block.pos.y + 1), block.isBackground, out var upper) &&
+                                     upper.data.id == BlockID.Water;
+
+                //如果到达了水面, 那么不动
+                if (!hasUpperWater && transform.position.y - block.pos.y > 0f)
+                    rb.SetVelocityY(Mathf.Lerp(rb.velocity.y, 0, 0.2f * Time.fixedDeltaTime));
+
+                //上钩五秒内不动
+                if (Tools.time > lastTimeHookedUp + 1f)
+                    rb.AddVelocityY(2.3f);
             }
         }
 

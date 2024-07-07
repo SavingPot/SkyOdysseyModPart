@@ -31,6 +31,7 @@ namespace GameCore
             });
             #endregion
 
+            //Todo: Auto destroy after player being far away from NPC
             tradeUI = new("ori:trader", new TradeUI.ItemTrade[]
             {
                 new(ItemID.BlockGun, 1, 100),

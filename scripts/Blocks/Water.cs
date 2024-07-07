@@ -15,8 +15,8 @@ namespace GameCore
 {
     public static class WaterCenter
     {
+        static readonly List<Action> operationsToExecute = new();
         public static List<Water> waterBlocks = new();
-        public static List<Action> operationsToExecute = new();
         public static float physicsTimer;
         public static float streamSpeed = 0.2f;
 
@@ -28,6 +28,18 @@ namespace GameCore
         public static void Remove(Water water)
         {
             waterBlocks.Remove(water);
+        }
+
+        public static void WriteAllCustomDataToSave()
+        {
+            foreach (var water in waterBlocks)
+            {
+                if (water.customData == null)
+                    continue;
+
+                water.customData["ori:water_filled_level"] = water.filledLevel;
+                water.WriteCustomDataToSave();
+            }
         }
 
         /// <returns>origin 是否流完了</returns>

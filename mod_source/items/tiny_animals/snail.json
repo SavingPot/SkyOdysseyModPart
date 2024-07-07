@@ -2,6 +2,9 @@
     "json_format": "0.5.1",
     "ori:item": {
         "id": "ori:snail",
-        "texture": "ori:snail"
+        "texture": "ori:snail",
+        "tags": [
+            "ori:bait=1"
+        ]
     }
 }

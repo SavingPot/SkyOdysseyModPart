@@ -119,7 +119,7 @@ namespace GameCore
                         velocity.y += 1; //y轴 +1 是为了抬高一点角度
 
                         //TODO: 发射树种
-                        GM.instance.SummonEntityCallback(guard.transform.position, EntityID.FlintArrow, entity => entity.SetVelocity(velocity));
+                        GM.instance.SummonBullet(guard.transform.position, EntityID.FlintArrow, velocity, guard.netId);
                     }
 
                     guard.attackTimer = Tools.time + 1;
