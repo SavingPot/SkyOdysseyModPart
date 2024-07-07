@@ -1285,6 +1285,38 @@
             "path": "/entities/cricket_0.png"
         },
         {
+            "id": "ori:earthworm",
+            "path": "/entities/earthworm_0.png"
+        },
+        {
+            "id": "ori:earthworm_0",
+            "path": "/entities/earthworm_0.png"
+        },
+        {
+            "id": "ori:maggot",
+            "path": "/entities/maggot_0.png"
+        },
+        {
+            "id": "ori:maggot_0",
+            "path": "/entities/maggot_0.png"
+        },
+        {
+            "id": "ori:caterpillar",
+            "path": "/entities/caterpillar_0.png"
+        },
+        {
+            "id": "ori:caterpillar_0",
+            "path": "/entities/caterpillar_0.png"
+        },
+        {
+            "id": "ori:grasshopper",
+            "path": "/entities/grasshopper_0.png"
+        },
+        {
+            "id": "ori:grasshopper_0",
+            "path": "/entities/grasshopper_0.png"
+        },
+        {
             "id": "ori:snail",
             "path": "/entities/snail_0.png"
         },

@@ -1,4 +1,4 @@
-using DG.Tweening;
+using GameCore.Network;
 using SP.Tools.Unity;
 using System.Collections;
 using System.Linq;
@@ -9,6 +9,7 @@ namespace GameCore
     [EntityBinding(EntityID.FishingFloat)]
     public sealed class FishingFloat : Entity
     {
+        internal FishingRodBehaviour rod;
         internal float lastTimeHookedUp;
 
         public override void Initialize()
@@ -24,6 +25,31 @@ namespace GameCore
             Debug.Log("Hooking up");
             lastTimeHookedUp = Tools.time;
             rb.AddVelocityY(5);
+        }
+
+        /// <summary>
+        /// 必须得在服务器端调用，这样才可以获取世界数据
+        /// </summary>
+        [ServerRpc]
+        internal void GetLoot()
+        {
+            //如果在 3 秒内收竿
+            if (rod.TryGetBait(out var bait) && Tools.time < lastTimeHookedUp + 3)
+            {
+                //扣除鱼饵
+                rod.player.ServerReduceItemCount(bait.index.ToString(), 1);
+
+                //获取战利品
+                if (GFiles.world.TryGetRegion(PosConvert.WorldPosToRegionIndex(transform.position), out var region))
+                {
+                    var biome = region.biomeId;
+
+                    GM.instance.SummonDrop(transform.position, ItemID.Cod);
+                }
+
+                //清除浮标
+                Death();
+            }
         }
 
         protected override void FixedUpdate()

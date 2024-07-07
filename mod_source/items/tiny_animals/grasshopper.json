@@ -1,0 +1,10 @@
+{
+    "json_format": "0.5.1",
+    "ori:item": {
+        "id": "ori:grasshopper",
+        "texture": "ori:grasshopper",
+        "tags": [
+            "ori:bait=1"
+        ]
+    }
+}

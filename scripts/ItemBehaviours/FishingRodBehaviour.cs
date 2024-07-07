@@ -1,7 +1,3 @@
-using GameCore.High;
-using Newtonsoft.Json.Linq;
-using SP.Tools;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameCore
@@ -11,6 +7,7 @@ namespace GameCore
     {
         FishingFloat fishingFloat;
         LineRenderer lineRenderer;
+        internal Player player;
         const int lineSampleCount = 20;
 
         public override bool Use(Vector2 point)
@@ -18,7 +15,7 @@ namespace GameCore
             bool baseUse = base.Use(point);
             if (baseUse) return baseUse;
 
-            if (owner is not Player player)
+            if (owner is not Player)
             {
                 Debug.LogWarning("只有玩家可以使用钓鱼竿");
                 return false;
@@ -46,6 +43,7 @@ namespace GameCore
                     //设置浮标的速度
                     fishingFloat = (FishingFloat)entity;
                     fishingFloat.ServerSetVelocity(velocity);
+                    fishingFloat.rod = this;
 
                     //显示鱼线
                     lineRenderer.startWidth = 0.1f;
@@ -58,19 +56,11 @@ namespace GameCore
 
         void ReelIn()
         {
-            var player = (Player)owner;
-
             //设置浮标
             if (fishingFloat)
             {
-                //如果在 3 秒内收竿
-                if (TryGetBait(out var bait) && Tools.time < fishingFloat.lastTimeHookedUp + 3)
-                {
-                    player.ServerReduceItemCount(bait.index.ToString(), 1);
-                    GM.instance.SummonDrop(fishingFloat.transform.position, ItemID.Cod);
-                }
-
-                fishingFloat.Death();
+                //给予战利品
+                fishingFloat.GetLoot();
                 fishingFloat = null;
             }
 
@@ -84,9 +74,9 @@ namespace GameCore
 
 
 
-        bool CheckBait() => !Item.Null(GetBait().item);
-        bool TryGetBait(out (int index, Item item, int allure) bait) => (bait = GetBait()).item != null;
-        (int index, Item item, int allure) GetBait()
+        public bool CheckBait() => !Item.Null(GetBait().item);
+        public bool TryGetBait(out (int index, Item item, int allure) bait) => (bait = GetBait()).item != null;
+        public (int index, Item item, int allure) GetBait()
         {
             //检查物品栏
             var inventory = owner.GetInventory();
@@ -169,7 +159,7 @@ namespace GameCore
 
         public FishingRodBehaviour(IInventoryOwner owner, Item data, string inventoryIndex) : base(owner, data, inventoryIndex)
         {
-
+            player = owner as Player;
         }
     }
 }
