@@ -1,4 +1,5 @@
 using GameCore.Network;
+using Mirror;
 using SP.Tools.Unity;
 using System.Collections;
 using System.Linq;
@@ -31,10 +32,10 @@ namespace GameCore
         /// 必须得在服务器端调用，这样才可以获取世界数据
         /// </summary>
         [ServerRpc]
-        internal void GetLoot()
+        internal void GetLoot(NetworkConnection caller = null)
         {
             //如果在 3 秒内收竿
-            if (rod.TryGetBait(out var bait) && Tools.time < lastTimeHookedUp + 3)
+            if (rod.TryGetBait(out var bait))
             {
                 //扣除鱼饵
                 rod.player.ServerReduceItemCount(bait.index.ToString(), 1);
@@ -46,9 +47,6 @@ namespace GameCore
 
                     GM.instance.SummonDrop(transform.position, ItemID.Cod);
                 }
-
-                //清除浮标
-                Death();
             }
         }
 

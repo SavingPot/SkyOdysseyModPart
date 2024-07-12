@@ -60,7 +60,13 @@ namespace GameCore
             if (fishingFloat)
             {
                 //给予战利品
-                fishingFloat.GetLoot();
+                if (Tools.time < fishingFloat.lastTimeHookedUp + 3)
+                {
+                    fishingFloat.GetLoot();
+                }
+
+                //清除浮标
+                fishingFloat.Death();
                 fishingFloat = null;
             }
 

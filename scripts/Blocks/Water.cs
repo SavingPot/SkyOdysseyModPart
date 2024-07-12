@@ -94,6 +94,39 @@ namespace GameCore
             return origin.filledLevel <= 0;
         }
 
+        /// <returns>origin 是否流完了</returns>
+        public static bool StreamIntoBlock(Water origin, Vector2Int target)
+        {
+            var jo = new JObject();
+            jo.AddProperty("ori:water_filled_level", 1);
+
+            Interlocked.Decrement(ref origin.filledLevel);
+
+            operationsToExecute.Add(() =>
+            {
+                //摧毁原来的方块
+                if (Map.instance.TryGetBlock(target, origin.isBackground, out Block block))
+                {
+                    block.Destroy();
+                }
+                //放水
+                Map.instance.SetBlockNet(target, origin.isBackground, BlockID.Water, jo.ToString());
+
+                if (origin.filledLevel <= 0)
+                {
+                    //如果流尽了就删除
+                    origin.RemoveFromMap();
+                }
+                else
+                {
+                    //如果没流尽就更新
+                    origin.OnUpdate();
+                }
+            });
+
+            return origin.filledLevel <= 0;
+        }
+
         //TODO: 水物理十分耗时
         public static void WaterPhysics()
         {
@@ -125,6 +158,11 @@ namespace GameCore
                 if (StreamIntoAir(water, water.posTempDown))
                     return;
             }
+            else if (downBlock.data.HasTag("ori:plant"))
+            {
+                if (StreamIntoBlock(water, water.posTempDown))
+                    return;
+            }
             else
             {
                 if (downBlock is Water downWater && downWater.filledLevel < 8)
@@ -143,6 +181,11 @@ namespace GameCore
                         if (StreamIntoAir(water, water.posTempLeft))
                             return;
                     }
+                    else if (leftBlock != null && leftBlock.data.HasTag("ori:plant") && water.filledLevel > 0)
+                    {
+                        if (StreamIntoBlock(water, water.posTempLeft))
+                            return;
+                    }
                     else if (leftBlock is Water leftWater && water.filledLevel > leftWater.filledLevel)
                     {
                         if (StreamIntoWater(water, leftWater))
@@ -153,6 +196,11 @@ namespace GameCore
                     if (rightBlock == null && water.filledLevel > 0)
                     {
                         if (StreamIntoAir(water, water.posTempRight))
+                            return;
+                    }
+                    else if (rightBlock != null && rightBlock.data.HasTag("ori:plant") && water.filledLevel > 0)
+                    {
+                        if (StreamIntoBlock(water, water.posTempRight))
                             return;
                     }
                     else if (rightBlock is Water rightWater && water.filledLevel > rightWater.filledLevel)
