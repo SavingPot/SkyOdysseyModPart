@@ -17,6 +17,8 @@ namespace GameCore
         {
             base.Initialize();
 
+            isHurtable = false;
+
             //添加贴图
             AddSpriteRenderer("ori:fishing_float");
         }
