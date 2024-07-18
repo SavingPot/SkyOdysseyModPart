@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.FishingFloat)]
+    [EntityBinding(EntityID.FishingFloat), NotSummonable]
     public sealed class FishingFloat : Entity
     {
         internal FishingRodBehaviour rod;

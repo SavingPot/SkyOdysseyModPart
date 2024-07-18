@@ -150,7 +150,7 @@ namespace GameCore
             var yLength = dest.y - origin.y;
 
             //采样
-            Vector3[] samples = new Vector3[lineSampleCount];
+            var samples = new Vector3[lineSampleCount];
             samples[0] = origin;
             samples[^1] = dest;
             for (int i = 1; i < lineSampleCount - 1; i++)

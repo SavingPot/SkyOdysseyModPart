@@ -184,7 +184,7 @@ namespace GameCore
             //TODO: 需要确保NPC和房屋没有在查看时因为其它玩家失效
             //设置房屋名
             housingInfoNameText.SetText(name);
-            housingInfoCollectRentButton.SetText(tenantName.IsNullOrWhiteSpace() ? "收租：无租客" : $"向 {GameUI.CompareText(tenantName).text} 收租：{GetRentAmount(tenantName)}");
+            housingInfoCollectRentButton.SetText(tenantName.IsNullOrWhiteSpace() ? "收租：无租客" : $"向 {GameUI.CompareText(tenantName)} 收租：{GetRentAmount(tenantName)}");
 
             //回收 NPC 列表
             foreach (var item in housingRentalNPCScrollView.content.GetComponentsInChildren<ButtonIdentity>())
@@ -194,7 +194,7 @@ namespace GameCore
             foreach (var npc in NPCCenter.all)
             {
                 var button = housingRentalNPCScrollViewPool.Get();
-                button.SetText($"{GameUI.CompareText(npc.data.id).text}");
+                button.SetText($"{GameUI.CompareText(npc.data.id)}");
                 button.SetOnClickBind(() =>
                 {
                     doorplate.SetTenantName(npc.data.id);

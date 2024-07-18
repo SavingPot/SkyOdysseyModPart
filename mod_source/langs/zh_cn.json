@@ -1463,6 +1463,10 @@
             {
                 "id": "ori:button.building_center.housing_info_to_rental.text",
                 "text": "返回"
+            },
+            {
+                "id": "ori:toggle.create_new_world_world_mode.text",
+                "text": "短期模式"
             }
         ]
     }
