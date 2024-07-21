@@ -71,10 +71,8 @@ namespace GameCore
             }
         }
 
-        public override void PlayerInteraction(Player player)
+        public override bool PlayerInteraction(Player player)
         {
-            base.PlayerInteraction(player);
-
             switch (progress)
             {
                 case NickProgress.FirstMeet:
@@ -151,6 +149,8 @@ namespace GameCore
                         new DialogData.DialogDatum(GameUI.CompareText(GM.instance.weather.id == WeatherID.Rain ? "ori:dialog.nick.hello.rain" : "ori:dialog.nick.hello.normal").Replace("{name}", player.playerName), "ori:nick_head")));
                     break;
             }
+
+            return true;
         }
 
         public void FirstMeetDialog(Player caller)

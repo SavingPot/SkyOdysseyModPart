@@ -19,14 +19,14 @@ namespace GameCore
             AddSpriteRenderer(Texture());
         }
 
-        public virtual void PlayerInteraction(Player caller)
+        public virtual bool PlayerInteraction(Player caller)
         {
             //获取物品并检查
             var itemData = ModFactory.CompareItem(data.id);
             if (itemData == null)
             {
                 Debug.LogError("Item not found");
-                return;
+                return false;
             }
 
             //给予玩家物品
@@ -34,6 +34,8 @@ namespace GameCore
 
             //死亡
             Death();
+
+            return true;
         }
 
         protected override void Update()

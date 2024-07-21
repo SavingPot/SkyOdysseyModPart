@@ -38,11 +38,10 @@ namespace GameCore
             });
         }
 
-        public override void PlayerInteraction(Player player)
+        public override bool PlayerInteraction(Player player)
         {
-            base.PlayerInteraction(player);
-
             player.pui.ShowOrHideBackpackAndSetPanelTo(tradeUI.backpackPanelId);
+            return true;
         }
     }
 }
