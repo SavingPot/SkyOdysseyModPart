@@ -773,12 +773,12 @@
                 "text": "Switched to item {item_id}"
             },
             {
-                "id": "ori:button.reborn.text",
-                "text": "Reborn"
+                "id": "ori:button.respawn.text",
+                "text": "Respawn"
             },
             {
-                "id": "ori:text.reborn_info",
-                "text": "You will return to region zero after you reborn, you can wait for other players to save you"
+                "id": "ori:text.respawn_info",
+                "text": "You will return to region zero after you respawn, you can wait for other players to save you"
             },
             {
                 "id": "ori:text.wait_joining_the_server",

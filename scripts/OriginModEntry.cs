@@ -54,6 +54,32 @@ namespace GameCore
 
 
 
+            //添加物品信息修改器
+            Item.infoModifiersForId.Add(ItemID.ManaStone, item =>
+            {
+                var spellId = ISpellContainer.GetSpellIdFromJObject(item.customData);
+
+                if (spellId == null)
+                    return $"魔咒: 空";
+                else
+                    return $"魔咒: {spellId}";
+            });
+            Item.infoModifiersForId.Add(ItemID.SpellManuscript, item =>
+            {
+                var spellId = ISpellContainer.GetSpellIdFromJObject(item.customData);
+
+                if (spellId == null)
+                    return $"魔咒: 空";
+                else
+                    return $"魔咒: {spellId}";
+            });
+            Item.infoModifiersForTag.Add("ori:edible", item =>
+            {
+                return $"回血: {item.data.Edible().tagValue}";
+            });
+
+
+
             //绑定场景切换事件
             GScene.AfterChanged += scene =>
             {

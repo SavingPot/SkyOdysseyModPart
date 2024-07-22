@@ -1016,10 +1016,6 @@
             "path": "/gui/loading_bar_2.png"
         },
         {
-            "id": "ori:hunger_bar",
-            "path": "/gui/hunger_bar.png"
-        },
-        {
             "id": "ori:mana_bar",
             "path": "/gui/mana_bar.png"
         },

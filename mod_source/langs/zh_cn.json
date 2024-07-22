@@ -865,11 +865,11 @@
                 "text": "切换到了物品 {item_id}"
             },
             {
-                "id": "ori:button.reborn.text",
+                "id": "ori:button.respawn.text",
                 "text": "重生"
             },
             {
-                "id": "ori:text.reborn_info",
+                "id": "ori:text.respawn_info",
                 "text": "重生后会回到初始区域, 因此可以等待其他玩家来救"
             },
             {

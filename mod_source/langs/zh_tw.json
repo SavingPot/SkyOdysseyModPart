@@ -773,11 +773,11 @@
                 "text": "切換到了物品 {item_id}"
             },
             {
-                "id": "ori:button.reborn.text",
+                "id": "ori:button.respawn.text",
                 "text": "重生"
             },
             {
-                "id": "ori:text.reborn_info",
+                "id": "ori:text.respawn_info",
                 "text": "重生後會回到初始沙箱，囙此可以等待其他玩家來救"
             },
             {

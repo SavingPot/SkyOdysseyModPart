@@ -10,17 +10,6 @@ namespace GameCore
         public Spell spell { get; set; }
         public SpellBehaviour spellBehaviour { get; set; }
 
-        public override void ModifyInfo(ItemInfoShower ui)
-        {
-            base.ModifyInfo(ui);
-
-            //TODO: Compare text
-            if (spell == null)
-                ui.detailText.text.text += $"魔咒: 空";
-            else
-                ui.detailText.text.text += $"魔咒: {spell.id}";
-        }
-
         public override bool Use(Vector2 point)
         {
             //TODO: this only offers player logic
