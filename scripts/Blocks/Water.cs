@@ -55,7 +55,7 @@ namespace GameCore
                 if (origin.filledLevel <= 0)
                 {
                     //如果流尽了就删除
-                    origin.RemoveFromMap();
+                    origin.RemoveSelf();
                 }
                 else
                 {
@@ -82,7 +82,7 @@ namespace GameCore
                 if (origin.filledLevel <= 0)
                 {
                     //如果流尽了就删除
-                    origin.RemoveFromMap();
+                    origin.RemoveSelf();
                 }
                 else
                 {
@@ -107,15 +107,16 @@ namespace GameCore
                 //摧毁原来的方块
                 if (Map.instance.TryGetBlock(target, origin.isBackground, out Block block))
                 {
-                    block.Destroy();
+                    block.DestroySelf();
                 }
+
                 //放水
                 Map.instance.SetBlockNet(target, origin.isBackground, BlockID.Water, jo.ToString());
 
                 if (origin.filledLevel <= 0)
                 {
                     //如果流尽了就删除
-                    origin.RemoveFromMap();
+                    origin.RemoveSelf();
                 }
                 else
                 {

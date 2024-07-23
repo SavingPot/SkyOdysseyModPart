@@ -204,7 +204,7 @@ namespace GameCore
 
             if (!chunk.map.TryGetBlock(new(pos.x, pos.y - 1), isBackground, out var underBlock))
             {
-                Destroy();
+                DestroySelf();
                 return;
             }
             else

@@ -1,0 +1,14 @@
+{
+    "json_format": "0.6.0",
+    "ori:block": {
+        "id": "ori:battle_cube",
+        "display": {
+            "texture_id": "ori:battle_cube"
+        },
+        "property": {
+            "hardness": -1,
+            "collidible": false,
+            "behaviour": "GameCore.BattleCube"
+        }
+    }
+}

@@ -1076,6 +1076,10 @@
             "path": "/blocks/grass.png"
         },
         {
+            "id": "ori:battle_cube",
+            "path": "/blocks/battle_cube.png"
+        },
+        {
             "id": "ori:cactus",
             "path": "/blocks/cactus.png"
         },

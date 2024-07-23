@@ -49,7 +49,7 @@ namespace GameCore
                 //如果也是木头，就销毁
                 if (upperBlock != null && upperBlock.data.id == data.id)
                 {
-                    upperBlock.Destroy();
+                    upperBlock.DestroySelf();
                 }
             }
 

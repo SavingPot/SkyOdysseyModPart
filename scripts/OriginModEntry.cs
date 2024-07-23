@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using SP.Tools.Unity;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace GameCore
 {
@@ -143,6 +144,13 @@ namespace GameCore
                     result++;
 
             return result;
+        }
+
+        public override void OnAllModsLoaded()
+        {
+            base.OnAllModsLoaded();
+
+            BattleCube.Init();
         }
     }
 }

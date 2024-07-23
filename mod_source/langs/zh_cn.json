@@ -933,6 +933,10 @@
                 "text": "砾石方块"
             },
             {
+                "id": "ori:battle_cube",
+                "text": "战斗方碑"
+            },
+            {
                 "id": "ori:fried_snow",
                 "text": "炸雪"
             },
