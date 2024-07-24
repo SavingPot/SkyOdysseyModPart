@@ -18,6 +18,7 @@
             "gravity": 7
         },
         "max_health": 80,
+        "coin_count": 10,
         "search_radius": 25
     }
 }

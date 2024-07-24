@@ -26,6 +26,7 @@
         },
         "max_health": 200,
         "search_radius": 25,
+        "coin_count": 12,
         "normal_attack_radius": 3
     }
 }

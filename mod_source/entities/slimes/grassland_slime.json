@@ -26,6 +26,7 @@
         },
         "max_health": 40,
         "normal_attack_radius": 1,
+        "coin_count": 5,
         "normal_attack_damage": 10
     }
 }
