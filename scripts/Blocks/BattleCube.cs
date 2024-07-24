@@ -35,6 +35,7 @@ namespace GameCore
         public override bool PlayerInteraction(Player player)
         {
             //检查是否激活过了
+            //TODO: 退出游戏之后就重置了，得解决
             if (entitiesSummoned != null)
                 return false;
 

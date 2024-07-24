@@ -1695,38 +1695,18 @@
             "pixel_unit": 8
         },
         {
-            "id": "ori:bamboo_grove_slime.idle",
-            "path": "/entities/enemies/slimes/bamboo_grove/idle.png",
+            "id": "ori:dirt_slime.idle",
+            "path": "/entities/enemies/slimes/dirt.png",
             "pixel_unit": 16
         },
         {
-            "id": "ori:desert_slime.idle",
-            "path": "/entities/enemies/slimes/desert/idle.png",
+            "id": "ori:grass_slime.idle",
+            "path": "/entities/enemies/slimes/grass.png",
             "pixel_unit": 16
         },
         {
-            "id": "ori:grassland_slime.idle",
-            "path": "/entities/enemies/slimes/grassland/idle.png",
-            "pixel_unit": 16
-        },
-        {
-            "id": "ori:oak_forest_slime.idle",
-            "path": "/entities/enemies/slimes/oak_forest/idle.png",
-            "pixel_unit": 16
-        },
-        {
-            "id": "ori:rain_forest_slime.idle",
-            "path": "/entities/enemies/slimes/rain_forest/idle.png",
-            "pixel_unit": 16
-        },
-        {
-            "id": "ori:savannah_grassland_slime.idle",
-            "path": "/entities/enemies/slimes/savannah_grassland/idle.png",
-            "pixel_unit": 16
-        },
-        {
-            "id": "ori:snowfield_slime.idle",
-            "path": "/entities/enemies/slimes/snowfield/idle.png",
+            "id": "ori:ice_slime.idle",
+            "path": "/entities/enemies/slimes/ice.png",
             "pixel_unit": 16
         }
     ]
