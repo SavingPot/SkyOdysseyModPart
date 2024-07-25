@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    public class Slime : Enemy, IEnemyJumpToTarget
+    public abstract class Slime : Enemy, IEnemyJumpToTarget
     {
         public string Texture;
 

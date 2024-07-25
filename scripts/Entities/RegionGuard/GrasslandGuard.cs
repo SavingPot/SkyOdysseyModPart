@@ -2,6 +2,7 @@ using System;
 using Newtonsoft.Json.Linq;
 using SP.Tools.Unity;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace GameCore
 {
@@ -88,7 +89,7 @@ namespace GameCore
                 float xDelta = Mathf.PerlinNoise1D(Time.time * 0.5f) - 0.5f; //from -0.5 to 0.5
                 float yDelta = Mathf.PerlinNoise1D((Time.time + 10) * 0.5f) - 0.5f;
                 Vector3 delta = new(xDelta * motionDiameter, yDelta * motionDiameter);
-                guard.gameObject.transform.position = Vector3.Lerp(guard.transform.position, guard.originPosition + delta, Tools.deltaTime * 10f);
+                guard.transform.position = Vector3.Lerp(guard.transform.position, guard.originPosition + delta, Tools.deltaTime * 10f);
 
 
                 /* ----------------------------------- 休息 ----------------------------------- */

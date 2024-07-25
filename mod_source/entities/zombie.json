@@ -20,6 +20,8 @@
         "max_health": 120,
         "search_radius": 35,
         "coin_count": 10,
-        "normal_attack_damage": 15
+        "normal_attack": {
+            "damage": 15
+        }
     }
 }

@@ -24,8 +24,10 @@
             "gravity": 6
         },
         "max_health": 40,
-        "normal_attack_radius": 1,
         "coin_count": 5,
-        "normal_attack_damage": 10
+        "normal_attack": {
+            "radius": 1,
+            "damage": 10
+        }
     }
 }

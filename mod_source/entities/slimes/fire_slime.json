@@ -1,7 +1,7 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:ice_slime",
+        "id": "ori:fire_slime",
         "summon": {
             "default_probability": 80,
             "time_earliest": 3,
@@ -27,7 +27,7 @@
         "coin_count": 5,
         "normal_attack": {
             "radius": 1,
-            "damage": 12
+            "damage": 10
         }
     }
 }

@@ -1700,6 +1700,11 @@
             "pixel_unit": 16
         },
         {
+            "id": "ori:fire_slime.idle",
+            "path": "/entities/enemies/slimes/fire.png",
+            "pixel_unit": 16
+        },
+        {
             "id": "ori:grass_slime.idle",
             "path": "/entities/enemies/slimes/grass.png",
             "pixel_unit": 16

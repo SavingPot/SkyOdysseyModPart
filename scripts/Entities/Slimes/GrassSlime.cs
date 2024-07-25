@@ -8,14 +8,14 @@ using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.SnowfieldSlime)]
-    public class SnowfieldSlime : Slime
+    [EntityBinding(EntityID.GrassSlime)]
+    public class GrassSlime : Slime
     {
         protected override void Awake()
         {
             base.Awake();
 
-            Texture = "ori:snowfield_slime.idle";
+            Texture = "ori:grass_slime.idle";
         }
     }
 }
