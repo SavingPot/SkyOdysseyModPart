@@ -1265,6 +1265,10 @@
             "pixel_unit": 6
         },
         {
+            "id": "ori:enemy_exclamation_mark",
+            "path": "/entities/enemy_exclamation_mark.png"
+        },
+        {
             "id": "ori:fishing_float",
             "path": "/entities/fishing_float.png"
         },

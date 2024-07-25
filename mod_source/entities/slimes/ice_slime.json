@@ -27,7 +27,9 @@
         "coin_count": 5,
         "normal_attack": {
             "radius": 1,
-            "damage": 12
+            "damage": 12,
+            "warning_time": 0.15,
+            "dodge_time": 0.15
         }
     }
 }
