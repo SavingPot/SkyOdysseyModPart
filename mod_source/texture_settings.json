@@ -1277,6 +1277,10 @@
             "path": "/entities/enemy_exclamation_mark.png"
         },
         {
+            "id": "ori:enemy_lock_on_mark",
+            "path": "/entities/enemy_lock_on_mark.png"
+        },
+        {
             "id": "ori:fishing_float",
             "path": "/entities/fishing_float.png"
         },
