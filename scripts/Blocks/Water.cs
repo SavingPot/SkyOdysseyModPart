@@ -260,6 +260,10 @@ namespace GameCore
 
         public override void OnEntityStay(Entity entity)
         {
+            //灭火（服务器权威）
+            if (Server.isServer && entity.GetTemperatureEffectState() == Entity.TemperatureEffectState.OnFire)
+                entity.ServerClearTemperatureEffect();
+
             if (entity.rb && entity.rb.velocity.y != 0)
             {
                 if (entity.rb.velocity.y < -entityFallingSpeed)

@@ -99,6 +99,30 @@
             "path": "/blocks/walk_through_grass_2.ogg"
         },
         {
+            "id": "ori:parry",
+            "path": "/parry.ogg"
+        },
+        {
+            "id": "ori:parry_succeed",
+            "path": "/parry_succeed.ogg"
+        },
+        {
+            "id": "ori:shield_block_0",
+            "path": "/shield_block_0.ogg"
+        },
+        {
+            "id": "ori:shield_block_1",
+            "path": "/shield_block_1.ogg"
+        },
+        {
+            "id": "ori:shield_block_2",
+            "path": "/shield_block_2.ogg"
+        },
+        {
+            "id": "ori:shield_block_3",
+            "path": "/shield_block_3.ogg"
+        },
+        {
             "id": "ori:trade",
             "path": "/trade.ogg"
         },
