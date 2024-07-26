@@ -141,6 +141,14 @@
                 "text": "解锁钓竿配方"
             },
             {
+                "id": "ori:button.skill_tree.node.ori:magic.text",
+                "text": "魔法"
+            },
+            {
+                "id": "ori:skill_description.magic",
+                "text": "解锁魔能祭坛配方\n解锁群系结晶配方"
+            },
+            {
                 "id": "ori:button.task_tree.node.ori:get_dirt.text",
                 "text": "获得泥土"
             },
@@ -247,6 +255,10 @@
             {
                 "id": "ori:button.task_tree.node.ori:get_bark_vest.text",
                 "text": "获得树皮背心"
+            },
+            {
+                "id": "ori:description.bark_shield",
+                "text": "非常轻质的一个盾牌, 可以快速格挡攻击"
             },
             {
                 "id": "ori:description.fishing_rod",
@@ -607,6 +619,10 @@
             {
                 "id": "ori:cod",
                 "text": "鳕鱼"
+            },
+            {
+                "id": "ori:bark_shield",
+                "text": "树皮盾"
             },
             {
                 "id": "ori:fishing_rod",

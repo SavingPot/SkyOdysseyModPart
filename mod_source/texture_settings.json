@@ -26,6 +26,10 @@
             "path": "/gui/skills/agriculture.fishing.png"
         },
         {
+            "id": "ori:skill.magic",
+            "path": "/gui/skills/magic.png"
+        },
+        {
             "id": "ori:task.get_dirt",
             "path": "/gui/tasks/get_dirt.png"
         },
@@ -241,6 +245,10 @@
         {
             "id": "ori:frying_pan_filled",
             "path": "/blocks/frying_pan_filled.png"
+        },
+        {
+            "id": "ori:bark_shield",
+            "path": "/items/shields/bark_shield.png"
         },
         {
             "id": "ori:slime_gel",

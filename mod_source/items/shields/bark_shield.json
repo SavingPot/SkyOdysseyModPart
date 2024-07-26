@@ -1,0 +1,14 @@
+{
+    "json_format": "0.5.1",
+    "ori:item": {
+        "id": "ori:bark_shield",
+        "texture": "ori:bark_shield",
+        "tags": [
+            "ori:shield"
+        ],
+        "description": "ori:description.bark_shield",
+        "shield": {
+            "parry_cd": 0.45
+        }
+    }
+}

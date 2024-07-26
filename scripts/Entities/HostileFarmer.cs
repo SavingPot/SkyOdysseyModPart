@@ -14,6 +14,7 @@ namespace GameCore
     public class HostileFarmer : Enemy, IInventoryOwner, IEnemyWalkToTarget
     {
         public Inventory inventory;
+        public SpriteRenderer usingShieldRenderer { get; set; }
         public SpriteRenderer usingItemRenderer { get; set; }
         public BoxCollider2D usingItemCollider { get; set; }
         public InventoryItemRendererCollision usingItemCollisionComponent { get; set; }
@@ -45,7 +46,7 @@ namespace GameCore
                 leftFoot = AddBodyPart("leftFoot", ModFactory.CompareTexture("ori:hostile_farmer_left_foot").sprite, Vector2.zero, 1, leftLeg, BodyPartType.LeftFoot);
 
                 //添加手持物品的显示
-                EntityInventoryOwnerBehaviour.CreateUsingItemRenderer(this, rightArm.transform, 9);
+                EntityInventoryOwnerBehaviour.CreateItemRenderers(this, leftArm.transform, rightArm.transform, 9, 9);
             });
 
             BindHumanAnimations(this);
@@ -57,6 +58,12 @@ namespace GameCore
 
             EntityInventoryOwnerBehaviour.LoadInventoryFromCustomData(this);
             EntityInventoryOwnerBehaviour.RefreshInventory(this);
+        }
+
+        public void ModifyUsingShieldRendererTransform()
+        {
+            usingShieldRenderer.transform.localPosition = new(0.04f, -0.7f);
+            usingShieldRenderer.transform.localScale = new(0.5f, 0.5f);
         }
 
         public void ModifyUsingItemRendererTransform(Vector2 localPosition, Vector2 localScale, int localRotation)
