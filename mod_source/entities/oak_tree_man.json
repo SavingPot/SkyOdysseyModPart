@@ -24,11 +24,11 @@
             },
             "gravity": 12
         },
-        "max_health": 200,
+        "max_health": 300,
         "search_radius": 25,
         "coin_count": 12,
         "normal_attack": {
-            "radius": 3
+            "radius": 4
         }
     }
 }

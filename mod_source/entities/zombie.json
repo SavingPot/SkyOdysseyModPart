@@ -17,7 +17,7 @@
             },
             "gravity": 5
         },
-        "max_health": 120,
+        "max_health": 180,
         "search_radius": 35,
         "coin_count": 10,
         "normal_attack": {
