@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 namespace GameCore
@@ -25,10 +26,12 @@ namespace GameCore
 
             AddSpriteRenderer("ori:spark");
 
-            light = gameObject.AddComponent<Light2D>();
+            //创建子物体
+            light = Instantiate(GInit.instance.GetLightPrefab());
+            light.gameObject.name = "ori:spark_light";
             light.color = new(1, 0.5f, 0.5f, 1);
-            light.pointLightOuterRadius = 3f;
-            light.intensity = 0.4f;
+            light.pointLightOuterRadius = 2f;
+            light.intensity = 0.3f;
         }
 
         protected override void Update()
@@ -37,6 +40,8 @@ namespace GameCore
 
             SetScaleByTime();
             LookAtDirection();
+
+            light.transform.position = transform.position;
         }
 
         void SetScaleByTime()
@@ -61,6 +66,13 @@ namespace GameCore
             base.Show();
 
             light.enabled = true;
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            Destroy(light.gameObject);
         }
     }
 }

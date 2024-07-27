@@ -1373,6 +1373,18 @@
                 "text": "返回"
             },
             {
+                "id": "ori:button.settings.performance.text",
+                "text": "性能"
+            },
+            {
+                "id": "ori:toggle.settings.performance.autoHideChunks.text",
+                "text": "自动隐藏区块"
+            },
+            {
+                "id": "ori:button.settings.performance.back.text",
+                "text": "返回"
+            },
+            {
                 "id": "ori:button.settings.sound.text",
                 "text": "声音"
             },
