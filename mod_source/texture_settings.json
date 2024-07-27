@@ -1088,6 +1088,10 @@
             "path": "/blocks/battle_cube.png"
         },
         {
+            "id": "ori:battle_cube_enabled",
+            "path": "/blocks/battle_cube_enabled.png"
+        },
+        {
             "id": "ori:cactus",
             "path": "/blocks/cactus.png"
         },

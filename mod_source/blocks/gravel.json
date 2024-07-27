@@ -12,7 +12,7 @@
     },
     "ori:item": {
         "texture": "ori:gravel_item",
-        "damage": 13,
+        "damage": 8,
         "description": "ori:description.gravel"
     }
 }

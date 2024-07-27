@@ -2,7 +2,7 @@
     "json_format": "0.7.8",
     "ori:item": {
         "id": "ori:flint_knife",
-        "damage": 16,
+        "damage": 14,
         "excavation_strength": 70,
         "tags": [
             "ori:knife"

@@ -20,6 +20,10 @@
         "max_health": 80,
         "coin_count": 10,
         "search_radius": 25,
-        "normal_attack": {}
+        "normal_attack": {
+            "radius": 2,
+            "warning_time": 0.25,
+            "dodge_time": 0.15
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace GameCore
             attackAnimations = new[] { "attack" };
             animWeb = new();
 
-            /* ----------------------------------- 战立 ----------------------------------- */
+            /* ----------------------------------- 站立 ----------------------------------- */
             animWeb.AddAnim("idle", -1, new AnimFragment[] {
                 new SpriteAnimFragment(
                     value => { if (sr) sr.sprite = value; return sr; },
@@ -67,7 +67,7 @@ namespace GameCore
             });
 
             /* ----------------------------------- 攻击 ----------------------------------- */
-            animWeb.AddAnim("attack", -1, new AnimFragment[] {
+            animWeb.AddAnim("attack", 1, new AnimFragment[] {
                 new SpriteAnimFragment(
                     value => { if (sr) sr.sprite = value; return sr; },
                     new[]
@@ -81,6 +81,8 @@ namespace GameCore
                     Ease.Linear
                 )
             });
+
+            animWeb.CreateConnectionFromTo("attack", "idle", () => true, 0.4f);
         }
 
         public override Vector2 GetMovementDirection()

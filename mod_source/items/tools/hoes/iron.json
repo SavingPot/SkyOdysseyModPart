@@ -2,7 +2,7 @@
     "json_format": "0.7.8",
     "ori:item": {
         "id": "ori:iron_hoe",
-        "damage": 20,
+        "damage": 15,
         "excavation_strength": 75,
         "tags": [
             "ori:hoe"

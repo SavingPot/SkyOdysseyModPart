@@ -3,7 +3,7 @@
     "ori:item": {
         "id": "ori:wooden_saw",
         "texture": "ori:wooden_saw",
-        "damage": 15,
+        "damage": 8,
         "excavation_strength": 45,
         "tags": [
             "ori:saw"

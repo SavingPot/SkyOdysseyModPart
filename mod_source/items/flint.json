@@ -3,7 +3,7 @@
     "ori:item": {
         "id": "ori:flint",
         "texture": "ori:flint",
-        "damage": 10,
+        "damage": 8,
         "description": "ori:description.flint"
     }
 }

@@ -3,7 +3,8 @@
     "ori:block": {
         "id": "ori:battle_cube",
         "display": {
-            "texture_id": "ori:battle_cube"
+            "texture_id": "ori:battle_cube",
+            "light_level": 3
         },
         "property": {
             "hardness": -1,

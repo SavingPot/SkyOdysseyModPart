@@ -12,7 +12,7 @@ namespace GameCore
         {
             base.Initialize();
 
-            damage = 10;
+            damage = 9;
             AddSpriteRenderer("ori:flint_arrow");
         }
     }

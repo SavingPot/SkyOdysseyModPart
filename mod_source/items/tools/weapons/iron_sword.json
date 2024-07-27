@@ -2,7 +2,7 @@
     "json_format": "0.7.8",
     "ori:item": {
         "id": "ori:iron_sword",
-        "damage": 32,
+        "damage": 25,
         "excavation_strength": 90,
         "tags": [
             "ori:sword"

@@ -32,6 +32,8 @@ namespace GameCore
             entitiesSpawnable = entitiesSpawnableTemp.ToArray();
         }
 
+
+
         public override bool PlayerInteraction(Player player)
         {
             //检查是否激活过了
@@ -53,6 +55,9 @@ namespace GameCore
                     entitiesSummoned[index] = entity;
                 });
             }
+
+            //更改视觉效果
+            sr.sprite = ModFactory.CompareTexture("ori:battle_cube_enabled").sprite;
 
             return true;
         }
