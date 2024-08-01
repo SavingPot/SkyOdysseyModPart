@@ -78,6 +78,7 @@ namespace GameCore
                 bool hasUpperWater = block.chunk.map.TryGetBlock(new(block.pos.x, block.pos.y + 1), block.isBackground, out var upper) &&
                                      upper.data.id == BlockID.Water;
 
+                //TODO: 修复沉底问题（直接用position，不用velocity）
                 //如果到达了水面, 那么不动
                 if (!hasUpperWater && transform.position.y - block.pos.y > 0f)
                     rb.SetVelocityY(Mathf.Lerp(rb.velocity.y, 0, 0.2f * Time.fixedDeltaTime));

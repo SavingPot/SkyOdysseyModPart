@@ -10,6 +10,10 @@
             "path": "/gui/skills/agriculture.png"
         },
         {
+            "id": "ori:skill.agriculture.cooking",
+            "path": "/gui/skills/agriculture.cooking.png"
+        },
+        {
             "id": "ori:skill.agriculture.quick",
             "path": "/gui/skills/agriculture.quick.png"
         },
@@ -30,14 +34,6 @@
             "path": "/gui/skills/magic.png"
         },
         {
-            "id": "ori:task.get_dirt",
-            "path": "/gui/tasks/get_dirt.png"
-        },
-        {
-            "id": "ori:task.craft",
-            "path": "/gui/tasks/craft.png"
-        },
-        {
             "id": "ori:task.get_log",
             "path": "/gui/tasks/get_log.png"
         },
@@ -46,60 +42,16 @@
             "path": "/gui/tasks/get_meat.png"
         },
         {
-            "id": "ori:task.get_potato",
-            "path": "/gui/tasks/get_potato.png"
-        },
-        {
-            "id": "ori:task.get_onion",
-            "path": "/gui/tasks/get_onion.png"
-        },
-        {
-            "id": "ori:task.get_watermelon",
-            "path": "/gui/tasks/get_watermelon.png"
-        },
-        {
-            "id": "ori:task.get_egg",
-            "path": "/gui/tasks/get_egg.png"
-        },
-        {
-            "id": "ori:task.get_feather",
-            "path": "/gui/tasks/get_feather.png"
-        },
-        {
             "id": "ori:task.get_feather_wing",
             "path": "/gui/tasks/get_feather_wing.png"
-        },
-        {
-            "id": "ori:task.get_grass",
-            "path": "/gui/tasks/get_grass.png"
         },
         {
             "id": "ori:task.get_straw_rope",
             "path": "/gui/tasks/get_straw_rope.png"
         },
         {
-            "id": "ori:task.get_plant_fiber",
-            "path": "/gui/tasks/get_plant_fiber.png"
-        },
-        {
-            "id": "ori:task.get_gravel",
-            "path": "/gui/tasks/get_gravel.png"
-        },
-        {
-            "id": "ori:task.get_flint",
-            "path": "/gui/tasks/get_flint.png"
-        },
-        {
-            "id": "ori:task.get_stone",
-            "path": "/gui/tasks/get_stone.png"
-        },
-        {
             "id": "ori:task.get_planks",
             "path": "/gui/tasks/get_planks.png"
-        },
-        {
-            "id": "ori:task.get_stick",
-            "path": "/gui/tasks/get_stick.png"
         },
         {
             "id": "ori:task.get_campfire",
@@ -118,24 +70,12 @@
             "path": "/gui/tasks/get_flint_sword.png"
         },
         {
-            "id": "ori:task.get_iron_knife",
-            "path": "/gui/tasks/get_iron_knife.png"
-        },
-        {
-            "id": "ori:task.get_iron_hoe",
-            "path": "/gui/tasks/get_iron_hoe.png"
-        },
-        {
-            "id": "ori:task.get_iron_sword",
-            "path": "/gui/tasks/get_iron_sword.png"
+            "id": "ori:task.get_ore",
+            "path": "/gui/tasks/get_ore.png"
         },
         {
             "id": "ori:task.get_bark",
             "path": "/gui/tasks/get_bark.png"
-        },
-        {
-            "id": "ori:task.get_bark_vest",
-            "path": "/gui/tasks/get_bark_vest.png"
         },
         {
             "id": "ori:unlocked_region_color",
@@ -470,6 +410,10 @@
         {
             "id": "ori:spell_manuscript",
             "path": "/items/spell_manuscript.png"
+        },
+        {
+            "id": "ori:skill_manuscript",
+            "path": "/items/skill_manuscript.png"
         },
         {
             "id": "ori:fried_snow",

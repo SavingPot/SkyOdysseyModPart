@@ -86,7 +86,15 @@
             },
             {
                 "id": "ori:task.rewards",
-                "text": "Rewards: {id} x {count}"
+                "text": "Rewards:"
+            },
+            {
+                "id": "ori:task.skill_point_reward",
+                "text": "Skill Point: {value}"
+            },
+            {
+                "id": "ori:task.item_reward",
+                "text": "Item: {id} x {count}"
             },
             {
                 "id": "ori:button.task_tree.node.ori:get_dirt.text",

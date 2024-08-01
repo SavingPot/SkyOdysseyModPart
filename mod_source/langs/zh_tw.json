@@ -86,7 +86,15 @@
             },
             {
                 "id": "ori:task.rewards",
-                "text": "獎勵: {id} x {count}"
+                "text": "獎勵:"
+            },
+            {
+                "id": "ori:task.skill_point_reward",
+                "text": "技能點: {value}"
+            },
+            {
+                "id": "ori:task.item_reward",
+                "text": "物品: {id} x {count}"
             },
             {
                 "id": "ori:button.task_tree.node.ori:get_dirt.text",

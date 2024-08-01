@@ -60,6 +60,22 @@ namespace GameCore
             EntityInventoryOwnerBehaviour.RefreshInventory(this);
         }
 
+        public override void OnDeathServer()
+        {
+            base.OnDeathServer();
+
+            //把装备栏的第一个物品爆出
+            if (inventory != null)
+            {
+                var item = inventory.GetItemChecked(0);
+                if (!Item.Null(item))
+                {
+                    GM.instance.SummonDrop(transform.position, item.data.id, item.count, item.customData?.ToString(Newtonsoft.Json.Formatting.None));
+                }
+            }
+        }
+
+
         public void ModifyUsingShieldRendererTransform()
         {
             usingShieldRenderer.transform.localPosition = new(0.04f, -0.7f);
@@ -105,13 +121,11 @@ namespace GameCore
         {
             Inventory inventory = new(inventorySlotCount, this);
 
-            string item = Random.Range(0, 5) switch
+            string item = Random.Range(0, 3) switch
             {
-                2 => "ori:iron_hoe",
-                0 => "ori:flint_hoe",
-                1 => "ori:straw_hat",
-                3 => "ori:straw_hat",
-                4 => "ori:straw_hat",
+                0 => "ori:iron_hoe",
+                1 => "ori:flint_hoe",
+                2 => "ori:flint_hoe",
                 _ => throw new NotImplementedException()
             };
 

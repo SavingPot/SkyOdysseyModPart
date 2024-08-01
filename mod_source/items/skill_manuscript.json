@@ -1,0 +1,8 @@
+{
+    "json_format": "0.5.1",
+    "ori:item": {
+        "id": "ori:skill_manuscript",
+        "texture": "ori:skill_manuscript",
+        "description": "ori:description.skill_manuscript"
+    }
+}

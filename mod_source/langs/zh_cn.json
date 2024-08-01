@@ -90,10 +90,18 @@
             },
             {
                 "id": "ori:task.rewards",
-                "text": "奖励: {id} x {count}"
+                "text": "奖励:"
             },
             {
-                "id": "ori:button.skill_tree.node.ori:skill.text",
+                "id": "ori:task.skill_point_reward",
+                "text": "技能点: {value}"
+            },
+            {
+                "id": "ori:task.item_reward",
+                "text": "物品: {id} x {count}"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:skill.text",
                 "text": "技能"
             },
             {
@@ -101,7 +109,7 @@
                 "text": "<color=red>目前还没功能，尽快加入（全局性的技能）</color>"
             },
             {
-                "id": "ori:button.skill_tree.node.ori:agriculture.text",
+                "id": "ori:skill_tree.node.ori:agriculture.text",
                 "text": "农业"
             },
             {
@@ -109,7 +117,15 @@
                 "text": "获得土豆种子x3\n解锁锄头配方"
             },
             {
-                "id": "ori:button.skill_tree.node.ori:agriculture.quick.text",
+                "id": "ori:skill_tree.node.ori:agriculture.cooking.text",
+                "text": "烹饪"
+            },
+            {
+                "id": "ori:skill_description.agriculture.cooking",
+                "text": "解锁烹饪锅配方\n解锁煎锅配方"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:agriculture.quick.text",
                 "text": "快快"
             },
             {
@@ -117,7 +133,7 @@
                 "text": "农作物生长加速15%"
             },
             {
-                "id": "ori:button.skill_tree.node.ori:agriculture.coin.text",
+                "id": "ori:skill_tree.node.ori:agriculture.coin.text",
                 "text": "摇钱树"
             },
             {
@@ -125,7 +141,7 @@
                 "text": "农作物有20%概率掉落金币"
             },
             {
-                "id": "ori:button.skill_tree.node.ori:agriculture.harvest.text",
+                "id": "ori:skill_tree.node.ori:agriculture.harvest.text",
                 "text": "丰收"
             },
             {
@@ -133,7 +149,7 @@
                 "text": "农作物有10%概率获得双倍收益"
             },
             {
-                "id": "ori:button.skill_tree.node.ori:agriculture.fishing.text",
+                "id": "ori:skill_tree.node.ori:agriculture.fishing.text",
                 "text": "渔业"
             },
             {
@@ -141,7 +157,7 @@
                 "text": "解锁钓竿配方"
             },
             {
-                "id": "ori:button.skill_tree.node.ori:magic.text",
+                "id": "ori:skill_tree.node.ori:magic.text",
                 "text": "魔法"
             },
             {
@@ -149,112 +165,52 @@
                 "text": "解锁魔能祭坛配方\n解锁群系结晶配方"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_dirt.text",
-                "text": "获得泥土"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:craft.text",
-                "text": "合成"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_log.text",
+                "id": "ori:task_tree.node.ori:get_log.text",
                 "text": "获得木头"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_meat.text",
+                "id": "ori:task_tree.node.ori:get_meat.text",
                 "text": "获得肉"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_onion.text",
-                "text": "获得洋葱"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_potato.text",
-                "text": "获得土豆"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_watermelon.text",
-                "text": "获得西瓜"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_egg.text",
-                "text": "获得蛋"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_feather.text",
-                "text": "获得羽毛"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_feather_wing.text",
+                "id": "ori:task_tree.node.ori:get_feather_wing.text",
                 "text": "获得羽翼"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_grass.text",
-                "text": "获得草"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_straw_rope.text",
+                "id": "ori:task_tree.node.ori:get_straw_rope.text",
                 "text": "获得草绳"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_plant_fiber.text",
-                "text": "获得植物纤维"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_gravel.text",
-                "text": "获得砾石"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_flint.text",
-                "text": "获得燧石"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_stone.text",
-                "text": "获得石头"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_planks.text",
+                "id": "ori:task_tree.node.ori:get_planks.text",
                 "text": "获得木板"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_stick.text",
+                "id": "ori:task_tree.node.ori:get_stick.text",
                 "text": "获得木棍"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_campfire.text",
+                "id": "ori:task_tree.node.ori:get_campfire.text",
                 "text": "获得篝火"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_flint_knife.text",
+                "id": "ori:task_tree.node.ori:get_flint_knife.text",
                 "text": "获得燧石小刀"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_flint_hoe.text",
+                "id": "ori:task_tree.node.ori:get_flint_hoe.text",
                 "text": "获得燧石锄"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_flint_sword.text",
+                "id": "ori:task_tree.node.ori:get_flint_sword.text",
                 "text": "获得燧石剑"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_iron_knife.text",
-                "text": "获得铁制小刀"
+                "id": "ori:task_tree.node.ori:get_ore.text",
+                "text": "获得矿石"
             },
             {
-                "id": "ori:button.task_tree.node.ori:get_iron_hoe.text",
-                "text": "获得铁锄"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_iron_sword.text",
-                "text": "获得铁剑"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_bark.text",
+                "id": "ori:task_tree.node.ori:get_bark.text",
                 "text": "获得树皮"
-            },
-            {
-                "id": "ori:button.task_tree.node.ori:get_bark_vest.text",
-                "text": "获得树皮背心"
             },
             {
                 "id": "ori:description.bark_shield",
@@ -267,6 +223,10 @@
             {
                 "id": "ori:description.mana_stone",
                 "text": "魔能石被用于储存魔能, 若注入魔咒, 也可以释放魔法"
+            },
+            {
+                "id": "ori:description.skill_manuscript",
+                "text": "技能稿纸被用于储存技能, 其中蕴藏着深不可测的能力"
             },
             {
                 "id": "ori:description.spell_manuscript",
@@ -605,8 +565,24 @@
                 "text": "{value} 使用CD"
             },
             {
+                "id": "ori:caterpillar",
+                "text": "毛毛虫"
+            },
+            {
                 "id": "ori:cricket",
                 "text": "蟋蟀"
+            },
+            {
+                "id": "ori:earthworm",
+                "text": "蚯蚓"
+            },
+            {
+                "id": "ori:grasshopper",
+                "text": "蚱蜢"
+            },
+            {
+                "id": "ori:maggot",
+                "text": "蛆"
             },
             {
                 "id": "ori:pillworm",
@@ -655,6 +631,10 @@
             {
                 "id": "ori:mana_stone",
                 "text": "魔能石"
+            },
+            {
+                "id": "ori:skill_manuscript",
+                "text": "技能稿纸"
             },
             {
                 "id": "ori:spell_manuscript",

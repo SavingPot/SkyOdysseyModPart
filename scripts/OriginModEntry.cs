@@ -74,10 +74,8 @@ namespace GameCore
                 else
                     return $"魔咒: {spellId}";
             });
-            Item.infoModifiersForTag.Add("ori:edible", item =>
-            {
-                return $"回血: {item.data.Edible().tagValue}";
-            });
+            Item.infoModifiersForTag.Add("ori:edible", item => $"回血: {item.data.Edible().tagValue}");
+            Item.infoModifiersForTag.Add("ori:bait", item => $"鱼饵: {item.data.GetValueTagToInt("ori:bait").tagValue}");
 
 
 

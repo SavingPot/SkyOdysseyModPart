@@ -2,7 +2,7 @@ using SP.Tools;
 
 namespace GameCore
 {
-    public abstract class BowBehaviour: ItemBehaviour
+    public abstract class BowBehaviour : ItemBehaviour
     {
         public float shootTimer;
 
