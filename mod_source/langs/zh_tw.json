@@ -369,16 +369,8 @@
                 "text": "可做成爐子"
             },
             {
-                "id": "ori:description.soft_clay_furnace",
-                "text": "在它下麵放一個篝火會幫到你"
-            },
-            {
-                "id": "ori:description.clay_furnace",
+                "id": "ori:description.furnace",
                 "text": "可以使用它煮菜或冶煉"
-            },
-            {
-                "id": "ori:description.stone_furnace",
-                "text": "可以使用它煮菜"
             },
             {
                 "id": "ori:description.dead_tree",
@@ -977,16 +969,8 @@
                 "text": "粘土"
             },
             {
-                "id": "ori:soft_clay_furnace",
-                "text": "軟粘土爐"
-            },
-            {
-                "id": "ori:clay_furnace",
-                "text": "粘土爐"
-            },
-            {
-                "id": "ori:stone_furnace",
-                "text": "石爐"
+                "id": "ori:furnace",
+                "text": "熔爐"
             },
             {
                 "id": "ori:soup_pot",

@@ -1,7 +1,7 @@
 {
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
-        "id": "ori:soft_clay_furnace",
+        "id": "ori:furnace",
         "ingredients": [
             {
                 "id": "ori:clay",
@@ -9,8 +9,7 @@
             }
         ],
         "result": {
-            "id": "ori:soft_clay_furnace",
-            "count": 1
+            "id": "ori:furnace"
         }
     }
 }

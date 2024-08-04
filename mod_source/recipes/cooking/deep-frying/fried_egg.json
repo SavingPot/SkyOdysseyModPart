@@ -2,7 +2,7 @@
     "json_format": "0.6.0",
     "ori:cooking_recipe": {
         "id": "ori:fried_egg",
-        "type": "ori:deep-frying",
+        "facility": "ori:wok",
         "ingredients": [
             {
                 "tags": [

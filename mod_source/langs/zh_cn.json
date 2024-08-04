@@ -165,6 +165,30 @@
                 "text": "解锁魔能祭坛配方\n解锁群系结晶配方"
             },
             {
+                "id": "ori:skill_tree.node.ori:economy.text",
+                "text": "经济"
+            },
+            {
+                "id": "ori:skill_description.economy",
+                "text": "解锁远程市场配方"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:economy.building.text",
+                "text": "建造"
+            },
+            {
+                "id": "ori:skill_description.economy.building",
+                "text": "解锁建造中心配方"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:industry.text",
+                "text": "工业"
+            },
+            {
+                "id": "ori:skill_description.industry",
+                "text": "解锁炉子配方"
+            },
+            {
                 "id": "ori:task_tree.node.ori:get_log.text",
                 "text": "获得木头"
             },
@@ -381,16 +405,8 @@
                 "text": "可做成炉子"
             },
             {
-                "id": "ori:description.soft_clay_furnace",
-                "text": "在它下面放一个篝火会帮到你"
-            },
-            {
-                "id": "ori:description.clay_furnace",
+                "id": "ori:description.furnace",
                 "text": "可以使用它煮菜或冶炼"
-            },
-            {
-                "id": "ori:description.brick_furnace",
-                "text": "可以使用它煮菜"
             },
             {
                 "id": "ori:description.dead_tree",
@@ -1097,16 +1113,8 @@
                 "text": "粘土"
             },
             {
-                "id": "ori:soft_clay_furnace",
-                "text": "软粘土炉"
-            },
-            {
-                "id": "ori:clay_furnace",
-                "text": "粘土炉"
-            },
-            {
-                "id": "ori:brick_furnace",
-                "text": "砖炉"
+                "id": "ori:furnace",
+                "text": "熔炉"
             },
             {
                 "id": "ori:soup_pot",

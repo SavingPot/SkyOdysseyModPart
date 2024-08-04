@@ -369,16 +369,8 @@
                 "text": "Can be made into furnaces"
             },
             {
-                "id": "ori:description.soft_clay_furnace",
-                "text": "Placing a campfire under it will help you"
-            },
-            {
-                "id": "ori:description.clay_furnace",
+                "id": "ori:description.furnace",
                 "text": "You can use it to cook or smelt"
-            },
-            {
-                "id": "ori:description.brick_furnace",
-                "text": "You can use it to cook"
             },
             {
                 "id": "ori:description.dead_tree",
@@ -977,16 +969,8 @@
                 "text": "Clay"
             },
             {
-                "id": "ori:soft_clay_furnace",
-                "text": "Soft Clay Furnace"
-            },
-            {
-                "id": "ori:clay_furnace",
-                "text": "Clay Furnace"
-            },
-            {
-                "id": "ori:brick_furnace",
-                "text": "Brick Furnace"
+                "id": "ori:furnace",
+                "text": "Furnace"
             },
             {
                 "id": "ori:soup_pot",

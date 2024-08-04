@@ -1,5 +1,6 @@
 using DG.Tweening;
 using GameCore.High;
+using SP.Tools;
 using SP.Tools.Unity;
 using System;
 using System.Collections;
@@ -22,6 +23,7 @@ namespace GameCore
         public bool isPursuingLastFrame { get; set; }
         public float jumpForce => 25;
         public bool isAttacking { get; private set; }
+        string[] seedsToBeDropped = new[] { BlockID.OnionCrop, BlockID.CarrotCrop, BlockID.TomatoCrop, BlockID.PotatoCrop, BlockID.PumpkinCrop, BlockID.WatermelonCrop };
 
 
 
@@ -60,9 +62,9 @@ namespace GameCore
             EntityInventoryOwnerBehaviour.RefreshInventory(this);
         }
 
-        public override void OnDeathServer()
+        protected override void SummonDrops()
         {
-            base.OnDeathServer();
+            base.SummonDrops();
 
             //把装备栏的第一个物品爆出
             if (inventory != null)
@@ -73,6 +75,11 @@ namespace GameCore
                     GM.instance.SummonDrop(transform.position, item.data.id, item.count, item.customData?.ToString(Newtonsoft.Json.Formatting.None));
                 }
             }
+
+            //掉落种子
+            var id = seedsToBeDropped.Extract(Tools.staticRandom);
+            var count = (ushort)Random.Range(1, 4);
+            GM.instance.SummonDrop(transform.position, id, count);
         }
 
 

@@ -14,7 +14,7 @@ namespace GameCore
 
             if (owner is Player player)
             {
-                if (player.IsPointInteractable(point) && player.map.TryGetBlock(PosConvert.WorldToMapPos(point), player.isControllingBackground, out Block block))
+                if (player.IsPointInteractable(point) && Map.instance.TryGetBlock(PosConvert.WorldToMapPos(point), player.isControllingBackground, out Block block))
                 {
                     if (block.data.id != BlockID.Water)
                         return false;

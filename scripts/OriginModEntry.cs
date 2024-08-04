@@ -2,6 +2,8 @@
 using SP.Tools.Unity;
 using System.Linq;
 using System.Collections.Generic;
+using GameCore.UI;
+using SP.Tools;
 
 namespace GameCore
 {
@@ -73,6 +75,18 @@ namespace GameCore
                     return $"魔咒: 空";
                 else
                     return $"魔咒: {spellId}";
+            });
+            Item.infoModifiersForId.Add(ItemID.SkillManuscript, item =>
+            {
+                //这个检查极少失败，因为通常只有本地玩家会用到 infoModifiersForId
+                if (!Player.TryGetLocal(out Player player))
+                {
+                    Debug.LogError($"没有本地玩家");
+                    return null;
+                }
+
+                var id = SkillManuscriptBehaviour.GetSkillId(item.customData);
+                return id.IsNullOrWhiteSpace() ? $"技能: 空" : $"技能: {GameUI.CompareText(player.pui.skillNodeTree.GetNodeButtonId(id) + ".text")}";
             });
             Item.infoModifiersForTag.Add("ori:edible", item => $"回血: {item.data.Edible().tagValue}");
             Item.infoModifiersForTag.Add("ori:bait", item => $"鱼饵: {item.data.GetValueTagToInt("ori:bait").tagValue}");

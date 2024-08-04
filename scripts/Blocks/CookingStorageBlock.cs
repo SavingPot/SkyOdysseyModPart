@@ -7,7 +7,6 @@ namespace GameCore
 {
     public abstract class CookingStorageBlock : StorageBlock
     {
-        public abstract string cookingType { get; }
         public abstract string uncookedTexture { get; }
         public abstract string cookedTexture { get; }
 
@@ -29,7 +28,7 @@ namespace GameCore
                 foreach (var mod in ModFactory.mods) foreach (var recipe in mod.cookingRecipes)
                     {
                         //如果全部原料都可以匹配就添加
-                        if (recipe.type == cookingType && recipe.WhetherCanBeCrafted(items, out var ingredientTables))
+                        if (recipe.facility == data.id && recipe.WhetherCanBeCrafted(items, out var ingredientTables))
                         {
                             return Cook(recipe, ingredientTables, player);
                         }

@@ -11,6 +11,8 @@ namespace GameCore
     {
         static string[] entitiesSpawnable;
         Entity[] entitiesSummoned;
+        Player challenger;
+        int entityCount;
 
 
 
@@ -42,10 +44,11 @@ namespace GameCore
                 return false;
 
             var entity = entitiesSpawnable.Extract(Tools.staticRandom);
-            var entityCount = Tools.staticRandom.Next(2, 6);
 
             //生成实体
+            entityCount = Tools.staticRandom.Next(2, 6);
             entitiesSummoned = new Entity[entityCount];
+            challenger = player;
             WaitForEntitiesDeath();
             for (int i = 0; i < entityCount; i++)
             {
@@ -73,7 +76,7 @@ namespace GameCore
                 await UniTask.WaitUntil(() => !entity || entity.isDead);
 
             //给予战利品并销毁方块
-            GM.instance.SummonCoinEntity(pos.To3(), 30);
+            challenger.ServerAddSkillPoint(entityCount * 0.05f);
             RemoveSelf();
         }
     }

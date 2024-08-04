@@ -1,16 +1,16 @@
 {
     "json_format": "0.6.0",
     "ori:crafting_recipe": {
-        "id": "ori:bottle",
+        "id": "ori:flowerpot",
         "facility": "ori:furnace",
         "ingredients": [
             {
-                "id": "ori:glass"
+                "id": "ori:clay"
             }
         ],
         "result": {
-            "id": "ori:bottle",
-            "count": 2
+            "id": "ori:flowerpot",
+            "count": 3
         }
     }
 }

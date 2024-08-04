@@ -34,6 +34,18 @@
             "path": "/gui/skills/magic.png"
         },
         {
+            "id": "ori:skill.economy",
+            "path": "/gui/skills/economy.png"
+        },
+        {
+            "id": "ori:skill.economy.building",
+            "path": "/gui/skills/economy.building.png"
+        },
+        {
+            "id": "ori:skill.industry",
+            "path": "/gui/skills/industry.png"
+        },
+        {
             "id": "ori:task.get_log",
             "path": "/gui/tasks/get_log.png"
         },
@@ -988,16 +1000,8 @@
             "path": "/blocks/clay.png"
         },
         {
-            "id": "ori:soft_clay_furnace",
-            "path": "/blocks/furnaces/soft_clay_furnace.png"
-        },
-        {
-            "id": "ori:clay_furnace",
-            "path": "/blocks/furnaces/clay_furnace.png"
-        },
-        {
-            "id": "ori:brick_furnace",
-            "path": "/blocks/furnaces/brick_furnace.png"
+            "id": "ori:furnace",
+            "path": "/blocks/furnace.png"
         },
         {
             "id": "ori:dog_tail_grass",

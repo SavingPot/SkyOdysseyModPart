@@ -1,18 +1,18 @@
 {
     "json_format": "0.6.0",
     "ori:block": {
-        "id": "ori:clay_furnace",
+        "id": "ori:furnace",
         "display": {
-            "texture_id": "ori:clay_furnace",
-            "description": "ori:description.clay_furnace"
+            "texture_id": "ori:furnace",
+            "description": "ori:description.furnace"
         },
         "property": {
             "hardness": 25,
             "tags": [
-                "ori:furnace",
                 "ori:furniture"
             ],
-            "behaviour": "GameCore.ClayFurnace"
+            "collidible": false,
+            "behaviour": "GameCore.Furnace"
         }
     }
 }

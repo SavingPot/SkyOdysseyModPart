@@ -44,32 +44,35 @@ namespace GameCore
             RefreshItemView();
         }
 
+        protected virtual void CreateItemView()
+        {
+            (var modId, var panelName) = Tools.SplitModIdAndName(backpackPanelId);
+
+            //物品视图
+            (itemPanel, itemView) = Player.local.pui.GenerateItemViewBackpackPanel(
+                backpackPanelId,
+                $"{modId}:switch_button.{panelName}",
+                80,
+                Vector2.zero,
+                Vector2.zero,
+                RefreshItemView,
+                () => itemView.gameObject.SetActive(true),
+                null,
+                AutoDestroyBackpackPanel);
+
+            //初始化所有UI
+            for (int i = 0; i < slotUIs.Length; i++)
+            {
+                itemView.AddChild((slotUIs[i] = new($"{modId}:button.{panelName}_item_{i}", $"{modId}:image.{panelName}_item_{i}", itemView.gridLayoutGroup.cellSize)).button);
+            }
+        }
+
         public virtual void RefreshItemView()
         {
             if (!itemView)
-            {
-                (var modId, var panelName) = Tools.SplitModIdAndName(backpackPanelId);
+                CreateItemView();
 
-                //物品视图
-                (itemPanel, itemView) = Player.local.pui.GenerateItemViewBackpackPanel(
-                    backpackPanelId,
-                    $"{modId}:switch_button.{panelName}",
-                    80,
-                    Vector2.zero,
-                    Vector2.zero,
-                    RefreshItemView,
-                    () => itemView.gameObject.SetActive(true),
-                    null,
-                    AutoDestroyBackpackPanel);
-
-                //初始化所有UI
-                for (int i = 0; i < slotUIs.Length; i++)
-                {
-                    itemView.AddChild((slotUIs[i] = new($"{modId}:button.{panelName}_item_{i}", $"{modId}:image.{panelName}_item_{i}", itemView.gridLayoutGroup.cellSize)).button);
-                }
-            }
-
-
+            //刷新每个格子
             for (int i = 0; i < slotUIs.Length; i++)
             {
                 slotUIs[i].Refresh(this, i.ToString());

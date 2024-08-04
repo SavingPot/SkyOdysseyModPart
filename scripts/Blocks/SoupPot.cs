@@ -6,7 +6,6 @@ namespace GameCore
     {
         #region 烹饪
 
-        public override string cookingType => "ori:poach";
         public override string uncookedTexture => "ori:soup_pot";
         public override string cookedTexture => "ori:soup_pot_filled";
 
