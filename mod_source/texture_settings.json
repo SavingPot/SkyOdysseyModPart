@@ -649,19 +649,19 @@
         },
         {
             "id": "ori:iron_ore",
-            "path": "/blocks/iron_ore.png"
+            "path": "/blocks/ores/iron.png"
         },
         {
             "id": "ori:gold_ore",
-            "path": "/blocks/gold_ore.png"
+            "path": "/blocks/ores/gold.png"
         },
         {
             "id": "ori:copper_ore",
-            "path": "/blocks/copper_ore.png"
+            "path": "/blocks/ores/copper.png"
         },
         {
             "id": "ori:silver_ore",
-            "path": "/blocks/silver_ore.png"
+            "path": "/blocks/ores/silver.png"
         },
         {
             "id": "ori:flint_knife",
