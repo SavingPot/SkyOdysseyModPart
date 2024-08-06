@@ -1,0 +1,97 @@
+{
+    "json_format": "0.6.4",
+    "ori:structure": {
+        "id": "ori:bowl_stone",
+        "generation": {
+            "probability": 0.35
+        },
+        "blocks": {
+            "fixed": [
+                {
+                    "id": "ori:stone",
+                    "pos": [
+                        -1,
+                        0
+                    ]
+                },
+                {
+                    "id": "ori:stone",
+                    "pos": [
+                        0,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:water",
+                    "pos": [
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "id": "ori:water",
+                    "pos": [
+                        1,
+                        0
+                    ]
+                },
+                {
+                    "id": "ori:water",
+                    "pos": [
+                        2,
+                        0
+                    ]
+                },
+                {
+                    "id": "ori:water",
+                    "pos": [
+                        3,
+                        0
+                    ]
+                },
+                {
+                    "id": "ori:stone",
+                    "pos": [
+                        3,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:stone",
+                    "pos": [
+                        4,
+                        0
+                    ]
+                },
+                {
+                    "id": "ori:water",
+                    "pos": [
+                        1,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:water",
+                    "pos": [
+                        2,
+                        -1
+                    ]
+                },
+                {
+                    "id": "ori:stone",
+                    "pos": [
+                        1,
+                        -2
+                    ]
+                },
+                {
+                    "id": "ori:stone",
+                    "pos": [
+                        2,
+                        -2
+                    ]
+                }
+            ]
+        }
+    }
+}
