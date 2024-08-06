@@ -2,8 +2,8 @@
     "json_format": "0.4.6",
     "textures": [
         {
-            "id": "ori:skill.skill",
-            "path": "/gui/skills/skill.png"
+            "id": "ori:skill.root",
+            "path": "/gui/skills/root.png"
         },
         {
             "id": "ori:skill.agriculture",
@@ -664,6 +664,22 @@
             "path": "/blocks/ores/silver.png"
         },
         {
+            "id": "ori:iron_ingot",
+            "path": "/items/iron_ingot.png"
+        },
+        {
+            "id": "ori:gold_ingot",
+            "path": "/items/gold_ingot.png"
+        },
+        {
+            "id": "ori:copper_ingot",
+            "path": "/items/copper_ingot.png"
+        },
+        {
+            "id": "ori:silver_ingot",
+            "path": "/items/silver_ingot.png"
+        },
+        {
             "id": "ori:flint_knife",
             "path": "/items/tools/knives/flint.png"
         },
@@ -958,14 +974,6 @@
         {
             "id": "ori:player_cursor",
             "path": "/ui/player/player_cursor.png"
-        },
-        {
-            "id": "ori:day_night_bar",
-            "path": "/gui/day_night_bar.png"
-        },
-        {
-            "id": "ori:day_night_bar_pointer",
-            "path": "/gui/day_night_bar_pointer.png"
         },
         {
             "id": "ori:virtual_cursor",

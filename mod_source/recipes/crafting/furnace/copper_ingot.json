@@ -1,0 +1,15 @@
+{
+    "json_format": "0.6.0",
+    "ori:crafting_recipe": {
+        "id": "ori:copper_ingot",
+        "facility": "ori:furnace",
+        "ingredients": [
+            {
+                "id": "ori:copper_ore"
+            }
+        ],
+        "result": {
+            "id": "ori:copper_ingot"
+        }
+    }
+}

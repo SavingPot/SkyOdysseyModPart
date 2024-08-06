@@ -1,0 +1,9 @@
+{
+    "json_format": "0.7.8",
+    "ori:item": {
+        "id": "ori:iron_ingot",
+        "tags": [
+            "ori:ingot"
+        ]
+    }
+}
