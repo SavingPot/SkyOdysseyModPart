@@ -17,6 +17,7 @@
         }
     },
     "ori:tree_log": {
-        "leaf": "ori:oak_tree_leaf"
+        "leaf": "ori:oak_tree_leaf",
+        "stump": "ori:oak_tree_stump"
     }
 }
