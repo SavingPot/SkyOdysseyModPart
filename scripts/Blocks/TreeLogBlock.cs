@@ -29,11 +29,6 @@ namespace GameCore
                 leaveRenderer.sprite = ModFactory.CompareTexture(treeLogBlockDatum.leaf).sprite;
                 leaveRenderer.transform.localPosition = new(pos.x, pos.y + 1.5f, 0);
             }
-            //树墩
-            else if (chunk.map.GetBlock(new(pos.x, pos.y - 1), isBackground)?.data?.id != data.id)
-            {
-                sr.sprite = ModFactory.CompareTexture(treeLogBlockDatum.stump).sprite;
-            }
             //TODO: 树枝叉出
             else
             {
@@ -83,7 +78,6 @@ namespace GameCore
         public class TreeLogBlockDatum
         {
             public string leaf;
-            public string stump;
         }
 
         public static TreeLogBlockDatum GetDatum(Block block)
@@ -103,7 +97,6 @@ namespace GameCore
                 JToken root = data.jo["ori:tree_log"];
 
                 logDatum.leaf = root["leaf"].ToString();
-                logDatum.stump = root["stump"].ToString();
             }
 
             dataTemps.Add(data.id, logDatum);

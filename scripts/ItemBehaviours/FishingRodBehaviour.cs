@@ -156,7 +156,9 @@ namespace GameCore
             for (int i = 1; i < lineSampleCount - 1; i++)
             {
                 var rad = i / (float)lineSampleCount * Mathf.PI * 0.5f; // 0~90度
-                samples[i] = new(origin.x + xLength * Mathf.Sin(rad), origin.y + yLength * (i / (float)lineSampleCount), origin.z);
+
+                //根据弧度计算出x和y的坐标 (x = kl+b, y = ksin(rad)+b)
+                samples[i] = new(origin.x + xLength * (i / (float)lineSampleCount), origin.y + yLength * Mathf.Sin(rad), origin.z);
             }
 
             //绘制鱼线

@@ -237,6 +237,50 @@
                 "text": "获得树皮"
             },
             {
+                "id": "ori:center",
+                "text": "中心"
+            },
+            {
+                "id": "ori:desert",
+                "text": "沙漠"
+            },
+            {
+                "id": "ori:grassland",
+                "text": "草原"
+            },
+            {
+                "id": "ori:grassland_fighting",
+                "text": "草原 战斗"
+            },
+            {
+                "id": "ori:oak_forest",
+                "text": "橡树林"
+            },
+            {
+                "id": "ori:rain_forest",
+                "text": "雨林"
+            },
+            {
+                "id": "ori:savannah_grassland",
+                "text": "热带草原"
+            },
+            {
+                "id": "ori:snowfield",
+                "text": "雪原"
+            },
+            {
+                "id": "ori:swamp",
+                "text": "沼泽"
+            },
+            {
+                "id": "ori:region_index_y.0",
+                "text": "空岛"
+            },
+            {
+                "id": "ori:region_index_y.-1",
+                "text": "潮湿带"
+            },
+            {
                 "id": "ori:description.bark_shield",
                 "text": "非常轻质的一个盾牌, 可以快速格挡攻击"
             },

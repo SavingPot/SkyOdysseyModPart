@@ -720,10 +720,6 @@
             "path": "/blocks/oak_log.png"
         },
         {
-            "id": "ori:oak_tree_stump",
-            "path": "/blocks/oak_tree_stump.png"
-        },
-        {
             "id": "ori:oak_planks",
             "path": "/blocks/oak_planks.png"
         },
