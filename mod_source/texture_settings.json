@@ -964,12 +964,32 @@
             "path": "/ui/player/joystick_handle.png"
         },
         {
-            "id": "ori:item_tab",
-            "path": "/ui/player/item_tab.png"
+            "id": "ori:item_slot",
+            "path": "/ui/player/item_slot.png"
         },
         {
-            "id": "ori:using_item_tab",
-            "path": "/ui/player/using_item_tab.png"
+            "id": "ori:item_slot_helmet",
+            "path": "/ui/player/item_slot_helmet.png"
+        },
+        {
+            "id": "ori:item_slot_breastplate",
+            "path": "/ui/player/item_slot_breastplate.png"
+        },
+        {
+            "id": "ori:item_slot_legging",
+            "path": "/ui/player/item_slot_legging.png"
+        },
+        {
+            "id": "ori:item_slot_boots",
+            "path": "/ui/player/item_slot_boots.png"
+        },
+        {
+            "id": "ori:item_slot_shield",
+            "path": "/ui/player/item_slot_shield.png"
+        },
+        {
+            "id": "ori:item_slot_using",
+            "path": "/ui/player/item_slot_using.png"
         },
         {
             "id": "ori:player_cursor",
