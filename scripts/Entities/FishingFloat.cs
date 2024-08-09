@@ -1,5 +1,6 @@
 using GameCore.Network;
 using Mirror;
+using SP.Tools;
 using SP.Tools.Unity;
 using System.Collections;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace GameCore
     {
         internal FishingRodBehaviour rod;
         internal float lastTimeHookedUp;
+        bool hasBoundUpdate;
+        const float BUOYANCY = 4;
 
         public override void Initialize()
         {
@@ -27,6 +30,7 @@ namespace GameCore
         {
             Debug.Log("Hooking up");
             lastTimeHookedUp = Tools.time;
+            transform.AddLocalPosY(0.3f);
             rb.AddVelocityY(5);
         }
 
@@ -45,9 +49,11 @@ namespace GameCore
                 //获取战利品
                 if (GFiles.world.TryGetRegion(PosConvert.WorldPosToRegionIndex(transform.position), out var region))
                 {
+                    //找到符合群系要求的结果
                     var biome = region.biomeId;
-
-                    GM.instance.SummonDrop(transform.position, ItemID.Cod);
+                    var availableResults = ModFactory.mods.SelectMany(m => m.fishingResults).Where(r => r.biome.IsNullOrWhiteSpace() || r.biome == biome).ToArray();
+                    var result = availableResults.Extract(Tools.staticRandom);
+                    GM.instance.SummonDrop(transform.position, result.result);
                 }
             }
         }
@@ -56,37 +62,47 @@ namespace GameCore
         {
             base.FixedUpdate();
 
+            //速度衰减
             rb.SetVelocityX(Mathf.Lerp(rb.velocity.x, 0, 1.2f * Time.fixedDeltaTime));
-        }
-
-        protected override void OnBlockEnter(Block block)
-        {
-            base.OnBlockEnter(block);
-
-            if (block.data.id == BlockID.Water)
-            {
-                RandomUpdater.Bind("ori:fishing_float", 30, HookingUp);
-            }
         }
 
         protected override void OnBlockStay(Block block)
         {
             base.OnBlockStay(block);
 
+            //浸在水里
             if (block.data.id == BlockID.Water)
             {
+                //绑定更新
+                if (!hasBoundUpdate)
+                {
+                    hasBoundUpdate = true;
+                    RandomUpdater.Bind("ori:fishing_float", GetHookingUpProbability(), HookingUp);
+                }
+
+                //漂浮效果
+                float sizeY = mainCollider.size.y;
                 bool hasUpperWater = block.chunk.map.TryGetBlock(new(block.pos.x, block.pos.y + 1), block.isBackground, out var upper) &&
                                      upper.data.id == BlockID.Water;
+                float objectBottom = transform.position.y - sizeY * 0.5f;
+                float waterLevel = hasUpperWater ? upper.pos.y : block.pos.y + 0.2f;
 
-                //TODO: 修复沉底问题（直接用position，不用velocity）
-                //如果到达了水面, 那么不动
-                if (!hasUpperWater && transform.position.y - block.pos.y > 0f)
-                    rb.SetVelocityY(Mathf.Lerp(rb.velocity.y, 0, 0.2f * Time.fixedDeltaTime));
+                //如果底部未到达水面, 那么上浮
+                if (objectBottom < waterLevel)
+                {
+                    //计算浮力
+                    float submergedPercentage = (waterLevel - objectBottom) / mainCollider.size.y;
+                    float force = Mathf.Clamp(BUOYANCY * submergedPercentage, 0, BUOYANCY);
 
-                //上钩五秒内不动
-                if (Tools.time > lastTimeHookedUp + 1f)
-                    rb.AddVelocityY(2.3f);
+                    //应用浮力
+                    rb.SetVelocityY(Mathf.Min(rb.velocity.y + force, BUOYANCY));
+                }
             }
+        }
+
+        float GetHookingUpProbability()
+        {
+            return 30;
         }
 
         protected override void OnBlockExit(Block block)
@@ -95,7 +111,11 @@ namespace GameCore
 
             if (block.data.id == BlockID.Water)
             {
-                RandomUpdater.Unbind("ori:fishing_float");
+                if (hasBoundUpdate)
+                {
+                    hasBoundUpdate = false;
+                    RandomUpdater.Unbind("ori:fishing_float");
+                }
             }
         }
     }

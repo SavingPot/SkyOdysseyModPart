@@ -255,7 +255,12 @@ namespace GameCore
             base.OnUpdate();
 
             if (filledLevel != 0)
+            {
+                if (filledLevel > 8)
+                    Interlocked.Decrement(ref filledLevel);
+                    
                 sr.sprite = ModFactory.CompareTexture($"ori:water_{filledLevel}").sprite;
+            }
         }
 
         public override void OnEntityStay(Entity entity)
