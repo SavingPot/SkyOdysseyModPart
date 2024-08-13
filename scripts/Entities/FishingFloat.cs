@@ -53,15 +53,12 @@ namespace GameCore
                     var biome = region.biomeId;
                     var availableResults = new List<FishingResult>();
                     var sum = 0f;
-                    foreach (var mod in ModFactory.mods)
+                    foreach (var r in ModFactory.globalFishingResults)
                     {
-                        foreach (var r in mod.fishingResults)
+                        if (r.biome.IsNullOrWhiteSpace() || r.biome == biome)
                         {
-                            if (r.biome.IsNullOrWhiteSpace() || r.biome == biome)
-                            {
-                                availableResults.Add(r);
-                                sum += r.probability;
-                            }
+                            availableResults.Add(r);
+                            sum += r.probability;
                         }
                     }
 

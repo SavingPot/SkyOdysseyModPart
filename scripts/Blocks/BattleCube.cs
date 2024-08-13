@@ -20,14 +20,11 @@ namespace GameCore
         {
             var entitiesSpawnableTemp = new List<string>();
 
-            foreach (var mod in ModFactory.mods)
+            foreach (var entity in ModFactory.globalEntities)
             {
-                foreach (var entity in mod.entities)
+                if (entity.behaviourType != null && entity.behaviourType.IsSubclassOf(typeof(Enemy)))
                 {
-                    if (entity.behaviourType != null && entity.behaviourType.IsSubclassOf(typeof(Enemy)))
-                    {
-                        entitiesSpawnableTemp.Add(entity.id);
-                    }
+                    entitiesSpawnableTemp.Add(entity.id);
                 }
             }
 

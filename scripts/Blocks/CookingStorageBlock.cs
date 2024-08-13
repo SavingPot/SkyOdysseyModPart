@@ -25,14 +25,14 @@ namespace GameCore
             if (chunk.map.TryGetBlock(posDown, isBackground, out Block blockDown) && blockDown.data.id == BlockID.Campfire)
             {
                 //TODO: 改成像塞尔达一样一次只放一些材料
-                foreach (var mod in ModFactory.mods) foreach (var recipe in mod.cookingRecipes)
+                foreach (var recipe in ModFactory.globalCookingRecipes)
+                {
+                    //如果全部原料都可以匹配就添加
+                    if (recipe.facility == data.id && recipe.WhetherCanBeCrafted(items, out var ingredientTables))
                     {
-                        //如果全部原料都可以匹配就添加
-                        if (recipe.facility == data.id && recipe.WhetherCanBeCrafted(items, out var ingredientTables))
-                        {
-                            return Cook(recipe, ingredientTables, player);
-                        }
+                        return Cook(recipe, ingredientTables, player);
                     }
+                }
 
 
 
