@@ -3,7 +3,7 @@ using Mirror;
 using SP.Tools;
 using SP.Tools.Unity;
 using System.Collections;
-using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameCore
@@ -51,9 +51,33 @@ namespace GameCore
                 {
                     //找到符合群系要求的结果
                     var biome = region.biomeId;
-                    var availableResults = ModFactory.mods.SelectMany(m => m.fishingResults).Where(r => r.biome.IsNullOrWhiteSpace() || r.biome == biome).ToArray();
-                    var result = availableResults.Extract(Tools.staticRandom);
-                    GM.instance.SummonDrop(transform.position, result.result);
+                    var availableResults = new List<FishingResult>();
+                    var sum = 0f;
+                    foreach (var mod in ModFactory.mods)
+                    {
+                        foreach (var r in mod.fishingResults)
+                        {
+                            if (r.biome.IsNullOrWhiteSpace() || r.biome == biome)
+                            {
+                                availableResults.Add(r);
+                                sum += r.probability;
+                            }
+                        }
+                    }
+
+                    //抽取隧机数，区间是 [O, sum)（要进行加权抽取）
+                    var random = Random.Range(0, sum);
+                    var currentRange = 0f;
+
+                    //遍历每个区间。如果 random 在此区间内，返回此 item
+                    foreach (var result in availableResults)
+                    {
+                        currentRange += result.probability;
+                        if (random < currentRange)
+                        {
+                            GM.instance.SummonDrop(transform.position, result.result);
+                        }
+                    }
                 }
             }
         }
