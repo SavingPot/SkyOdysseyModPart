@@ -2,7 +2,6 @@
     "json_format": "0.6.2",
     "ori:biome": {
         "id": "ori:rain_forest",
-        "distribution": 2,
         "tags": [
             "ori:rich"
         ],

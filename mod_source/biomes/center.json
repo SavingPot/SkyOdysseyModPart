@@ -2,7 +2,6 @@
     "json_format": "0.6.2",
     "ori:biome": {
         "id": "ori:center",
-        "distribution": 0,
         "structures": [
             {
                 "id": "ori:oak_tree"

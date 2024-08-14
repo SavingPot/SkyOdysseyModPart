@@ -2,7 +2,6 @@
     "json_format": "0.6.2",
     "ori:biome": {
         "id": "ori:grassland_fighting",
-        "distribution": 2,
         "is_fighting_biome": true,
         "structure": [
             {
