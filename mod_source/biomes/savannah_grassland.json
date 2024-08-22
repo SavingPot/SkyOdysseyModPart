@@ -59,7 +59,7 @@
                     "id": "ori:savannah_grass_block"
                 },
                 "rules": {
-                    "probability": 10
+                    "probability": 20
                 }
             }
         ],

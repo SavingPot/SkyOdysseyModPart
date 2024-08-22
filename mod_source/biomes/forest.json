@@ -1,29 +1,13 @@
 {
     "json_format": "0.6.2",
     "ori:biome": {
-        "id": "ori:oak_forest",
+        "id": "ori:forest",
         "tags": [
             "ori:rich"
         ],
         "structures": [
             {
-                "id": "ori:oak_tree",
-                "generation": {
-                    "probability": 10,
-                    "must_enough": false,
-                    "require": [
-                        {
-                            "layer": "@surface + 1"
-                        },
-                        {
-                            "id": "ori:grass_block",
-                            "pos": [
-                                0,
-                                0
-                            ]
-                        }
-                    ]
-                }
+                "id": "ori:tree"
             },
             {
                 "id": "ori:maple_tree"
