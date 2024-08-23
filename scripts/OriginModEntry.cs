@@ -104,14 +104,14 @@ namespace GameCore
                 {
                     //TODO: 调整音频播放位置
                     case SceneNames.MainMenu:
-                        GAudio.Play(AudioID.Town);
+                        GAudio.Play(AudioID.Town, null);
                         GAudio.Stop(AudioID.WhyNotComeToTheParty);
                         GAudio.Stop(AudioID.Skirmish0);
                         break;
 
                     case SceneNames.GameScene:
                         GAudio.Stop(AudioID.Town);
-                        GAudio.Play(AudioID.WhyNotComeToTheParty);
+                        GAudio.Play(AudioID.WhyNotComeToTheParty, null);
 
                         //初始化 UI
                         Doorplate.InitUI();
@@ -135,7 +135,7 @@ namespace GameCore
                 if (!enemyTargetingPlayer)
                 {
                     GAudio.Stop(AudioID.Skirmish0);
-                    GAudio.Play(AudioID.WhyNotComeToTheParty);
+                    GAudio.Play(AudioID.WhyNotComeToTheParty, null);
                 }
             }
             else
@@ -143,7 +143,7 @@ namespace GameCore
                 if (enemyTargetingPlayer)
                 {
                     GAudio.Stop(AudioID.WhyNotComeToTheParty);
-                    GAudio.Play(AudioID.Skirmish0);
+                    GAudio.Play(AudioID.Skirmish0, null);
                 }
             }
         }

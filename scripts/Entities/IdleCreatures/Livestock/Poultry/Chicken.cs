@@ -22,7 +22,7 @@ namespace GameCore
             {
                 GTime.BindTimeEvent(5, true, () =>
                 {
-                    GAudio.Play(AudioID.Rooster);
+                    GAudio.Play(AudioID.Rooster, transform.position);
                 });
             }
         }

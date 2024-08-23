@@ -37,7 +37,7 @@ namespace GameCore
                     if (GControls.mode == ControlMode.Gamepad)
                         GControls.GamepadVibrationSlightMedium();
 
-                    GAudio.Play(AudioID.Hoe);
+                    GAudio.Play(AudioID.Hoe, block.pos);
 
                     return true;
                 }

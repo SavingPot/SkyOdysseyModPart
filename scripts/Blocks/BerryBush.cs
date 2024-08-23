@@ -12,7 +12,7 @@ namespace GameCore
             GM.instance.SummonDrop(transform.position, ItemID.Berry);
 
             //播放采摘音效
-            GAudio.Play(AudioID.PickBerryBush);
+            GAudio.Play(AudioID.PickBerryBush, pos);
 
             //修改方块
             chunk.map.SetBlockNet(pos, isBackground, BlockID.PickedBerryBush, null);

@@ -30,7 +30,7 @@ namespace GameCore
                     player.ServerAddItem(target.DataToItem());
                     player.ServerReduceItemCount(inventoryIndex, 1);
 
-                    GAudio.Play(AudioID.FillingWaterBottle);
+                    GAudio.Play(AudioID.FillingWaterBottle, player.transform.position);
 
                     return true;
                 }

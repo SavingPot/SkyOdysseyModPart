@@ -106,7 +106,7 @@ namespace GameCore
             if (GControls.mode == ControlMode.Gamepad)
                 GControls.GamepadVibrationSlightMedium();
 
-            GAudio.Play(AudioID.Cooking);
+            GAudio.Play(AudioID.Cooking, pos);
 
 
 

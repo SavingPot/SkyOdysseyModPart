@@ -64,7 +64,7 @@ namespace GameCore
                 caller.ServerReduceUsingItemCount(1);
 
                 //播放音效
-                GAudio.Play(AudioID.PlaceBlock);
+                GAudio.Play(AudioID.PlaceBlock, pos);
                 return true;
             }
 

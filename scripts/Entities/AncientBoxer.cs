@@ -95,7 +95,7 @@ namespace GameCore
 
         public void WhenStroll()
         {
-            GAudio.Play(AudioID.AncientBoxerSpare, true);
+            GAudio.Play(AudioID.AncientBoxerSpare, transform.position, true);
         }
     }
 }

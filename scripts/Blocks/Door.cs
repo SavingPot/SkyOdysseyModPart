@@ -49,9 +49,9 @@ namespace GameCore
 
             //播放开关门音效
             if (blockCollider.isTrigger)
-                GAudio.Play(AudioID.OpenDoor);
+                GAudio.Play(AudioID.OpenDoor, pos);
             else
-                GAudio.Play(AudioID.CloseDoor);
+                GAudio.Play(AudioID.CloseDoor, pos);
 
             //然后改组里的其他方块
             foreach (var groupPos in groupPosTemp)

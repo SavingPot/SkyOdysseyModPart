@@ -101,7 +101,7 @@ namespace GameCore
                 1 => AudioID.WalkThroughGrass1,
                 2 => AudioID.WalkThroughGrass2,
                 _ => throw new()
-            }, true);
+            }, entity.transform.position, true);
         }
 
         public static void Update()

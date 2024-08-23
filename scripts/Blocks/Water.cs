@@ -258,7 +258,7 @@ namespace GameCore
             {
                 if (filledLevel > 8)
                     Interlocked.Decrement(ref filledLevel);
-                    
+
                 sr.sprite = ModFactory.CompareTexture($"ori:water_{filledLevel}").sprite;
             }
         }
@@ -306,7 +306,7 @@ namespace GameCore
 
                             if (GAudio.GetAudio(swimAudio).sources.Count == 0)
                             {
-                                GAudio.Play(swimAudio, true);
+                                GAudio.Play(swimAudio, player.transform.position, true);
                             }
                         }
                         else if (player.rb.velocity.y > creatureSwimmingSpeed)
@@ -322,15 +322,12 @@ namespace GameCore
         {
             base.OnEntityExit(entity);
 
-            if (entity.isLocalPlayer)
-            {
                 GAudio.Play(Random.Range(0, 2) switch
                 {
                     0 => AudioID.SwimExit0,
                     1 => AudioID.SwimExit1,
                     _ => throw new(),
-                });
-            }
+                }, entity.transform.position);
         }
     }
 }

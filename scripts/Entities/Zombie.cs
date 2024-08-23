@@ -50,7 +50,7 @@ namespace GameCore
 
         public void WhenStroll()
         {
-            GAudio.Play(AudioID.ZombieSpare, true);
+            GAudio.Play(AudioID.ZombieSpare, transform.position, true);
         }
     }
 }

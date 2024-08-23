@@ -25,7 +25,7 @@ namespace GameCore
                     GM.instance.SummonDrop(block.transform.position, ItemID.ShelledDogTailGrass);
                     player.ServerReduceItemCount(inventoryIndex, 1);
 
-                    GAudio.Play(AudioID.PickBerryBush);
+                    GAudio.Play(AudioID.PickBerryBush, block.pos);
 
                     return true;
                 }

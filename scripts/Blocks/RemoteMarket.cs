@@ -36,7 +36,7 @@ namespace GameCore
             {
                 player.ServerReduceUsingItemCount(1);
                 player.ServerAddCoin(item.data.economy.worth);
-                GAudio.Play(AudioID.Trade);
+                GAudio.Play(AudioID.Trade, pos);
                 return true;
             }
             else

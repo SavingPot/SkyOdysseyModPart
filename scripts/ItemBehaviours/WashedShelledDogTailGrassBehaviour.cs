@@ -24,7 +24,7 @@ namespace GameCore
                 }
 
                 //TODO: 改为用石头敲打, 检测地上是否有水洗去壳狗尾草
-                if (Map.instance.GetBlock(PosConvert.WorldToMapPos( point),player.isControllingBackground)?.data?.id== BlockID.Stone)
+                if (Map.instance.GetBlock(PosConvert.WorldToMapPos(point), player.isControllingBackground)?.data?.id == BlockID.Stone)
                 {
                     for (int i = 0; i < player.inventory.slots.Length; i++)
                     {
@@ -44,7 +44,7 @@ namespace GameCore
                             player.ServerReduceItemCount(i.ToString(), 1);
                             player.ServerReduceItemCount(inventoryIndex, powerNeed);
 
-                            GAudio.Play(AudioID.PickBerryBush);
+                            GAudio.Play(AudioID.PickBerryBush, point);
                             return true;
                         }
                     }

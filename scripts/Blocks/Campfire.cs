@@ -12,7 +12,7 @@ namespace GameCore
             base.DoStart();
 
             campfireCount++;
-            GAudio.Play(AudioID.Campfire, true);
+            GAudio.Play(AudioID.Campfire, pos, true);
         }
 
         public override void OnRecovered()
@@ -29,7 +29,7 @@ namespace GameCore
         {
             //替换为熄灭的篝火
             chunk.map.SetBlockNet(pos, isBackground, BlockID.ExtinguishedCampfire, null);
-            GAudio.Play(AudioID.Smother, true);
+            GAudio.Play(AudioID.Smother, pos, true);
 
             return true;
         }
