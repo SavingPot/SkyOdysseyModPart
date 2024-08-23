@@ -143,10 +143,10 @@ namespace GameCore
                 default:
                     if (Item.Null(player.inventory.breastplate))
                         player.pui.DisplayDialog(new("ori:nick", "ori:button",
-                        new DialogData.DialogDatum(GameUI.CompareText(GM.instance.weather.id == WeatherID.Rain ? "ori:dialog.nick.hello.shirtless_rain" : "ori:dialog.nick.hello.shirtless").Replace("{name}", player.playerName), "ori:nick_head")));
+                        new DialogData.DialogDatum(GameUI.CompareText(GWeather.weatherId == WeatherID.Rain ? "ori:dialog.nick.hello.shirtless_rain" : "ori:dialog.nick.hello.shirtless").Replace("{name}", player.playerName), "ori:nick_head")));
                     else
                         player.pui.DisplayDialog(new("ori:nick", "ori:button",
-                        new DialogData.DialogDatum(GameUI.CompareText(GM.instance.weather.id == WeatherID.Rain ? "ori:dialog.nick.hello.rain" : "ori:dialog.nick.hello.normal").Replace("{name}", player.playerName), "ori:nick_head")));
+                        new DialogData.DialogDatum(GameUI.CompareText(GWeather.weatherId == WeatherID.Rain ? "ori:dialog.nick.hello.rain" : "ori:dialog.nick.hello.normal").Replace("{name}", player.playerName), "ori:nick_head")));
                     break;
             }
 

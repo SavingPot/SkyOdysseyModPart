@@ -21,6 +21,7 @@ namespace GameCore
                 if (caller.inventory.breastplate?.data?.id == ItemID.FeatherWing)
                 {
                     caller.gravity *= 0.7f;
+                    caller.fallenY = caller.transform.position.y;
                 }
             };
 
