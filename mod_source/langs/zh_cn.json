@@ -162,7 +162,7 @@
             },
             {
                 "id": "ori:skill_description.exploration",
-                "text": "<color=red>TODO! Uncompleted!!</color>"
+                "text": "解锁双击移动冲刺"
             },
             {
                 "id": "ori:skill_tree.node.ori:exploration.run.text",
