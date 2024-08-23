@@ -157,12 +157,68 @@
                 "text": "解锁钓竿配方"
             },
             {
-                "id": "ori:skill_tree.node.ori:magic.text",
+                "id": "ori:skill_tree.node.ori:exploration.text",
+                "text": "探索"
+            },
+            {
+                "id": "ori:skill_description.exploration",
+                "text": "<color=red>TODO! Uncompleted!!</color>"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:exploration.run.text",
+                "text": "奔跑"
+            },
+            {
+                "id": "ori:skill_description.exploration.run",
+                "text": "移动速度提升20%"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:exploration.mining.text",
+                "text": "采矿"
+            },
+            {
+                "id": "ori:skill_description.exploration.mining",
+                "text": "挖掘方块速度增加8%\n挖掘石头、矿物的速度额外加快15%"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:exploration.mining.area_mining_i.text",
+                "text": "范围采矿I"
+            },
+            {
+                "id": "ori:skill_description.exploration.mining.area_mining_i",
+                "text": "挖掘泥沙、石头时可以3x3范围挖掘"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:exploration.mining.area_mining_ii.text",
+                "text": "范围采矿II"
+            },
+            {
+                "id": "ori:skill_description.exploration.mining.area_mining_ii",
+                "text": "<color=red>TODO! Uncompleted!!</color>"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:profound.text",
+                "text": "奥秘"
+            },
+            {
+                "id": "ori:skill_description.profound",
+                "text": "<color=red>TODO! Uncompleted!!</color>"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:profound.magic.text",
                 "text": "魔法"
             },
             {
-                "id": "ori:skill_description.magic",
+                "id": "ori:skill_description.profound.magic",
                 "text": "解锁魔能祭坛配方\n解锁群系结晶配方"
+            },
+            {
+                "id": "ori:skill_tree.node.ori:profound.industry.text",
+                "text": "工业"
+            },
+            {
+                "id": "ori:skill_description.profound.industry",
+                "text": "解锁炉子配方"
             },
             {
                 "id": "ori:skill_tree.node.ori:economy.text",
@@ -179,14 +235,6 @@
             {
                 "id": "ori:skill_description.economy.building",
                 "text": "解锁建造中心配方"
-            },
-            {
-                "id": "ori:skill_tree.node.ori:industry.text",
-                "text": "工业"
-            },
-            {
-                "id": "ori:skill_description.industry",
-                "text": "解锁炉子配方"
             },
             {
                 "id": "ori:task_tree.node.ori:get_log.text",

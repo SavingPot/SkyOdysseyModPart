@@ -30,8 +30,36 @@
             "path": "/gui/skills/agriculture.fishing.png"
         },
         {
-            "id": "ori:skill.magic",
-            "path": "/gui/skills/magic.png"
+            "id": "ori:skill.exploration",
+            "path": "/gui/skills/exploration.png"
+        },
+        {
+            "id": "ori:skill.exploration.run",
+            "path": "/gui/skills/exploration.run.png"
+        },
+        {
+            "id": "ori:skill.exploration.mining",
+            "path": "/gui/skills/exploration.mining.png"
+        },
+        {
+            "id": "ori:skill.exploration.mining.area_mining_i",
+            "path": "/gui/skills/exploration.mining.area_mining_i.png"
+        },
+        {
+            "id": "ori:skill.exploration.mining.area_mining_ii",
+            "path": "/gui/skills/exploration.mining.area_mining_ii.png"
+        },
+        {
+            "id": "ori:skill.profound",
+            "path": "/gui/skills/profound.png"
+        },
+        {
+            "id": "ori:skill.profound.magic",
+            "path": "/gui/skills/profound.magic.png"
+        },
+        {
+            "id": "ori:skill.profound.industry",
+            "path": "/gui/skills/profound.industry.png"
         },
         {
             "id": "ori:skill.economy",
@@ -40,10 +68,6 @@
         {
             "id": "ori:skill.economy.building",
             "path": "/gui/skills/economy.building.png"
-        },
-        {
-            "id": "ori:skill.industry",
-            "path": "/gui/skills/industry.png"
         },
         {
             "id": "ori:task.get_log",
