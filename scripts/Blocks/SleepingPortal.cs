@@ -59,6 +59,9 @@ namespace GameCore
                 if (guard.isDead) guard = null;
                 if (guard == null)
                 {
+                    //给予技能点
+                    player.ServerAddSkillPoint(0.5f);
+
                     //送玩家回到原本的区域
                     var portalRegion = PosConvert.MapPosToRegionIndex(pos);
                     player.GenerateRegion(portalRegion, true);
