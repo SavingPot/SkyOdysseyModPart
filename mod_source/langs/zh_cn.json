@@ -729,6 +729,10 @@
                 "text": "玻璃"
             },
             {
+                "id": "ori:sleeping_portal",
+                "text": "沉睡的传送门"
+            },
+            {
                 "id": "ori:portal",
                 "text": "传送门"
             },

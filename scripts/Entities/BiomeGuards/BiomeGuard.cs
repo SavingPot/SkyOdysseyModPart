@@ -1,27 +1,38 @@
-using System;
-using Newtonsoft.Json.Linq;
-using SP.Tools.Unity;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.GrasslandGuard)]
-    public class GrasslandGuard : BiomeGuard
+    [NotSummonable]
+    public abstract class BiomeGuard : Enemy
     {
         public const int attackRadius = 15 * 15; // 15^2
         public float attackTimer;
         public StateMachine machine;
         public LineRenderer lineRenderer;
-        public SpriteRenderer spriteRenderer;
+        public Vector3 originPosition;
+        public ParticleSystem particleSystem;
+        public BiomeGuardParticle particleScript;
 
+        public override Vector2 GetMovementDirection() => Vector2.zero;
+
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            originPosition = transform.position;
+
+            //TODO: pool-ify
+            particleSystem = GameObject.Instantiate(GInit.instance.BiomeGuardParticleSystemPrefab, transform);
+            particleSystem.transform.localPosition = Vector3.zero;
+            particleSystem.textureSheetAnimation.AddSprite(ModFactory.CompareTexture("ori:biome_guard_particle").sprite);
+            particleSystem.gameObject.AddComponent<BiomeGuardParticle>();
+
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        }
 
         public override void AfterInitialization()
         {
             base.AfterInitialization();
-
-            //添加贴图
-            spriteRenderer = AddSpriteRenderer(BlockID.Grass);
 
             //创建线渲染器
             lineRenderer = gameObject.AddComponent<LineRenderer>();
@@ -43,6 +54,29 @@ namespace GameCore
             machine.Update();
         }
 
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            if (particleSystem != null)
+                GameObject.Destroy(particleSystem.gameObject);
+        }
+
+        public override void Hide()
+        {
+            base.Hide();
+
+            particleSystem.Stop();
+        }
+
+        public override void Show()
+        {
+            base.Show();
+
+            particleSystem.Play();
+        }
+
+        protected abstract void ReleaseAttack();
 
 
 
@@ -65,7 +99,8 @@ namespace GameCore
 
 
 
-        public sealed class MovingState : IState
+
+        public class MovingState : IState
         {
             public StateMachine machine;
             public float motionDiameter = 20;
@@ -83,9 +118,15 @@ namespace GameCore
 
             public void OnUpdate()
             {
-                var guard = (GrasslandGuard)machine.entity;
+                var guard = (BiomeGuard)machine.entity;
 
-                /* ----------------------------------- 运动 ----------------------------------- */
+                /* ---------------------------------- 逼近玩家 ---------------------------------- */
+                if (guard.targetEntity)
+                {
+                    guard.originPosition = Vector3.Lerp(guard.originPosition, guard.targetEntity.transform.position, Tools.deltaTime * 0.4f);
+                }
+
+                /* ----------------------------------- 噪声运动 ----------------------------------- */
                 float xDelta = Mathf.PerlinNoise1D(Time.time * 0.5f) - 0.5f; //from -0.5 to 0.5
                 float yDelta = Mathf.PerlinNoise1D((Time.time + 10) * 0.5f) - 0.5f;
                 Vector3 delta = new(xDelta * motionDiameter, yDelta * motionDiameter);
@@ -111,18 +152,7 @@ namespace GameCore
                 /* ----------------------------------- 攻击 ----------------------------------- */
                 else if (Tools.time >= guard.attackTimer)
                 {
-                    foreach (var player in PlayerCenter.all)
-                    {
-                        if ((player.transform.position - guard.transform.position).sqrMagnitude > attackRadius)
-                            continue;
-
-                        var velocity = AngleTools.GetAngleVector2(guard.transform.position, player.transform.position).normalized * 30;
-                        velocity.y += 1; //y轴 +1 是为了抬高一点角度
-
-                        //TODO: 发射树种
-                        GM.instance.SummonBullet(guard.transform.position, EntityID.FlintArrow, velocity, guard.netId);
-                    }
-
+                    guard.ReleaseAttack();
                     guard.attackTimer = Tools.time + 1;
                 }
             }
@@ -151,16 +181,16 @@ namespace GameCore
 
 
 
-        public sealed class RestState : IState
+        public class RestState : IState
         {
             public StateMachine machine;
-            readonly GrasslandGuard guard;
+            readonly BiomeGuard guard;
             public float timeToResume;
 
             public RestState(StateMachine machine)
             {
                 this.machine = machine;
-                this.guard = (GrasslandGuard)machine.entity;
+                this.guard = (BiomeGuard)machine.entity;
                 this.timeToResume = Tools.time + 5;
             }
 
@@ -191,19 +221,19 @@ namespace GameCore
 
 
 
-        public sealed class HideState : IState
+        public class HideState : IState
         {
             readonly StateMachine machine;
             readonly Block blockToHideIn;
             readonly Vector3 targetPosition;
-            readonly GrasslandGuard guard;
+            readonly BiomeGuard guard;
             float timeToEscape;
 
             public HideState(StateMachine machine, Block blockToHideIn)
             {
                 this.machine = machine;
                 this.blockToHideIn = blockToHideIn;
-                this.guard = (GrasslandGuard)machine.entity;
+                this.guard = (BiomeGuard)machine.entity;
                 this.targetPosition = blockToHideIn.transform.position;
             }
 

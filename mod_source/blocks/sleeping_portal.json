@@ -1,0 +1,13 @@
+{
+    "json_format": "0.6.0",
+    "ori:block": {
+        "id": "ori:sleeping_portal",
+        "display": {
+            "texture_id": "ori:sleeping_portal"
+        },
+        "property": {
+            "hardness": -1,
+            "behaviour": "GameCore.SleepingPortal"
+        }
+    }
+}

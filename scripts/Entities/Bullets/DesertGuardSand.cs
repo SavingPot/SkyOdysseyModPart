@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.ExtremeWeatherGuardSand)]
-    public class ExtremeWeatherGuardSand : Bullet
+    [EntityBinding(EntityID.DesertGuardSand)]
+    public class DesertGuardSand : Bullet
     {
         public override void Initialize()
         {
             base.Initialize();
 
-            rb.gravityScale = 0;
+            destroyOnCollideWithBlock = false;
             damage = 20;
 
             AddSpriteRenderer("ori:desert_guard_sand");

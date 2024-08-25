@@ -175,6 +175,10 @@
             "path": "/blocks/glass.png"
         },
         {
+            "id": "ori:sleeping_portal",
+            "path": "/blocks/sleeping_portal.png"
+        },
+        {
             "id": "ori:portal",
             "path": "/blocks/portal.png"
         },
@@ -1351,13 +1355,11 @@
         },
         {
             "id": "ori:grassland_guard_storm",
-            "path": "/entities/bullets/grassland_guard_storm.png",
-            "pixel_unit": 16
+            "path": "/entities/bullets/grassland_guard_storm.png"
         },
         {
             "id": "ori:desert_guard_sand",
-            "path": "/entities/bullets/desert_guard_sand.png",
-            "pixel_unit": 16
+            "path": "/entities/bullets/desert_guard_sand.png"
         },
         {
             "id": "ori:flint_arrow",

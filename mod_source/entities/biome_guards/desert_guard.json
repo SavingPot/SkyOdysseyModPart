@@ -1,7 +1,7 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:grassland_guard",
+        "id": "ori:desert_guard",
         "physics": {
             "gravity": 0,
             "collider": {
@@ -11,8 +11,9 @@
                 ]
             }
         },
-        "max_health": 250,
+        "max_health": 600,
         "coin_count": 100,
-        "lifetime": 3600
+        "lifetime": 3600,
+        "search_radius": 80
     }
 }

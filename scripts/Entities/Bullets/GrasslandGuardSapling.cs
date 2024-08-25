@@ -11,6 +11,7 @@ namespace GameCore
             base.Initialize();
             damage = 0;
         }
+        
         public override void BlockCollision(Block block)
         {
             if (!isDead)

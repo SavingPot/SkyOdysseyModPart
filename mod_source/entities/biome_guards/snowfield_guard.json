@@ -1,7 +1,7 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:extreme_weather_guard",
+        "id": "ori:snowfield_guard",
         "physics": {
             "gravity": 0,
             "collider": {
@@ -11,8 +11,9 @@
                 ]
             }
         },
-        "max_health": 800,
+        "max_health": 500,
         "coin_count": 100,
-        "lifetime": 3600
+        "lifetime": 3600,
+        "search_radius": 80
     }
 }
