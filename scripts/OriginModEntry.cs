@@ -54,7 +54,7 @@ namespace GameCore
 
 
             //保存事件
-            GFiles.SaveAllBlockDataToFiles += WaterCenter.WriteAllCustomDataToSave;
+            GFiles.ApplyBlockDataToWorld += WaterCenter.WriteAllCustomDataToSave;
 
 
 
