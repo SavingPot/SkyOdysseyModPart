@@ -11,7 +11,7 @@
                 ]
             }
         },
-        "max_health": 500,
+        "max_health": 300,
         "coin_count": 100,
         "lifetime": 3600,
         "search_radius": 80
