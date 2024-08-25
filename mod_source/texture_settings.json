@@ -1354,12 +1354,9 @@
             "pixel_unit": 24
         },
         {
-            "id": "ori:grassland_guard_storm",
-            "path": "/entities/bullets/grassland_guard_storm.png"
-        },
-        {
             "id": "ori:desert_guard_sand",
-            "path": "/entities/bullets/desert_guard_sand.png"
+            "path": "/entities/bullets/desert_guard_sand.png",
+            "pixel_unit": 8
         },
         {
             "id": "ori:flint_arrow",

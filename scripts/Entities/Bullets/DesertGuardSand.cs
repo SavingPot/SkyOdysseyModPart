@@ -10,8 +10,7 @@ namespace GameCore
         {
             base.Initialize();
 
-            destroyOnCollideWithBlock = false;
-            damage = 20;
+            damage = 8;
 
             AddSpriteRenderer("ori:desert_guard_sand");
         }

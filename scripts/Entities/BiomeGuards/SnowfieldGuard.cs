@@ -13,7 +13,7 @@ namespace GameCore
 
             for (var i = 0; i < bulletAmount; i++)
             {
-                var velocity = new Vector2(Random.Range(-10, 11), Random.Range(10, 16));
+                var velocity = new Vector2(Random.Range(-10, 11), Random.Range(12, 18));
 
                 GM.instance.SummonBullet(transform.position, EntityID.SnowfieldGuardSnowball, velocity, netId);
             }

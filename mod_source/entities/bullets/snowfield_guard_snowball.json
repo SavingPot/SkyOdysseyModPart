@@ -4,7 +4,7 @@
         "id": "ori:snowfield_guard_snowball",
         "coin_count": 0,
         "physics": {
-            "gravity": 0
+            "gravity": 3
         },
         "lifetime": 10
     }
