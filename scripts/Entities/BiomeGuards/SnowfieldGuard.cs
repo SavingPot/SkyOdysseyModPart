@@ -7,9 +7,19 @@ namespace GameCore
     [EntityBinding(EntityID.SnowfieldGuard)]
     public class SnowfieldGuard : BiomeGuard
     {
+        public SpriteRenderer spriteRenderer;
+
+        public override void AfterInitialization()
+        {
+            base.AfterInitialization();
+
+            //添加贴图
+            spriteRenderer = AddSpriteRenderer(BlockID.SnowBlock);
+        }
+
         protected override void ReleaseAttack()
         {
-            var bulletAmount = Random.Range(10, 21);
+            var bulletAmount = Random.Range(5, 16);
 
             for (var i = 0; i < bulletAmount; i++)
             {

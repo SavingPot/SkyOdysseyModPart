@@ -10,8 +10,9 @@ namespace GameCore
         {
             base.Initialize();
 
-            destroyOnCollideWithBlock = false;
-            damage = 15;
+            damage = 1;
+
+            AddSpriteRenderer("ori:snow_block");//TODO
         }
 
         protected override void HitEntity(Entity entity)

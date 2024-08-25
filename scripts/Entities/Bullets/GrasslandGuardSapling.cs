@@ -9,6 +9,7 @@ namespace GameCore
         public override void Initialize()
         {
             base.Initialize();
+            
             damage = 0;
         }
         
