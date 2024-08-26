@@ -22,7 +22,7 @@ namespace GameCore
 
             foreach (var entity in ModFactory.globalEntities)
             {
-                if (entity.behaviourType != null && entity.behaviourType.IsSubclassOf(typeof(Enemy)))
+                if (entity.behaviourType != null && entity.behaviourType.IsSubclassOf(typeof(Enemy)) && !entity.behaviourType.IsSubclassOf(typeof(BiomeGuard)))
                 {
                     entitiesSpawnableTemp.Add(entity.id);
                 }
@@ -53,6 +53,7 @@ namespace GameCore
                 GM.instance.SummonEntityCallback(pos.To3(), entity, entity =>
                 {
                     entitiesSummoned[index] = entity;
+                    entity.rb.AddVelocity(new(Tools.staticRandom.Next(-5, 6), 3));
                 });
             }
 

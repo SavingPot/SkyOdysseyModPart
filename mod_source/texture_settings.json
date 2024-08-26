@@ -1500,32 +1500,37 @@
         },
         {
             "id": "ori:nick_right_arm",
-            "path": "/entities/npcs/nick/rightarm.png",
+            "path": "/entities/npcs/nick/right_arm.png",
             "pixel_unit": 16
         },
         {
             "id": "ori:nick_left_arm",
-            "path": "/entities/npcs/nick/leftarm.png",
+            "path": "/entities/npcs/nick/left_arm.png",
             "pixel_unit": 16
         },
         {
             "id": "ori:nick_right_leg",
-            "path": "/entities/npcs/nick/rightleg.png",
+            "path": "/entities/npcs/nick/right_leg.png",
             "pixel_unit": 16
         },
         {
             "id": "ori:nick_left_leg",
-            "path": "/entities/npcs/nick/leftleg.png",
+            "path": "/entities/npcs/nick/left_leg.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:nick_right_foot",
+            "path": "/entities/npcs/nick/right_foot.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:nick_left_foot",
+            "path": "/entities/npcs/nick/left_foot.png",
             "pixel_unit": 16
         },
         {
             "id": "ori:trader_body",
             "path": "/entities/npcs/trader/body.png",
-            "pixel_unit": 16
-        },
-        {
-            "id": "ori:trader_body_naked",
-            "path": "/entities/npcs/trader/body_naked.png",
             "pixel_unit": 16
         },
         {
@@ -1535,22 +1540,32 @@
         },
         {
             "id": "ori:trader_right_arm",
-            "path": "/entities/npcs/trader/rightarm.png",
+            "path": "/entities/npcs/trader/right_arm.png",
             "pixel_unit": 16
         },
         {
             "id": "ori:trader_left_arm",
-            "path": "/entities/npcs/trader/leftarm.png",
+            "path": "/entities/npcs/trader/left_arm.png",
             "pixel_unit": 16
         },
         {
             "id": "ori:trader_right_leg",
-            "path": "/entities/npcs/trader/rightleg.png",
+            "path": "/entities/npcs/trader/right_leg.png",
             "pixel_unit": 16
         },
         {
             "id": "ori:trader_left_leg",
-            "path": "/entities/npcs/trader/leftleg.png",
+            "path": "/entities/npcs/trader/left_leg.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:trader_right_foot",
+            "path": "/entities/npcs/trader/right_foot.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:trader_left_foot",
+            "path": "/entities/npcs/trader/left_foot.png",
             "pixel_unit": 16
         },
         {
