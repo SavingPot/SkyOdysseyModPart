@@ -138,6 +138,14 @@ namespace GameCore
                     ProgressDeeper();
                     break;
 
+                case NickProgress.Teaching_Portal:
+                    player.pui.DisplayDialog(new("ori:nick", "ori:button",
+                    new(GameUI.CompareText("ori:dialog.nick.teaching.portal_0"), "ori:nick_head"),
+                    new(GameUI.CompareText("ori:dialog.nick.teaching.portal_1"), "ori:nick_head")));
+
+                    ProgressDeeper();
+                    break;
+
                 default:
                     if (Item.Null(player.inventory.breastplate))
                         player.pui.DisplayDialog(new("ori:nick", "ori:button",
@@ -187,6 +195,7 @@ namespace GameCore
         Teaching_Attack,
         Teaching_Backpack,
         Teaching_Travel,
+        Teaching_Portal,
         AfterTeaching,
     }
 }

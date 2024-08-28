@@ -1,0 +1,24 @@
+{
+    "json_format": "0.7.8",
+    "ori:item": {
+        "id": "ori:grassland_knife",
+        "damage": 21,
+        "excavation_strength": 100,
+        "tags": [
+            "ori:knife"
+        ],
+        "use_cd": 0.15,
+        "extra_distance": 0.4,
+        "display": {
+            "description": "ori:description.grassland_knife",
+            "size": [
+                1.6,
+                1.6
+            ],
+            "offset": [
+                0.2,
+                -0.2
+            ]
+        }
+    }
+}

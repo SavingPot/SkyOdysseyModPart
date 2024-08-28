@@ -732,6 +732,10 @@
             "path": "/items/tools/weapons/iron_sword.png"
         },
         {
+            "id": "ori:grassland_knife",
+            "path": "/items/tools/knives/grassland.png"
+        },
+        {
             "id": "ori:building_center",
             "path": "/blocks/building_center.png"
         },

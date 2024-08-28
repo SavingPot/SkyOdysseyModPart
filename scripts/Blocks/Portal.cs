@@ -1,12 +1,15 @@
+using GameCore.UI;
+
 namespace GameCore
 {
     public class Portal : Block
     {
         public override bool PlayerInteraction(Player player)
         {
-            //TODO: 打开传送界面
+            GameUI.SetPage(player.pui.mapPanel);
+            player.ServerRefreshTeleportPoints();
 
-            return base.PlayerInteraction(player);
+            return true;
         }
     }
 }

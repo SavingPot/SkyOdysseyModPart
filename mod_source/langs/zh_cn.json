@@ -62,11 +62,19 @@
             },
             {
                 "id": "ori:dialog.nick.teaching.travel_1",
-                "text": "每个岛屿都可能对应着不同的生物群系, 群系守护者会将你拒之门外, 你务必要做好准备"
+                "text": "每个岛屿都可能对应着不同的生物群系, 群系守护者会将你拒之门外, 务必要做好准备"
             },
             {
                 "id": "ori:dialog.nick.teaching.travel_2",
                 "text": "我这里有一些物品, 他们应该可以帮到你, 请收下吧"
+            },
+            {
+                "id": "ori:dialog.nick.teaching.portal_0",
+                "text": "你发现头顶上的传送门了吗？每个区域都有一个传送门。"
+            },
+            {
+                "id": "ori:dialog.nick.teaching.portal_1",
+                "text": "传送门可以帮助你快速在不同区域间切换。"
             },
             {
                 "id": "ori:dialog.nick.hello.normal",
@@ -559,6 +567,10 @@
             {
                 "id": "ori:description.watermelon",
                 "text": "What's up, 你这瓜皮是金子做的还是这瓜粒子是金子做的"
+            },
+            {
+                "id": "ori:description.grassland_knife",
+                "text": "蕴藏着草原的力量"
             },
             {
                 "id": "ori:description.jungle_sword",
@@ -1155,6 +1167,10 @@
             {
                 "id": "ori:iron_sword",
                 "text": "铁剑"
+            },
+            {
+                "id": "ori:grassland_knife",
+                "text": "草原小刀"
             },
             {
                 "id": "ori:sugar",

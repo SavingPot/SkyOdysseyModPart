@@ -46,6 +46,8 @@ namespace GameCore
 
         IEnumerator WaitForChallengeEnd(Player player, BiomeGuard guard)
         {
+            var entityId = guard.data.id;
+
             while (player.regionIndex.y == ChallengeRoomGeneration.challengeRoomIndexY)
             {
                 //若玩家死亡那么不等了
@@ -61,6 +63,7 @@ namespace GameCore
                 {
                     //给予技能点
                     player.ServerAddSkillPoint(0.5f);
+                    if (entityId == EntityID.GrasslandGuard) player.ServerAddItem(ModFactory.CompareItem(ItemID.GrasslandKnife).DataToItem());
 
                     //送玩家回到原本的区域
                     var portalRegion = PosConvert.MapPosToRegionIndex(pos);
@@ -71,6 +74,7 @@ namespace GameCore
                         yield return null;
 
                     //激活传送门
+                    player.ServerAddTeleportPoint(pos);
                     Map.instance.SetBlockNet(pos, isBackground, BlockID.Portal, null);
                     yield break;
                 }
