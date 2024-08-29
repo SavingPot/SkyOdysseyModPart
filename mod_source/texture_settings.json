@@ -1260,23 +1260,33 @@
             "path": "/ui/button_low.png"
         },
         {
-            "id": "ori:world_background_0",
-            "path": "/gui/world_backgrounds/world_background_0.png",
+            "id": "ori:world_background_islands",
+            "path": "/gui/world_backgrounds/islands.png",
             "pixel_unit": 16
         },
         {
-            "id": "ori:world_background_1",
-            "path": "/gui/world_backgrounds/world_background_1.png",
+            "id": "ori:world_background_moist_zone",
+            "path": "/gui/world_backgrounds/moist_zone.png",
             "pixel_unit": 16
         },
         {
-            "id": "ori:world_background_2",
-            "path": "/gui/world_backgrounds/world_background_2.png",
+            "id": "ori:world_background_ocean",
+            "path": "/gui/world_backgrounds/ocean.png",
             "pixel_unit": 16
         },
         {
-            "id": "ori:world_background_3",
-            "path": "/gui/world_backgrounds/world_background_3.png",
+            "id": "ori:world_background_clouds1",
+            "path": "/gui/world_backgrounds/clouds1.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:world_background_clouds0",
+            "path": "/gui/world_backgrounds/clouds0.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:world_background_clouds-1",
+            "path": "/gui/world_backgrounds/clouds-1.png",
             "pixel_unit": 16
         },
         {
