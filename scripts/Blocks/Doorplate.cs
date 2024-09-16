@@ -7,9 +7,11 @@ namespace GameCore
 {
     public class Doorplate : Block
     {
-        static PanelIdentity nameEnterPanel;
+        static PanelIdentity settingsPanel;
+        static ToggleIdentity respawnPointToggle;
         static InputButtonIdentity nameEnterInputButton;
         static Doorplate operatingDoorplate;
+        static Player operatingPlayer;
 
 
         public override void DoStart()
@@ -29,7 +31,8 @@ namespace GameCore
                 if (GetRoomName().IsNullOrWhiteSpace())
                 {
                     operatingDoorplate = this;
-                    GameUI.SetPage(nameEnterPanel);
+                    operatingPlayer = player;
+                    GameUI.SetPage(settingsPanel);
                     return true;
                 }
                 else
@@ -114,9 +117,12 @@ namespace GameCore
 
         public static void InitUI()
         {
-            nameEnterPanel = GameUI.AddBackpackFormedPanel("ori:panel.doorplate_name_enter", GameUI.canvasRT, true);
+            settingsPanel = GameUI.AddBackpackFormedPanel("ori:panel.doorplate_settings", GameUI.canvasRT, true);
 
-            nameEnterInputButton = GameUI.AddInputButton(UIA.Middle, "ori:input_button.doorplate_name_enter", nameEnterPanel);
+            respawnPointToggle = GameUI.AddToggle(UIA.Middle, "ori:toggle.doorplate_set_respawn_point", settingsPanel);
+            respawnPointToggle.SetAPosY(-50);
+
+            nameEnterInputButton = GameUI.AddInputButton(UIA.Middle, "ori:input_button.doorplate_name_enter", settingsPanel);
             nameEnterInputButton.SetSize(new(300, 50));
             nameEnterInputButton.OnClickBind(() =>
             {
@@ -141,6 +147,34 @@ namespace GameCore
                 else
                 {
                     operatingDoorplate.SetRoomName(newName);
+
+                    //设置重生点
+                    if (respawnPointToggle.toggle.isOn)
+                    {
+                        Vector2Int? respawnPoint = null;
+                        MapUtils.RoomCheck roomCheck = new(operatingDoorplate.pos);
+                        roomCheck.IsEnclosedConstruction();
+
+                        //在房间里找空间
+                        foreach (var (x, y) in roomCheck.spacesInConstruction)
+                        {
+                            //如果可以容下一个人
+                            if ((!Map.instance.TryGetBlock(new(x, y), false, out var currentBlock) || currentBlock.data.collidible) &&
+                                (!Map.instance.TryGetBlock(new(x, y + 1), false, out var upperBlock) || upperBlock.data.collidible))
+                            {
+                                respawnPoint = new(x, y);
+                                break;
+                            }
+                        }
+
+                        //实在找不到就在门牌里
+                        if (!respawnPoint.HasValue)
+                            respawnPoint = operatingDoorplate.pos;
+
+                        //设置重生点
+                        operatingPlayer.ServerSetRespawnPoint(respawnPoint.Value);
+                        InternalUIAdder.instance.SetStatusText($"设置了重生点");
+                    }
                 }
 
                 GameUI.SetPage(null);
