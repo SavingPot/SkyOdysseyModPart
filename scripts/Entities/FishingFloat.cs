@@ -139,5 +139,29 @@ namespace GameCore
                 }
             }
         }
+
+        protected override void Update()
+        {
+            base.Update();
+
+            //把视野放在浮标和玩家中间
+            if (rod.player != null && rod.player.isLocalPlayer)
+            {
+                if (!Tools.instance.mainCameraController.secondLookAt)
+                    Tools.instance.mainCameraController.secondLookAt = transform;
+            }
+        }
+
+        public override void OnDeathClient()
+        {
+            base.OnDeathClient();
+
+            //把视野恢复
+            if (rod.player != null && rod.player.isLocalPlayer)
+            {
+                if (Tools.instance.mainCameraController.secondLookAt == transform)
+                    Tools.instance.mainCameraController.secondLookAt = null;
+            }
+        }
     }
 }

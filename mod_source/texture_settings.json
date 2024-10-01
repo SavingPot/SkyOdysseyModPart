@@ -119,6 +119,14 @@
             "pixel_unit": 1
         },
         {
+            "id": "ori:sun",
+            "path": "/sun.png"
+        },
+        {
+            "id": "ori:moon",
+            "path": "/moon.png"
+        },
+        {
             "id": "ori:rain_particle_0",
             "path": "/particles/rain_0.png"
         },

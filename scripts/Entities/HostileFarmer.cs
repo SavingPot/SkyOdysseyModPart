@@ -122,7 +122,7 @@ namespace GameCore
 
         public Item[] items { get => inventory.slots; set => inventory.slots = value; }
         public int inventorySlotCount => 1;
-        public int usingItemIndex => 0;
+        public int usingItemIndex { get; set; } = 0;
 
         Inventory IInventoryOwner.DefaultInventory()
         {

@@ -56,23 +56,14 @@ namespace GameCore
 
         void ReelIn()
         {
-            //设置浮标
-            if (fishingFloat)
+            //给予战利品
+            if (fishingFloat && Tools.time < fishingFloat.lastTimeHookedUp + 3)
             {
-                //给予战利品
-                if (Tools.time < fishingFloat.lastTimeHookedUp + 3)
-                {
-                    fishingFloat.GetLoot();
-                }
-
-                //清除浮标
-                fishingFloat.Death();
-                fishingFloat = null;
+                fishingFloat.GetLoot();
             }
 
-            //隐藏鱼线
-            lineRenderer.startWidth = 0;
-            lineRenderer.endWidth = 0;
+            //取消钓鱼
+            CancelFishing();
 
             //播放收竿动画
             player.animWeb.SwitchPlayingTo("slight_rightarm_lift");
@@ -120,7 +111,7 @@ namespace GameCore
             base.OnExit();
 
             GameObject.Destroy(lineRenderer.gameObject);
-            if (fishingFloat) fishingFloat.Death();
+            if (fishingFloat) ClearFloat();
         }
 
         public override void OnHand()
@@ -135,6 +126,13 @@ namespace GameCore
 
                 //更新鱼线
                 UpdateFishline();
+
+                //距离大于 20 就收竿
+                if ((fishingFloat.transform.position - owner.transform.position).sqrMagnitude > 20 * 20)
+                {
+                    //取消钓鱼
+                    CancelFishing();
+                }
             }
         }
 
@@ -157,12 +155,42 @@ namespace GameCore
             {
                 var rad = i / (float)lineSampleCount * Mathf.PI * 0.5f; // 0~90度
 
-                //根据弧度计算出x和y的坐标 (x = kl+b, y = ksin(rad)+b)
+                //根据弧度计算出 xy 坐标
                 samples[i] = new(origin.x + xLength * (i / (float)lineSampleCount), origin.y + yLength * Mathf.Sin(rad), origin.z);
             }
 
             //绘制鱼线
             lineRenderer.SetPositions(samples);
+        }
+
+        public override void OnSwitchFromThis()
+        {
+            base.OnSwitchFromThis();
+
+            //取消钓鱼
+            CancelFishing();
+        }
+
+        public void CancelFishing()
+        {
+            //清除浮标
+            if (fishingFloat)
+                ClearFloat();
+
+            //隐藏鱼线
+            HideFishline();
+        }
+
+        void ClearFloat()
+        {
+            fishingFloat.Death();
+            fishingFloat = null;
+        }
+
+        void HideFishline()
+        {
+            lineRenderer.startWidth = 0;
+            lineRenderer.endWidth = 0;
         }
 
         public FishingRodBehaviour(IInventoryOwner owner, Item data, string inventoryIndex) : base(owner, data, inventoryIndex)
