@@ -5,7 +5,7 @@
         "summon": {
             "default_probability": 80,
             "time_earliest": 3,
-            "time_latest": 18
+            "time_latest": 21
         },
         "drops": [
             {
@@ -13,7 +13,7 @@
                 "count": 2
             }
         ],
-        "speed": 3,
+        "speed": 4,
         "physics": {
             "collider": {
                 "size": [

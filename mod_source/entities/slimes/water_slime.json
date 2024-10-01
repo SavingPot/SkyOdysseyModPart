@@ -1,7 +1,7 @@
 {
     "json_format": "0.4.8",
     "ori:entity": {
-        "id": "ori:ice_slime",
+        "id": "ori:water_slime",
         "summon": {
             "default_probability": 80,
             "time_earliest": 3,
@@ -10,21 +10,21 @@
         "drops": [
             {
                 "id": "ori:slime_gel",
-                "count": 2
+                "count": 5
             }
         ],
-        "speed": 3,
+        "speed": 6,
         "physics": {
             "collider": {
                 "size": [
-                    0.8,
-                    0.8
+                    0.6,
+                    0.6
                 ]
             },
-            "gravity": 6
+            "gravity": 4
         },
-        "max_health": 40,
-        "coin_count": 5,
+        "max_health": 10,
+        "coin_count": 12,
         "normal_attack": {
             "radius": 1,
             "damage": 12,

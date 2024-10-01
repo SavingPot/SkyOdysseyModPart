@@ -1769,6 +1769,11 @@
             "id": "ori:ice_slime.idle",
             "path": "/entities/enemies/slimes/ice.png",
             "pixel_unit": 16
+        },
+        {
+            "id": "ori:water_slime.idle",
+            "path": "/entities/enemies/slimes/water.png",
+            "pixel_unit": 16
         }
     ]
 }
