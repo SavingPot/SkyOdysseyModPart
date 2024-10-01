@@ -51,10 +51,10 @@ namespace GameCore
 
 
                     bool isTargetLeft = targetPosition.x < enemyPosition.x;
-                    float errorValue = 0.1f;
+                    float errorValue = 0.2f;
 
                     // 目标右向右
-                    // 靠的很近就设为 0, 否则会鬼畜
+                    // 靠的很近就设为 0, 否则会一直跳跃
                     xVelo = !isTargetLeft ? (targetPosition.x - enemyPosition.x < errorValue ? 0 : 13) : (targetPosition.x - enemyPosition.x > -errorValue ? 0 : -13);
 
                     yVelo = enemy.GetJumpVelocity(60);
