@@ -29,6 +29,7 @@ namespace GameCore
             AddSpriteRenderer(Texture);
 
             jumpCD = 2;
+            fallenDamageHeight = float.MaxValue; //免疫摔落伤害
         }
 
         public override Vector2 GetMovementDirection()
