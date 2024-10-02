@@ -1774,6 +1774,41 @@
             "id": "ori:water_slime.idle",
             "path": "/entities/enemies/slimes/water.png",
             "pixel_unit": 16
+        },
+        {
+            "id": "ori:giant_scorpion_body",
+            "path": "/entities/enemies/giant_scorpion/body.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:giant_scorpion_back_legs_0",
+            "path": "/entities/enemies/giant_scorpion/back_legs_0.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:giant_scorpion_back_legs_1",
+            "path": "/entities/enemies/giant_scorpion/back_legs_1.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:giant_scorpion_back_pincher",
+            "path": "/entities/enemies/giant_scorpion/back_pincher.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:giant_scorpion_upper_legs_0",
+            "path": "/entities/enemies/giant_scorpion/upper_legs_0.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:giant_scorpion_upper_legs_1",
+            "path": "/entities/enemies/giant_scorpion/upper_legs_1.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:giant_scorpion_upper_pincher",
+            "path": "/entities/enemies/giant_scorpion/upper_pincher.png",
+            "pixel_unit": 16
         }
     ]
 }

@@ -1,0 +1,22 @@
+{
+    "json_format": "0.4.8",
+    "ori:entity": {
+        "id": "ori:giant_scorpion",
+        "speed": 3,
+        "physics": {
+            "collider": {
+                "size": [
+                    5,
+                    10
+                ]
+            },
+            "gravity": 5
+        },
+        "max_health": 1000,
+        "search_radius": 350,
+        "coin_count": 100,
+        "normal_attack": {
+            "damage": 30
+        }
+    }
+}
