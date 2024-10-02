@@ -9,6 +9,7 @@
         },
         "property": {
             "hardness": 10,
+            "transformable": false,
             "tags": [
                 "ori:furniture"
             ],

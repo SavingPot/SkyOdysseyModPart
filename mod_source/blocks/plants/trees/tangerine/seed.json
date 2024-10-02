@@ -8,6 +8,7 @@
         },
         "property": {
             "hardness": 1,
+            "transformable": false,
             "tags": [
                 "ori:plant",
                 "ori:tree_seed"

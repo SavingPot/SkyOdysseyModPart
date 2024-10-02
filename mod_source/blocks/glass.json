@@ -4,6 +4,7 @@
         "id": "ori:glass",
         "property": {
             "hardness": 1,
+            "transformable": false,
             "tags": [
                 "ori:construction_wall"
             ]

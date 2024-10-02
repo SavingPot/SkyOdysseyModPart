@@ -4,6 +4,7 @@
         "id": "ori:frying_pan",
         "property": {
             "hardness": 10,
+            "transformable": false,
             "behaviour": "GameCore.FryingPan"
         }
     }

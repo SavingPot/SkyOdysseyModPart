@@ -6,7 +6,8 @@
             "texture_id": "ori:boundary"
         },
         "property": {
-            "hardness": -1
+            "hardness": -1,
+            "transformable": false
         }
     }
 }

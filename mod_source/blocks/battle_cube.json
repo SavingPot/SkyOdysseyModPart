@@ -8,6 +8,7 @@
         },
         "property": {
             "hardness": -1,
+            "transformable": false,
             "collidible": false,
             "behaviour": "GameCore.BattleCube"
         }

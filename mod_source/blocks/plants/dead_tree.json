@@ -8,6 +8,7 @@
         },
         "property": {
             "hardness": 0.25,
+            "transformable": false,
             "tags": [
                 "ori:plant"
             ],

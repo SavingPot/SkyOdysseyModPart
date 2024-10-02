@@ -3,7 +3,6 @@
     "ori:item": {
         "id": "ori:wrench",
         "damage": 12,
-        "use_cd": 0.7,
         "extra_distance": 0.2,
         "display": {
             "rotation": -45,
