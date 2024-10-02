@@ -28,12 +28,12 @@ namespace GameCore
             //添加身体部分
             CreateModel();
             body = AddBodyPart("body", ModFactory.CompareTexture("ori:giant_scorpion_body").sprite, Vector2.zero, 5, model.transform, BodyPartType.Body);
-            upperPincher = AddBodyPart("upper_pincher", ModFactory.CompareTexture("ori:giant_scorpion_upper_pincher").sprite, new(0, 0f), 9, body, BodyPartType.RightArm);
-            backPincher = AddBodyPart("back_pincher", ModFactory.CompareTexture("ori:giant_scorpion_back_pincher").sprite, new(2.3f, -0.61f), 8, body, BodyPartType.LeftArm);
-            upperLegs0 = AddBodyPart("upper_legs_0", ModFactory.CompareTexture("ori:giant_scorpion_upper_legs_0").sprite, new(-1.643f, -0.958f), 7, body, BodyPartType.RightLeg);
-            upperLegs1 = AddBodyPart("upper_legs_1", ModFactory.CompareTexture("ori:giant_scorpion_upper_legs_1").sprite, new(-0.516f, -1.214f), 7, body, BodyPartType.LeftLeg);
-            backLegs0 = AddBodyPart("back_legs_0", ModFactory.CompareTexture("ori:giant_scorpion_back_legs_0").sprite, new(0.054f, -0.338f), 4, body, BodyPartType.RightFoot);
-            backLegs1 = AddBodyPart("back_legs_1", ModFactory.CompareTexture("ori:giant_scorpion_back_legs_1").sprite, new(-0f, -0f), 4, body, BodyPartType.LeftFoot);
+            upperPincher = AddBodyPart("upper_pincher", ModFactory.CompareTexture("ori:giant_scorpion_upper_pincher").sprite, new(-0.05f,1f), 9, body, BodyPartType.RightArm);
+            backPincher = AddBodyPart("back_pincher", ModFactory.CompareTexture("ori:giant_scorpion_back_pincher").sprite, Vector2.zero, 8, body, BodyPartType.LeftArm);
+            upperLegs0 = AddBodyPart("upper_legs_0", ModFactory.CompareTexture("ori:giant_scorpion_upper_legs_0").sprite, Vector2.zero, 7, body, BodyPartType.RightLeg);
+            upperLegs1 = AddBodyPart("upper_legs_1", ModFactory.CompareTexture("ori:giant_scorpion_upper_legs_1").sprite, Vector2.zero, 7, body, BodyPartType.LeftLeg);
+            backLegs0 = AddBodyPart("back_legs_0", ModFactory.CompareTexture("ori:giant_scorpion_back_legs_0").sprite, Vector2.zero, 4, body, BodyPartType.RightFoot);
+            backLegs1 = AddBodyPart("back_legs_1", ModFactory.CompareTexture("ori:giant_scorpion_back_legs_1").sprite, Vector2.zero, 4, body, BodyPartType.LeftFoot);
 
 
             animWeb = new AnimWeb();
