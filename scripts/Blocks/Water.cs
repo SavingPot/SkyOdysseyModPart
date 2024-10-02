@@ -77,7 +77,7 @@ namespace GameCore
 
             operationsToExecute.Add(() =>
             {
-                Map.instance.SetBlockNet(target, origin.isBackground, BlockID.Water, jo.ToString());
+                Map.instance.SetBlockNet(target, origin.isBackground, BlockStatus.Normal, BlockID.Water, jo.ToString());
 
                 if (origin.filledLevel <= 0)
                 {
@@ -111,7 +111,7 @@ namespace GameCore
                 }
 
                 //放水
-                Map.instance.SetBlockNet(target, origin.isBackground, BlockID.Water, jo.ToString());
+                Map.instance.SetBlockNet(target, origin.isBackground, BlockStatus.Normal, BlockID.Water, jo.ToString());
 
                 if (origin.filledLevel <= 0)
                 {
@@ -322,12 +322,12 @@ namespace GameCore
         {
             base.OnEntityExit(entity);
 
-                GAudio.Play(Random.Range(0, 2) switch
-                {
-                    0 => AudioID.SwimExit0,
-                    1 => AudioID.SwimExit1,
-                    _ => throw new(),
-                }, entity.transform.position);
+            GAudio.Play(Random.Range(0, 2) switch
+            {
+                0 => AudioID.SwimExit0,
+                1 => AudioID.SwimExit1,
+                _ => throw new(),
+            }, entity.transform.position);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace GameCore
             GAudio.Play(AudioID.PickBerryBush, pos);
 
             //修改方块
-            chunk.map.SetBlockNet(pos, isBackground, BlockID.PickedBerryBush, null);
+            chunk.map.SetBlockNet(pos, isBackground, BlockStatus.Normal, BlockID.PickedBerryBush, null);
 
             return true;
         }

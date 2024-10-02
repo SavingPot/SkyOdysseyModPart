@@ -27,7 +27,7 @@ namespace GameCore
 
             //防止方块
             var blockPos = PosConvert.WorldToMapPos(endPoint);
-            Map.instance.SetBlockNet(blockPos, false, BlockID.OakPlanks, null);
+            Map.instance.SetBlockNet(blockPos, false, BlockStatus.Normal, BlockID.OakPlanks, null);
 
             return true;
         }

@@ -28,7 +28,7 @@ namespace GameCore
         public override bool PlayerInteraction(Player caller)
         {
             //替换为熄灭的篝火
-            chunk.map.SetBlockNet(pos, isBackground, BlockID.ExtinguishedCampfire, null);
+            chunk.map.SetBlockNet(pos, isBackground, BlockStatus.Normal, BlockID.ExtinguishedCampfire, null);
             GAudio.Play(AudioID.Smother, pos, true);
 
             return true;

@@ -34,7 +34,7 @@ namespace GameCore
                 if (grassData == null)
                     return;
 
-                Map.instance.SetBlockNet(targetPos, isBackground, grassData.id, null);
+                Map.instance.SetBlockNet(targetPos, isBackground, BlockStatus.Normal, grassData.id, null);
             }
         }
     }

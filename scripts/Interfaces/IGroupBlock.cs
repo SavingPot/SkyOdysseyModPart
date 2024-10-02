@@ -148,7 +148,7 @@ namespace GameCore
                         //创建子方块
                         JObject customData = new();
                         customData.AddProperty("offset", VectorConverter.ToIntArray(entourageOffset));
-                        Map.instance.SetBlock(entouragePos, block.isBackground, block.data, customData.ToString(Formatting.None), true, false);
+                        Map.instance.SetBlock(entouragePos, block.isBackground, BlockStatus.Normal, block.data, customData.ToString(Formatting.None), true, false);
                     }
                 }
             }

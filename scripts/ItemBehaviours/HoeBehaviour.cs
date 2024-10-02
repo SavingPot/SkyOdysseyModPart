@@ -32,7 +32,7 @@ namespace GameCore
 
                     //Remove 不执行生命周期，等到 Add 再更新，以节约性能
                     chunk.RemoveBlock(pos, isBackground, true, false);
-                    chunk.AddBlock(pos, isBackground, blockDatum, null, true, true);
+                    chunk.AddBlock(pos, isBackground, BlockStatus.Normal, blockDatum, null, true, true);
 
                     if (GControls.mode == ControlMode.Gamepad)
                         GControls.GamepadVibrationSlightMedium();

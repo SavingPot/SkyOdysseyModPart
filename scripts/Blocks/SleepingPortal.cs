@@ -75,7 +75,7 @@ namespace GameCore
 
                     //激活传送门
                     player.ServerAddTeleportPoint(pos);
-                    Map.instance.SetBlockNet(pos, isBackground, BlockID.Portal, null);
+                    Map.instance.SetBlockNet(pos, isBackground, BlockStatus.Normal, BlockID.Portal, null);
                     yield break;
                 }
                 //如果还在挑战那么继续等待
