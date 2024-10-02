@@ -4,7 +4,7 @@
         "id": "ori:fishing_rod",
         "damage": 7,
         "use_cd": 0.8,
-        "extra_distance": 0.2,
+        "extra_distance": 0.4,
         "display": {
             "description": "ori:description.fishing_rod",
             "size": [

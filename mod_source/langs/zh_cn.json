@@ -349,6 +349,10 @@
                 "text": "向水中投掷浮标以钓鱼"
             },
             {
+                "id": "ori:description.wrench",
+                "text": "单击物品以改变物体形状"
+            },
+            {
                 "id": "ori:description.mana_stone",
                 "text": "魔能石被用于储存魔能, 若注入魔咒, 也可以释放魔法"
             },
@@ -727,6 +731,10 @@
             {
                 "id": "ori:fishing_rod",
                 "text": "钓鱼竿"
+            },
+            {
+                "id": "ori:wrench",
+                "text": "扳手"
             },
             {
                 "id": "ori:loot_bag",

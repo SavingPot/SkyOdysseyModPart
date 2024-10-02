@@ -167,6 +167,10 @@
             "path": "/items/tools/fishing_rod.png"
         },
         {
+            "id": "ori:wrench",
+            "path": "/items/tools/wrench.png"
+        },
+        {
             "id": "ori:cod",
             "path": "/items/foods/fishes/cod.png"
         },
