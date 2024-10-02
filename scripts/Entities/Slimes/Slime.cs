@@ -30,6 +30,8 @@ namespace GameCore
 
             jumpCD = 2;
             fallenDamageHeight = float.MaxValue; //免疫摔落伤害
+
+            transform.localScale= Vector3.one * Random.Range(0.9f, 1.5f);
         }
 
         public override Vector2 GetMovementDirection()
