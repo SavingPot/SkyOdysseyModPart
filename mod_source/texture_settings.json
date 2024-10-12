@@ -255,8 +255,8 @@
             "path": "/items/foods/dishes/poultry_soup.png"
         },
         {
-            "id": "ori:pig_soup",
-            "path": "/items/foods/dishes/pig_soup.png"
+            "id": "ori:meat_soup",
+            "path": "/items/foods/dishes/meat_soup.png"
         },
         {
             "id": "ori:salad",

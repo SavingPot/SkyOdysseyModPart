@@ -6,7 +6,8 @@
         "tags": [
             "ori:food",
             "ori:meat",
-            "ori:edible=20"
+            "ori:edible=20",
+            "ori:meat_chop"
         ],
         "economy": {
             "worth": 25

@@ -669,8 +669,8 @@
                 "text": "具有恢复饥饿值的作用。\n一颗蛋被轻轻打碎，在锅中化作了蛋花汤。\n尝起来甜甜的。"
             },
             {
-                "id": "ori:description.pig_soup",
-                "text": "具有恢复饥饿值的作用。\n切片的猪肉被放入锅中，煮至深红，汤汁浓郁。\n油浮在表面而看着鲜美。"
+                "id": "ori:description.meat_soup",
+                "text": "具有恢复饥饿值的作用。\n切片的肉被放入锅中，煮至深红，汤汁浓郁。\n油浮在表面而看着鲜美。"
             },
             {
                 "id": "ori:description.poultry_soup",
@@ -789,8 +789,8 @@
                 "text": "禽肉汤"
             },
             {
-                "id": "ori:pig_soup",
-                "text": "猪肉汤"
+                "id": "ori:meat_soup",
+                "text": "兽肉汤"
             },
             {
                 "id": "ori:strange_dish",

@@ -1,14 +1,16 @@
 {
     "json_format": "0.6.0",
     "ori:cooking_recipe": {
-        "id": "ori:pig_soup",
+        "id": "ori:meat_soup",
         "ingredients": [
             {
-                "id": "ori:pig_chop"
+                "tags": [
+                    "ori:meat_chop"
+                ]
             }
         ],
         "result": {
-            "id": "ori:pig_soup"
+            "id": "ori:meat_soup"
         }
     }
 }
