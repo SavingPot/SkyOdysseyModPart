@@ -1500,6 +1500,26 @@
             "pixel_unit": 16
         },
         {
+            "id": "ori:iron_breastplate",
+            "path": "/items/armors/iron/breastplate.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:iron_breastplate.body",
+            "path": "/items/armors/iron/body.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:iron_breastplate.right_arm",
+            "path": "/items/armors/iron/right_arm.png",
+            "pixel_unit": 16
+        },
+        {
+            "id": "ori:iron_breastplate.left_arm",
+            "path": "/items/armors/iron/left_arm.png",
+            "pixel_unit": 16
+        },
+        {
             "id": "ori:feather_wing",
             "path": "/items/armors/wings/feather_wing.png",
             "pixel_unit": 16

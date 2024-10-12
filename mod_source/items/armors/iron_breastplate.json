@@ -1,0 +1,17 @@
+{
+    "json_format": "0.5.1",
+    "ori:item": {
+        "id": "ori:iron_breastplate",
+        "texture": "ori:iron_breastplate",
+        "damage": 10,
+        "tags": [
+            "ori:iron"
+        ],
+        "breastplate": {
+            "defense": 5,
+            "body": "ori:iron_breastplate.body",
+            "right_arm": "ori:iron_breastplate.right_arm",
+            "left_arm": "ori:iron_breastplate.left_arm"
+        }
+    }
+}

@@ -949,6 +949,26 @@
                 "text": "银矿"
             },
             {
+                "id": "ori:copper_ingot",
+                "text": "铜锭"
+            },
+            {
+                "id": "ori:gold_ingot",
+                "text": "金锭"
+            },
+            {
+                "id": "ori:iron_ingot",
+                "text": "铁锭"
+            },
+            {
+                "id": "ori:silver_ingot",
+                "text": "银锭"
+            },
+            {
+                "id": "ori:iron_breastplate",
+                "text": "铁胸甲"
+            },
+            {
                 "id": "ori:field.settings.playerName",
                 "text": "输入玩家名称"
             },
