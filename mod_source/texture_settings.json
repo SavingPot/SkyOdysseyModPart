@@ -331,10 +331,6 @@
             "path": "/gui/switch_to_housing_rental.png"
         },
         {
-            "id": "ori:switch_to_housing_purchase",
-            "path": "/gui/switch_to_housing_purchase.png"
-        },
-        {
             "id": "ori:loading_house_0",
             "path": "/gui/loading_house_0.png"
         },
@@ -1040,6 +1036,18 @@
             "path": "/ui/player/player_cursor.png"
         },
         {
+            "id": "ori:building_center_button",
+            "path": "/ui/player/building_center_button.png"
+        },
+        {
+            "id": "ori:market_center_button",
+            "path": "/ui/player/market_center_button.png"
+        },
+        {
+            "id": "ori:region_unlocking_button",
+            "path": "/ui/player/region_unlocking_button.png"
+        },
+        {
             "id": "ori:virtual_cursor",
             "path": "/gui/virtual_cursor.png"
         },
@@ -1058,6 +1066,10 @@
         {
             "id": "ori:health_bar",
             "path": "/gui/health_bar.png"
+        },
+        {
+            "id": "ori:enemy_health_bar",
+            "path": "/gui/enemy_health_bar.png"
         },
         {
             "id": "ori:dirt",

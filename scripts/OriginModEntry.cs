@@ -115,7 +115,6 @@ namespace GameCore
 
                         //初始化 UI
                         Doorplate.InitUI();
-                        BuildingCenter.InitUI();
                         break;
                 }
             };

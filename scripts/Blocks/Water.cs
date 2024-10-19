@@ -290,7 +290,7 @@ namespace GameCore
                 {
                     var player = (Player)entity;
 
-                    if (Player.PlayerCanControl(player) && player.playerController.HoldingJump())
+                    if (Player.InteractiveControllable(player) && player.playerController.HoldingJump())
                     {
                         if (player.rb.velocity.y < creatureSwimmingSpeed)
                         {
