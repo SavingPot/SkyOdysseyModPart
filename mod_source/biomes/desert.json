@@ -12,7 +12,7 @@
                 "type": "perlin",
                 "fluctuation": {
                     "frequency": 2.5,
-                    "height": 2.5
+                    "height": 10
                 },
                 "start_y": "@surface + 1",
                 "blocks": [
