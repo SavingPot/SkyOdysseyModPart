@@ -242,7 +242,7 @@
             },
             {
                 "id": "ori:skill_description.economy.building",
-                "text": "解锁建造中心配方"
+                "text": "<color=red>TODO! Uncompleted!!</color>"
             },
             {
                 "id": "ori:task_tree.node.ori:get_log.text",
@@ -801,10 +801,6 @@
                 "text": "熄灭的篝火"
             },
             {
-                "id": "ori:remote_market",
-                "text": "远程市场"
-            },
-            {
                 "id": "ori:campfire",
                 "text": "篝火"
             },
@@ -1015,6 +1011,10 @@
             {
                 "id": "ori:switch_item",
                 "text": "切换到了物品 {item_id}"
+            },
+            {
+                "id": "ori:button.placement_trade_sell_item.text",
+                "text": "售卖手中物品"
             },
             {
                 "id": "ori:button.respawn.text",

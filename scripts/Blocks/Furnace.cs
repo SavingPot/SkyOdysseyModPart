@@ -8,9 +8,9 @@ namespace GameCore
 
         public override bool PlayerInteraction(Player player)
         {
-            player.pui.SetCraftingFacility(data.id);
-            player.pui.ShowOrHideBackpackAndSetPanelToCrafting();
-            player.pui.RefreshBackpackPanel("ori:crafting");
+            player.pui.Backpack.SetCraftingFacility(data.id);
+            player.pui.Backpack.ShowOrHideBackpackAndSetPanelToCrafting();
+            player.pui.Backpack.RefreshBackpackPanel("ori:crafting");
             return true;
         }
     }

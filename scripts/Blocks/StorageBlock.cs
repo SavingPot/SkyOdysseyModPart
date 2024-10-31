@@ -34,7 +34,7 @@ namespace GameCore
         public override bool PlayerInteraction(Player player)
         {
             RefreshItemView();
-            player.pui.ShowOrHideBackpackAndSetPanelTo(backpackPanelId);
+            player.pui.Backpack.ShowOrHideBackpackAndSetPanelTo(backpackPanelId);
 
             return true;
         }
@@ -49,7 +49,7 @@ namespace GameCore
             (var modId, var panelName) = Tools.SplitModIdAndName(backpackPanelId);
 
             //物品视图
-            (itemPanel, itemView) = Player.local.pui.GenerateItemViewBackpackPanel(
+            (itemPanel, itemView) = Player.local.pui.Backpack.GenerateItemViewBackpackPanel(
                 backpackPanelId,
                 $"{modId}:switch_button.{panelName}",
                 80,
@@ -89,8 +89,8 @@ namespace GameCore
                 return;
 
             //检测一下背包面板是否还存在
-            if (player.pui.backpackPanels.Any(p => p.id == backpackPanelId))
-                player.pui.DestroyBackpackPanel(backpackPanelId);
+            if (player.pui.Backpack.backpackPanels.Any(p => p.id == backpackPanelId))
+                player.pui.Backpack.DestroyBackpackPanel(backpackPanelId);
         }
 
 

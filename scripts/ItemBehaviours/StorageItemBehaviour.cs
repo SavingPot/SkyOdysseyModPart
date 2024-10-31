@@ -39,7 +39,7 @@ namespace GameCore
             if (owner is Player player)
             {
                 RefreshItemView();
-                player.pui.ShowOrHideBackpackAndSetPanelTo(backpackPanelId);
+                player.pui.Backpack.ShowOrHideBackpackAndSetPanelTo(backpackPanelId);
             }
 
             return true;
@@ -52,7 +52,7 @@ namespace GameCore
                 (var modId, var panelName) = Tools.SplitModIdAndName(backpackPanelId);
 
                 //物品视图
-                (itemPanel, itemView) = Player.local.pui.GenerateItemViewBackpackPanel(
+                (itemPanel, itemView) = Player.local.pui.Backpack.GenerateItemViewBackpackPanel(
                     backpackPanelId,
                     $"{modId}:button.switch_{panelName}",
                     80,

@@ -161,6 +161,7 @@ namespace GameCore
 
         public void FirstMeetDialog(Player player)
         {
+            //TODO: 更改对话内容，减少对话量
             player.pui.DisplayDialog(new("ori:nick", "ori:button",
             new(GameUI.CompareText("ori:dialog.nick.first_meet_0"), "ori:nick_head"),
             new(GameUI.CompareText("ori:dialog.nick.first_meet_1"), "ori:nick_head"),
@@ -171,13 +172,15 @@ namespace GameCore
                 ControlMode.KeyboardAndMouse => "鼠标右键",
                 ControlMode.Gamepad => "手柄左触发器",
                 _ => ""
-            }), "ori:nick_head")));
-
-            //TODO: 更改对话内容，减少对话量
-            //给予技能稿纸
-            JObject jo = new();
-            SkillManuscriptBehaviour.WriteSkillId(ref jo, SkillID.Root);
-            player.ServerAddItem(ModFactory.CompareItem(ItemID.SkillManuscript).DataToItem().SetCustomData(jo));
+            }), "ori:nick_head")), () =>
+            {
+                //对话完毕后给予技能稿纸
+                JObject jo = new();
+                SkillManuscriptBehaviour.WriteSkillId(ref jo, SkillID.Root);
+                var manuscript = ModFactory.CompareItem(ItemID.SkillManuscript).DataToItem().SetCustomData(jo);
+                player.pui.ShowGainRareItemUI(manuscript);
+                player.ServerAddItem(manuscript);
+            });
 
             ProgressDeeper();
         }

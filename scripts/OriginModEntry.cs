@@ -35,7 +35,7 @@ namespace GameCore
                 if (player.isLocalPlayer && player.isServer)
                 {
                     //解锁技能时刷新一下农作物装饰器
-                    player.pui.OnUnlockSkill += skill =>
+                    player.pui.Backpack.OnUnlockSkill += skill =>
                     {
                         //TODO: 解锁锄头合成配方
                         CropBlock.GetCrop();
@@ -87,7 +87,7 @@ namespace GameCore
                 }
 
                 var id = SkillManuscriptBehaviour.GetSkillId(item.customData);
-                return id.IsNullOrWhiteSpace() ? $"技能: 空" : $"技能: {GameUI.CompareText(player.pui.skillNodeTree.GetNodeButtonId(id) + ".text")}";
+                return id.IsNullOrWhiteSpace() ? $"技能: 空" : $"技能: {GameUI.CompareText(player.pui.Backpack.skillNodeTree.GetNodeButtonId(id) + ".text")}";
             });
             Item.infoModifiersForTag.Add("ori:edible", item => $"回血: {item.data.Edible().tagValue}");
             Item.infoModifiersForTag.Add("ori:bait", item => $"鱼饵: {item.data.GetValueTagToInt("ori:bait").tagValue}");

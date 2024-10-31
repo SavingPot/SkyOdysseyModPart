@@ -159,10 +159,6 @@
             "path": "/blocks/chests/wooden.png"
         },
         {
-            "id": "ori:remote_market",
-            "path": "/blocks/remote_market.png"
-        },
-        {
             "id": "ori:fishing_rod",
             "path": "/items/tools/fishing_rod.png"
         },
@@ -418,10 +414,6 @@
         {
             "id": "ori:switch_button.wooden_chest",
             "path": "/gui/backpack_panels/switch_buttons/wooden_chest.png"
-        },
-        {
-            "id": "ori:switch_button.remote_market",
-            "path": "/gui/backpack_panels/switch_buttons/remote_market.png"
         },
         {
             "id": "ori:switch_button.trader",

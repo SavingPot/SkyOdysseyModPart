@@ -28,17 +28,17 @@ namespace GameCore
                                                 ModFactory.CompareTexture("ori:trader_left_leg").sprite,
                                                 ModFactory.CompareTexture("ori:trader_right_foot").sprite,
                                                 ModFactory.CompareTexture("ori:trader_left_foot").sprite);
-
-            //Todo: Auto destroy after player has been far away from the NPC
-            tradeUI = new("ori:trader", new TradeUI.ItemTrade[]
-            {
-                new(ItemID.BlockGun, 1, 100),
-            });
         }
 
         public override bool PlayerInteraction(Player player)
         {
-            player.pui.ShowOrHideBackpackAndSetPanelTo(tradeUI.backpackPanelId);
+            //Todo: Auto destroy after player has been far away from the NPC
+            tradeUI ??= TradeUI.GenerateItemViewBackpackPanel(player.pui, "ori:trader", new TradeUI.ItemTrade[]
+            {
+                new(ItemID.BlockGun, 1, 100),
+            });
+
+            player.pui.Backpack.ShowOrHideBackpackAndSetPanelTo(tradeUI.backpackPanelId);
             return true;
         }
     }
