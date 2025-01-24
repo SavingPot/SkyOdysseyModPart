@@ -736,10 +736,6 @@
             "path": "/items/tools/knives/grassland.png"
         },
         {
-            "id": "ori:building_center",
-            "path": "/blocks/building_center.png"
-        },
-        {
             "id": "ori:doorplate",
             "path": "/blocks/doorplate.png"
         },
@@ -1064,6 +1060,14 @@
             "path": "/gui/enemy_health_bar.png"
         },
         {
+            "id": "ori:labor_housing_occupied_flag",
+            "path": "/gui/labor_housing_occupied_flag.png"
+        },
+        {
+            "id": "ori:labor_housing_unoccupied_flag",
+            "path": "/gui/labor_housing_unoccupied_flag.png"
+        },
+        {
             "id": "ori:dirt",
             "path": "/blocks/dirt.png"
         },
@@ -1377,6 +1381,10 @@
         {
             "id": "ori:snail_0",
             "path": "/entities/snail_0.png"
+        },
+        {
+            "id": "ori:labor_body",
+            "path": "/entities/labor/body.png"
         },
         {
             "id": "ori:spark",

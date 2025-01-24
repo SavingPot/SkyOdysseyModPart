@@ -234,7 +234,7 @@
             },
             {
                 "id": "ori:skill_description.economy",
-                "text": "解锁远程市场配方"
+                "text": "<color=red>TODO! Uncompleted!!</color>"
             },
             {
                 "id": "ori:skill_tree.node.ori:economy.building.text",
@@ -1345,10 +1345,6 @@
                 "text": "剑"
             },
             {
-                "id": "ori:building_center",
-                "text": "建造中心"
-            },
-            {
                 "id": "ori:doorplate",
                 "text": "门牌"
             },
@@ -1623,14 +1619,6 @@
             {
                 "id": "ori:text.leaving_game",
                 "text": "退出游戏中"
-            },
-            {
-                "id": "ori:button.building_center.housing_info_to_rental.text",
-                "text": "返回"
-            },
-            {
-                "id": "ori:toggle.create_new_world_world_mode.text",
-                "text": "短期模式"
             }
         ]
     }

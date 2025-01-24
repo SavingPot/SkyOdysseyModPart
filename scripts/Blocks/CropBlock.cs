@@ -202,7 +202,7 @@ namespace GameCore
             if (!Server.isServer)
                 return;
 
-            if (!chunk.map.TryGetBlock(new(pos.x, pos.y - 1), isBackground, out var underBlock))
+            if (!chunk.map.TryGetBlock(new(pos.x, pos.y - 1), isBackground, out var underBlock) || underBlock is Plant)
             {
                 DestroySelf();
                 return;

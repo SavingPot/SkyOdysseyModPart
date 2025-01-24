@@ -43,6 +43,10 @@
             "path": "/blocks/close_door.ogg"
         },
         {
+            "id": "ori:house_detect",
+            "path": "/house_detect.ogg"
+        },
+        {
             "id": "ori:destroy_block",
             "path": "/blocks/destroy_block.ogg"
         },
