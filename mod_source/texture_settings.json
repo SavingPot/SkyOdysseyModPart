@@ -1024,8 +1024,8 @@
             "path": "/ui/player/player_cursor.png"
         },
         {
-            "id": "ori:building_center_button",
-            "path": "/ui/player/building_center_button.png"
+            "id": "ori:labor_center_button",
+            "path": "/ui/player/labor_center_button.png"
         },
         {
             "id": "ori:market_center_button",
@@ -1384,7 +1384,7 @@
         },
         {
             "id": "ori:labor_body",
-            "path": "/entities/labor/body.png"
+            "path": "/entities/npcs/labor/body.png"
         },
         {
             "id": "ori:spark",

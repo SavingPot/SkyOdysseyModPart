@@ -1,0 +1,17 @@
+{
+    "json_format": "0.4.8",
+    "ori:entity": {
+        "id": "ori:wandering_labor",
+        "coin_count": 0,
+        "lifetime": 5000,
+        "physics": {
+            "gravity": 0,
+            "collider": {
+                "size": [
+                    0.5,
+                    1
+                ]
+            }
+        }
+    }
+}

@@ -17,7 +17,7 @@ namespace GameCore
                 _ => "ori:chicken_china_local"
             };
 
-            //打鸣
+            //打鸣（公）
             if (Tools.Prob100(50))
             {
                 GTime.BindTimeEvent(5, true, () =>

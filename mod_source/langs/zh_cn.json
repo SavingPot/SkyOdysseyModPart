@@ -93,6 +93,14 @@
                 "text": "真是朦胧的雨天啊! 我真喜欢这般的天气, 这让我感到宁静与舒适, 在这样的一天光着上身真是太凉爽了"
             },
             {
+                "id": "ori:dialog.wandering_labor.confirm",
+                "text": "你想要雇佣我吗？"
+            },
+            {
+                "id": "ori:dialog.wandering_labor.coin_not_enough",
+                "text": "你想要雇佣我吗？但是你需要多一些金币。"
+            },
+            {
                 "id": "ori:trader",
                 "text": "商人"
             },
@@ -1467,6 +1475,18 @@
             {
                 "id": "ori:trade_not_enough_coin",
                 "text": "金币不足！"
+            },
+            {
+                "id": "ori:text.labor_center_title",
+                "text": "劳工中心"
+            },
+            {
+                "id": "ori:text.market_center_title",
+                "text": "市场中心"
+            },
+            {
+                "id": "ori:text.region_unlocking_title",
+                "text": "区域解锁"
             },
             {
                 "id": "ori:button.choose_world_panel.text",
