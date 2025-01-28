@@ -9,8 +9,8 @@ namespace GameCore
     [EntityBinding(EntityID.Nick)]
     public class Nick : NPC
     {
+        const int autoTalkRadius = 4 * 4; //4^2
         public NickProgress progress;
-        public int autoTalkRadius = 4 * 4; //4^2
 
 
 

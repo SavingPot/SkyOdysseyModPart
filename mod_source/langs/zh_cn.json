@@ -93,12 +93,24 @@
                 "text": "真是朦胧的雨天啊! 我真喜欢这般的天气, 这让我感到宁静与舒适, 在这样的一天光着上身真是太凉爽了"
             },
             {
-                "id": "ori:dialog.wandering_labor.confirm",
-                "text": "你想要雇佣我吗？"
+                "id": "ori:wandering_labor",
+                "text": "游荡的劳工"
+            },
+            {
+                "id": "ori:dialog.wandering_labor.free_fishing_rod",
+                "text": "今天天气不错，正好我有了一把新的鱼竿，这把旧鱼竿还可以用来钓鱼卖钱，我就把它送给你了吧。"
             },
             {
                 "id": "ori:dialog.wandering_labor.coin_not_enough",
                 "text": "你想要雇佣我吗？但是你需要多一些金币。"
+            },
+            {
+                "id": "ori:dialog.wandering_labor.house_not_enough",
+                "text": "你想要雇佣我吗？但是我需要一间空房。"
+            },
+            {
+                "id": "ori:dialog.wandering_labor.confirm",
+                "text": "你想要雇佣我吗？"
             },
             {
                 "id": "ori:trader",

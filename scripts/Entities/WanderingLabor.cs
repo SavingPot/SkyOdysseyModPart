@@ -9,12 +9,13 @@ using UnityEngine;
 
 namespace GameCore
 {
-    [EntityBinding(EntityID.WanderingLabor), NotSummonable]
+    [EntityBinding(EntityID.WanderingLabor)]
     public sealed class WanderingLabor : Entity, IInteractableEntity
     {
         TextImageIdentity coinTextImage;
         int recruitmentExpenses;
-        public Vector2 interactionSize { get; } = new(1f, 1.8f);
+        const int autoTalkRadius = 4 * 4; //4^2
+        public Vector2 interactionSize { get; } = new(5f, 5f);
 
         public override void Initialize()
         {
@@ -35,14 +36,43 @@ namespace GameCore
             coinTextImage.SetText(recruitmentExpenses);
         }
 
+        protected override void Update()
+        {
+            base.Update();
+
+            if (Player.TryGetLocal(out var localPlayer) && (localPlayer.transform.position - transform.position).sqrMagnitude <= autoTalkRadius)
+            {
+                localPlayer.pui.DisplayDialog(
+                    new("ori:wandering_labor",
+                    "ori:button",
+                    new DialogData.DialogDatum[] { new(GameUI.CompareText("ori:dialog.wandering_labor.free_fishing_rod"), "ori:labor_body") }),
+                    () =>
+                    {
+                        localPlayer.ServerAddItem(ModFactory.CompareItem(ItemID.FishingRod).DataToItem());
+                        //TODO: 呼叫服务器标记该玩家
+                    });
+            }
+        }
+
+        public void Recruit(Player player)
+        {
+            //TODO: Network
+            GFiles.world.laborData.laborCount++;
+            player.ServerAddCoin(-recruitmentExpenses);
+            Death();
+        }
+
         public bool PlayerInteraction(Player player)
         {
-            if (player.coin >= recruitmentExpenses)
-                player.pui.DisplayDialog(new("ori:wandering_labor", "ori:button", new DialogData.DialogDatum[] {
-                    new(GameUI.CompareText("ori:dialog.wandering_labor.confirm"), "ori:labor_body")}));
-            else
+            if (player.coin < recruitmentExpenses)
                 player.pui.DisplayDialog(new("ori:wandering_labor", "ori:button", new DialogData.DialogDatum[] {
                     new(GameUI.CompareText("ori:dialog.wandering_labor.coin_not_enough"), "ori:labor_body")}));
+            else if (GFiles.world.laborData.registeredHousings.Count <= GFiles.world.laborData.laborCount)//TODO: Net
+                player.pui.DisplayDialog(new("ori:wandering_labor", "ori:button", new DialogData.DialogDatum[] {
+                    new(GameUI.CompareText("ori:dialog.wandering_labor.house_not_enough"), "ori:labor_body")}));
+            else
+                player.pui.DisplayDialog(new("ori:wandering_labor", "ori:button", new DialogData.DialogDatum[] {
+                    new(GameUI.CompareText("ori:dialog.wandering_labor.confirm"), "ori:labor_body", options: new System.Action[] { () => Recruit(player), null})}));
 
             return true;
         }
