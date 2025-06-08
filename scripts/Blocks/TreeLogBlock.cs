@@ -124,7 +124,7 @@ namespace GameCore
 
             //添加父对象
             if (!parent)
-                parent = new GameObject("BlockPreviewPool").transform;
+                parent = new GameObject("LeaveRendererPool").transform;
 
             //创建
             spriteRenderer = new GameObject("LeaveRenderer").AddComponent<SpriteRenderer>();
