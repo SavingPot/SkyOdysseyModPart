@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using GameCore.Network;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace GameCore
 {
@@ -25,7 +26,7 @@ namespace GameCore
             //树顶
             if (chunk.map.GetBlock(new(pos.x, pos.y + 1), isBackground)?.data?.id != data.id)
             {
-                leaveRenderer = LitSpriteRendererPool.Get(sr.sortingOrder);
+                leaveRenderer = LeaveRendererPool.Get(sr.sortingOrder);
                 leaveRenderer.sprite = ModFactory.CompareTexture(treeLogBlockDatum.leaf).sprite;
                 leaveRenderer.transform.localPosition = new(pos.x, pos.y + 1.5f, 0);
             }
@@ -64,7 +65,7 @@ namespace GameCore
         {
             if (leaveRenderer)
             {
-                LitSpriteRendererPool.Recycle(leaveRenderer);
+                LeaveRendererPool.Recycle(leaveRenderer);
                 leaveRenderer = null;
             }
         }
@@ -101,6 +102,52 @@ namespace GameCore
 
             dataTemps.Add(data.id, logDatum);
             return logDatum;
+        }
+    }
+
+    public static class LeaveRendererPool
+    {
+        public static Transform parent;
+        public static Stack<SpriteRenderer> stack = new();
+
+        public static SpriteRenderer Get(int sortingOrder)
+        {
+            SpriteRenderer spriteRenderer;
+
+            //先看有没有缓存的
+            if (stack.Count > 0)
+            {
+                spriteRenderer = stack.Pop();
+                spriteRenderer.gameObject.SetActive(value: true);
+                return spriteRenderer;
+            }
+
+            //添加父对象
+            if (!parent)
+                parent = new GameObject("BlockPreviewPool").transform;
+
+            //创建
+            spriteRenderer = new GameObject("LeaveRenderer").AddComponent<SpriteRenderer>();
+            spriteRenderer.transform.SetParent(parent);
+            spriteRenderer.material = GInit.instance.spriteLitMat;
+            spriteRenderer.sortingOrder = sortingOrder;
+            var shadowCaster = spriteRenderer.gameObject.AddComponent<ShadowCaster2D>();
+            //TODO:设置形状
+            //shadowCaster.path = new(1,1,1);
+
+            return spriteRenderer;
+        }
+
+        public static void Recycle(SpriteRenderer sr)
+        {
+            sr.gameObject.SetActive(value: false);
+            stack.Push(sr);
+        }
+
+        public static void Reset()
+        {
+            parent = null;
+            stack.Clear();
         }
     }
 }

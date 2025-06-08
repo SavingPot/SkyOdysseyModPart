@@ -98,7 +98,8 @@ namespace GameCore
             GScene.AfterChanged += scene =>
             {
                 //清理对象池
-                LaserLightPool.stack.Clear();
+                LeaveRendererPool.Reset();
+                LaserLightPool.Reset();
 
                 switch (scene.name)
                 {

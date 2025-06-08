@@ -10,72 +10,70 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace GameCore
 {
-    public static class LaserLightPool
+    public class LaserLight : MonoBehaviour
     {
-        public class LaserLight : MonoBehaviour
+        public LineRenderer line { get; private set; }
+        public Light2D light { get; private set; }
+        public Vector3 originPoint { get; private set; }
+        public Vector3 endPoint { get; private set; }
+
+        private void Awake()
         {
-            public LineRenderer line { get; private set; }
-            public Light2D light { get; private set; }
-            public Vector3 originPoint { get; private set; }
-            public Vector3 endPoint { get; private set; }
-
-            private void Awake()
+            //添加线渲染器
+            line = gameObject.AddComponent<LineRenderer>();
+            line.material = new(GInit.instance.defaultMat)
             {
-                //添加线渲染器
-                line = gameObject.AddComponent<LineRenderer>();
-                line.material = new(GInit.instance.defaultMat)
-                {
-                    //TODO: 贴图
-                    //mainTexture = GInit.instance.spriteUnknown.texture
-                };
-                line.startWidth = 0.1f;
-                line.endWidth = 0.1f;
-                line.useWorldSpace = false;
+                //TODO: 贴图
+                //mainTexture = GInit.instance.spriteUnknown.texture
+            };
+            line.startWidth = 0.1f;
+            line.endWidth = 0.1f;
+            line.useWorldSpace = false;
 
-                //设置光照组件
-                light = gameObject.GetComponent<Light2D>();
-                light.lightType = Light2D.LightType.Freeform;
-                light.intensity = 0.1f;
-            }
+            //设置光照组件
+            light = gameObject.GetComponent<Light2D>();
+            light.lightType = Light2D.LightType.Freeform;
+            light.intensity = 0.1f;
+        }
 
-            public void SetPoints(Vector3 originPoint, Vector3 endPoint)
-            {
-                //设置激光的位置
-                transform.position = originPoint;
-                this.originPoint = originPoint;
-                this.endPoint = endPoint;
+        public void SetPoints(Vector3 originPoint, Vector3 endPoint)
+        {
+            //设置激光的位置
+            transform.position = originPoint;
+            this.originPoint = originPoint;
+            this.endPoint = endPoint;
 
-                //转换世界坐标为本地坐标
-                var localOriginPoint = transform.InverseTransformPoint(originPoint);
-                var localEndPoint = transform.InverseTransformPoint(endPoint);
+            //转换世界坐标为本地坐标
+            var localOriginPoint = transform.InverseTransformPoint(originPoint);
+            var localEndPoint = transform.InverseTransformPoint(endPoint);
 
-                //设置线的端点
-                line.SetPosition(0, localOriginPoint);
-                line.SetPosition(1, localEndPoint);
+            //设置线的端点
+            line.SetPosition(0, localOriginPoint);
+            line.SetPosition(1, localEndPoint);
 
-                //设置光亮的形状
-                light.SetShapePath(new Vector3[] {
+            //设置光亮的形状
+            light.SetShapePath(new Vector3[] {
                     localOriginPoint + new Vector3(0, 0.1f),
                     localOriginPoint - new Vector3(0, 0.1f),
                     localEndPoint - new Vector3(0, 0.1f),
                     localEndPoint + new Vector3(0, 0.1f),
                 });
-            }
-
-            private void Update()
-            {
-                //如果激光已经结束, 则回收
-                if (Mathf.Abs(originPoint.x - endPoint.x) < 0.1f && Mathf.Abs(originPoint.y - endPoint.y) < 0.1f)
-                    LaserLightPool.Recover(this);
-
-                //让起点慢慢接近终点
-                var newZero = Vector3.Lerp(originPoint, endPoint, Tools.deltaTime * 6);
-                SetPoints(newZero, endPoint);
-            }
         }
 
+        private void Update()
+        {
+            //如果激光已经结束, 则回收
+            if (Mathf.Abs(originPoint.x - endPoint.x) < 0.1f && Mathf.Abs(originPoint.y - endPoint.y) < 0.1f)
+                LaserLightPool.Recover(this);
 
+            //让起点慢慢接近终点
+            var newZero = Vector3.Lerp(originPoint, endPoint, Tools.deltaTime * 6);
+            SetPoints(newZero, endPoint);
+        }
+    }
 
+    public static class LaserLightPool
+    {
         public static readonly Stack<LaserLight> stack = new();
 
         public static LaserLight Get(Vector3 originPoint, Vector3 endPoint)
@@ -112,6 +110,11 @@ namespace GameCore
         {
             obj.gameObject.SetActive(false);
             stack.Push(obj);
+        }
+
+        public static void Reset()
+        {
+            stack.Clear();
         }
     }
 
